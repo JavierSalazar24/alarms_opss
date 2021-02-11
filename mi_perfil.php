@@ -1,0 +1,132 @@
+<?php
+
+    session_start();
+
+    require_once __DIR__ . '/vendor/autoload.php';
+
+    if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
+
+        header("Location: control_panel/index.php");
+      
+    }elseif (!isset($_SESSION['usuario'])) {
+
+        header("Location: index.php");
+        
+    }elseif (isset($_SESSION['usuario'])) {
+
+        $correo = $_SESSION['usuario'];
+
+        $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
+        $datos = $C_clientes->findOne(['correo' => $correo]);
+
+        $id = $datos['_id'];
+        $nombre = $datos['nombre'];
+        $ape1 = $datos['ape1'];
+        $ape2 = $datos['ape2'];
+        $calle = $datos['calle'];
+        $numero = $datos['numero'];
+        $col_fracc = $datos['col_fracc'];
+        $cp = $datos['cp'];
+        $telefono = $datos['telefono'];
+        $correo = $datos['correo'];
+        
+
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_responsivo.css">
+    <script src="js/scrollreveal.js"></script>
+    <link rel="shortcut icon" href="img/favicon.jpg">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+</head>
+<body class="body-perfil">
+    
+    <?php include "partes/_navs.php" ?>
+
+    <section id="perfil">
+        
+        <h1 class="h1-perfil">Mi perfil</h1>
+        
+        <div class="div-inputs-perfil-gnrl">
+            <div class="div-inputs-perfil">
+                <label for="nombre" id="label-perfil">Nombre(s)</label>
+                <br>
+                <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php echo $nombre?>" disabled>
+            </div>
+                
+            <div class="div-inputs-perfil">
+                <input type="hidden" name="id" value="<?php echo $id?>">                
+                <label for="ape1" id="label-perfil">Primer apellido</label>
+                <br>
+                <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php echo $ape1?>" disabled>                
+            </div>
+
+            <div class="div-inputs-perfil">
+                <label for="ape2" id="label-perfil">Segundo apellido</label>
+                <br>
+                <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape2" id="ape2" value="<?php echo $ape2?>" disabled>
+            </div>
+
+            <div class="div-inputs-perfil">
+                <label for="telefono" id="label-perfil">Teléfono</label>
+                <br>
+                <input class="input-perfil-form" title="Solo números" pattern="[0-9]+" type="tel" name="telefono" required id="telefono" minlength="10" maxlength="10" value="<?php echo $telefono?>" disabled>
+            </div>
+
+            <div class="div-inputs-perfil">
+                <label for="calle" id="label-perfil">Calle</label>
+                <br>
+                <input class="input-perfil-form" type="text" name="calle" required id="calle" value="<?php echo $calle?>" disabled>
+            </div>
+
+            <div class="div-inputs-perfil">
+                <label for="numero" id="label-perfil">Número exterior</label>
+                <br>
+                <input class="input-perfil-form" type="text" name="numero" required id="numero" value="<?php echo $numero?>" disabled>
+            </div>
+
+            <div class="div-inputs-perfil">
+                <label for="col-fracc" id="label-perfil">Col. o Fracc.</label>
+                <br>
+                <input class="input-perfil-form" type="text" name="col_fracc" required id="col-fracc" value="<?php echo $col_fracc?>" disabled>
+            </div>
+
+            <div class="div-inputs-perfil">
+                <label for="cp" id="label-perfil">Código Postal</label>
+                <br>
+                <input class="input-perfil-form" type="tel" title="Solo números" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php echo $cp?>" disabled>
+            </div>
+
+            <div class="div-inputs-perfil">
+                <label for="email" id="label-perfil">Email</label>
+                <br>
+                <input class="input-perfil-form" type="text" name="correo" required id="email" value="<?php echo $correo?>" disabled>
+            </div>
+
+        </div>
+
+        <div class="div-perfil-btn">
+            <a class="btn-perfil" href="editar_mi_perfil.php">Editar perfil</a>
+            <a class="btn-perfil2" href="mis_pedidos.php">Mis pedidos</a>
+            <a class="btn-perfil2" href="index.php">Volver al inicio</a>
+        </div>
+
+    </section>
+
+    <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
+
+<?php
+
+    }
+
+?>
