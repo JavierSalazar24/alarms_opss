@@ -17,7 +17,7 @@ body::-webkit-scrollbar-thumb {
 
 html {
   scroll-behavior: smooth;
-  transition: 3s;
+  transition: 4s;
 }
 
 input {
@@ -98,6 +98,7 @@ input {
   background: rgb(208, 180, 143);
   color: black;
   margin-bottom: 1.1rem;
+  display: inline-block;
 }
 
 .li-menu-comprar:hover {
@@ -105,6 +106,7 @@ input {
   border: 1px solid rgb(208, 180, 143);
   color: rgb(208, 180, 143);
   transition-duration: 0.5s;
+  box-sizing: border-box;
 }
 
 .ancla-menu {
@@ -514,20 +516,19 @@ input {
 
 .p-nota {
   margin: 0;
-  padding: 2rem 0;
+  padding: 2rem;
 }
 
 /* NOTICIAS */
 
 .div-noticias {
   width: 60%;
-  margin: 7rem auto;
+  margin: 5rem auto;
   text-align: justify;
 }
 
 .h1-noticias {
-  padding-top: 3rem;
-  padding-bottom: 1rem;
+  padding-top: 1rem;
   text-align: center;
   font-size: 3rem;
 }
@@ -659,14 +660,17 @@ input {
 #iniciar-sesion {
   text-align: center;
   width: 80%;
-  margin-top: 3rem;
+  margin-top: 5rem;
   margin-left: auto;
   margin-right: auto;
 }
 
 #x-login {
-  text-align: right;
-  margin-top: 4rem;
+  margin-top: -1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
 }
 
 .x-ancla {
@@ -675,7 +679,7 @@ input {
 }
 
 .h1-login {
-  margin-top: -2rem;
+  margin-top: -1rem;
   font-size: 3rem;
   color: white;
   font-weight: 500;
@@ -708,9 +712,10 @@ input {
   border-bottom: 1px solid white;
   background: transparent;
   padding: 0;
-  font-weight: 500;
+  font-weight: lighter;
   width: 50%;
   outline: 0px;
+  font-size: 18px;
 }
 
 .btn-input-login {
@@ -737,11 +742,15 @@ input {
 }
 
 #registrarse {
-  text-align: center;
   width: 80%;
-  margin-top: 3rem;
+  margin-top: 5rem;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+.div-registrarse {
+  text-align: center;
 }
 
 .div-inputs-registrar-gnrl {
@@ -753,6 +762,7 @@ input {
 .div-inputs-registrar {
   width: 40%;
   margin: 1rem 0 1.5rem 0%;
+  text-align: center;
 }
 
 #label-registrar {
@@ -763,13 +773,18 @@ input {
   margin-top: 2rem;
 }
 
+.div-inputs-registrar2 {
+  text-align: left;
+  width: 60%;
+  margin-left: 20%;
+}
+
 .input-registrar-form {
   color: white;
   border: none;
   border-bottom: 1px solid white;
   background: transparent;
-  padding-left: 10px;
-  font-size: 1.2rem;
+  font-size: 18px;
   width: 60%;
   outline: 0px;
 }
@@ -782,8 +797,8 @@ input {
   width: 40%;
   height: 3rem;
   font-size: 1rem;
-  margin-top: 3rem;
-  margin-bottom: 4rem;
+  margin: 3rem auto 4rem auto;
+  display: inline-block;
 }
 
 .btn-input-registrar:hover {
@@ -981,7 +996,7 @@ input {
 
 .div-inputs-perfil {
   width: 40%;
-  margin: 1.5rem 0 1rem 0%;
+  margin: 1.5rem 0 1rem 3rem;
 }
 
 #label-perfil {

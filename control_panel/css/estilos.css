@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-color: gray;
   font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 body::-webkit-scrollbar {
@@ -25,59 +26,53 @@ input {
 
 /* Inicio */
 
-#control-panel {
-  height: auto;
-  display: flex;
-}
-
 .menu {
   color: white;
   background: rgb(15, 15, 15);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  margin-top: -1rem;
 }
 
 .ul-menu {
   display: flex;
   flex-wrap: wrap;
+  /* justify-content: space-around; */
   list-style: none;
-  margin-right: 1.5rem;
 }
 
 .li-menu {
-  box-sizing: border-box;
-  cursor: pointer;
-  padding: 0rem 3rem;
+  padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-.li-icon-menu {
+.salir {
+  text-decoration: none;
+  color: rgb(116, 116, 116);
+  font-size: 1.4rem;
+}
+
+.li-menu::selection {
+  background-color: white;
+  color: #000000;
+}
+
+/* .li-icon-menu {
   box-sizing: border-box;
   cursor: pointer;
   padding: 0rem 0 0 1rem;
   font-size: 1.8rem;
   font-weight: bold;
   margin-top: -0.2rem;
-}
+} */
 
-.linea {
-  height: auto;
-  width: 2px;
-  background-color: white;
-  border: none;
-  margin: -0.2rem 0rem 0.2rem 0rem;
-}
-
-.li-icon-salir {
+/* .li-icon-salir {
   margin-top: -0.2rem;
   font-size: 1.8rem;
-}
+} */
 
-.salir {
-  text-decoration: none;
-  color: rgb(116, 116, 116);
+#control-panel {
+  height: auto;
+  display: flex;
 }
 
 #icon-nav-menu {
@@ -86,10 +81,6 @@ input {
 
 #icon-nav-menu:checked ~ .opc-panel {
   margin: 0;
-}
-
-.label-icon:hover {
-  cursor: pointer;
 }
 
 .opc-panel {

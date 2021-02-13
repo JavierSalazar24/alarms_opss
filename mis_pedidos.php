@@ -3,6 +3,8 @@
     session_start();
     require_once __DIR__ . '/vendor/autoload.php';
 
+    error_reporting(0);
+
     if(isset($_SESSION['usuario'])){
 
         $correo = $_SESSION['usuario'];
@@ -19,12 +21,19 @@
         $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos; 
         $datosPr = $C_productos->findOne(['codigo' => "111"]);
 
-        $codigo = $datosP['codigo_mercancia'];
         $nombre_p = $datosPr['nombre'];
         $precio = $datosPr['precio'];
         $cantidad = $datosP['cantidad'];
         $total = $datosP['total'];
         $fecha_hora = $datosP['fecha_hora'];
+
+        if ($datosP['cantidad'] == null && $total = $datosP['total'] == null && $datosP['fecha_hora'] == null) {
+            $nombre_p = 'Sin pedidos';
+            $precio = 'Sin pedidos';
+            $cantidad = 'Sin pedidos';
+            $total = 'Sin pedidos';
+            $fecha_hora = 'Sin pedidos';
+        }
 
 
 
@@ -51,13 +60,7 @@
         
         <h1 class="h1-perfil">Mis pedidos</h1>
         
-        <div class="div-inputs-perfil-gnrl">
-            <div class="div-inputs-perfil">
-                <label for="codigo_mercancia" id="label-perfil">Código de la mercancia</label>
-                <br>
-                <input class="input-perfil-form" type="text" value="<?php echo $codigo?>" disabled>
-            </div>
-                
+        <div class="div-inputs-perfil-gnrl">                
             <div class="div-inputs-perfil">
                 <label for="nombre" id="label-perfil">Nombre del producto</label>
                 <br>
@@ -71,19 +74,19 @@
             </div>
 
             <div class="div-inputs-perfil">
-                <label for="cantidad" id="label-perfil">Cantidad comprada</label>
+                <label for="cantidad" id="label-perfil">Cantidad comprada hasta el momento</label>
                 <br>
-                <input class="input-perfil-form" type="tel" value="<?php echo $cantidad?>" disabled>
+                <input class="input-perfil-form" type="text" value="<?php echo $cantidad?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <label for="precio_total" id="label-perfil">Precio total de la compra</label>
+                <label for="precio_total" id="label-perfil">Precio total de la compra hasta el momento</label>
                 <br>
                 <input class="input-perfil-form" type="text" value="<?php echo $total?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <label for="fecha_hora" id="label-perfil">Fecha y hora de la compra</label>
+                <label for="fecha_hora" id="label-perfil">Fecha y hora de la última compra</label>
                 <br>
                 <input class="input-perfil-form" type="text" value="<?php echo $fecha_hora?>" disabled>
             </div>
@@ -91,6 +94,7 @@
         </div>
 
         <div class="div-perfil-btn">
+            <a class="btn-perfil" href="mi_perfil.php">Volver atrás</a>
             <a class="btn-perfil" href="index.php">Volver al inicio</a>
         </div>
 

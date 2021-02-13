@@ -37,27 +37,26 @@
                 if ($correo_busq==null && $contrasena_busq==null && $correo_busq_admin==null && $contrasena_busq_admin==null) {
                     echo "<script>alert('Usuario o contraseña incorrectos')</script>";
                 }elseif ($correo_busq!=null && $contrasena_busq!=null) {
-                    $datos = $C_clientes->find();
-                    foreach ($datos as $dato){
-                        $nombre = $dato['nombre'];
-                        $ape1 = $dato['ape1'];
-                    }
-                    echo "<script>alert('Bienvenid@ cliente $nombre $ape1 ')</script>";
-                    echo "<script> location.href='index.php' </script>";
+
+                    $cliente = $C_clientes->findOne(['correo' => $correo]);        
+                    $nombre_c = $cliente['nombre'];
+                    $ape1_c = $cliente['ape1'];
+
+                    echo "<script>alert('Bienvenid@ cliente $nombre_c $ape1_c ')</script>";
+                    echo "<script> location.href='index.php'</script>";
                     $_SESSION['usuario']=$correo;
                 }elseif($correo_busq_admin!=null && $contrasena_busq_admin!=null){
-                    $datos = $C_admins->find();
-                    foreach ($datos as $dato){
-                        $nombre = $dato['nombre'];
-                        $ape1 = $dato['ape1'];
-                    }
+                    $administrador = $C_admins->findOne(['correo' => $correo]);
+                    
+                    $nombre_a = $administrador['nombre'];
+                    $ape1_a = $administrador['ape1'];
 
-                    if ($dato['tipo_admin']=='1' || $dato['tipo_admin']==1) {
+                    if ($administrador['tipo_admin']=='1' || $administrador['tipo_admin']==1) {
                         $_SESSION['admin']=$correo;
-                    }elseif($dato['tipo_admin']=='2' || $dato['tipo_admin']==2){
+                    }elseif($administrador['tipo_admin']=='2' || $administrador['tipo_admin']==2){
                         $_SESSION['estandar']=$correo;
                     }
-                    echo "<script>alert('Bienvenid@ admin $nombre $ape1 ')</script>";
+                    echo "<script>alert('Bienvenid@ admin $nombre_a $ape1_a ')</script>";
                     echo "<script> location.href='control_panel/index.php' </script>";
                 }elseif ($correo_busq==null || $contrasena_busq==null || $correo_busq_admin==null || $contrasena_busq_admin==null) {
                     echo "<script>alert('Usuario o contraseña incorrectos')</script>";

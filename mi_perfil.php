@@ -56,57 +56,66 @@
         
         <div class="div-inputs-perfil-gnrl">
             <div class="div-inputs-perfil">
-                <label for="nombre" id="label-perfil">Nombre(s)</label>
-                <br>
+                <div class="div-inputs-registrar2">
+                    <label for="nombre" id="label-perfil">Nombre(s)</label>
+                </div>
                 <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php echo $nombre?>" disabled>
             </div>
                 
             <div class="div-inputs-perfil">
                 <input type="hidden" name="id" value="<?php echo $id?>">                
-                <label for="ape1" id="label-perfil">Primer apellido</label>
-                <br>
+                <div class="div-inputs-registrar2">
+                    <label for="ape1" id="label-perfil">Primer apellido</label>
+                </div>
                 <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php echo $ape1?>" disabled>                
             </div>
 
             <div class="div-inputs-perfil">
-                <label for="ape2" id="label-perfil">Segundo apellido</label>
-                <br>
+                <div class="div-inputs-registrar2">                 
+                    <label for="ape2" id="label-perfil">Segundo apellido</label>
+                </div>
                 <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape2" id="ape2" value="<?php echo $ape2?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <label for="telefono" id="label-perfil">Teléfono</label>
-                <br>
+                <div class="div-inputs-registrar2">
+                    <label for="telefono" id="label-perfil">Teléfono</label>
+                </div>
                 <input class="input-perfil-form" title="Solo números" pattern="[0-9]+" type="tel" name="telefono" required id="telefono" minlength="10" maxlength="10" value="<?php echo $telefono?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <label for="calle" id="label-perfil">Calle</label>
-                <br>
+                <div class="div-inputs-registrar2">                
+                    <label for="calle" id="label-perfil">Calle</label>
+                </div>
                 <input class="input-perfil-form" type="text" name="calle" required id="calle" value="<?php echo $calle?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <label for="numero" id="label-perfil">Número exterior</label>
-                <br>
+                <div class="div-inputs-registrar2">
+                    <label for="numero" id="label-perfil">Número exterior</label>
+                </div>
                 <input class="input-perfil-form" type="text" name="numero" required id="numero" value="<?php echo $numero?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <label for="col-fracc" id="label-perfil">Col. o Fracc.</label>
-                <br>
+                <div class="div-inputs-registrar2">
+                    <label for="col-fracc" id="label-perfil">Col. o Fracc.</label>
+                </div>
                 <input class="input-perfil-form" type="text" name="col_fracc" required id="col-fracc" value="<?php echo $col_fracc?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <label for="cp" id="label-perfil">Código Postal</label>
-                <br>
+                <div class="div-inputs-registrar2">
+                    <label for="cp" id="label-perfil">Código Postal</label>
+                </div>
                 <input class="input-perfil-form" type="tel" title="Solo números" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php echo $cp?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <label for="email" id="label-perfil">Email</label>
-                <br>
+                <div class="div-inputs-registrar2">
+                    <label for="email" id="label-perfil">Email</label>
+                </div>
                 <input class="input-perfil-form" type="text" name="correo" required id="email" value="<?php echo $correo?>" disabled>
             </div>
 

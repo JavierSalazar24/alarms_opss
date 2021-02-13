@@ -90,60 +90,66 @@
 
             <div class="div-inputs-perfil-gnrl">
                 <div class="div-inputs-perfil">
-                    <label for="nombre" id="label-perfil">Nombre(s)</label>
-                    <br>
-                    <input type="hidden" name="id" value="<?php echo $id?>">                
+                    <input type="hidden" name="id" value="<?php echo $id?>">
+                    <div class="div-inputs-registrar2">                      
+                        <label for="nombre" id="label-perfil">Nombre(s)</label>
+                    </div>
                     <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php echo $nombre?>">
                 </div>
                 
                 <div class="div-inputs-perfil">
-                    <div class="div2-inputs-perfil">
-                    <label for="ape1" id="label-perfil">Primer apellido</label>
-                    <br>
-                    <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php echo $ape1?>">
+                    <div class="div-inputs-registrar2">                
+                        <label for="ape1" id="label-perfil">Primer apellido</label>
                     </div>
-                    
+                    <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php echo $ape1?>">                
                 </div>
 
                 <div class="div-inputs-perfil">
-                    <label for="ape2" id="label-perfil">Segundo apellido</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="ape2" id="label-perfil">Segundo apellido</label>
+                    </div>
                     <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape2" id="ape2" value="<?php echo $ape2?>">
                 </div>
 
                 <div class="div-inputs-perfil">
-                    <label for="telefono" id="label-perfil">Teléfono</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="telefono" id="label-perfil">Teléfono</label>
+                    </div>
                     <input class="input-perfil-form" title="Solo números" pattern="[0-9]+" type="tel" name="telefono" required id="telefono" minlength="10" maxlength="10" value="<?php echo $telefono?>">
                 </div>
 
                 <div class="div-inputs-perfil">
-                    <label for="calle" id="label-perfil">Calle</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="calle" id="label-perfil">Calle</label>
+                    </div>
                     <input class="input-perfil-form" type="text" name="calle" required id="calle" value="<?php echo $calle?>">
                 </div>
 
                 <div class="div-inputs-perfil">
-                    <label for="numero" id="label-perfil">Número exterior</label>
-                    <br>
+                    <div class="div-inputs-registrar2"> 
+                        <label for="numero" id="label-perfil">Número exterior</label>
+                    </div>                    
                     <input class="input-perfil-form" type="text" name="numero" required id="numero" value="<?php echo $numero?>">
                 </div>
 
                 <div class="div-inputs-perfil">
-                    <label for="col-fracc" id="label-perfil">Col. o Fracc.</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="col-fracc" id="label-perfil">Col. o Fracc.</label>
+                    </div>
                     <input class="input-perfil-form" type="text" name="col_fracc" required id="col-fracc" value="<?php echo $col_fracc?>">
                 </div>
 
                 <div class="div-inputs-perfil">
-                    <label for="cp" id="label-perfil">Código Postal</label>
-                    <br>
+                    <div class="div-inputs-registrar2">     
+                        <label for="cp" id="label-perfil">Código Postal</label>
+                    </div>                
                     <input class="input-perfil-form" type="tel" title="Solo números" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php echo $cp?>">
                 </div>
 
                 <div class="div-inputs-perfil">
-                    <label for="email" id="label-perfil">Email</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="email" id="label-perfil">Email</label>
+                    </div>
                     <input class="input-perfil-form" type="text" name="correo" required id="email" value="<?php echo $correo?>" disabled>
                 </div>
 
@@ -151,7 +157,8 @@
 
             <div class="div-btns-editar">
                 <input class="btn-input-perfil" type="submit" value="Guardar cambios">
-                <a class="btn-editar-perfil2" href="index.php"><input class="btn-input-perfil2" type="text" value="Volver al inicio" disabled></a>
+                <a class="btn-editar-perfil2" href="mi_perfil.php"><input class="btn-input-perfil2" type="button" value="Volver atrás" ></a>
+                <a class="btn-editar-perfil2" href="index.php"><input class="btn-input-perfil2 btn-input-perfil2-2" type="button" value="Volver al inicio"></a>
             </div>
 
         </form>

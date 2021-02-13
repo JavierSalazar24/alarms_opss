@@ -238,22 +238,21 @@
 <body>
     <nav class="menu">
         <ul class="ul-menu">
-            <li class="li-menu li-titulo">
+            <li class="li-menu">
                 Panel de control: OPSS
             </li>
-            <li class="li-menu li-fecha">
-            <?php echo $fecha?>
+            <li class="li-menu">
+                <?php echo $fecha?>
             </li>
             <li class="li-menu">
                 Bienvenid@: <?php echo $nombre.' '.$ape1?>
             </li>
-            <li class="li-menu li-icon-salir">
+            <li class="li-menu">
                 <a class="salir" href="../cerrar_sesion.php"><i class="fas fa-power-off"></i></a>
             </li>
-            <hr class="linea">
-            <li class="li-icon-menu">
-                <label class="label-icon" for="icon-nav-menu"><i class="fas fa-bars icon-menu"></i></label>
-            </li>
+           <!--  <li class="li-menu">
+                <label for="icon-nav-menu"><i class="fas fa-bars"></i></label>
+            </li> -->
         </ul>
     </nav>
     <section id="control-panel">

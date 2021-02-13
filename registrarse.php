@@ -81,80 +81,92 @@
 
 <body class="body-registrar">
     <section id="registrarse">
+        <div class="div-registrarse">
             <a href="index.php" class="x-ancla">
-                <h1 id="x-login">X</h1>
+                <span id="x-login">X</span>
             </a>
             <h1 class="h1-login h1-registrarse">Regístrate</h1>
             <h4 class="h4-p">¿Ya tienes una cuenta? 
                 <a class="ancla-registrarse-login" href="iniciar_sesion.php">Iniciar sesión</a>
             </h4>
-        
+        </div>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 
             <div class="div-inputs-registrar-gnrl">
                 <div class="div-inputs-registrar">
-                    <label for="nombre" id="label-registrar">Nombre(s)</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="nombre" id="label-registrar">Nombre(s)</label>
+                    </div>
                     <input class="input-registrar-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php if(isset($nombre)) echo $nombre?>">
                 </div>
                 
                 <div class="div-inputs-registrar">
-                    <label for="ape1" id="label-registrar">Primer apellido</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="ape1" id="label-registrar">Primer apellido</label>
+                    </div>
                     <input class="input-registrar-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php if(isset($ape1)) echo $ape1?>">                    
                 </div>
 
                 <div class="div-inputs-registrar">
-                    <label for="ape2" id="label-registrar">Segundo apellido</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="ape2" id="label-registrar">Segundo apellido</label>
+                    </div>
                     <input class="input-registrar-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape2" id="ape2" value="<?php if(isset($ape2)) echo $ape2?>">
                 </div>
 
                 <div class="div-inputs-registrar">
-                    <label for="telefono" id="label-registrar">Teléfono</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="telefono" id="label-registrar">Teléfono</label>
+                    </div>
                     <input class="input-registrar-form" title="Solo números" pattern="[0-9]+" type="tel" name="telefono" required id="telefono" minlength="10" maxlength="10" value="<?php if(isset($telefono)) echo $telefono?>">
                 </div>
 
                 <div class="div-inputs-registrar">
-                    <label for="calle" id="label-registrar">Calle</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="calle" id="label-registrar">Calle</label>
+                    </div>
                     <input class="input-registrar-form" type="text" name="calle" required id="calle" value="<?php if(isset($calle)) echo $calle?>">
                 </div>
 
                 <div class="div-inputs-registrar">
-                    <label for="numero" id="label-registrar">Número exterior</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="numero" id="label-registrar">Número exterior</label>
+                    </div>
                     <input class="input-registrar-form" type="text" name="numero" required id="numero" value="<?php if(isset($numero)) echo $numero?>">
                 </div>
 
                 <div class="div-inputs-registrar">
-                    <label for="col-fracc" id="label-registrar">Col. o Fracc.</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="col-fracc" id="label-registrar">Col. o Fracc.</label>
+                    </div>
                     <input class="input-registrar-form" type="text" name="col_fracc" required id="col-fracc" value="<?php if(isset($col_fracc)) echo $col_fracc?>">
                 </div>
 
                 <div class="div-inputs-registrar">
-                    <label for="cp" id="label-registrar">Código Postal</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="cp" id="label-registrar">Código Postal</label>
+                    </div>                    
                     <input class="input-registrar-form" type="tel" title="Solo números" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php if(isset($cp)) echo $cp?>">
                 </div>
 
                 <div class="div-inputs-registrar">
-                    <label for="email" id="label-registrar">Email</label>
-                    <br>
+                    <div class="div-inputs-registrar2"> 
+                        <label for="email" id="label-registrar">Email</label>
+                    </div>
                     <input class="input-registrar-form" type="email" name="correo" required id="email" value="<?php if(isset($correo)) echo $correo?>">
                 </div>
 
                 <div class="div-inputs-registrar">
-                    <label for="password" id="label-registrar">Contraseña</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="password" id="label-registrar">Contraseña</label>
+                    </div>
                     <input class="input-registrar-form" type="password" name="password" minlength="8" required id="password">
                 </div>
 
                 <div class="div-inputs-registrar">
-                    <label for="conf-password" id="label-registrar">Confirmar contraseña</label>
-                    <br>
+                    <div class="div-inputs-registrar2">
+                        <label for="conf-password" id="label-registrar">Confirmar contraseña</label>
+                    </div>
                     <input class="input-registrar-form" type="password" name="conf_password" minlength="8" required id="conf-password">
                 </div>
 
