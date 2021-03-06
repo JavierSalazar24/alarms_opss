@@ -250,9 +250,9 @@
             <li class="li-menu">
                 <a class="salir" href="../cerrar_sesion.php"><i class="fas fa-power-off"></i></a>
             </li>
-           <!--  <li class="li-menu">
+            <li class="li-menu">
                 <label for="icon-nav-menu"><i class="fas fa-bars"></i></label>
-            </li> -->
+            </li>
         </ul>
     </nav>
     <section id="control-panel">
