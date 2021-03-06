@@ -14,8 +14,8 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
     $datos = $C_clientes->findOne(['correo' => $correo]);
 
-    $nombre = $datos['nombre'];
-    $ape1 = $datos['ape1'];
+    $nombre = $datos['nombres']['nombre'];
+    $ape1 = $datos['nombres']['ape1'];
 
 
 ?>
@@ -26,11 +26,16 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Alarmas, IoT, Seguridad, WIFI, Intenet of Things, Alarma, Ventas, Casa">
+    <meta name="description" content="OPSS Es una comparañia destinada a brindar seguridad con calidad y buen precio, contamos con alarmas hechas con ayuda de las IoT para brindar una mejor seguridad y fácil accesibilidad a estas.">
+    <meta name="author" content="Empresa OPSS.">
+    <meta name="copyright" content="Empresa OPSS.">
+    <meta name="robots" content="index">
     <title>OPSS</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <script src="js/scrollreveal.js"></script>
-    <link rel="shortcut icon" href="img/favicon.jpg">
+    <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -100,8 +105,8 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <section id="comprar-producto">
         <div class="div-comprar-producto">
             <h1 class="h1-comprar-productos">LA VIDA OPSS</h1>
-            <p class="p-comprar-productos">Tu hogar está esperándote. Prepáralo acorde a tus necesidades de confort.</p>
-            <p><a class="btn-comprar-productos" href="comprar.php">COMPRAR</a></p>
+            <p class="p-comprar-productos">Descarga nuestra aplicación móvil para que puedas tener un mejor control de tu alarma.</p>
+            <p><a class="btn-comprar-productos" href="#">DESCARGAR</a></p>
         </div>
     </section>
 
@@ -165,26 +170,26 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <section id="marcas">
         <div class="div-marcas">
             <div class="marca div-acer">
-                <img class="marca1" src="img/acer.png" alt="">
+                <img class="marca1" src="img/acer.png" alt="Marca patrocinadora ACER">
             </div>
 
-            <div class="marca marca-cisco">
-                <img class="marca2" src="img/cisco.png" alt="">
+            <div class="marca">
+                <img class="marca2" src="img/cisco.png" alt="Marca patrocinadora CISCO">
             </div>
-            <div class="marca marca-hp">
-                <img class="marca3" src="img/hp.png" alt="">
-            </div>
-
-            <div class="marca marca-intel">
-                <img class="marca4" src="img/intel.png" alt="">
+            <div class="marca">
+                <img class="marca3" src="img/hp.png" alt="Marca patrocinadora HP">
             </div>
 
-            <div class="marca marca-microsoft">
-                <img class="marca5" src="img/microsoft.png" alt="">
+            <div class="marca">
+                <img class="marca4" src="img/intel.png" alt="Marca patrocinadora INTEL">
             </div>
 
-            <div class="marca marca-toshiba">
-                <img class="marca6" src="img/toshiba.png" alt="">
+            <div class="marca">
+                <img class="marca5" src="img/microsoft.png" alt="Marca patrocinadora MICROSOFT">
+            </div>
+
+            <div class="marca">
+                <img class="marca6" src="img/toshiba.png" alt="Marca patrocinadora TOSHIBA">
             </div>
         </div>
     </section>
@@ -222,7 +227,7 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <script src="js/scrollreveal.js"></script>
-    <link rel="shortcut icon" href="img/favicon.jpg">
+    <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -357,26 +362,26 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <section id="marcas">
         <div class="div-marcas">
             <div class="marca div-acer">
-                <img class="marca1" src="img/acer.png" alt="">
+                <img class="marca1" src="img/acer.png" alt="Marca patrocinadora ACER">
             </div>
 
             <div class="marca">
-                <img class="marca2" src="img/cisco.png" alt="">
+                <img class="marca2" src="img/cisco.png" alt="Marca patrocinadora CISCO">
             </div>
             <div class="marca">
-                <img class="marca3" src="img/hp.png" alt="">
-            </div>
-
-            <div class="marca">
-                <img class="marca4" src="img/intel.png" alt="">
+                <img class="marca3" src="img/hp.png" alt="Marca patrocinadora HP">
             </div>
 
             <div class="marca">
-                <img class="marca5" src="img/microsoft.png" alt="">
+                <img class="marca4" src="img/intel.png" alt="Marca patrocinadora INTEL">
             </div>
 
             <div class="marca">
-                <img class="marca6" src="img/toshiba.png" alt="">
+                <img class="marca5" src="img/microsoft.png" alt="Marca patrocinadora MICROSOFT">
+            </div>
+
+            <div class="marca">
+                <img class="marca6" src="img/toshiba.png" alt="Marca patrocinadora TOSHIBA">
             </div>
         </div>
     </section>

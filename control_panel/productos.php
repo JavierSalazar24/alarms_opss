@@ -1,6 +1,8 @@
 <?php
 
     session_start();
+    error_reporting(0);
+
 
     require_once '../vendor/autoload.php';
     $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos; 
@@ -17,7 +19,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
@@ -85,6 +87,8 @@
 
     <!-- funcionamiento de datatables propias -->
     <script type="text/javascript" src="../js/main.js"></script>
+    <!-- funcionamiento de eliminación de registros (propios) -->
+    <script type="text/javascript" src="../js/eliminar.js"></script>
 </body>
 
 </html>
@@ -102,7 +106,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />

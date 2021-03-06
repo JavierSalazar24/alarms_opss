@@ -1,6 +1,8 @@
 <?php
 
     session_start();
+    error_reporting(0);
+
 
     require_once '../vendor/autoload.php';
     $C_ventas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->ventas; 
@@ -18,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventas</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
@@ -51,7 +53,7 @@
                 <td><?php echo $dato["no_envio"]; ?></td>
                 <td><?php echo $dato["total_compra"]; ?></td>
                 <td><?php echo $dato["fecha_hora"]; ?></td>
-                <td><a class="btn-eliminar" href="eliminar.php?id_venta=<?php echo $dato['_id']?>"><i class="fas fa-check"></i></a></td>
+                <td><a class="btn-eliminar" href="eliminar.php?id_venta=<?php echo $dato['_id']?>" onclick="return ConfirmDelete()"><i class="fas fa-check"></i></a></td>
             </tr>
         </tbody>
     <?php
@@ -75,6 +77,9 @@
 
     <!-- funcionamiento de datatables propias -->
     <script type="text/javascript" src="../js/main.js"></script>
+    <!-- funcionamiento de eliminación de registros (propios) -->
+    <script type="text/javascript" src="../js/eliminar.js"></script>
+
 </body>
 
 </html>
@@ -92,7 +97,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventas</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />

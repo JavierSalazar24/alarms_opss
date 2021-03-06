@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    error_reporting(0);
     
     require_once '../vendor/autoload.php';
     $administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
@@ -21,7 +22,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administradores</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
@@ -54,10 +55,22 @@
         <tbody>
             <tr>
                 <td><?php echo $i=$i+1 ?></td>
-                <td><?php echo $dato["nombre"]; ?></td>
-                <td><?php echo $dato["ape1"]; ?></td>
-                <td><?php echo $dato["ape2"]; ?></td>
-                <td><?php echo $dato["telefono"]; ?></td>
+                <td><?php echo $dato['nombres']["nombre"]; ?></td>
+                <td><?php if ($dato['nombres']["ape1"]) {
+                    echo $dato['nombres']["ape1"];
+                }else{
+                    echo "-";
+                } ?></td>
+                <td><?php if ($dato['nombres']["ape2"]) {
+                    echo $dato['nombres']["ape2"];
+                }else{
+                    echo "-";
+                } ?></td>
+                <td><?php if ($dato["telefono"]) {
+                    echo $dato["telefono"];
+                }else{
+                    echo "-";
+                } ?></td>
                 <td><?php echo $dato["correo"]; ?></td>
                 <td><?php echo $dato["tipo_admin"]; ?></td>
                 <td>
@@ -95,6 +108,8 @@
 
     <!-- funcionamiento de datatables propias -->
     <script type="text/javascript" src="../js/main.js"></script>
+    <!-- funcionamiento de eliminación de registros (propios) -->
+    <script type="text/javascript" src="../js/eliminar.js"></script>
 </body>
 
 </html>
@@ -112,7 +127,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administradores</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
@@ -142,12 +157,25 @@
     ?>
         <tbody>
             <tr>
-                <td><?php echo $i=$i+1 ?></td>
-                <td><?php echo $dato["nombre"]; ?></td>
-                <td><?php echo $dato["ape1"]; ?></td>
-                <td><?php echo $dato["ape2"]; ?></td>
-                <td><?php echo $dato["telefono"]; ?></td>
+            <td><?php echo $i=$i+1 ?></td>
+                <td><?php echo $dato['nombres']["nombre"]; ?></td>
+                <td><?php if ($dato['nombres']["ape1"]) {
+                    echo $dato['nombres']["ape1"];
+                }else{
+                    echo "-";
+                } ?></td>
+                <td><?php if ($dato['nombres']["ape2"]) {
+                    echo $dato['nombres']["ape2"];
+                }else{
+                    echo "-";
+                } ?></td>
+                <td><?php if ($dato["telefono"]) {
+                    echo $dato["telefono"];
+                }else{
+                    echo "-";
+                } ?></td>
                 <td><?php echo $dato["correo"]; ?></td>
+                <td><?php echo $dato["tipo_admin"]; ?></td>
             </tr>
         </tbody>
 

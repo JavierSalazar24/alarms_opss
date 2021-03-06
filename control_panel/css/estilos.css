@@ -4,6 +4,7 @@ body {
   background-color: gray;
   font-family: sans-serif;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -35,20 +36,33 @@ input {
 .ul-menu {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
+  justify-content: space-around;
   list-style: none;
 }
 
 .li-menu {
-  padding: 1rem 2rem;
+  padding: 1rem 0rem;
   font-size: 1.2rem;
   font-weight: bold;
+  margin: auto 0;
+}
+
+.li-menu2 {
+  font-size: 1rem;
+}
+
+.icon-menu {
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding-right: 4px;
+  padding-left: 1.5rem;
+  border-left: 2px solid #fff;
 }
 
 .salir {
   text-decoration: none;
   color: rgb(116, 116, 116);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .li-menu::selection {
@@ -73,6 +87,7 @@ input {
 #control-panel {
   height: auto;
   display: flex;
+  margin-top: -1rem;
 }
 
 #icon-nav-menu {
@@ -89,7 +104,7 @@ input {
   width: 20%;
   margin-left: -30%;
   text-align: center;
-  height: 36rem;
+  height: 90vh;
   overflow: auto;
   border: 4px solid #2d2d2d;
   background-color: #111111;
@@ -232,7 +247,7 @@ iframe {
   width: 100%;
   padding: 2rem 1rem 1rem 1rem;
   box-sizing: border-box;
-  height: 46vh;
+  height: auto;
 }
 
 .h4-calendario {
@@ -241,7 +256,7 @@ iframe {
 }
 
 .div-barras {
-  margin: 2rem auto 2rem auto;
+  margin: 2rem auto;
   height: 57vh;
   background-color: white;
 }
@@ -617,4 +632,8 @@ table > tbody > tr > td {
 .btn-input-agregar2:hover {
   transition: 1s;
   color: black;
+}
+
+table > tbody > tr > td:hover {
+  background-color: #fff !important;
 }

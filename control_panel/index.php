@@ -2,7 +2,6 @@
 
     session_start();
     require_once '../vendor/autoload.php';
-
     date_default_timezone_set('America/Mexico_City');
     
     setlocale(LC_ALL, '');
@@ -12,7 +11,7 @@
     $anio=date('Y');
     
     $fecha=$dia . ' de ' . $mes . ' del ' . $anio;
-
+    
     if(isset($_SESSION['admin'])){
 
         $correo = $_SESSION['admin'];
@@ -20,8 +19,15 @@
         $C_administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
         $datos = $C_administradores->findOne(['correo' => $correo]);
 
-        $nombre = $datos['nombre'];
-        $ape1 = $datos['ape1'];
+        
+
+        if ($correo == "root@gmail.com") {
+            $nombre = "usuario";
+            $ape1 = $datos['nombres']['nombre'];
+        }else{
+            $nombre = $datos['nombres']['nombre'];
+            $ape1 = $datos['nombres']['ape1'];
+        }
 
 
 
@@ -43,27 +49,24 @@
     <title>Panel de control</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
 </head>
 
 <body>
     <nav class="menu">
         <ul class="ul-menu">
-            <li class="li-menu li-titulo">
+            <li class="li-menu">
                 Panel de control: OPSS
             </li>
-            <li class="li-menu li-fecha">
+            <li class="li-menu li-menu2 li-fecha">
             <?php echo $fecha?>
             </li>
+            <li class="li-menu li-menu2">
+                Bienvenido: <?php echo $nombre.' '.$ape1?>
+            </li>
             <li class="li-menu">
-                Bienvenid@: <?php echo $nombre.' '.$ape1?>
-            </li>
-            <li class="li-menu li-icon-salir">
-                <a class="salir" href="../cerrar_sesion.php"><i class="fas fa-power-off"></i></a>
-            </li>
-            <hr class="linea">
-            <li class="li-icon-menu">
                 <label class="label-icon" for="icon-nav-menu"><i class="fas fa-bars icon-menu"></i></label>
+                <a class="salir" href="../cerrar_sesion.php"><i class="fas fa-power-off"></i></a>
             </li>
         </ul>
     </nav>
@@ -72,7 +75,7 @@
         <div class="opc-panel">
             <h3 class="nombre-panel"><?php echo $nombre.' '.$ape1?></h3>
             <div class="div-img-panel">
-                <img class="img-panel" src="../img/logo.jpg" alt="">
+                <img class="img-panel" src="../img/Logo4.jpeg" alt="Logo OPSS">
             </div>
 
             <hr class="hr-linea">
@@ -209,10 +212,13 @@
         $C_administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
         $datos = $C_administradores->findOne(['correo' => $correo]);
 
-        $nombre = $datos['nombre'];
-        $ape1 = $datos['ape1'];
-
-
+        if ($correo == "estandar@gmail.com") {
+            $nombre = "usuario";
+            $ape1 = $datos['nombre'];
+        }else{
+            $nombre = $datos['nombre'];
+            $ape1 = $datos['ape1'];
+        }
 
         $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
         $C_ventas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->ventas; 
@@ -230,28 +236,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de control</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
+    <link rel="shortcut icon" href="../img/favicon2.jpg">
+
 </head>
 
 <body>
-    <nav class="menu">
+<nav class="menu">
         <ul class="ul-menu">
             <li class="li-menu">
                 Panel de control: OPSS
             </li>
-            <li class="li-menu">
-                <?php echo $fecha?>
+            <li class="li-menu li-menu2">
+            <?php echo $fecha?>
+            </li>
+            <li class="li-menu li-menu2">
+                Bienvenido: <?php echo $nombre.' '.$ape1?>
             </li>
             <li class="li-menu">
-                Bienvenid@: <?php echo $nombre.' '.$ape1?>
-            </li>
-            <li class="li-menu">
+                <label class="label-icon" for="icon-nav-menu"><i class="fas fa-bars icon-menu"></i></label>
                 <a class="salir" href="../cerrar_sesion.php"><i class="fas fa-power-off"></i></a>
-            </li>
-            <li class="li-menu">
-                <label for="icon-nav-menu"><i class="fas fa-bars"></i></label>
             </li>
         </ul>
     </nav>
@@ -260,7 +265,7 @@
         <div class="opc-panel">
             <h3 class="nombre-panel"><?php echo $nombre.' '.$ape1?></h3>
             <div class="div-img-panel">
-                <img class="img-panel" src="../img/logo.jpg" alt="">
+                <img class="img-panel" src="../img/logo.jpg" alt="Logo OPSS">
             </div>
 
             <hr class="hr-linea">

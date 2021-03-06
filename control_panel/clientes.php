@@ -1,10 +1,13 @@
 <?php
 
     session_start();
+    error_reporting(0);
 
     require_once '../vendor/autoload.php';
     $clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
+    // $vacios= $clientes->find();
     $datos = $clientes->find();
+
 
     $i=0;
 
@@ -20,7 +23,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
@@ -45,6 +48,7 @@
             <th>Número</th>
             <th>Col o Fracc.</th>
             <th>CP</th>
+            <th>Ciudad</th>
             <th>Teléfono</th>
             <th>Correo</th>
             <th>Acciones</th>
@@ -56,13 +60,18 @@
         <tbody>
             <tr>
                 <td><?php echo $i=$i+1 ?></td>
-                <td><?php echo $dato["nombre"]; ?></td>
-                <td><?php echo $dato["ape1"]; ?></td>
-                <td><?php echo $dato["ape2"]; ?></td>
-                <td><?php echo $dato["calle"]; ?></td>
-                <td><?php echo $dato["numero"]; ?></td>
-                <td><?php echo $dato["col_fracc"]; ?></td>
-                <td><?php echo $dato["cp"]; ?></td>
+                <td><?php echo $dato['nombres']["nombre"]; ?></td>
+                <td><?php echo $dato['nombres']["ape1"]; ?></td>
+                <td><?php if ($dato['nombres']["ape2"]) {
+                    echo $dato['nombres']["ape2"];
+                }else{
+                    echo "-";
+                } ?></td>
+                <td><?php echo $dato['direccion']["calle"]; ?></td>
+                <td><?php echo $dato['direccion']["numero"]; ?></td>
+                <td><?php echo $dato['direccion']["col_fracc"]; ?></td>
+                <td><?php echo $dato['direccion']["cp"]; ?></td>
+                <td><?php echo $dato['direccion']["ciudad"]; ?></td>
                 <td><?php echo $dato["telefono"]; ?></td>
                 <td><?php echo $dato["correo"]; ?></td>
                 <td><a class="btn-eliminar" href="eliminar.php?id_cliente=<?php echo $dato['_id']?>" onclick="return ConfirmDelete()"><i class="fas fa-trash"></i></a></td>
@@ -90,6 +99,8 @@
 
     <!-- funcionamiento de datatables propias -->
     <script type="text/javascript" src="../js/main.js"></script>
+    <!-- funcionamiento de eliminación de registros (propios) -->
+    <script type="text/javascript" src="../js/eliminar.js"></script>
 </body>
 
 </html>
@@ -107,7 +118,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
@@ -142,13 +153,18 @@
         <tbody>
             <tr>
                 <td><?php echo $i=$i+1 ?></td>
-                <td><?php echo $dato["nombre"]; ?></td>
-                <td><?php echo $dato["ape1"]; ?></td>
-                <td><?php echo $dato["ape2"]; ?></td>
-                <td><?php echo $dato["calle"]; ?></td>
-                <td><?php echo $dato["numero"]; ?></td>
-                <td><?php echo $dato["col_fracc"]; ?></td>
-                <td><?php echo $dato["cp"]; ?></td>
+                <td><?php echo $dato['nombres']["nombre"]; ?></td>
+                <td><?php echo $dato['nombres']["ape1"]; ?></td>
+                <td><?php if ($dato['nombres']["ape2"]) {
+                    echo $dato['nombres']["ape2"];
+                }else{
+                    echo "-";
+                } ?></td>
+                <td><?php echo $dato['direccion']["calle"]; ?></td>
+                <td><?php echo $dato['direccion']["numero"]; ?></td>
+                <td><?php echo $dato['direccion']["col_fracc"]; ?></td>
+                <td><?php echo $dato['direccion']["cp"]; ?></td>
+                <td><?php echo $dato['direccion']["ciudad"]; ?></td>
                 <td><?php echo $dato["telefono"]; ?></td>
                 <td><?php echo $dato["correo"]; ?></td>
             </tr>

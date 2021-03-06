@@ -26,39 +26,44 @@
                 $correo = $_POST['correo'];
                 $contrasena = MD5($_POST['contrasena']);
 
-                $correo_busq = $C_clientes->findOne(['correo' => $correo]);
-                $contrasena_busq = $C_clientes->findOne(['contrasena' => $contrasena]);
+                $cuenta_cliente = $C_clientes->findOne(['correo' => $correo],['contrasena' => $contrasena]);
 
 
-                $correo_busq_admin = $C_admins->findOne(['correo' => $correo]);
-                $contrasena_busq_admin = $C_admins->findOne(['contrasena' => $contrasena]);
-
+                $cuenta_admin = $C_admins->findOne(['correo' => $correo],['contrasena' => $contrasena]);
                 
-                if ($correo_busq==null && $contrasena_busq==null && $correo_busq_admin==null && $contrasena_busq_admin==null) {
+                if ($cuenta_admin==null && $cuenta_cliente==null ) {
+
                     echo "<script>alert('Usuario o contraseña incorrectos')</script>";
-                }elseif ($correo_busq!=null && $contrasena_busq!=null) {
+
+                }elseif ($cuenta_cliente!=null) {
 
                     $cliente = $C_clientes->findOne(['correo' => $correo]);        
-                    $nombre_c = $cliente['nombre'];
-                    $ape1_c = $cliente['ape1'];
+                    $nombre_c = $cliente['nombres']['nombre'];
+                    $ape1_c = $cliente['nombres']['ape1'];
 
-                    echo "<script>alert('Bienvenid@ cliente $nombre_c $ape1_c ')</script>";
+                    echo "<script>alert('Bienvenido cliente $nombre_c $ape1_c ')</script>";
                     echo "<script> location.href='index.php'</script>";
                     $_SESSION['usuario']=$correo;
-                }elseif($correo_busq_admin!=null && $contrasena_busq_admin!=null){
+
+                }elseif(cuenta_admin!=null){
                     $administrador = $C_admins->findOne(['correo' => $correo]);
                     
-                    $nombre_a = $administrador['nombre'];
-                    $ape1_a = $administrador['ape1'];
+                    if ($correo == "estandar@gmail.com" || $correo == "root@gmail.com") {
+                        $nombre_a = "";
+                        $ape1_a = $administrador['nombre'];
+                    }else{
+                        $nombre_a = $administrador['nombres']['nombre'];
+                        $ape1_a = $administrador['nombres']['ape1'];
+                    }
 
                     if ($administrador['tipo_admin']=='1' || $administrador['tipo_admin']==1) {
                         $_SESSION['admin']=$correo;
                     }elseif($administrador['tipo_admin']=='2' || $administrador['tipo_admin']==2){
                         $_SESSION['estandar']=$correo;
                     }
-                    echo "<script>alert('Bienvenid@ admin $nombre_a $ape1_a ')</script>";
+                    echo "<script>alert('Bienvenido admin $nombre_a $ape1_a ')</script>";
                     echo "<script> location.href='control_panel/index.php' </script>";
-                }elseif ($correo_busq==null || $contrasena_busq==null || $correo_busq_admin==null || $contrasena_busq_admin==null) {
+                }elseif ($cuenta_cliente==null || $cuenta_admin==null) {
                     echo "<script>alert('Usuario o contraseña incorrectos')</script>";
                 }
             

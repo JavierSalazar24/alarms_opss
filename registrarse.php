@@ -2,6 +2,7 @@
 
     session_start();
     require_once __DIR__ . '/vendor/autoload.php';
+    error_reporting(0);
 
     if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 
@@ -15,8 +16,7 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-            if(!empty($_POST['nombre'])&&!empty($_POST['ape1'])&&!empty($_POST['correo'])&&!empty($_POST['calle'])&&!empty($_POST['numero'])&&!empty($_POST['col_fracc'])&&!empty($_POST['cp'])&&!empty($_POST['telefono'])&&!empty($_POST['password'])&&!empty($_POST['conf_password'])){
-
+            if(!empty($_POST['nombre'])&&!empty($_POST['ape1'])&&!empty($_POST['correo'])&&!empty($_POST['calle'])&&!empty($_POST['numero'])&&!empty($_POST['col_fracc'])&&!empty($_POST['cp'])&&!empty($_POST['ciudad'])&&!empty($_POST['telefono'])&&!empty($_POST['password'])&&!empty($_POST['conf_password'])){
 
                 $nombre = $_POST['nombre'];
                 $ape1 = $_POST['ape1'];
@@ -25,33 +25,54 @@
                 $numero = $_POST['numero'];
                 $col_fracc = $_POST['col_fracc'];
                 $cp = $_POST['cp'];
+                $ciudad = $_POST['ciudad'];
                 $telefono = $_POST['telefono'];
                 $correo = $_POST['correo'];
                 $contrasena = MD5($_POST['password']);
                 $concontrasena = MD5($_POST['conf_password']);
 
+                $numero_n = intval($numero);
+                $cp_n = intval($cp);
+                $telefono_n = intval($telefono);
+
                 if ($contrasena == $concontrasena) {
-                    
+
                     $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
+                    $C_admins = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
+
+                    $correo_busq_a = $C_admins->findOne(['correo' => $correo]);
+                    $correo_busq_c = $C_clientes->findOne(['correo' => $correo]);
                     
+                    if($correo_busq_a > 0 || $correo_busq_c >0){
+        
+                        echo "<script>alert('El correo ya existe')</script>";
 
-                    $insert = $C_clientes->insertOne([
-                        'nombre' => $nombre,
-                        'ape1' => $ape1,
-                        'ape2' => $ape2,
-                        'calle' => $calle,
-                        'numero' => $numero,
-                        'col_fracc' => $col_fracc,
-                        'cp' => $cp,
-                        'telefono' => $telefono,
-                        'correo' => $correo,
-                        'contrasena' => $contrasena,
-                    ]);
+                    }else{
 
-                    $_SESSION['usuario']=$correo;
+                        $insert = $C_clientes->insertOne([
+                            'nombres' => [
+                            'nombre' => $nombre,
+                            'ape1' => $ape1,
+                            'ape2' => $ape2
+                            ],
+                            'direccion' => [
+                            'calle' => $calle,
+                            'numero' => $numero_n,
+                            'col_fracc' => $col_fracc,
+                            'cp' => $cp_n,
+                            'cp' => $ciudad
+                            ],
+                            'telefono' => $telefono_n,
+                            'correo' => $correo,
+                            'contrasena' => $contrasena,
+                        ]);
 
-                    echo "<script>alert('Usuario agregado')</script>";
-                    echo "<script> location.href='index.php' </script>";
+                        $_SESSION['usuario']=$correo;
+
+                        echo "<script>alert('Usuario agregado')</script>";
+                        echo "<script> location.href='index.php' </script>";
+
+                    }
 
                 }else{
                     echo "<script>alert('Las contraseñas no coinciden')</script>";
@@ -147,6 +168,46 @@
                         <label for="cp" id="label-registrar">Código Postal</label>
                     </div>                    
                     <input class="input-registrar-form" type="tel" title="Solo números" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php if(isset($cp)) echo $cp?>">
+                </div>
+
+                <div class="div-inputs-registrar">
+                    <div class="div-inputs-registrar2">
+                        <label for="ciudad" id="label-registrar">Ciudad</label>
+                    </div>        
+                    <input list="ciudades" class="input-registrar-form" type="text" name="ciudad" required id="ciudad" value="<?php if(isset($ciudad)) echo $ciudad?>">
+                    <datalist id="ciudades">
+                        <option value="Aguascalientes">
+                        <option value="Baja California">
+                        <option value="Baja California Sur">
+                        <option value="Campeche">
+                        <option value="CDMX">
+                        <option value="Coahuila">
+                        <option value="Colima">
+                        <option value="Chiapas">
+                        <option value="Chihuahua">
+                        <option value="Durango">
+                        <option value="Estado de México">
+                        <option value="Guanajuato">
+                        <option value="Guerrero">
+                        <option value="Hidalgo">
+                        <option value="Jalisco">
+                        <option value="Michoacán">
+                        <option value="Morelos">
+                        <option value="Nayarit">
+                        <option value="Nuevo León">
+                        <option value="Oaxaca">
+                        <option value="Puebla">
+                        <option value="Querétaro">
+                        <option value="Quintana Roo">
+                        <option value="Sinaloa">
+                        <option value="Sonora">
+                        <option value="Tabasco">
+                        <option value="Tamaulipas">
+                        <option value="Tlaxcala">
+                        <option value="Veracruz">
+                        <option value="Yucatán">
+                        <option value="Zacatecas">
+                    </datalist>
                 </div>
 
                 <div class="div-inputs-registrar">

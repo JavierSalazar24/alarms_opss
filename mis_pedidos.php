@@ -12,29 +12,37 @@
         $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
         $datosC = $C_clientes->findOne(['correo' => $correo]);
 
-        $nombre = $datosC['nombre'];
-        $ape1 = $datosC['ape1'];
+        $nombre = $datosC['nombres']['nombre'];
+        $ape1 = $datosC['nombres']['ape1'];
 
         $C_pedidos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->pedidos; 
-        $datosP = $C_pedidos->findOne(['correo' => $correo]);
+        $datosP = $C_pedidos->find(['correo' => $correo]);
 
         $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos; 
-        $datosPr = $C_productos->findOne(['codigo' => "111"]);
+        $datosPr = $C_productos->findOne(['codigo' => 111]);
 
-        $nombre_p = $datosPr['nombre'];
-        $precio = $datosPr['precio'];
-        $cantidad = $datosP['cantidad'];
-        $total = $datosP['total'];
-        $fecha_hora = $datosP['fecha_hora'];
+        $count = count($datosP);
+        $cant = array();
+        $tot = array();
 
-        if ($datosP['cantidad'] == null && $total = $datosP['total'] == null && $datosP['fecha_hora'] == null) {
-            $nombre_p = 'Sin pedidos';
-            $precio = 'Sin pedidos';
-            $cantidad = 'Sin pedidos';
-            $total = 'Sin pedidos';
-            $fecha_hora = 'Sin pedidos';
+        foreach($datosP as $datosPedidos){
+            for ($i=0; $i < $datosPedidos; $i++) {
+                $cant[] = $datosPedidos['cantidad'];
+                $tot[] = $datosPedidos['total'];
+            }
+
+            $nombre_p = $datosPr['nombre'];
+            $precio = $datosPr['precio'];
+            $fecha_hora = $datosPedidos['fecha_hora'];  
+
         }
 
+        $limite = count($cant);
+
+        for ($j=0; $j < $limite; $j++) {             
+            $cantidad = $cantidad+$cant[$j];
+            $total = $total+$tot[$j];
+        }
 
 
 ?>
@@ -48,7 +56,7 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <script src="js/scrollreveal.js"></script>
-    <link rel="shortcut icon" href="img/favicon.jpg">
+    <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -64,31 +72,31 @@
             <div class="div-inputs-perfil">
                 <label for="nombre" id="label-perfil">Nombre del producto</label>
                 <br>
-                <input class="input-perfil-form" type="text" value="<?php echo $nombre_p?>" disabled>                
+                <input class="input-perfil-form" type="text" value="<?php if(empty($nombre_p)) echo "Sin pedidos"; else echo $nombre_p;?>" disabled>                
             </div>
 
             <div class="div-inputs-perfil">
                 <label for="precio" id="label-perfil">Precio del producto</label>
                 <br>
-                <input class="input-perfil-form" type="text" value="<?php echo $precio?>" disabled>
+                <input class="input-perfil-form" type="text" value="<?php if(empty($precio)) echo "Sin pedidos"; else echo $precio;?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
                 <label for="cantidad" id="label-perfil">Cantidad comprada hasta el momento</label>
                 <br>
-                <input class="input-perfil-form" type="text" value="<?php echo $cantidad?>" disabled>
+                <input class="input-perfil-form" type="text" value="<?php if(empty($cantidad)) echo "Sin pedidos"; else echo $cantidad;?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
                 <label for="precio_total" id="label-perfil">Precio total de la compra hasta el momento</label>
                 <br>
-                <input class="input-perfil-form" type="text" value="<?php echo $total?>" disabled>
+                <input class="input-perfil-form" type="text" value="<?php if(empty($total)) echo "Sin pedidos"; else echo $total;?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
                 <label for="fecha_hora" id="label-perfil">Fecha y hora de la última compra</label>
                 <br>
-                <input class="input-perfil-form" type="text" value="<?php echo $fecha_hora?>" disabled>
+                <input class="input-perfil-form" type="text" value="<?php if(empty($fecha_hora)) echo "Sin pedidos"; else echo $fecha_hora;?>" disabled>
             </div>
 
         </div>

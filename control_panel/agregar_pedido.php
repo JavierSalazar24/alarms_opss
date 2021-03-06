@@ -2,6 +2,7 @@
 
 
     session_start();
+    error_reporting(0);
 
     require_once '../vendor/autoload.php';
 
@@ -23,6 +24,13 @@
                 $cp = $_POST['cp'];
                 $total = $_POST['total'];
                 $fecha_hora = $_POST['fecha_hora'];
+
+                $no_pedido_n = intval($no_pedido);
+                $telefono_n = intval($telefono);
+                $numero_n = intval($numero);
+                $cp_n = intval($cp);
+                $total_n = intval($total);
+
                 
                 $C_envios = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->envios; 
                 $numE = $C_envios -> count();
@@ -30,15 +38,16 @@
 
                 $insert = $C_envios->insertOne([
                     'no' => $no,
-                    'no_pedido' => $no_pedido,
-                    'nombres' => $nombres,
+                    'no_pedido' => $no_pedido_n,
+                    'info_cliente' => ['nombres' => $nombres,
                     'apellidos' => $apellidos,
-                    'telefono' => $telefono,
+                    'telefono' => $telefono_n,
                     'calle' => $calle,
-                    'numero' => $numero,
+                    'numero' => $numero_n,
                     'col_fracc' => $col_fracc,
-                    'cp' => $cp,
-                    'total' => $total,
+                    'cp' => $cp_n,
+                    ],
+                    'total' => $total_n,
                     'fecha_hora' => $fecha_hora,
                 ]);
 
@@ -74,7 +83,7 @@
     <title>Enviar pedido</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -82,7 +91,7 @@
 <body class="body-agregar2">
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         <section id="agregar2">
-            <a href="productos.php" class="x-ancla">
+            <a href="pedidos.php" class="x-ancla">
                 <h1 id="x-agregar">X</h1>
             </a>
             <h1 class="h1-agregar h1-agregar2">Agregar pedido</h1>
@@ -97,44 +106,44 @@
                 <div class="div-inputs-agregar2">
                     <label for="correo" id="label-agregar2">Nombre cliente</label>
                     <br>
-                    <input class="input-agregar2-form" type="text" name="nombres" value="<?php echo $datos['nombres']?>" disabled>
-                    <input class="input-agregar2-form" type="hidden" name="nombres" value="<?php echo $datos['nombres']?>">
+                    <input class="input-agregar2-form" type="text" name="nombres" value="<?php echo $datos['info_cliente']['nombres']?>" disabled>
+                    <input class="input-agregar2-form" type="hidden" name="nombres" value="<?php echo $datos['info_cliente']['nombres']?>">
                 </div>
                 <div class="div-inputs-agregar2">
                     <label for="correo" id="label-agregar2">Apellidos cliente</label>
                     <br>
-                    <input class="input-agregar2-form" type="text" name="apellidos" value="<?php echo $datos['apellidos']?>" disabled>
-                    <input class="input-agregar2-form" type="hidden" name="apellidos" value="<?php echo $datos['apellidos']?>">
+                    <input class="input-agregar2-form" type="text" name="apellidos" value="<?php echo $datos['info_cliente']['apellidos']?>" disabled>
+                    <input class="input-agregar2-form" type="hidden" name="apellidos" value="<?php echo $datos['info_cliente']['apellidos']?>">
                 </div>
                 <div class="div-inputs-agregar2">
                     <label for="telefono" id="label-agregar2">Teléfono cliente</label>
                     <br>
-                    <input class="input-agregar2-form" type="text" name="telefono" value="<?php echo $datos['telefono']?>" disabled>
-                    <input class="input-agregar2-form" type="hidden" name="telefono" value="<?php echo $datos['telefono']?>">
+                    <input class="input-agregar2-form" type="text" name="telefono" value="<?php echo $datos['info_cliente']['telefono']?>" disabled>
+                    <input class="input-agregar2-form" type="hidden" name="telefono" value="<?php echo $datos['info_cliente']['telefono']?>">
                 </div>
                 <div class="div-inputs-agregar2">
                     <label for="calle" id="label-agregar2">Calle cliente</label>
                     <br>
-                    <input class="input-agregar2-form" type="text" name="calle" value="<?php echo $datos['calle']?>" disabled>
-                    <input class="input-agregar2-form" type="hidden" name="calle" value="<?php echo $datos['calle']?>">
+                    <input class="input-agregar2-form" type="text" name="calle" value="<?php echo $datos['info_cliente']['calle']?>" disabled>
+                    <input class="input-agregar2-form" type="hidden" name="calle" value="<?php echo $datos['info_cliente']['calle']?>">
                 </div>
                 <div class="div-inputs-agregar2">
                     <label for="numero" id="label-agregar2">Número cliente</label>
                     <br>
-                    <input class="input-agregar2-form" type="text" name="numero" value="<?php echo $datos['numero']?>" disabled>
-                    <input class="input-agregar2-form" type="hidden" name="numero" value="<?php echo $datos['numero']?>">
+                    <input class="input-agregar2-form" type="text" name="numero" value="<?php echo $datos['info_cliente']['numero']?>" disabled>
+                    <input class="input-agregar2-form" type="hidden" name="numero" value="<?php echo $datos['info_cliente']['numero']?>">
                 </div>
                 <div class="div-inputs-agregar2">
                     <label for="col_fracc" id="label-agregar2">Col. o Fracc. cliente</label>
                     <br>
-                    <input class="input-agregar2-form" type="text" name="col_fracc" value="<?php echo $datos['col_fracc']?>" disabled>
-                    <input class="input-agregar2-form" type="hidden" name="col_fracc" value="<?php echo $datos['col_fracc']?>">
+                    <input class="input-agregar2-form" type="text" name="col_fracc" value="<?php echo $datos['info_cliente']['col_fracc']?>" disabled>
+                    <input class="input-agregar2-form" type="hidden" name="col_fracc" value="<?php echo $datos['info_cliente']['col_fracc']?>">
                 </div>
                 <div class="div-inputs-agregar2">
                     <label for="cp" id="label-agregar2">Código postal</label>
                     <br>
-                    <input class="input-agregar2-form" type="text" name="cp" value="<?php echo $datos['cp']?>" disabled>
-                    <input class="input-agregar2-form" type="hidden" name="cp" value="<?php echo $datos['cp']?>">
+                    <input class="input-agregar2-form" type="text" name="cp" value="<?php echo $datos['info_cliente']['cp']?>" disabled>
+                    <input class="input-agregar2-form" type="hidden" name="cp" value="<?php echo $datos['info_cliente']['cp']?>">
                 </div>
                 <div class="div-inputs-agregar2">
                     <label for="total" id="label-agregar2">Total</label>

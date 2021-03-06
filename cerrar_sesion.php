@@ -17,9 +17,11 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
+echo "<script>alert('Gracias por su visita')</script>";
+
 // Finalmente, destruir la sesión.
 session_destroy();
 
-header("Location: iniciar_sesion.php");
+echo "<script> location.href='iniciar_sesion.php' </script>";
 
 ?>

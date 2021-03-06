@@ -18,7 +18,7 @@
             if ($delete) {
                 
                 echo "<script>alert('Admin eliminado con exito')</script>";
-                echo "<script> location.href='ventas.php' </script>";
+                echo "<script> location.href='administradores.php' </script>";
 
             }
         
@@ -33,7 +33,7 @@
             if ($delete) {
                 
                 echo "<script>alert('Cliente eliminado con exito')</script>";
-                echo "<script> location.href='ventas.php' </script>";
+                echo "<script> location.href='clientes.php' </script>";
 
             }
 
@@ -48,7 +48,7 @@
             if ($delete) {
                 
                 echo "<script>alert('Producto eliminado con exito')</script>";
-                echo "<script> location.href='ventas.php' </script>";
+                echo "<script> location.href='productos.php' </script>";
 
             }
 
@@ -64,7 +64,35 @@
             if ($delete) {
                 
                 echo "<script>alert('Mensaje eliminado con exito')</script>";
-                echo "<script> location.href='ventas.php' </script>";
+                echo "<script> location.href='mensajes.php' </script>";
+
+            }
+            
+        }elseif (isset($_REQUEST['id_pedido'])) {
+
+            $id_pedido = $_REQUEST['id_pedido'];
+
+            $C_pedido = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->pedidos; 
+
+            $delete = $C_pedido->deleteMany(['_id' => new MongoDB\BSON\ObjectID($id_pedido)]);
+
+            if ($delete) {
+                echo "<script>alert('Pedido eliminado con exito')</script>";
+                echo "<script> location.href='pedidos.php' </script>";
+            }
+            
+        }elseif (isset($_REQUEST['id_envio'])) {
+
+            $id_envio = $_REQUEST['id_envio'];
+
+            $C_envio = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->envios; 
+
+            $delete = $C_envio->deleteMany(['_id' => new MongoDB\BSON\ObjectID($id_envio)]);
+
+            if ($delete) {
+                
+                echo "<script>alert('Envío eliminado con exito')</script>";
+                echo "<script> location.href='envios.php' </script>";
 
             }
             
@@ -78,7 +106,7 @@
 
             if ($delete) {
                 
-                echo "<script>alert('Venta realizada con exito')</script>";
+                echo "<script>alert('Venta eliminada con exito')</script>";
                 echo "<script> location.href='ventas.php' </script>";
 
             }

@@ -1,6 +1,8 @@
 <?php
 
     session_start();
+    error_reporting(0);
+
 
     require_once '../vendor/autoload.php';
 
@@ -9,7 +11,7 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-            if(!empty($_POST['nombre'])&&!empty($_POST['ape1'])&&!empty($_POST['ape2'])&&!empty($_POST['correo'])&&!empty($_POST['telefono'])&&!empty($_POST['contrasena'])&&!empty($_POST['tipo_admin'])){
+            if(!empty($_POST['nombre'])&&!empty($_POST['ape2'])&&!empty($_POST['correo'])&&!empty($_POST['telefono'])&&!empty($_POST['contrasena'])&&!empty($_POST['tipo_admin'])){
 
 
                 $nombre = $_POST['nombre'];
@@ -20,16 +22,21 @@
                 $contrasena = MD5($_POST['contrasena']);
                 $tipo_admin = $_POST['tipo_admin'];
 
+                $telefono_n = intval($telefono);
+                $tipo_admin_n = intval($tipo_admin);
+
                 $C_administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
 
                 $insert = $C_administradores->insertOne([
+                    'nombres' => [
                     'nombre' => $nombre,
                     'ape1' => $ape1,
                     'ape2' => $ape2,
-                    'telefono' => $telefono,
+                    ],
+                    'telefono' => $telefono_n,
                     'correo' => $correo,
                     'contrasena' => $contrasena,
-                    'tipo_admin' => $tipo_admin
+                    'tipo_admin' => $tipo_admin_n
                 ]);
 
                 if ($insert) {
@@ -53,7 +60,7 @@
     <title>Agregar administradores</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -78,7 +85,7 @@
             <div class="div-inputs-agregar">
                 <label for="ape2" id="label-agregar">Segundo apellido</label>
                 <br>
-                <input class="input-agregar-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape2" required id="ape2" value="<?php if(isset($ape2)) echo $ape2?>">
+                <input class="input-agregar-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape2" id="ape2" value="<?php if(isset($ape2)) echo $ape2?>">
             </div>
             <div class="div-inputs-agregar">
                 <label for="telefono" id="label-agregar">Teléfono</label>

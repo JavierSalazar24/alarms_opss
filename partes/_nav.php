@@ -1,12 +1,12 @@
 <input type="checkbox" name="" id="icon-nav-menu">
 <div class="div-label">
     <label class="label-icon" for="icon-nav-menu"><i class="fas fa-bars"></i></label>
-    <h4 class="letras-logo"><a class="ancla-letras-logo" href="index.php">OPSS</a></h4>
+        <a class="ancla-logo" href="index.php"><img class="logo-responsive" src="img/Logo6.png" alt="Logo OPSS"></a>
 </div>
 <nav class="menu">
         <ul class="ul-menu">
-            <a class="ancla-menu" href="index.php">
-                <li class="li-menu-OPSS">OPSS</li>
+            <a class="ancla-menu ancla-menu-logo" href="index.php">
+                <li><img class="logo-menu" src="img/Logo6.png" alt="Logo OPSS"></li>
             </a>
             <a class="ancla-menu" href="index.php">
                 <li class="li-menu">INICIO</li>

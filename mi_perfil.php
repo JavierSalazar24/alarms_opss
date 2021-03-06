@@ -20,13 +20,14 @@
         $datos = $C_clientes->findOne(['correo' => $correo]);
 
         $id = $datos['_id'];
-        $nombre = $datos['nombre'];
-        $ape1 = $datos['ape1'];
-        $ape2 = $datos['ape2'];
-        $calle = $datos['calle'];
-        $numero = $datos['numero'];
-        $col_fracc = $datos['col_fracc'];
-        $cp = $datos['cp'];
+        $nombre = $datos['nombres']['nombre'];
+        $ape1 = $datos['nombres']['ape1'];
+        $ape2 = $datos['nombres']['ape2'];
+        $calle = $datos['direccion']['calle'];
+        $numero = $datos['direccion']['numero'];
+        $col_fracc = $datos['direccion']['col_fracc'];
+        $cp = $datos['direccion']['cp'];
+        $ciudad = $datos['direccion']['ciudad'];
         $telefono = $datos['telefono'];
         $correo = $datos['correo'];
         
@@ -42,7 +43,7 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <script src="js/scrollreveal.js"></script>
-    <link rel="shortcut icon" href="img/favicon.jpg">
+    <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -114,6 +115,13 @@
 
             <div class="div-inputs-perfil">
                 <div class="div-inputs-registrar2">
+                    <label for="cp" id="label-perfil">Ciudad</label>
+                </div>
+                <input class="input-perfil-form" type="text" name="ciudd" required id="ciudad" value="<?php echo $ciudad?>" disabled>
+            </div>
+
+            <div class="div-inputs-perfil">
+                <div class="div-inputs-registrar3">
                     <label for="email" id="label-perfil">Email</label>
                 </div>
                 <input class="input-perfil-form" type="text" name="correo" required id="email" value="<?php echo $correo?>" disabled>
@@ -124,7 +132,7 @@
         <div class="div-perfil-btn">
             <a class="btn-perfil" href="editar_mi_perfil.php">Editar perfil</a>
             <a class="btn-perfil2" href="mis_pedidos.php">Mis pedidos</a>
-            <a class="btn-perfil2" href="index.php">Volver al inicio</a>
+            <a class="btn-perfil2 btn-perfil22" href="index.php">Volver al inicio</a>
         </div>
 
     </section>

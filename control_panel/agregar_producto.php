@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    error_reporting(0);
 
     require_once '../vendor/autoload.php';
 
@@ -17,17 +18,21 @@
             $precio = $_POST['precio'];
             $cantidad = $_POST['cantidad'];
 
+            $codigo_n = intval($codigo);
+            $precio_n = intval($precio);
+            $cantidad_n = intval($cantidad);
+
             $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos; 
 
             $insert = $C_productos->insertOne([
-                'codigo' => $codigo,
+                'codigo' => $codigo_n,
                 'nombre' => $nombre,
-                'precio' => $precio,
-                'cantidad' => $cantidad,
+                'precio' => $precio_n,
+                'cantidad' => $cantidad_n,
             ]);
 
             if ($insert) {
-                echo "<script>alert('Admin agregado')</script>";
+                echo "<script>alert('Producto agregado')</script>";
                 echo "<script> location.href='productos.php' </script>";
             }
         }else{
@@ -47,7 +52,7 @@
     <title>Agregar productos</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -62,17 +67,17 @@
             <div class="div-inputs-agregar">
                 <label for="codigo" id="label-agregar">Código</label>
                 <br>
-                <input class="input-agregar-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="codigo" required id="codigo" value="<?php if(isset($codigo)) echo $codigo?>">
+                <input class="input-agregar-form" title="Solo números" pattern="[0-9 ]+" type="number" name="codigo" required id="codigo" value="<?php if(isset($codigo)) echo $codigo?>">
             </div>
             <div class="div-inputs-agregar">
                 <label for="nombre" id="label-agregar">Nombre</label>
                 <br>
-                <input class="input-agregar-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php if(isset($nombre)) echo $nombre?>">
+                <input class="input-agregar-form" type="text" name="nombre" required id="nombre" value="<?php if(isset($nombre)) echo $nombre?>">
             </div>
             <div class="div-inputs-agregar">
                 <label for="precio" id="label-agregar">Precio</label>
                 <br>
-                <input class="input-agregar-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="precio" required id="precio" value="<?php if(isset($precio)) echo $precio?>">
+                <input class="input-agregar-form" title="Solo números" pattern="[0-9 ]+" type="number" name="precio" required id="precio" value="<?php if(isset($precio)) echo $precio?>">
             </div>
             <div class="div-inputs-agregar">
                 <label for="cantidad" id="label-agregar">Cantidad</label>

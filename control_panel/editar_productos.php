@@ -6,31 +6,33 @@
 
     if(isset($_SESSION['admin'])){
 
+        $id_req = $_REQUEST['id_productos'];
 
         $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos; 
-        $datos = $C_productos->find();
+        $datos = $C_productos->findOne(['_id' => new MongoDB\BSON\ObjectID($id_req)]);
 
-
-        foreach ($datos as $dato) { 
-            $id = $dato["_id"];
-            $nombre = $dato["nombre"];
-            $cantidad = $dato["cantidad"];
-            $precio = $dato["precio"];
-        }
+            $id = $datos["_id"];
+            $nombre = $datos["nombre"];
+            $cantidad = $datos["cantidad"];
+            $precio = $datos["precio"];
 
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-            if(!empty($_POST['id_productos'])&&!empty($_POST['nombre_edit'])&&!empty($_POST['cantidad_edit'])&&!empty($_POST['precio_edit'])){
+            if(!empty($_POST['id_productos_edit'])&&!empty($_POST['nombre_edit'])&&!empty($_POST['cantidad_edit'])&&!empty($_POST['precio_edit'])){
 
-                $id = $_POST['id_productos'];
+                $id_edit = $_POST['id_productos_edit'];
                 $nombre_edit = $_POST['nombre_edit'];
                 $precio_edit = $_POST['precio_edit'];
                 $cantidad_edit = $_POST['cantidad_edit'];
 
+                $precio_edit_n = intval($precio_edit);
+                $cantidad_edit_n = intval($cantidad_edit);
+
+
 
                 $edit_productos = $C_productos -> updateOne(
-                    ['_id' => new MongoDB\BSON\ObjectID($id)],
-                    ['$set' => ['nombre' => $nombre_edit, 'precio' => $precio_edit, 'cantidad' => $cantidad_edit]]
+                    ['_id' => new MongoDB\BSON\ObjectID($id_edit)],
+                    ['$set' => ['nombre' => $nombre_edit, 'precio' => $precio_edit_n, 'cantidad' => $cantidad_edit_n]]
                 );
 
                 if ($edit_productos) {
@@ -42,7 +44,6 @@
 
             }else{
                 echo "<script>alert('Rellene todos los campos')</script>";
-                echo "<script> location.href='productos.php' </script>";
             }
 
         }
@@ -59,7 +60,7 @@
     <title>Editar Productos</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -75,9 +76,9 @@
             <h1 class="h1-agregar">Editar Productos</h1>
 
             <div class="div-inputs-agregar">
-                <input type="hidden" name="id_productos" value="<?php echo $id;?>">
                 <label for="nombre" id="label-agregar">Nombre</label>
                 <br>
+                <input class="input-agregar-form" type="hidden" name="id_productos_edit" value="<?php echo $id;?>">
                 <input class="input-agregar-form" type="text" name="nombre_edit" required id="nombre" value="<?php echo $nombre;?>">
             </div>
 

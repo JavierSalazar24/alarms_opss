@@ -56,7 +56,7 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <script src="js/scrollreveal.js"></script>
-    <link rel="shortcut icon" href="img/favicon.jpg">
+    <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -154,7 +154,7 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <script src="js/scrollreveal.js"></script>
-    <link rel="shortcut icon" href="img/favicon.jpg">
+    <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -220,7 +220,7 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
                     <br>
                     <input class="input-email" type="email" name="email" placeholder="Email" value="<?php if(isset($email_mensaje)) echo $email_mensaje?>" required>
                     <br>
-                    <input class="input-mensaje" type="text" autocomplete="off" name="mensaje" placeholder="Escribe tu mensaje aquí..." value="<?php if(isset($mensaje)) echo $mensaje?>" required>
+                    <textarea required placeholder="Escribe tu mensaje aquí..." class="input-mensaje" name="mensaje" autocomplete="off" id="" cols="30" rows="10"><?php if(isset($mensaje)) echo $mensaje?></textarea>
                     <br>                    
                     <input class="input-btn" type="submit" value="Enviar">
                 </div>

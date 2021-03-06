@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    error_reporting(0);
 
     require_once '../vendor/autoload.php';
 
@@ -15,6 +16,10 @@
                 $no_envio = $_POST['no_envio'];
                 $total = $_POST['total'];
                 $fecha_hora = $_POST['fecha_hora'];
+
+                $no_envio_n = intval($no_envio);
+                $total_n = intval($total);
+
                 
                 $C_ventas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->ventas; 
                 $numV = $C_ventas -> count();
@@ -22,8 +27,8 @@
 
                 $insert = $C_ventas->insertOne([
                     'no' => $no,
-                    'no_envio' => $no_envio,
-                    'total_compra' => $total,
+                    'no_envio' => $no_envio_n,
+                    'total_compra' => $total_n,
                     'fecha_hora' => $fecha_hora,
                 ]);
 
@@ -57,7 +62,7 @@
     <title>Envío entregado</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -65,7 +70,7 @@
 <body class="body-agregar">
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
         <section id="agregar">
-            <a href="productos.php" class="x-ancla">
+            <a href="envios.php" class="x-ancla">
                 <h1 id="x-agregar">X</h1>
             </a>
             <h1 class="h1-agregar">Envío entregado</h1>
@@ -87,7 +92,7 @@
                 <input class="input-agregar-form" type="text" name="fecha_hora" value="<?php echo $datos['fecha_hora']?>" disabled>
                 <input class="input-agregar-form" type="hidden" name="fecha_hora" value="<?php echo $datos['fecha_hora']?>">
             </div>
-            <input class="btn-input-agregar" type="submit" value="Enviar pedido">
+            <input class="btn-input-agregar" type="submit" value="Envío entregdo">
         </section>
     </form>
 </body>

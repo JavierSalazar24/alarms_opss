@@ -1,31 +1,30 @@
 <?php
 
     session_start();
+    error_reporting(0);
 
     require_once '../vendor/autoload.php';
 
     if(isset($_SESSION['admin'])){
 
+        $id_req = $_REQUEST['id_admin'];
 
         $C_administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
-        $datos = $C_administradores->find();
+        $datos = $C_administradores->findOne(['_id' => new MongoDB\BSON\ObjectID($id_req)]);
 
-
-        foreach ($datos as $dato) { 
-            $id = $dato["_id"];
-            $nombre = $dato["nombre"];
-            $ape1 = $dato["ape1"];
-            $ape2 = $dato["ape2"];
-            $correo = $dato["correo"];
-            $telefono = $dato["telefono"];
-            $tipo_admin = $dato["tipo_admin"];
-        }
+            $id = $datos["_id"];
+            $nombre = $datos["nombres"]["nombre"];
+            $ape1 = $datos["nombres"]["ape1"];
+            $ape2 = $datos["nombres"]["ape2"];
+            $correo = $datos["correo"];
+            $telefono = $datos["telefono"];
+            $tipo_admin = $datos["tipo_admin"];
 
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-            if(!empty($_POST['id_admin'])&&!empty($_POST['nombre_edit'])&&!empty($_POST['ape1_edit'])&&!empty($_POST['ape2_edit'])&&!empty($_POST['correo_edit'])&&!empty($_POST['telefono_edit'])&&!empty($_POST['tipo_admin_edit'])){
+            if(!empty($_POST['id_admin_edit'])&&!empty($_POST['nombre_edit'])&&!empty($_POST['ape1_edit'])&&!empty($_POST['correo_edit'])&&!empty($_POST['telefono_edit'])&&!empty($_POST['tipo_admin_edit'])){
 
-                $id = $_POST['id_admin'];
+                $id_edit = $_POST['id_admin_edit'];
                 $nombre_edit = $_POST['nombre_edit'];
                 $ape1_edit = $_POST['ape1_edit'];
                 $ape2_edit = $_POST['ape2_edit'];
@@ -33,9 +32,13 @@
                 $telefono_edit = $_POST['telefono_edit'];
                 $tipo_admin_edit = $_POST['tipo_admin_edit'];
 
+                $telefono_edit_n = intval($telefono_edit);
+                $tipo_admin_edit_n = intval($tipo_admin_edit);
+
+
                 $edit_admin = $C_administradores -> updateOne(
-                    ['_id' => new MongoDB\BSON\ObjectID($id)],
-                    ['$set' => ['nombre' => $nombre_edit, 'ape1' => $ape1_edit, 'ape2' => $ape2_edit, 'correo' => $correo_edit, 'telefono' => $telefono_edit, 'tipo_admin' => $tipo_admin_edit]]
+                    ['_id' => new MongoDB\BSON\ObjectID($id_edit)],
+                    ['$set' => ['nombres' => ['nombre' => $nombre_edit, 'ape1' => $ape1_edit, 'ape2' => $ape2_edit], 'correo' => $correo_edit, 'telefono' => $telefono_edit_n, 'tipo_admin' => $tipo_admin_edit_n]]
                 );
 
                 if ($edit_admin) {
@@ -47,7 +50,6 @@
 
             }else{
                 echo "<script>alert('Rellene todos los campos')</script>";
-                echo "<script> location.href='administradores.php' </script>";
             }
 
         }
@@ -64,7 +66,7 @@
     <title>Editar administrador</title>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -74,15 +76,15 @@
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div id="div-ancla">
                 <a href="administradores.php" class="x-ancla">
-                    <h1 id="x-agregar">&times;</h1>
+                    <h1 id="x-agregar">X</h1>
                 </a>
             </div>
             <h1 class="h1-agregar">Editar admin</h1>
 
             <div class="div-inputs-agregar">
-                <input type="hidden" name="id_admin" value="<?php echo $id;?>">
                 <label for="nombre" id="label-agregar">Nombre</label>
                 <br>
+                <input class="input-agregar-form" type="hidden" name="id_admin_edit" value="<?php echo $id?>">
                 <input class="input-agregar-form" type="text" name="nombre_edit" required id="nombre" value="<?php echo $nombre;?>">
             </div>
 
@@ -107,7 +109,7 @@
             <div class="div-inputs-agregar">
                 <label for="telefono" id="label-agregar">Teléfono</label>
                 <br>
-                <input class="input-agregar-form" type="tel" name="telefono_edit" required id="telefono" value="<?php echo $telefono;?>">
+                <input class="input-agregar-form" title="Solo números" pattern="[0-9]+" type="tel" name="telefono_edit" required id="telefono" value="<?php echo $telefono;?>">
             </div>
 
             <div class="div-inputs-agregar">

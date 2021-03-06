@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    error_reporting(0);
 
     require_once '../vendor/autoload.php';
     $C_envios = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->envios; 
@@ -18,7 +19,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Envíos</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
@@ -55,15 +56,18 @@
             <tr>
                 <td><?php echo $dato["no"]; ?></td>
                 <td><?php echo $dato["no_pedido"]; ?></td>
-                <td><?php echo $dato["nombres"]; ?></td>
-                <td><?php echo $dato["apellidos"]; ?></td>
-                <td><?php echo $dato["calle"]; ?></td>
-                <td><?php echo $dato["numero"]; ?></td>
-                <td><?php echo $dato["col_fracc"]; ?></td>
-                <td><?php echo $dato["cp"]; ?></td>
+                <td><?php echo $dato['info_cliente']["nombres"]; ?></td>
+                <td><?php echo $dato['info_cliente']["apellidos"]; ?></td>
+                <td><?php echo $dato['info_cliente']["calle"]; ?></td>
+                <td><?php echo $dato['info_cliente']["numero"]; ?></td>
+                <td><?php echo $dato['info_cliente']["col_fracc"]; ?></td>
+                <td><?php echo $dato['info_cliente']["cp"]; ?></td>
                 <td><?php echo $dato["total"]; ?></td>
                 <td><?php echo $dato["fecha_hora"]; ?></td>
-                <td><a class="btn-aceptar" href="agregar_envio.php?id_envio=<?php echo $dato['_id']?>"><i class="fas fa-check"></i></a></td>
+                <td>
+                    <a class="btn-aceptar" href="agregar_envio.php?id_envio=<?php echo $dato['_id']?>"><i class="fas fa-check"></i></a>
+                    <a class="btn-eliminar" href="eliminar.php?id_envio=<?php echo $dato['_id']?>" onclick="return ConfirmDelete()"><i class="fas fa-trash"></i></a>
+                </td>
             </tr>
         </tbody>
     <?php
@@ -87,6 +91,8 @@
 
     <!-- funcionamiento de datatables propias -->
     <script type="text/javascript" src="../js/main.js"></script>
+    <!-- funcionamiento de eliminación de registros (propios) -->
+    <script type="text/javascript" src="../js/eliminar.js"></script>
 </body>
 
 </html>
@@ -105,7 +111,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Envíos</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
@@ -139,14 +145,14 @@
     ?>
         <tbody>
             <tr>
-                <td><?php echo $dato["no"]; ?></td>
+            <td><?php echo $dato["no"]; ?></td>
                 <td><?php echo $dato["no_pedido"]; ?></td>
-                <td><?php echo $dato["nombres"]; ?></td>
-                <td><?php echo $dato["apellidos"]; ?></td>
-                <td><?php echo $dato["calle"]; ?></td>
-                <td><?php echo $dato["numero"]; ?></td>
-                <td><?php echo $dato["col_fracc"]; ?></td>
-                <td><?php echo $dato["cp"]; ?></td>
+                <td><?php echo $dato['info_cliente']["nombres"]; ?></td>
+                <td><?php echo $dato['info_cliente']["apellidos"]; ?></td>
+                <td><?php echo $dato['info_cliente']["calle"]; ?></td>
+                <td><?php echo $dato['info_cliente']["numero"]; ?></td>
+                <td><?php echo $dato['info_cliente']["col_fracc"]; ?></td>
+                <td><?php echo $dato['info_cliente']["cp"]; ?></td>
                 <td><?php echo $dato["total"]; ?></td>
                 <td><?php echo $dato["fecha_hora"]; ?></td>
             </tr>

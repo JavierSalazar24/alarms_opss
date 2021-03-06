@@ -1,10 +1,20 @@
 <?php
 
     session_start();
+    error_reporting(0);
 
     require_once '../vendor/autoload.php';
-    $C_estadisticas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->estadisticas; 
-    $datos = $C_estadisticas->find();
+    $C_pedidos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->pedidos;
+
+    $C_envios = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->envios;
+
+    $C_ventas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->ventas;
+
+    $numPedidos = $C_pedidos->count();
+    $numEnvios = $C_envios->count();
+    $numVentas = $C_ventas->count();
+
+
 
     if(isset($_SESSION['admin'])&&!isset($_SESSION['estandar'])){
 
@@ -18,7 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estadísticas</title>
-    <link rel="shortcut icon" href="../img/favicon.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
@@ -40,20 +50,14 @@
             <th>No. Total de ventas</th>
         </thead>
     
-    <?php
-        foreach ($datos as $dato) {
-    ?>
         <tbody>
             <tr>
-                <td><?php echo $dato["no_pedidos"]; ?></td>
-                <td><?php echo $dato["no_envios"]; ?></td>
-                <td><?php echo $dato["no_ventas"]; ?></td>
+                <td><?php echo $numPedidos ?></td>
+                <td><?php echo $numEnvios ?></td>
+                <td><?php echo $numVentas ?></td>
             </tr>
         </tbody>
 
-    <?php
-        }//foreach
-    ?>
     </table>
 
     <!-- JavaScript -->
