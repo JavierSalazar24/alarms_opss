@@ -45,7 +45,7 @@ parser.on("data", function (data) {
       //actualización
       await pruebas.updateOne(
         { correo: correo },
-        { $set: { [id]: { status: "alarma activada" } } }
+        { $set: { [`alarmas.alarma ${id}`]: "activada" } }
       );
       // console.log(actualizar.modifiedCount);
       client.close();
@@ -57,9 +57,7 @@ parser.on("data", function (data) {
       //actualización
       await pruebas.updateOne(
         { correo: correo },
-        {
-          $set: { [id]: { status: "alarma apagada" } },
-        }
+        { $set: { [`alarmas.alarma ${id}`]: "apagada" } }
       );
       // console.log(actualizar.modifiedCount);
       client.close();

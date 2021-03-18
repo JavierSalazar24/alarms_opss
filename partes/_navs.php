@@ -1,37 +1,70 @@
-<input type="checkbox" name="" id="icon-nav-menu">
-<div class="div-label">
-    <label class="label-icon" for="icon-nav-menu"><i class="fas fa-bars"></i></label>
-    <!-- <div class="div-img-letras"> -->
-        <a class="ancla-logo" href="index.php"><img class="logo-responsive" src="img/Logo6.png" alt="Logo OPSS"></a>
-        <!-- <h4 class="letras-logo">
-            <a class="ancla-letras-logo" href="index.php">OPSS</a>
-        </h4> -->
-    <!-- </div> -->
-</div>
-<nav class="menu">
-        <ul class="ul-menu">
-            <a class="ancla-menu ancla-menu-logo" href="index.php">
-                <li><img class="logo-menu" src="img/Logo6.png" alt="Logo OPSS"></li>
-            </a>
-            <a class="ancla-menu" href="index.php">
-                <li class="li-menu">INICIO</li>
-            </a>
-            <a class="ancla-menu" href="noticias.php">
-                <li class="li-menu">NOTICIAS</li>
-            </a>
-            <a class="ancla-menu" href="asistencia.php">
-                <li class="li-menu">ASISTENCIA</li>
-            </a>
+<header id="headerf">
+	<h1 class="h1f"><a class="ancla-navf" href="index.php">Alarmas - OPSS</a></h1>
+	<nav class="links">
+		<ul class="ulf">
+			<li class="lif"><a class="ancla-navf" href="index.php">INICIO</a></li>
+			<li class="lif"><a class="ancla-navf" href="noticias.php">NOTICIAS</a></li>
+			<li class="lif"><a class="ancla-navf" href="asistencia.php">ASISTENCIA</a></li>
+			<li class="lif"><a class="ancla-navf" href="comprar.php">COMPRAR</a></li>
+			<li class="lif"><a class="ancla-navf" href="mi_perfil.php"><?php echo $nombre.' '.$ape1?></a></li>
+		</ul>
+	</nav>
+	<nav class="mainf">
+		<ul class="ulf">
+			<li class="lif search">
+				<a class="ancla-navf fa-search" href="cerrar_sesion.php">CERRAR SESIÓN</a>					
+			</li>
+			<li class="lif menu">
+				<a class="ancla-navf fa-bars" href="#menu">MENÚ</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<!-- Menu -->
+<section class="sectionf" id="menu">
+
+    <!-- logo -->
+    <section class="sectionf">
+        <img src="img/Logo6.png" width="100px"  alt="">
+    </section>
+
+    <!-- Links -->
+    <section class="sectionf">
+        <ul class="ulf links">
+            <li class="lif">
+                <a class="ancla-navf" href="#">
+                    <h3 class="h3f">Lorem ipsum</h3>
+                    <p class="parafof">Feugiat tempus veroeros dolor</p>
+                </a>
+            </li>
+            <li class="lif">
+                <a class="ancla-navf" href="#">
+                    <h3 class="h3f">Dolor sit amet</h3>
+                    <p class="parafof">Sed vitae justo condimentum</p>
+                </a>
+            </li>
+            <li class="lif">
+                <a class="ancla-navf" href="#">
+                    <h3 class="h3f">Feugiat veroeros</h3>
+                    <p class="parafof">Phasellus sed ultricies mi congue</p>
+                </a>
+            </li>
+            <li class="lif">
+                <a class="ancla-navf" href="#">
+                    <h3 class="h3f">Etiam sed consequat</h3>
+                    <p class="parafof">Porta lectus amet ultricies</p>
+                </a>
+            </li>
         </ul>
-        <ul class="ul-menu2">
-            <a class="ancla-menu" href="mi_perfil.php">
-                <li class=" li-menu"><?php echo $nombre.' '.$ape1?></li>
-            </a>
-            <a class="ancla-menu" href="cerrar_sesion.php">
-                <li class=" li-menu">CERRAR SESIÓN</li>
-            </a>
-            <a class="ancla-menu" href="comprar.php">
-                <li class="li-menu-comprar">COMPRAR</li>
-            </a>
+    </section>
+
+    <!-- Actions -->
+    <section>
+        <ul class="ulf actions vertical">
+            <li class="lif"><a href="mi_perfil.php" class="ancla-navf button big fit"><?php echo $nombre.' '.$ape1?></a></li>
+            <li class="lif"><a href="cerrar_sesion.php" class="ancla-navf button big fit">CERRAR SESIÓN</a></li>
         </ul>
-    </nav>
+    </section>
+
+</section>

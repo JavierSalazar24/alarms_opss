@@ -13,9 +13,9 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 
     $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
     $datos = $C_clientes->findOne(['correo' => $correo]);
-
-    $nombre = $datos['nombre'];
-    $ape1 = $datos['ape1'];
+    
+    $nombre = $datos['nombres']['nombre'];
+    $ape1 = $datos['nombres']['ape1'];
 
 
 ?>
@@ -27,12 +27,13 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticias</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/estilos_responsivo.css">
+    <!-- <link rel="stylesheet" href="css/estilos_responsivo.css"> -->
     <script src="js/scrollreveal.js"></script>
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <?php include_once "views/estilos_future.php"?>
 </head>
 
 <body>
@@ -65,6 +66,7 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+    <?php include_once "views/script_future.php"?>
 </body>
 
 </html>
@@ -82,12 +84,14 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticias</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/estilos_responsivo.css">
+    <!-- <link rel="stylesheet" href="css/estilos_responsivo.css"> -->
     <script src="js/scrollreveal.js"></script>
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <?php include_once "views/estilos_future.php"?>
+
 </head>
 
 <body>
@@ -120,6 +124,7 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+    <?php include_once "views/script_future.php"?>
 </body>
 
 </html>

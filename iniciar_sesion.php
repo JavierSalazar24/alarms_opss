@@ -79,12 +79,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/estilos_responsivo.css">
     <script src="js/scrollreveal.js"></script>
-    <link rel="shortcut icon" href="img/favicon.jpg">
+    <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_responsivo.css">
 </head>
 
 <body class="body-login">
@@ -94,8 +94,9 @@
                 <h1 id="x-login">X</h1>
             </a>
             <h1 class="h1-login">Iniciar sesión</h1>
-            <h4 class="h4-p">¿Eres nuevo en este sitio? <a class="ancla-registrarse-login"
-                    href="registrarse.php">Regístrate</a></h4>
+            <h4 class="h4-p">
+                ¿Eres nuevo en este sitio? <a class="ancla-registrarse-login" href="registrarse.php">Regístrate</a>
+            </h4>
 
             <div class="div-inputs-login">
                 <label for="email" id="label-login">Email</label>

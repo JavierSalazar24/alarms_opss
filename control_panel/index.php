@@ -45,160 +45,64 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de control</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/estilos_responsivo.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="../img/favicon1.png">
+    <!-- Estilos -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/estilos_panel.css" rel="stylesheet">
+    <title>Panel de control</title>
 </head>
 
-<body>
-    <nav class="menu">
-        <ul class="ul-menu">
-            <li class="li-menu">
-                Panel de control: OPSS
-            </li>
-            <li class="li-menu li-menu2 li-fecha">
-            <?php echo $fecha?>
-            </li>
-            <li class="li-menu li-menu2">
-                Bienvenido: <?php echo $nombre.' '.$ape1?>
-            </li>
-            <li class="li-menu">
-                <label class="label-icon" for="icon-nav-menu"><i class="fas fa-bars icon-menu"></i></label>
-                <a class="salir" href="../cerrar_sesion.php"><i class="fas fa-power-off"></i></a>
-            </li>
-        </ul>
-    </nav>
-    <section id="control-panel">
-        <input type="checkbox" name="" id="icon-nav-menu">
-        <div class="opc-panel">
-            <h3 class="nombre-panel"><?php echo $nombre.' '.$ape1?></h3>
-            <div class="div-img-panel">
-                <img class="img-panel" src="../img/Logo4.jpeg" alt="Logo OPSS">
-            </div>
+<body id="page-top" class="hold-transition sidebar-mini">
 
-            <hr class="hr-linea">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-            <a class="ancla-opc" href="administradores.php">
-                <div class="div-ancla">
-                    <h4>Administradores</h5>
-                </div>
-            </a>
+        <!-- Barra lateral -->
+        <?php include_once "views/navBar_lateral.php"?>
+        <!-- Fin Barra lateral -->
 
-            <hr class="hr-linea">
+        <!-- Contenido completo -->
+        <div id="content-wrapper" class="d-flex flex-column">
 
-            <a class="ancla-opc" href="clientes.php">
-                <div class="div-ancla">
-                    <h4>Clientes</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="estadisticas.php">
-                <div class="div-ancla">
-                    <h4>Estadísticas</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="mensajes.php">
-                <div class="div-ancla">
-                    <h4>Mensajes</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="productos.php">
-                <div class="div-ancla">
-                    <h4>Productos</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="pedidos.php">
-                <div class="div-ancla">
-                    <h4>Pedidos</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="envios.php">
-                <div class="div-ancla">
-                    <h4>Envíos</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="ventas.php">
-                <div class="div-ancla">
-                    <h4>Ventas</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="../cerrar_sesion.php">
-                <div class="div-ancla">
-                    <h4>Cerrar Sesión</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
+            <!-- Barra sueperior -->
+            <?php include_once "views/navBar_superior.php"?>
+            <!-- Fin de Barra sueperior -->
             
+            <!-- Contenido central -->
+            <?php include_once "views/contenido.php" ?>
+            <!-- Fin Contenido central -->
 
+            <!-- Footer -->
+            <?php include_once "views/footer.php" ?>
+            <!-- Fin de Footer -->
         </div>
 
-        <div class="contenido-panel">
-            <div class="div-estadisticas-numeros-estadisticas2">
-                <div class="div-estadisticas">
-                    <h4 class="h4-estadisticas">E S T A D Í S T I C A S</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio accusamus debitis officia necessitatibus cupiditate maxime voluptatibus! Voluptas laborum ratione labore eligendi unde eaque soluta dolore optio ipsam, voluptatem facilis sint.</p>
-                </div>
-                <div class="div-numeros">
-                    <a class="ancla-admins" href="administradores.php">
-                        <div class="div-admins">
-                            <h3>Número de admins</h3>
-                            <h4><?php echo $numA?></h5>
-                        </div>
-                    </a>
-                    <a class="ancla-clientes" href="clientes.php">
-                        <div class="div-clientes">
-                            <h3>Número de clientes</h3>
-                            <h4><?php echo $numC?></h5>
-                        </div>
-                    </a>
-                    <a class="ancla-ventas" href="ventas.php">
-                        <div class="div-ventas">
-                            <h3>Número de ventas</h3>
-                            <h4><?php echo $numV?></h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="div-estadisticas2">
-                </div>
-            </div>
-            <div class="div-calendario-barras">
-                <div class="div-calendario">
-                    <h4 class="h4-calendario">C A L E N D A R I O</h4>
-                    <iframe src="https://calendar.google.com/calendar/embed?height=250&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FMexico_City&amp;src=amF2aWVyYWxlamFuZHJvc2FsYXphcnRvcnJlc0BnbWFpbC5jb20&amp;src=dXRkLmVkdS5teF9jbGFzc3Jvb20wNDcwMDcyYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZXMubWV4aWNhbiNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=Y2xhc3Nyb29tMTE1ODA4NDY5ODc2NTI4NzYzNDM1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23039BE5&amp;color=%230047a8&amp;color=%230B8043&amp;color=%23202124&amp;showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0" style="border-width:0" width="300" height="217" frameborder="0" scrolling="no"></iframe>
-                </div>
-                <div class="div-barras">
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+    <!-- End of Page Wrapper -->
 
-    <script src="../js/control_panel.js"></script>
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
 </body>
 
 </html>
@@ -234,161 +138,68 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de control</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <link rel="shortcut icon" href="../img/favicon2.jpg">
+    <link rel="shortcut icon" href="../img/favicon1.png">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/estilos_panel.css" rel="stylesheet">
+    <title>Panel de control</title>
 </head>
 
-<body>
-<nav class="menu">
-        <ul class="ul-menu">
-            <li class="li-menu">
-                Panel de control: OPSS
-            </li>
-            <li class="li-menu li-menu2">
-            <?php echo $fecha?>
-            </li>
-            <li class="li-menu li-menu2">
-                Bienvenido: <?php echo $nombre.' '.$ape1?>
-            </li>
-            <li class="li-menu">
-                <label class="label-icon" for="icon-nav-menu"><i class="fas fa-bars icon-menu"></i></label>
-                <a class="salir" href="../cerrar_sesion.php"><i class="fas fa-power-off"></i></a>
-            </li>
-        </ul>
-    </nav>
-    <section id="control-panel">
-        <input type="checkbox" name="" id="icon-nav-menu">
-        <div class="opc-panel">
-            <h3 class="nombre-panel"><?php echo $nombre.' '.$ape1?></h3>
-            <div class="div-img-panel">
-                <img class="img-panel" src="../img/logo.jpg" alt="Logo OPSS">
-            </div>
+<body id="page-top">
 
-            <hr class="hr-linea">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-            <a class="ancla-opc" href="administradores.php">
-                <div class="div-ancla">
-                    <h4>Administradores</h5>
-                </div>
-            </a>
+        <!-- Sidebar -->
+        <?php include_once "views/navBar_lateral.php"?>
+        <!-- End of Sidebar -->
 
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="clientes.php">
-                <div class="div-ancla">
-                    <h4>Clientes</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="estadisticas.php">
-                <div class="div-ancla">
-                    <h4>Estadísticas</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="mensajes.php">
-                <div class="div-ancla">
-                    <h4>Mensajes</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="productos.php">
-                <div class="div-ancla">
-                    <h4>Productos</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="pedidos.php">
-                <div class="div-ancla">
-                    <h4>Pedidos</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="envios.php">
-                <div class="div-ancla">
-                    <h4>Envíos</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="ventas.php">
-                <div class="div-ancla">
-                    <h4>Ventas</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
-            <a class="ancla-opc" href="../cerrar_sesion.php">
-                <div class="div-ancla">
-                    <h4>Cerrar Sesión</h5>
-                </div>
-            </a>
-
-            <hr class="hr-linea">
-
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Content Wrapper -->
+            <?php include_once "views/navBar_superior.php"?>
+            <!-- End of Content Wrapper -->
             
+            <!-- End of Main Content -->
+            <?php include_once "views/contenido.php" ?>
+            <!-- End of Contenido -->
 
+            <!-- Footer -->
+                <?php include_once "views/footer.php" ?>
+            <!-- End of Footer -->
         </div>
 
-        <div class="contenido-panel">
-            <div class="div-estadisticas-numeros-estadisticas2">
-                <div class="div-estadisticas">
-                    <h4 class="h4-estadisticas">E S T A D Í S T I C A S</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio accusamus debitis officia necessitatibus cupiditate maxime voluptatibus! Voluptas laborum ratione labore eligendi unde eaque soluta dolore optio ipsam, voluptatem facilis sint.</p>
-                </div>
-                <div class="div-numeros">
-                    <a class="ancla-admins" href="administradores.php">
-                        <div class="div-admins">
-                            <h3>Número de admins</h3>
-                            <h4><?php echo $numA?></h5>
-                        </div>
-                    </a>
-                    <a class="ancla-clientes" href="clientes.php">
-                        <div class="div-clientes">
-                            <h3>Número de clientes</h3>
-                            <h4><?php echo $numC?></h5>
-                        </div>
-                    </a>
-                    <a class="ancla-ventas" href="ventas.php">
-                        <div class="div-ventas">
-                            <h3>Número de ventas</h3>
-                            <h4><?php echo $numV?></h5>
-                        </div>
-                    </a>
-                </div>
-                <div class="div-estadisticas2">
-                </div>
-            </div>
-            <div class="div-calendario-barras">
-                <div class="div-calendario">
-                    <h4 class="h4-calendario">C A L E N D A R I O</h4>
-                    <iframe src="https://calendar.google.com/calendar/embed?height=250&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FMexico_City&amp;src=amF2aWVyYWxlamFuZHJvc2FsYXphcnRvcnJlc0BnbWFpbC5jb20&amp;src=dXRkLmVkdS5teF9jbGFzc3Jvb20wNDcwMDcyYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZXMubWV4aWNhbiNob2xpZGF5QGdyb3VwLnYuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=Y2xhc3Nyb29tMTE1ODA4NDY5ODc2NTI4NzYzNDM1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23039BE5&amp;color=%230047a8&amp;color=%230B8043&amp;color=%23202124&amp;showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;showTz=0" style="border-width:0" width="300" height="217" frameborder="0" scrolling="no"></iframe>
-                </div>
-                <div class="div-barras">
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+    <!-- End of Page Wrapper -->
 
-    <script src="../js/control_panel.js"></script>
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
 </body>
 
 </html>

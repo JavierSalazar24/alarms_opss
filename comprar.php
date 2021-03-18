@@ -112,69 +112,70 @@
             }
 
     
-    ?>
+?>
     
-    <!DOCTYPE html>
-    <html lang="es">
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar</title>
+    <script src="js/scrollreveal.js"></script>
+    <link rel="shortcut icon" href="img/favicon1.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <?php include_once "views/estilos_future.php"?>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_responsivo.css">
+</head>
     
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Comprar</title>
-        <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="css/estilos_responsivo.css">
-        <script src="js/scrollreveal.js"></script>
-        <link rel="shortcut icon" href="img/favicon1.png">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
-    </head>
-    
-    <body class="body-comprar">
+<body class="body-comprar">
         
-        <?php include "partes/_navs.php" ?>
+    <?php include "partes/_navs.php" ?>
     
-        <section id="comprar">
-            <div class="comprar-div">
-                <div class="div-img-comprar">
-                    <img class="img-comprar" src="img/img-comprar.jpg" alt="Alarma OPSS en venta">
-                    <p class="desc-comprar">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci officiis
-                        explicabo? Non possimus, itaque accusantium maiores </p>
-                </div>
-                <div class="div-info-comprar">
-                    <div class="info-comprar">
-                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-                            <h4 class="titulo-comprar"><?php echo $datosP['nombre']?></h4>
-                            <h6 class="version-comprar">V1</h6>
-                            <h5 class="precio-comprar">$<?php echo $datosP['precio']?>.00</h5>
-                            <p class="cantidad-comprar">Cantidad</p>
-                            <input class="input-comprar" type="number" name="cant" value="1" min="1">
-                            <br>
-                            <label id="label-agregarnota">IMPORTANTE: Después de completar el pago, Da click en pedir producto para guardar tu información automaticamente.</label>
-                            <br>
-                            <br>
-                            <input class="btn-comprar" type="submit" value="Pedir producto" onclick="return ConfirmAdd()">
-                        </form>
-                        <p class="p-info-comprar">
-                            Información del producto
-                            <i class="plus fas fa-plus" onclick="accion5()"></i>
-                        <p class="info desc-info-comprar desaparece">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Animi
-                            expedita
-                            deleniti ab, laudantium hic modi architecto, beatae quos fugit dolor corrupti perferendis sed atque
-                            nulla facilis ducimus doloribus repudiandae a.</p>
-                        <hr class="hr-comprar">
-                        </p>
-                        <div id="smart-button-container">
-                            <div style="text-align: center;">
-                                <div id="paypal-button-container"></div>
-                            </div>
+    <section id="comprar">
+        <div class="comprar-div">
+            <div class="div-img-comprar">
+                <img class="img-comprar" src="img/img-comprar.jpg" alt="Alarma OPSS en venta">
+                <p class="desc-comprar">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima adipisci officiis
+                    explicabo? Non possimus, itaque accusantium maiores </p>
+            </div>
+            <div class="div-info-comprar">
+                <div class="info-comprar">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                        <h4 class="titulo-comprar"><?php echo $datosP['nombre']?></h4>
+                        <h6 class="version-comprar">V1</h6>
+                        <h5 class="precio-comprar">$<?php echo $datosP['precio']?>.00</h5>
+                        <p class="cantidad-comprar">Cantidad</p>
+                        <input class="input-comprar" type="number" name="cant" value="1" min="1">
+                        <br>
+                        <label id="label-agregarnota">IMPORTANTE: Después de completar el pago, Da click en pedir producto para guardar tu información automaticamente.</label>
+                        <br>
+                        <br>
+                        <input class="btn-comprar" type="submit" value="Pedir producto" onclick="return ConfirmAdd()">
+                    </form>
+                    <p class="p-info-comprar">
+                        Información del producto
+                        <i class="plus fas fa-plus" onclick="accion5()"></i>
+                    <p class="info desc-info-comprar desaparece">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Animi
+                        expedita
+                        deleniti ab, laudantium hic modi architecto, beatae quos fugit dolor corrupti perferendis sed atque
+                        nulla facilis ducimus doloribus repudiandae a.</p>
+                    <hr class="hr-comprar">
+                    </p>
+                    <div id="smart-button-container">
+                        <div style="text-align: center;">
+                            <div id="paypal-button-container"></div>
                         </div>
-                        <script src="https://www.paypal.com/sdk/js?client-id=AS60qhUgLC9kzTbhIfk80BWustQ8DL-QOb9KyehDfFVdRLtL88Ezm0ZPhra2_wY_XXGjlV8ZJVnXX6-G&currency=MXN" data-sdk-integration-source="button-factory"></script>
-                        <script src="js/paypal.js"></script>
                     </div>
+                    <script src="https://www.paypal.com/sdk/js?client-id=AS60qhUgLC9kzTbhIfk80BWustQ8DL-QOb9KyehDfFVdRLtL88Ezm0ZPhra2_wY_XXGjlV8ZJVnXX6-G&currency=MXN" data-sdk-integration-source="button-factory"></script>
+                    <script src="js/paypal.js"></script>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     
     <!-- Fontawesome -->
     <script src=" https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
@@ -183,6 +184,7 @@
     <script src="js/index.js"></script>
     <!-- funcionamiento para agregar de registros (propios) -->
     <script type="text/javascript" src="js/agregar.js"></script>
+    <?php include_once "views/script_future.php"?>
 
 </body>
     
@@ -266,21 +268,22 @@
     ?>
 
 <!DOCTYPE html>
-    <html lang="es">
+<html lang="es">
     
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Comprar</title>
-        <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="css/estilos_responsivo.css">
-        <script src="js/scrollreveal.js"></script>
-        <link rel="shortcut icon" href="img/favicon1.png">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar</title>
+    <script src="js/scrollreveal.js"></script>
+    <link rel="shortcut icon" href="img/favicon1.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <?php include_once "views/estilos_future.php"?>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_responsivo.css">
+</head>
     
-    <body class="body-comprar">
+<body class="body-comprar">
         
         <?php include "partes/_nav.php" ?>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">    
@@ -415,7 +418,7 @@
                 </div>
 
                     <input class="btn-input-comprar-producto" type="submit" value="Pedir producto" onclick="return ConfirmAdd()">
-                    <a class="btn-editar-perfil2 btn-input-comprar-producto2" href="comprar.php"><input class="btn-input-perfil2" type="button" value="Volver atrás"></a>
+                    <a class="btn-editar-perfil2" href="comprar.php">Volver atrás</a>
 
             </section>
         </form>
@@ -431,10 +434,11 @@
         <script src=" https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
         <script src="js/faq.js"></script>
         <script src="js/index.js"></script>
+        <?php include_once "views/script_future.php"?>
 
-    </body>
+</body>
     
-    </html>
+</html>
 
 <?php
 

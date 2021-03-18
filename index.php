@@ -1,21 +1,21 @@
 <?php
 
-session_start();
-require_once 'vendor/autoload.php';
+    session_start();
+    require_once 'vendor/autoload.php';
 
-if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
+    if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 
-    header("Location: control_panel/index.php");
-  
-}elseif(isset($_SESSION['usuario'])){
+        header("Location: control_panel/index.php");
+    
+    }elseif(isset($_SESSION['usuario'])){
 
-    $correo = $_SESSION['usuario'];
+        $correo = $_SESSION['usuario'];
 
-    $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
-    $datos = $C_clientes->findOne(['correo' => $correo]);
+        $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
+        $datos = $C_clientes->findOne(['correo' => $correo]);
 
-    $nombre = $datos['nombres']['nombre'];
-    $ape1 = $datos['nombres']['ape1'];
+        $nombre = $datos['nombres']['nombre'];
+        $ape1 = $datos['nombres']['ape1'];
 
 
 ?>
@@ -31,188 +31,414 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <meta name="author" content="Empresa OPSS.">
     <meta name="copyright" content="Empresa OPSS.">
     <meta name="robots" content="index">
-    <title>OPSS</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <script src="js/scrollreveal.js"></script>
     <link rel="shortcut icon" href="img/favicon1.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/estilos_brandy.css">
+    <?php include_once "views/estilos_alysa.php"?>
+    <?php include_once "views/estilos_future.php"?>
+    <?php include_once "views/estilos_bent.php"?>
+    <?php include_once "views/estilos_sima.php"?>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <title>OPSS</title>
 </head>
 
-<body>
+<body >
 
-   <?php include "partes/_navs.php"; ?>
+    <!-- Wrapper -->
+    <div id="div-principal">
+        <?php include_once "partes/_navs.php" ?>
 
-   <section id="promocion">
-        <div class="div-caja1-promocion">
-            <h1 class="h1-promocion1">TU HOGAR</h1>
-            <h1 class="h1-promocion2">MÁS INTELIGENTE</h1>
-            <p class="p-promocion">Controla la seguridad de tu hogar con estilo.</p>
-            <div class="div-btn-promocion">
-                <p><a class="btn-promocion" href="#funcionamiento">Saber más</a></p>
+        <!-- <section id="promocion">
+            <div class="div-caja1-promocion">
+                <h1 class="h1-promocion1">TU HOGAR</h1>
+                <h1 class="h1-promocion2">MÁS INTELIGENTE</h1>
+                <p class="p-promocion">Controla la seguridad de tu hogar con estilo.</p>
+                <div class="div-btn-promocion">
+                    <p><a class="btn-promocion" href="#funcionamiento">Saber más</a></p>
+                </div>
             </div>
-        </div>
+        </section> -->
 
-    </section>
-
-    <section id="funcionamiento">
-        <div class="div-caja-funcionamiento">
-            <h1 class="h1-funcionamiento1">COMO</h1>
-            <h1 class="h1-funcionamiento2">TRABAJAN</h1>
-            <p class="p-funcionamiento">Al sincronizar la alarma de tu hogar, puedes administrarlos desde tu teléfono
-                móvil.</p>
-
-            <ul class="ul-funcionamiento">
-                <li class="li-funcionamiento"><span class="li-span-funcionamiento">Descarga la app OPSS desde tu
-                        teléfono celular</span></li>
-                <li class="li-funcionamiento"><span class="li-span-funcionamiento">Conecta OPSS a tu router de
-                        Internet</span></li>
-                <li class="li-funcionamiento"><span class="li-span-funcionamiento">Víncula tu dispositivo a la alarma
-                        por medio de la la app y controla
-                        la seguridad de tu hogar, en cualquier momento y lugar.</span></li>
-            </ul>
-        </div>
-    </section>
-    <section id="caracteristicas">
-        <div class="div-caracteristicas">
-            <div class="opc-caracteristica opc-1">
-                <i class="fas fa-wifi iconos"></i>
-                <h4>INALÁMBRICO</h4>
-                <p>Cuenta con WIFI</p>
+        <!-- Funcionamiento -->
+        <section class="about page" id="ABOUT">
+            <div class="inner_about_area">
+                <div class="container about-p">
+                    <div class="row">
+                    <div class="col-md-6  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                            <div class="inner_about_title">
+                                <h2 class="h2b">COMO TRABAJAN</h2>
+                                <p class="parrafob">Al sincronizar la alarma de tu hogar, puedes administrarlos desde tu teléfono móvil.</p>
+                            </div>
+                            <div class="inner_about_desc">
+                                <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="1s">
+                                    <div><i class="pe-7s-cloud-download"></i></div>
+                                    <h3 class="h3b">Descargar APP</h3>
+                                    <p class="parrafob">Descarga la app OPSS desde tu teléfono celular</p>
+                                </div>
+                                <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="1.5s">
+                                    <div><i class="pe-7s-target"></i></div>
+                                    <h3 class="h3b">Conectar</h3>
+                                    <p class="parrafob">Conecta OPSS a tu router de Internet</p>
+                                </div>
+                                <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="2s">
+                                    <div><i class="pe-7s-usb usb-padding"></i></div>
+                                    <h3 class="h3b">Vincular APP</h3>
+                                    <p class="parrafob">Víncula tu dispositivo a la alarma por medio de la la app y controla la seguridad de tu hogar, en cualquier momento y lugar.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="aboutp__div-celular col-md-6">
+                            <div class="about_phone wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                <img src="assets/bent/images/about_iphone.png" alt="">
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
             </div>
+        </section>
+        <!-- Fin funcionamiento -->
 
-            <div class="opc-caracteristica opc-2">
-                <i class="fas fa-mobile iconos"></i>
-                <h4>FÁCIL CONTROL</h4>
-                <p>Desde la app puedes controlar la alarma</p>
+        <!-- características -->
+        <section id="pr_sec">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+                        <div class="title_sec">
+                            <h1 class="h1s">Características</h1>
+                            <h2 class="h2s">Características de nuestro sistema</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pt-3">
+                        <div class="service">
+                            <i class="is2 fas fa-wifi"></i>
+                            <h2 class="h2s">INALÁMBRICO</h2>
+                            <div class="service_hoverly">
+                                <i class="is fas fa-wifi"></i>
+                                <h2 class="h2s">INALÁMBRICO</h2>
+                                <p class="parrafos">Cuenta con WIFI para que te conectes desde cualquier parte. Cuenta con WIFI para que te conectes desde cualquier parte.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pt-3">
+                        <div class="service">
+                            <i class="is2 fas fa-gamepad"></i>
+                            <h2 class="h2s">FÁCIL CONTROL</h2>
+                            <div class="service_hoverly">
+                                <i class="is fas fa-gamepad"></i>
+                                <h2 class="h2s">FÁCIL CONTROL</h2>
+                                <p class="parrafos">Desde la app puedes controlar tu alarma. Desde la app puedes controlar tu alarma.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pt-3">
+                        <div class="service">
+                            <i class="is2 fas fa-cogs"></i>
+                            <h2 class="h2s">SIMPLE CONFIGURACIÓN</h2>
+                            <div class="service_hoverly">
+                                <i class="is fas fa-cogs"></i>
+                                <h2 class="h2s">SIMPLE CONFIGURACIÓN</h2>
+                                <p class="parrafos">Fácil configuración entre tú alarma y tu dispositivo móvil. Fácil configuración entre tú alarma y tu dispositivo móvil.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pt-3">
+                        <div class="service">
+                            <i class="is2 fas fa-mobile-alt"></i>
+                            <h2 class="h2s">100% COMPATIBLE</h2>
+                            <div class="service_hoverly">
+                                <i class="is fas fa-mobile-alt"></i>
+                                <h2 class="h2s">100% COMPATIBLE</h2>
+                                <p class="parrafos">Es compatible con cualquier dispositivo móvil. Es compatible con cualquier dispositivo móvil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+        <!-- End características -->
 
-            <div class="opc-caracteristica opc-3">
-                <i class="fas fa-cog iconos"></i>
-                <h4>SIMPLE CONFIGURACIÓN</h4>
-                <p>Fácil configuración entre la alarma y tu dispositivo móvil</p>
-            </div>
-
-            <div class="opc-caracteristica opc-4">
-                <i class="fab fa-bluetooth-b iconos"></i>
-                <h4>100% COMPATIBLE</h4>
-                <p>Es compatible con cualquier dispositivo móvil</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="comprar-producto">
-        <div class="div-comprar-producto">
-            <h1 class="h1-comprar-productos">LA VIDA OPSS</h1>
-            <p class="p-comprar-productos">Descarga nuestra aplicación móvil para que puedas tener un mejor control de tu alarma.</p>
-            <p><a class="btn-comprar-productos" href="#">DESCARGAR</a></p>
-        </div>
-    </section>
-
-    <section id="testimonios-contenedor">
-        <div class="testimonio-slider fade">
-            <h4 class="titulo-testimonio">T e s t i m o n i o s</h4>
-            <hr class="linea-testimonio">
-            <h1 class="parrafo-testimonio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi esse
-                dignissimos nihil veniam vel,
-                corporis
-                dolore cupiditate laborum molestiae dolorum atque ratione distinctio blanditiis dicta, fuga id totam nam
-                corrupti.</h1>
-            <p class="autor-testimonio">- Javier Salazar</p>
-        </div>
-        <div class="testimonio-slider fade">
-            <h4 class="titulo-testimonio">T e s t i m o n i o s</h4>
-            <hr class="linea-testimonio">
-            <h1 class="parrafo-testimonio">
-                dolore cupiditate laborum molestiae dolorum atque ratione distinctio blanditiis dicta, fuga id totam nam
-                corrupti Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi esse
-                dignissimos nihil veniam vel,
-                corporis.</h1>
-            <p class="autor-testimonio">- Rocío Salazar</p>
-        </div>
-        <div class="testimonio-slider fade">
-            <h4 class="titulo-testimonio">T e s t i m o n i o s</h4>
-            <hr class="linea-testimonio">
-            <h1 class="parrafo-testimonio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi esse
-                dignissimos nihil veniam vel,
-                corporis
-                dolore cupiditate laborum molestiae dolorum atque ratione distinctio blanditiis dicta, fuga id totam nam
-                corrupti.</h1>
-            <p class="autor-testimonio">- Litzzy Pacheco</p>
-        </div>
-
-        <div class="testimonio-slider fade">
-            <h4 class="titulo-testimonio">T e s t i m o n i o s</h4>
-            <hr class="linea-testimonio">
-            <h1 class="parrafo-testimonio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi esse
-                dignissimos nihil veniam vel,
-                corporis
-                dolore cupiditate laborum molestiae dolorum atque ratione distinctio blanditiis dicta, fuga id totam nam
-                corrupti.</h1>
-            <p class="autor-testimonio">- Didier Ortíz</p>
-        </div>
-
-        <div class="testimonio-direcciones">
-            <a href="#testimonios-contenedor" class="atras" onclick="avanzaSlide(-1)">&#10094;</a>
-            <a href="#testimonios-contenedor" class="adelante" onclick="avanzaSlide(1)">&#10095;</a>
-        </div>
-
-        <div class="barras">
-            <span class="barra active" onclick="posicionSlide(1)"></span>
-            <span class="barra" onclick="posicionSlide(2)"></span>
-            <span class="barra" onclick="posicionSlide(3)"></span>
-            <span class="barra" onclick="posicionSlide(4)"></span>
-        </div>
-
-    </section>
-
-    <section id="marcas">
-        <div class="div-marcas">
-            <div class="marca div-acer">
-                <img class="marca1" src="img/acer.png" alt="Marca patrocinadora ACER">
+        <!-- Descaragar APP -->
+        <section class="download page" id="DOWNLOAD">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="section_title">
+                            <h2 class="h2b">Descargar ahora</h2>
+                            <p class="parrafob">Descarga nuestra aplicación móvil para que puedas tener un mejor control de tu alarma.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="marca">
-                <img class="marca2" src="img/cisco.png" alt="Marca patrocinadora CISCO">
-            </div>
-            <div class="marca">
-                <img class="marca3" src="img/hp.png" alt="Marca patrocinadora HP">
-            </div>
-
-            <div class="marca">
-                <img class="marca4" src="img/intel.png" alt="Marca patrocinadora INTEL">
-            </div>
-
-            <div class="marca">
-                <img class="marca5" src="img/microsoft.png" alt="Marca patrocinadora MICROSOFT">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="download_screen text-center wow fadeInUp" data-wow-duration="1s">
+                        <img class="telefono-descargar" src="assets/bent/images/iPhone02.png" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="marca">
-                <img class="marca6" src="img/toshiba.png" alt="Marca patrocinadora TOSHIBA">
+            <div class="available_store">
+                <div class="available_store__div-padding container  wow bounceInRight" data-wow-duration="1s">
+                    <div class="col-md-6">
+                        <div class="available_title">
+                            <h2 class="h2b">Disponible para</h2>
+                            <p class="parrafob">Puedes descargar nuestra aplicación en la plataforma que gustes.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="">
+                                    <div class="single_store">
+                                        <i class="fa fa-apple"></i>
+                                        <div class="store_inner">
+                                            <h2 class="h2b">iOS</h2>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="">
+                                    <div class="single_store">
+                                        <i class="fa fa-android"></i>
+                                        <div class="store_inner">
+                                            <h2 class="h2b">ANDROID</h2>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                                                    
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+        <!-- <section class="download page mt-5" id="DOWNLOAD">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="section_title">
+                            <h2 class="h2b">Descargar ahora</h2>
+                            <p class="parrafob">Descarga nuestra aplicación móvil para que puedas tener un mejor control de tu alarma.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <footer id="footer">
-        <div class="div-redes-nota">
-            <i class="iconos-redes fab fa-facebook-f"></i>
-            <i class="iconos-redes fab fa-twitter"></i>
-            <i class="iconos-redes fab fa-youtube"></i>
-            <p class="p-nota">HECHO POR OPSS © <?php echo date('Y');?>. TODOS LOS DERECHOS RESERVADOS.</p>
-        </div>
-    </footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-2">
+                        <div class="download_screen text-center wow fadeInUp" data-wow-duration="1s">
+                        <img class="telefono-descargar" src="assets/bent/images/about_iphone.png" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="available_title">
+                                <h2 class="h2b">Disponible para</h2>
+                                <p class="parrafob">Puedes descargar nuestra aplicación en la plataforma que gustes.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                        <div class="single_store">
+                                            <i class="fa fa-apple"></i>
+                                            <div class="store_inner">
+                                                <h2 class="h2b">iOS</h2>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="col-md-6">
+                                        <div class="single_store">
+                                            <i class="fa fa-android"></i>
+                                            <div class="store_inner">
+                                                <h2 class="h2b">ANDROID</h2>
+                                            </div>
+                                        </div>
+                                </div>                                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- fin Descargar app -->
 
-    <script src="js/testimonios.js"></script>
-    <script src="js/index.js"></script>
+        <!-- Testimonios -->
+        <section id="slider_sec">
+            <div class="container">
+                <div class="row">
+                    <div class="slider">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li class="lis active" data-target="#carousel-example-generic" data-slide-to="0"></li>
+                                <li class="lis" data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li class="lis" data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li class="lis" data-target="#carousel-example-generic" data-slide-to="3"></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="wrap_caption">
+                                        <div class="caption_carousel">
+                                            <h1 class="h1s">Rocío Salazar</h1>
+                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="wrap_caption">
+                                        <div class="caption_carousel">
+                                            <h1 class="h1s">Javier Salazar</h1>
+                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item ">
+                                    <div class="wrap_caption">
+                                        <div class="caption_carousel">
+                                            <h1 class="h1s">Didier Ortíz</h1>
+                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item ">
+                                    <div class="wrap_caption">
+                                        <div class="caption_carousel">
+                                            <h1 class="h1s">Littzy Pacheco</h1>
+                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="as left left_crousel_btn" href="#carousel-example-generic" role="button"
+                                data-slide="prev">
+                                <i class="is fa fa-angle-left"></i>
+                                <span class="spans sr-only">Previous</span>
+                            </a>
+                            <a class="as right right_crousel_btn" href="#carousel-example-generic" role="button"
+                                data-slide="next">
+                                <i class="is fa fa-angle-right"></i>
+                                <span class="spans sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Testimonios -->
+
+        <!-- marcas -->
+        <section id="tm_sec">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+                        <div class="title_sec">
+                            <h1 class="h1s">Marcas</h1>
+                            <h2 class="h2s">Les mostramos algunas marcas que nos patrocinan.</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs12">
+                        <div class="all_team">
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="200px" src="img/acer.png" alt="" />
+                            </div>
+                            <div class="sngl_team">
+                                <br>
+                                <img class="imgs" width="200px" src="img/cisco.png" alt="" />
+                            </div>
+                            <div class="sngl_team">
+                                <img class="imgs" height="110px" src="img/hp.png" alt="" />
+                            </div>
+                            <div class="sngl_team">
+                                <br>
+                                <img class="imgs" width="120px" src="img/intel.png" alt="" />
+                            </div>
+                            <div class="sngl_team">
+                                <br>
+                                <img class="imgs" width="180px" src="img/microsoft.png" alt="" />
+                            </div>
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>						
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>	
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>	
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>	
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>	
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>                                      
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </section>
+        <!-- End marcas -->
+
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center   wow fadeInUp animated">
+                        <h4>Siguenos en nuestras redes sociales</h4>
+                        <ul class="icon_list">
+                            <li><a href="http://www.facebook.com/abdullah.noman99"target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="http://www.twitter.com/absconderm"target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="http://www.dribbble.com/abdullahnoman"target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                        </ul>                        
+                        <br>
+                        <div>
+                            <p>&copy; HECHO POR OPSS <?php echo date('Y');?>.</p>
+                            <p>TODOS LOS DERECHOS RESERVADOS.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End footer -->
+
+        
+        
+    </div>
+    
+    <div class="go-top"><i class="fas fa-arrow-up"></i></div>
+
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <?php include_once "views/script_alysa.php"?>
+    <?php include_once "views/script_bent.php"?>
+    <?php include_once "views/script_future.php"?>
+    <?php include_once "views/script_sima.php"?>
 </body>
 
 </html>
 
 <?php
 
-}elseif(!isset($_SESSION['usuario'])){
+    }elseif(!isset($_SESSION['usuario'])){
 
 
 ?>
@@ -223,186 +449,417 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OPSS</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <script src="js/scrollreveal.js"></script>
+    <meta name="keywords" content="Alarmas, IoT, Seguridad, WIFI, Intenet of Things, Alarma, Ventas, Casa">
+    <meta name="description" content="OPSS Es una comparañia destinada a brindar seguridad con calidad y buen precio, contamos con alarmas hechas con ayuda de las IoT para brindar una mejor seguridad y fácil accesibilidad a estas.">
+    <meta name="author" content="Empresa OPSS.">
+    <meta name="copyright" content="Empresa OPSS.">
+    <meta name="robots" content="index">
     <link rel="shortcut icon" href="img/favicon1.png">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos_brandy.css">
+    <?php include_once "views/estilos_alysa.php"?>
+    <?php include_once "views/estilos_future.php"?>
+    <?php include_once "views/estilos_bent.php"?>
+    <?php include_once "views/estilos_sima.php"?>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <title>OPSS</title>
 </head>
 
-<body>
+<body >
+
+    <!-- Wrapper -->
+    <div id="div-principal">
+        <?php include_once "partes/_nav.php" ?>
+
+        <!-- <section id="promocion">
+            <div class="div-caja1-promocion">
+                <h1 class="h1-promocion1">TU HOGAR</h1>
+                <h1 class="h1-promocion2">MÁS INTELIGENTE</h1>
+                <p class="p-promocion">Controla la seguridad de tu hogar con estilo.</p>
+                <div class="div-btn-promocion">
+                    <p><a class="btn-promocion" href="#funcionamiento">Saber más</a></p>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Funcionamiento -->
+        <section class="about page" id="ABOUT">
+            <div class="inner_about_area">
+                <div class="container about-p">
+                    <div class="row">
+                        <div class="col-md-6  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                            <div class="inner_about_title">
+                                <h2 class="h2b">COMO TRABAJAN</h2>
+                                <p class="parrafob">Al sincronizar la alarma de tu hogar, puedes administrarlos desde tu teléfono móvil.</p>
+                            </div>
+                            <div class="inner_about_desc">
+                                <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="1s">
+                                    <div><i class="pe-7s-cloud-download"></i></div>
+                                    <h3 class="h3b">Descargar APP</h3>
+                                    <p class="parrafob">Descarga la app OPSS desde tu teléfono celular</p>
+                                </div>
+                                <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="1.5s">
+                                    <div><i class="pe-7s-target"></i></div>
+                                    <h3 class="h3b">Conectar</h3>
+                                    <p class="parrafob">Conecta OPSS a tu router de Internet</p>
+                                </div>
+                                <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="2s">
+                                    <div><i class="pe-7s-usb usb-padding"></i></div>
+                                    <h3 class="h3b">Vincular APP</h3>
+                                    <p class="parrafob">Víncula tu dispositivo a la alarma por medio de la la app y controla la seguridad de tu hogar, en cualquier momento y lugar.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="aboutp__div-celular col-md-6">
+                            <div class="about_phone wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                                <img src="assets/bent/images/about_iphone.png" alt="">
+                            </div>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Fin funcionamiento -->
+
+        <!-- características -->
+        <section id="pr_sec">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+                        <div class="section-title white-color">
+                            <h2>características</h2>
+                            <div class="back-text">
+                                Sistema
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pt-3">
+                        <div class="service">
+                            <i class="is2 fas fa-wifi"></i>
+                            <h2 class="h2s">INALÁMBRICO</h2>
+                            <div class="service_hoverly">
+                                <i class="is fas fa-wifi"></i>
+                                <h2 class="h2s">INALÁMBRICO</h2>
+                                <p class="parrafos">Cuenta con WIFI para que te conectes desde cualquier parte. Cuenta con WIFI para que te conectes desde cualquier parte.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pt-3">
+                        <div class="service">
+                            <i class="is2 fas fa-gamepad"></i>
+                            <h2 class="h2s">FÁCIL CONTROL</h2>
+                            <div class="service_hoverly">
+                                <i class="is fas fa-gamepad"></i>
+                                <h2 class="h2s">FÁCIL CONTROL</h2>
+                                <p class="parrafos">Desde la app puedes controlar tu alarma. Desde la app puedes controlar tu alarma.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pt-3">
+                        <div class="service">
+                            <i class="is2 fas fa-cogs"></i>
+                            <h2 class="h2s">SIMPLE CONFIGURACIÓN</h2>
+                            <div class="service_hoverly">
+                                <i class="is fas fa-cogs"></i>
+                                <h2 class="h2s">SIMPLE CONFIGURACIÓN</h2>
+                                <p class="parrafos">Fácil configuración entre tú alarma y tu dispositivo móvil. Fácil configuración entre tú alarma y tu dispositivo móvil.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 pt-3">
+                        <div class="service">
+                            <i class="is2 fas fa-mobile-alt"></i>
+                            <h2 class="h2s">100% COMPATIBLE</h2>
+                            <div class="service_hoverly">
+                                <i class="is fas fa-mobile-alt"></i>
+                                <h2 class="h2s">100% COMPATIBLE</h2>
+                                <p class="parrafos">Es compatible con cualquier dispositivo móvil. Es compatible con cualquier dispositivo móvil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End características -->
+
+        <!-- Descaragar APP -->
+        <!-- <section class="download page" id="DOWNLOAD">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="section_title">
+                            <h2 class="h2b">Descargar ahora</h2>
+                            <p class="parrafob">Descarga nuestra aplicación móvil para que puedas tener un mejor control de tu alarma.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="download_screen text-center wow fadeInUp" data-wow-duration="1s">
+                        <img class="telefono-descargar" src="assets/bent/images/iPhone02.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="available_store">
+                <div class="available_store__div-padding container  wow bounceInRight" data-wow-duration="1s">
+                    <div class="col-md-6">
+                        <div class="available_title">
+                            <h2 class="h2b">Disponible para</h2>
+                            <p class="parrafob">Puedes descargar nuestra aplicación en la plataforma que gustes.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="">
+                                    <div class="single_store">
+                                        <i class="fa fa-apple"></i>
+                                        <div class="store_inner">
+                                            <h2 class="h2b">iOS</h2>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="">
+                                    <div class="single_store">
+                                        <i class="fa fa-android"></i>
+                                        <div class="store_inner">
+                                            <h2 class="h2b">ANDROID</h2>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="download page" id="DOWNLOAD">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="section_title">
+                            <h2 class="h2b">Descargar ahora</h2>
+                            <p class="parrafob">Descarga nuestra aplicación móvil para que puedas tener un mejor control de tu alarma.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row row-descargar_principal">
+                    <div class="col-md-6 download_screen__div-principal">
+                        <div class="download_screen  wow fadeInUp" data-wow-duration="1s">
+                            <img class="telefono-descargar" src="assets/bent/images/iPhone02.png" alt="">
+                        </div>
+                    </div>                    
+                     <div class="col-md-6 available_title__div-principal">
+                        <div class="available_title ">
+                            <h2 class="h2b">Disponible para</h2>
+                            <p class="parrafob">Puedes descargar nuestra aplicación en la plataforma que gustes.</p>
+                        </div>
+                        <div class="download__div-single_store ">
+                            <div class="col-md-6">
+                                <a href="">
+                                    <div class="single_store">
+                                        <i class="fa fa-apple"></i>
+                                        <div class="store_inner">
+                                            <h2 class="h2b">iOS</h2>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="">
+                                    <div class="single_store">
+                                        <i class="fa fa-android"></i>
+                                        <div class="store_inner">
+                                            <h2 class="h2b">ANDROID</h2>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- fin Descargar app -->
+
+        <!-- Testimonios -->
+        <section id="slider_sec">
+            <div class="container">
+                <div class="row">
+                    <div class="slider">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li class="lis active" data-target="#carousel-example-generic" data-slide-to="0"></li>
+                                <li class="lis" data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li class="lis" data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li class="lis" data-target="#carousel-example-generic" data-slide-to="3"></li>
+                            </ol>
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+                                    <div class="wrap_caption">
+                                        <div class="caption_carousel">
+                                            <h1 class="h1s">Rocío Salazar</h1>
+                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="wrap_caption">
+                                        <div class="caption_carousel">
+                                            <h1 class="h1s">Javier Salazar</h1>
+                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item ">
+                                    <div class="wrap_caption">
+                                        <div class="caption_carousel">
+                                            <h1 class="h1s">Didier Ortíz</h1>
+                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item ">
+                                    <div class="wrap_caption">
+                                        <div class="caption_carousel">
+                                            <h1 class="h1s">Littzy Pacheco</h1>
+                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="as left left_crousel_btn" href="#carousel-example-generic" role="button"
+                                data-slide="prev">
+                                <i class="is fa fa-angle-left"></i>
+                                <span class="spans sr-only">Previous</span>
+                            </a>
+                            <a class="as right right_crousel_btn" href="#carousel-example-generic" role="button"
+                                data-slide="next">
+                                <i class="is fa fa-angle-right"></i>
+                                <span class="spans sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Testimonios -->
+
+        <!-- marcas -->
+        <section id="tm_sec">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs12 ">
+                        <div class="section-title white-color">
+                            <h2>Nuestras marcas</h2>
+                            <div class="back-text">
+                                Marcas
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs12">
+                        <div class="all_team">
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="200px" src="img/acer.png" alt="" />
+                            </div>
+                            <div class="sngl_team">
+                                <br>
+                                <img class="imgs" width="200px" src="img/cisco.png" alt="" />
+                            </div>
+                            <div class="sngl_team">
+                                <img class="imgs" height="110px" src="img/hp.png" alt="" />
+                            </div>
+                            <div class="sngl_team">
+                                <br>
+                                <img class="imgs" width="120px" src="img/intel.png" alt="" />
+                            </div>
+                            <div class="sngl_team">
+                                <br>
+                                <img class="imgs" width="180px" src="img/microsoft.png" alt="" />
+                            </div>
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>						
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>	
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>	
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>	
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>	
+                            <div class="sngl_team">
+                                <br><br>
+                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
+                            </div>                                      
+                        </div>
+                    </div>
+                </div>        
+            </div>
+        </section>
+        <!-- End marcas -->
+
+        <!-- footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="social col-md-12 text-center   wow fadeInUp animated">
+                        <h2>Siguenos en nuestras redes sociales</h2>
+                        <ul class="icon_list">
+                            <li><a href="http://www.facebook.com/abdullah.noman99"target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="http://www.twitter.com/absconderm"target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="http://www.dribbble.com/abdullahnoman"target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                        </ul>                        
+                        <br>
+                        <div class="copyright_text">
+                            <p>&copy; HECHO POR OPSS <?php echo date('Y');?>.</p>
+                            <p>TODOS LOS DERECHOS RESERVADOS.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End footer -->
     
-    <?php include "partes/_nav.php" ?>
+        
+    </div>
 
-    <section id="promocion">
-        <div class="div-caja1-promocion">
-            <h1 class="h1-promocion1">TU HOGAR</h1>
-            <h1 class="h1-promocion2">MÁS INTELIGENTE</h1>
-            <p class="p-promocion">Controla la seguridad de tu hogar con estilo.</p>
-            <div class="div-btn-promocion">
-                <p><a class="btn-promocion" href="#funcionamiento">Saber más</a></p>
-            </div>
-        </div>
+    <div class="go-top"><i class="fas fa-arrow-up"></i></div>
 
-    </section>
-
-    <section id="funcionamiento">
-        <div class="div-caja-funcionamiento">
-            <h1 class="h1-funcionamiento1">COMO</h1>
-            <h1 class="h1-funcionamiento2">TRABAJAN</h1>
-            <p class="p-funcionamiento">Al sincronizar la alarma de tu hogar, puedes administrarlos desde tu teléfono
-                móvil.</p>
-
-            <ul class="ul-funcionamiento">
-                <li class="li-funcionamiento"><span class="li-span-funcionamiento">Descarga la app OPSS desde tu
-                        teléfono celular</span></li>
-                <li class="li-funcionamiento"><span class="li-span-funcionamiento">Conecta OPSS a tu router de
-                        Internet</span></li>
-                <li class="li-funcionamiento"><span class="li-span-funcionamiento">Víncula tu dispositivo a la alarma
-                        por medio de la la app y controla
-                        la seguridad de tu hogar, en cualquier momento y lugar.</span></li>
-            </ul>
-        </div>
-    </section>
-    <section id="caracteristicas">
-        <div class="div-caracteristicas">
-            <div class="opc-caracteristica opc-1">
-                <i class="fas fa-wifi iconos"></i>
-                <h4>INALÁMBRICO</h4>
-                <p>Cuenta con WIFI</p>
-            </div>
-
-            <div class="opc-caracteristica opc-2">
-                <i class="fas fa-mobile iconos"></i>
-                <h4>FÁCIL CONTROL</h4>
-                <p>Desde la app puedes controlar la alarma</p>
-            </div>
-
-            <div class="opc-caracteristica opc-3">
-                <i class="fas fa-cog iconos"></i>
-                <h4>SIMPLE CONFIGURACIÓN</h4>
-                <p>Fácil configuración entre la alarma y tu dispositivo móvil</p>
-            </div>
-
-            <div class="opc-caracteristica opc-4">
-                <i class="fab fa-bluetooth-b iconos"></i>
-                <h4>100% COMPATIBLE</h4>
-                <p>Es compatible con cualquier dispositivo móvil</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="comprar-producto">
-        <div class="div-comprar-producto">
-            <h1 class="h1-comprar-productos">LA VIDA OPSS</h1>
-            <p class="p-comprar-productos">Tu hogar está esperándote. Prepáralo acorde a tus necesidades de confort.</p>
-            <p><a class="btn-comprar-productos" href="comprar.php">COMPRAR</a></p>
-        </div>
-    </section>
-
-    <section id="testimonios-contenedor">
-        <div class="testimonio-slider fade">
-            <h4 class="titulo-testimonio">T e s t i m o n i o s</h4>
-            <hr class="linea-testimonio">
-            <h1 class="parrafo-testimonio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi esse
-                dignissimos nihil veniam vel,
-                corporis
-                dolore cupiditate laborum molestiae dolorum atque ratione distinctio blanditiis dicta, fuga id totam nam
-                corrupti.</h1>
-            <p class="autor-testimonio">- Javier Salazar</p>
-        </div>
-        <div class="testimonio-slider fade">
-            <h4 class="titulo-testimonio">T e s t i m o n i o s</h4>
-            <hr class="linea-testimonio">
-            <h1 class="parrafo-testimonio">
-                dolore cupiditate laborum molestiae dolorum atque ratione distinctio blanditiis dicta, fuga id totam nam
-                corrupti Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi esse
-                dignissimos nihil veniam vel,
-                corporis.</h1>
-            <p class="autor-testimonio">- Rocío Salazar</p>
-        </div>
-        <div class="testimonio-slider fade">
-            <h4 class="titulo-testimonio">T e s t i m o n i o s</h4>
-            <hr class="linea-testimonio">
-            <h1 class="parrafo-testimonio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi esse
-                dignissimos nihil veniam vel,
-                corporis
-                dolore cupiditate laborum molestiae dolorum atque ratione distinctio blanditiis dicta, fuga id totam nam
-                corrupti.</h1>
-            <p class="autor-testimonio">- Litzzy Pacheco</p>
-        </div>
-
-        <div class="testimonio-slider fade">
-            <h4 class="titulo-testimonio">T e s t i m o n i o s</h4>
-            <hr class="linea-testimonio">
-            <h1 class="parrafo-testimonio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi esse
-                dignissimos nihil veniam vel,
-                corporis
-                dolore cupiditate laborum molestiae dolorum atque ratione distinctio blanditiis dicta, fuga id totam nam
-                corrupti.</h1>
-            <p class="autor-testimonio">- Didier Ortíz</p>
-        </div>
-
-        <div class="testimonio-direcciones">
-            <a href="#testimonios-contenedor" class="atras" onclick="avanzaSlide(-1)">&#10094;</a>
-            <a href="#testimonios-contenedor" class="adelante" onclick="avanzaSlide(1)">&#10095;</a>
-        </div>
-
-        <div class="barras">
-            <span class="barra active" onclick="posicionSlide(1)"></span>
-            <span class="barra" onclick="posicionSlide(2)"></span>
-            <span class="barra" onclick="posicionSlide(3)"></span>
-            <span class="barra" onclick="posicionSlide(4)"></span>
-        </div>
-
-    </section>
-
-    <section id="marcas">
-        <div class="div-marcas">
-            <div class="marca div-acer">
-                <img class="marca1" src="img/acer.png" alt="Marca patrocinadora ACER">
-            </div>
-
-            <div class="marca">
-                <img class="marca2" src="img/cisco.png" alt="Marca patrocinadora CISCO">
-            </div>
-            <div class="marca">
-                <img class="marca3" src="img/hp.png" alt="Marca patrocinadora HP">
-            </div>
-
-            <div class="marca">
-                <img class="marca4" src="img/intel.png" alt="Marca patrocinadora INTEL">
-            </div>
-
-            <div class="marca">
-                <img class="marca5" src="img/microsoft.png" alt="Marca patrocinadora MICROSOFT">
-            </div>
-
-            <div class="marca">
-                <img class="marca6" src="img/toshiba.png" alt="Marca patrocinadora TOSHIBA">
-            </div>
-        </div>
-    </section>
-
-    <footer id="footer">
-        <div class="div-redes-nota">
-            <i class="iconos-redes fab fa-facebook-f"></i>
-            <i class="iconos-redes fab fa-twitter"></i>
-            <i class="iconos-redes fab fa-youtube"></i>
-            <p class="p-nota">HECHO POR OPSS © <?php echo date('Y');?>. TODOS LOS DERECHOS RESERVADOS.</p>
-        </div>
-    </footer>
-
-    <script src="js/testimonios.js"></script>
-    <script src="js/index.js"></script>
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <?php include_once "views/script_future.php"?>
+    <?php include_once "views/script_alysa.php"?>
+    <?php include_once "views/script_bent.php"?>
+    <?php include_once "views/script_sima.php"?>
 </body>
 
 </html>
-
-
 
 <?php
 

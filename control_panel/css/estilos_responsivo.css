@@ -1,3 +1,158 @@
+body {
+  font-family: sans-serif !important;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.671);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(10, 10, 10);
+  border-radius: 7px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input {
+  outline: 0px;
+}
+
+/* Agregar admin, productos*/
+
+.body-agregar {
+  background-color: #2d2d2d;
+}
+
+#agregar {
+  text-align: center;
+  width: 80%;
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#x-agregar {
+  text-align: right;
+  margin-top: 4rem;
+}
+
+.x-ancla {
+  text-decoration: none;
+  color: black;
+}
+
+.h1-agregar {
+  margin-top: -2rem;
+  font-size: 3rem;
+  color: white;
+  font-weight: 500;
+}
+
+.ancla-agregar {
+  text-decoration: none;
+  color: #7a6d5b;
+}
+
+.div-inputs-agregar {
+  text-align: left;
+  margin: 0.5rem 0 2.5rem 33.5%;
+}
+
+#label-agregar {
+  color: white;
+}
+
+.input-agregar-form {
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  padding: 0;
+  font-weight: 500;
+  width: 50%;
+  outline: 0px;
+}
+
+.btn-input-agregar {
+  background-color: #d0b48f;
+  border: none;
+  cursor: pointer;
+  color: white;
+  width: 20%;
+  height: 3rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.btn-input-agregar:hover {
+  transition: 1s;
+  color: black;
+}
+
+/* Agregar pedido */
+
+.body-agregar2 {
+  background-color: #2d2d2d;
+  height: auto;
+}
+
+#agregar2 {
+  text-align: center;
+  width: 80%;
+  margin-top: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-inputs-agregar2-gnrl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.div-inputs-agregar2 {
+  width: 40%;
+  margin: 1rem 0 1.5rem 0%;
+}
+
+#label-agregar2 {
+  color: white;
+}
+
+.input-agregar2-form {
+  text-align: center;
+  color: white;
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 50%;
+  outline: 0px;
+  font-size: 1rem;
+}
+
+.btn-input-agregar2 {
+  background-color: #d0b48f;
+  border: none;
+  cursor: pointer;
+  color: white;
+  width: 40%;
+  height: 3rem;
+  font-size: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+.btn-input-agregar2:hover {
+  transition: 1s;
+  color: black;
+}
+
 #icon-nav-menu2 {
   display: none;
 }

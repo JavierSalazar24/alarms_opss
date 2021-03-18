@@ -1,0 +1,237 @@
+/* body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.671);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(49, 49, 49);
+  border-radius: 7px;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: 4s;
+} */
+
+body .parrafos {
+  color: #666666;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+body .h1s,
+.h2s {
+  color: #141414;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  text-transform: capitalize;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.as:hover {
+  text-decoration: none;
+}
+.title_sec {
+  margin: 0 auto;
+  padding: 0 0 40px 0;
+  text-align: center;
+}
+.title_sec .h1s {
+  font-size: 20px;
+}
+.title_sec .h2s {
+  color: #606060;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 30px;
+}
+.wrap_caption {
+  padding: 190px 0;
+}
+.slider {
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+#slider_sec {
+  background-image: url("../img/slider.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 650px;
+  width: 100%;
+}
+.left_crousel_btn,
+.right_crousel_btn {
+  color: #fff;
+  height: 20px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 20px;
+  font-size: 25px;
+  font-weight: normal;
+}
+.caption_carousel .h1s {
+  font-family: lato;
+  font-size: 60px;
+  text-transform: capitalize;
+  color: #fff;
+}
+.caption_carousel .parrafos {
+  font-family: lato;
+  font-size: 14px;
+  color: #f6f6f6;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  display: inline;
+  line-height: 35px;
+  padding: 8px;
+}
+.caption_carousel {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+.carousel-indicators .lis {
+  background-color: #363636;
+  border: none medium;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  height: 6px;
+  text-indent: 0;
+  width: 25px;
+}
+.carousel-indicators .active {
+  width: 25px;
+  height: 7px;
+  background-color: #00aff0;
+}
+#pr_sec {
+  padding: 100px 0 140px 0;
+}
+.service {
+  transition: all 1.5s ease 0s;
+  -moz-transition: all 1.5s ease 0s;
+  -webkit-transition: all 1.5s ease 0s;
+  border: 1px solid #aaa;
+  cursor: pointer;
+  text-align: center;
+  padding: 61px 0;
+}
+.service:hover .service_hoverly {
+  display: block;
+  margin-left: -0.6px;
+  margin-bottom: 6rem;
+}
+.service:hover {
+  display: block;
+  margin-bottom: 6rem;
+}
+.service > .h2s {
+  color: #515050;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.service_hoverly .h2s {
+  color: #515050;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 30px;
+}
+.service .is {
+  font-size: 50px;
+  color: #03b0f0;
+  position: relative;
+}
+.service_hoverly {
+  transition: all 1.5s ease 0s;
+  -moz-transition: all 1.5s ease 0s;
+  -webkit-transition: all 1.5s ease 0s;
+  border: 1px solid #03b0f0;
+  display: none;
+  padding: 25px 5px;
+  position: absolute;
+  top: 0;
+  background: #fff;
+}
+.service_hoverly i {
+  background: none 0 0 repeat scroll #fff;
+  font-size: 50px;
+  position: relative;
+  top: -50px;
+}
+#tm_sec {
+  padding: 70px 0;
+}
+.sngl_team .h3s {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #333333;
+}
+.sngl_team {
+  text-align: center;
+  width: 100%;
+}
+.owl-item .sngl_team .imgs {
+  margin: 0 auto;
+  text-align: center;
+  width: 130px;
+}
+.sngl_team .spans {
+  color: #00aff0;
+  font-family: lato;
+  font-size: 13px;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+.all_team .owl-controls .owl-prev i {
+  position: absolute;
+  color: #3399ff;
+  font-size: 30px;
+  top: 25%;
+  left: 0;
+}
+.all_team .owl-controls .owl-next i {
+  position: absolute;
+  color: #3399ff;
+  font-size: 30px;
+  top: 25%;
+  right: 0%;
+}
+.all_team .owl-controls .owl-dot {
+  background-color: #363636;
+  border: none medium;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  height: 6px;
+  text-indent: 0;
+  width: 25px;
+  margin-right: 5px;
+  margin-top: 5rem;
+}
+.all_team .owl-controls .owl-dot.active {
+  background-color: #03b0f0;
+}
+.all_team .owl-controls {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}

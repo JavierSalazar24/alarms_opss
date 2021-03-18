@@ -73,12 +73,14 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi perfil</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/estilos_responsivo.css">
     <script src="js/scrollreveal.js"></script>
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <?php include_once "views/estilos_future.php"?>
+    <link rel="stylesheet" href="css/estilos_responsivo.css">
+
 </head>
 <body class="body-perfil">
     
@@ -86,7 +88,7 @@
 
     <section id="perfil">
         
-        <h1 class="h1-perfil">Mi perfil</h1>
+        <h1 class="h1-perfil">Editar perfil</h1>
         
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
 
@@ -199,8 +201,8 @@
 
             <div class="div-btns-editar">
                 <input class="btn-input-perfil" type="submit" value="Guardar cambios">
-                <a class="btn-editar-perfil2" href="mi_perfil.php"><input class="btn-input-perfil2" type="button" value="Volver atrás" ></a>
-                <a class="btn-editar-perfil2" href="index.php"><input class="btn-input-perfil2 btn-input-perfil2-2" type="button" value="Volver al inicio"></a>
+                <a class="btn-editar-perfil2 btn-editar-perfil2-1" href="mi_perfil.php">Volver atrás</a>
+                <a class="btn-editar-perfil2 btn-editar-perfil2-2" href="index.php">Volver al inicio</a>
             </div>
 
         </form>
@@ -208,6 +210,7 @@
 
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+    <?php include_once "views/script_future.php"?>
 </body>
 </html>
 

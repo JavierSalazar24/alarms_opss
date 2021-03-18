@@ -1,0 +1,45 @@
+/*Footer*/
+footer {
+  background-color: #f1f1f1;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-family: "Dosis", sans-serif !important;
+}
+.social h2 {
+  font-size: 19px;
+}
+.icon_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  margin-top: 20px;
+}
+.icon_list li {
+  display: inline;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.icon_list li a {
+  display: inline-block;
+  color: #636363;
+  border: 1px solid #636363;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 28px;
+  transition: all 1s;
+}
+.icon_list li a:hover {
+  color: #2ebaae;
+  border-color: #2ebaae;
+}
+.copyright_text p {
+  color: #636363;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  letter-spacing: 0px;
+}

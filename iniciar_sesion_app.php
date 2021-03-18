@@ -15,18 +15,19 @@
             $correo = $_POST['correo'];
             $contrasena = MD5($_POST['contrasena']);
 
-            $cuenta_cliente = $C_clientes->findOne(['correo' => $correo],['contrasena' => $contrasena]);
+            $cuenta_cliente = $C_clientes->findOne(['correo' => $correo]);
+            $contrasena_cliente = $C_clientes->findOne(['contrasena' => $contrasena]);
 
             $_SESSION['userapp'] = $correo;
-            echo json_encode(true);
+
+            if ($cuenta_cliente && $contrasena_cliente) {
+                echo json_encode(true);
+            }else{
+                echo json_encode('error');
+            }
 
         }
 
 
-    }else{
-
-        echo json_encode(true);
-
     }
-
 ?>

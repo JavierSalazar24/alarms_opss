@@ -1,33 +1,69 @@
-<input type="checkbox" name="" id="icon-nav-menu">
-<div class="div-label">
-    <label class="label-icon" for="icon-nav-menu"><i class="fas fa-bars"></i></label>
-        <a class="ancla-logo" href="index.php"><img class="logo-responsive" src="img/Logo6.png" alt="Logo OPSS"></a>
-</div>
-<nav class="menu">
-        <ul class="ul-menu">
-            <a class="ancla-menu ancla-menu-logo" href="index.php">
-                <li><img class="logo-menu" src="img/Logo6.png" alt="Logo OPSS"></li>
-            </a>
-            <a class="ancla-menu" href="index.php">
-                <li class="li-menu">INICIO</li>
-            </a>
-            <a class="ancla-menu" href="noticias.php">
-                <li class="li-menu">NOTICIAS</li>
-            </a>
-            <a class="ancla-menu" href="asistencia.php">
-                <li class="li-menu">ASISTENCIA</li>
-            </a>
-        </ul>
-        <ul class="ul-menu2">
-            <a class="ancla-menu" href="iniciar_sesion.php">
-                <li class=" li-menu">INICIAR SESIÓN</li>
-            </a>
-            <a class="ancla-menu" href="registrarse.php">
-                <li class=" li-menu">REGISTRARSE</li>
-            </a>
-            <a class="ancla-menu" href="comprar.php">
-                <li class="li-menu-comprar">COMPRAR</li>
-            </a>
-        </ul>
-    </nav>
+<header id="headerf">
+	<h1 class="h1f"><a class="ancla-navf" href="index.php">Alarmas - OPSS</a></h1>
+	<nav class="links">
+		<ul class="ulf">
+			<li class="lif"><a class="ancla-navf" href="index.php">INICIO</a></li>
+			<li class="lif"><a class="ancla-navf" href="noticias.php">NOTICIAS</a></li>
+			<li class="lif"><a class="ancla-navf" href="asistencia.php">ASISTENCIA</a></li>
+			<li class="lif"><a class="ancla-navf" href="iniciar_sesion.php">INICIAR SESIÓN</a></li>
+			<li class="lif"><a class="ancla-navf" href="registrar.php">REGISTRARSE</a></li>
+		</ul>
+	</nav>
+	<nav class="mainf">
+		<ul class="ulf">
+			<li class="lif search">
+				<a class="ancla-navf fa-search" href="comprar.php">COMPRAR</a>					
+			</li>
+			<li class="lif menu">
+				<a class="ancla-navf fa-bars" href="#menu">MENÚ</a>
+			</li>
+		</ul>
+	</nav>
+</header>
 
+<!-- Menu -->
+<section class="sectionf" id="menu">
+
+    <!-- logo width="300px"-->
+    <section class="sectionf">
+        <img src="img/Logo6.png" width="100px"  alt="">
+    </section>
+
+    <!-- Links -->
+    <section class="sectionf">
+        <ul class="ulf links">
+            <li class="lif">
+                <a class="ancla-navf" href="#">
+                    <h3 class="h3f">Lorem ipsum</h3>
+                    <p class="parafof">Feugiat tempus veroeros dolor</p>
+                </a>
+            </li>
+            <li class="lif">
+                <a class="ancla-navf" href="#">
+                    <h3 class="h3f">Dolor sit amet</h3>
+                    <p class="parafof">Sed vitae justo condimentum</p>
+                </a>
+            </li>
+            <li class="lif">
+                <a class="ancla-navf" href="#">
+                    <h3 class="h3f">Feugiat veroeros</h3>
+                    <p class="parafof">Phasellus sed ultricies mi congue</p>
+                </a>
+            </li>
+            <li class="lif">
+                <a class="ancla-navf" href="#">
+                    <h3 class="h3f">Etiam sed consequat</h3>
+                    <p class="parafof">Porta lectus amet ultricies</p>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Actions -->
+    <section>
+        <ul class="ulf actions vertical">
+            <li class="lif"><a href="cerrar_sesion.php" class="ancla-navf button big fit">INICIAR SESIÓN</a></li>
+        </ul>
+    </section>
+
+</section>
