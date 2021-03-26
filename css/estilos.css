@@ -20,7 +20,7 @@ html {
 }
 
 input {
-  outline: 0px;
+  outline: 0px !important;
 }
 
 /* INICIO */
@@ -224,10 +224,18 @@ input {
   color: black;
 }
 
+.h1-direccion {
+  margin-top: 7rem;
+  margin-bottom: 4rem;
+  font-size: 3rem;
+  color: #000;
+  font-weight: 500;
+}
+
 .h1-login {
   margin-top: -1rem;
   font-size: 3rem;
-  color: #fff;
+  color: #000;
   font-weight: 500;
 }
 
@@ -261,13 +269,13 @@ input {
 }
 
 .btn-input-login {
-  background-color: #1a74af;
-  border: 1px solid #175680;
+  background-color: #343a40;
+  border: none;
   cursor: pointer;
   color: #fff;
-  width: 20%;
+  width: 15%;
   height: 3rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 1.5rem;
   border-radius: 10px;
   transition: 1s;
@@ -275,7 +283,7 @@ input {
 
 .btn-input-login:hover {
   transition: 1s;
-  background-color: #175680;
+  background-color: #25292e;
 }
 
 /* REGISTRO */
@@ -324,6 +332,13 @@ input {
   margin-bottom: 10px;
 }
 
+.div-inputs-alarma {
+  text-align: left;
+  width: 60%;
+  margin-left: 20%;
+  margin-bottom: -5px;
+}
+
 .div-inputs-registrar3 {
   text-align: center;
   width: 60%;
@@ -342,24 +357,22 @@ input {
 }
 
 .btn-input-registrar {
-  background-color: #1a74af;
-  border: 1px solid #175680;
+  background-color: #343a40;
+  border: none;
   cursor: pointer;
   color: #fff;
-  width: 40%;
+  width: 30%;
   height: 3rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   margin: 3rem auto 4rem auto;
   display: inline-block;
   transition: 1s;
   border-radius: 10px;
-  /* background-color: #d0b48f; */
 }
 
 .btn-input-registrar:hover {
   transition: 1s;
-  background-color: #175680;
-  /* background-color: #ac9373; */
+  background-color: #25292e;
 }
 
 /* COMPRAR */
@@ -437,6 +450,7 @@ input {
   font-size: 0.9rem;
   background-color: #1a74af;
   border: 1px solid #175680;
+  border-radius: 10px;
   color: #fff;
   cursor: pointer;
   transition: 1s;
@@ -464,8 +478,8 @@ input {
 }
 
 .btn-input-comprar-producto {
-  background-color: #1a74af;
-  border: 1px solid #175680;
+  background-color: #343a40;
+  border: none;
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
@@ -479,7 +493,7 @@ input {
 
 .btn-input-comprar-producto:hover {
   transition: 1s;
-  background-color: #175680;
+  background-color: #2d2d2d;
 }
 
 /* Comprar producto */
@@ -563,6 +577,13 @@ input {
   font-weight: 500;
 }
 
+.h1-alarma {
+  font-size: 3rem;
+  color: #000000;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
 #perfil {
   text-align: center;
   width: 80%;
@@ -607,8 +628,8 @@ input {
 .btn-perfil {
   text-decoration: none;
   margin-right: 1rem;
-  background-color: #1a74af;
-  border: 1px solid #175680;
+  background-color: #343a40;
+  border: none;
   border-radius: 10px;
   color: #fff;
   padding: 0.8rem 5%;
@@ -620,15 +641,15 @@ input {
 
 .btn-perfil:hover {
   transition: 1s;
-  background-color: #175680;
+  background-color: #25292e;
 }
 
 .btn-perfil2 {
   display: inline-block;
   text-decoration: none;
   margin-right: 1rem;
-  background-color: #1a74af;
-  border: 1px solid #175680;
+  background-color: #343a40;
+  border: none;
   border-radius: 10px;
   color: #fff;
   padding: 0.8rem 4%;
@@ -639,15 +660,15 @@ input {
 
 .btn-perfil22 {
   margin-bottom: 3rem;
-  background-color: #1a74af;
-  border: 1px solid #175680;
+  background-color: #343a40;
+  border: none;
   color: #fff;
   border-radius: 10px;
 }
 
 .btn-perfil2:hover {
   transition: 1s;
-  background-color: #175680;
+  background-color: #25292e;
 }
 
 /* Editar perfil */
@@ -655,8 +676,8 @@ input {
 .btn-editar-perfil2 {
   display: inline-block;
   margin-left: 1rem;
-  background-color: #1a74af;
-  border: 1px solid #175680;
+  background-color: #343a40;
+  border: none;
   border-radius: 10px;
   color: #fff;
   margin-top: 3rem;
@@ -669,12 +690,12 @@ input {
 
 .btn-editar-perfil2:hover {
   transition: 1s;
-  background-color: #175680;
+  background-color: #25292e;
 }
 
 .btn-input-perfil {
-  background-color: #1a74af;
-  border: 1px solid #175680;
+  background-color: #343a40;
+  border: none;
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
@@ -689,13 +710,13 @@ input {
 
 .btn-input-perfil:hover {
   transition: 1s;
-  background-color: #175680;
+  background-color: #25292e;
 }
 
 .btn-input-perfil2 {
   text-align: center;
-  background-color: #1a74af;
-  border: 1px solid #175680;
+  background-color: #343a40;
+  border: none;
   border-radius: 10px;
   color: #fff;
   border: none;
@@ -711,5 +732,5 @@ input {
 
 .btn-input-perfil2:hover {
   transition: 1s;
-  background-color: #175680;
+  background-color: #25292e;
 }

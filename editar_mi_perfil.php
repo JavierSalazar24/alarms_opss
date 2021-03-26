@@ -26,13 +26,32 @@
                 ['$set' => ['nombres' => ['nombre' => $nombre_edit, 'ape1' => $ape1_edit, 'ape2' => $ape2_edit], 'direccion' => ['calle' => $calle_edit, 'numero' => $numero_edit, 'col_fracc' => $col_fracc_edit, 'cp' => $cp_edit, 'ciudad' => $ciudad_edit], 'telefono' => $telefono_edit]]
             );
 
+            
+
             if ($edit_cliente) {
-                echo "<script>alert('Su perfil se editó con exito')</script>";
-                echo "<script> location.href='mi_perfil.php' </script>";
+                echo "<script>
+                        setTimeout(cargaAlertaExitoEditarPerfil, 500);
+                        function cargaAlertaExitoEditarPerfil(){
+                            AlertaExitoEditarPerfil();
+                        }
+                        setTimeout(ReedireccionPerfil, 3500);
+                        function ReedireccionPerfil(){
+                            location.href = 'mi_perfil.php';                        
+                        }
+                    </script>";
             }
 
         }else{
-            echo "<script>alert('Ingrese todos los campo')</script>";
+            echo "<script>
+                    setTimeout(cargaAlertaErrorDatos, 500);
+                    function cargaAlertaErrorDatos(){
+                        AlertaErrorDatos();
+                    }
+                    setTimeout(ReedireccionPerfil, 3500);
+                    function ReedireccionPerfil(){
+                        location.href = 'mi_perfil.php';                      
+                    }                 
+                </script>";
         }
 
     }
@@ -65,23 +84,27 @@
         $correo = $datos['correo'];
         
 
+
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi perfil</title>
     <script src="js/scrollreveal.js"></script>
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/estilos.css">
-    <?php include_once "views/estilos_future.php"?>
     <link rel="stylesheet" href="css/estilos_responsivo.css">
+    <?php include_once "views/estilos_future.php"?>
 
 </head>
+
 <body class="body-perfil">
     
     <?php include "partes/_navs.php" ?>
@@ -191,7 +214,7 @@
                 </div>
 
                 <div class="div-inputs-perfil">
-                    <div class="div-inputs-registrar3">
+                    <div class="div-inputs-registrar2">
                         <label for="email" id="label-perfil">Email</label>
                     </div>
                     <input class="input-perfil-form" type="text" name="correo" required id="email" value="<?php echo $correo?>" disabled>
@@ -211,6 +234,8 @@
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
     <?php include_once "views/script_future.php"?>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/sweetalert.js"></script>
 </body>
 </html>
 

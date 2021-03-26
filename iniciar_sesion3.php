@@ -93,7 +93,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
 </head>
@@ -105,23 +105,23 @@
                 <h1 id="x-login">X</h1>
             </a>
             <h1 class="h1-login">Iniciar sesión</h1>
-            <h4 class="h4-p">
+            <p class="h4-p mt-2">
                 ¿Eres nuevo en este sitio? <a class="ancla-registrarse-login" href="registrarse.php">Regístrate</a>
-            </h4>
+            </p>
 
             <div class="div-inputs-login">
-                <label for="email" id="label-login">Email</label>
+                <label for="email" id="label-login" class="my-0 py-0">Email</label>
                 <br>
-                <input class="input-login-form" type="email" name="correo" required id="email" value="<?php if(isset($correo)) echo $correo?>">
+                <input class="my-0 py-0 input-login-form" type="email" name="correo" required id="email" value="<?php if(isset($correo)) echo $correo?>">
             </div>
             <br>
             <div class="div-inputs-login">
-                <label for="password" id="label-login">Contraseña</label>
+                <label for="password" id="label-login" class="my-0 py-0">Contraseña</label>
                 <br>
-                <input class="input-login-form" type="password" name="contrasena" required id="password" minlength="8">
+                <input class="my-0 py-0 input-login-form" type="password" name="contrasena" required id="password" minlength="8">
             </div>
             <br>
-            <input class="btn-input-login" type="submit" value="Iniciar Sesión">
+            <input class="btn btn-dark" type="submit" value="Iniciar Sesión">
         </section>
     </form>
 

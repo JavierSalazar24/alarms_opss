@@ -188,7 +188,8 @@
     width: 80%;
   }
 
-  .div-inputs-registrar2 {
+  .div-inputs-registrar2,
+  .div-inputs-alarma {
     width: 84%;
     margin-left: 8%;
   }
@@ -403,7 +404,8 @@
     font-size: 0.8rem;
   }
 
-  .h1-perfil {
+  .h1-perfil,
+  .h1-alarma {
     font-size: 2rem;
   }
 
@@ -422,7 +424,8 @@
     margin-top: 4rem;
     margin-bottom: 18rem;
   }
-  .div-inputs-registrar2 {
+  .div-inputs-registrar2,
+  .div-inputs-alarma {
     width: 100%;
     margin-left: 0%;
   }

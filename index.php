@@ -39,9 +39,8 @@
     <?php include_once "views/estilos_bent.php"?>
     <?php include_once "views/estilos_sima.php"?>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    
     <title>OPSS</title>
 </head>
 
@@ -369,27 +368,7 @@
                             <div class="sngl_team">
                                 <br><br>
                                 <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>						
-                            <div class="sngl_team">
-                                <br><br>
-                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>	
-                            <div class="sngl_team">
-                                <br><br>
-                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>	
-                            <div class="sngl_team">
-                                <br><br>
-                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>	
-                            <div class="sngl_team">
-                                <br><br>
-                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>	
-                            <div class="sngl_team">
-                                <br><br>
-                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>                                      
+                            </div>						                                     
                         </div>
                     </div>
                 </div>        
@@ -428,9 +407,10 @@
     <div class="go-top"><i class="fas fa-arrow-up"></i></div>
 
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <?php include_once "views/script_bootstrap.php"?>
+    <?php include_once "views/script_future.php"?>
     <?php include_once "views/script_alysa.php"?>
     <?php include_once "views/script_bent.php"?>
-    <?php include_once "views/script_future.php"?>
     <?php include_once "views/script_sima.php"?>
 </body>
 
@@ -460,10 +440,11 @@
     <?php include_once "views/estilos_alysa.php"?>
     <?php include_once "views/estilos_future.php"?>
     <?php include_once "views/estilos_bent.php"?>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <?php include_once "views/estilos_sima.php"?>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    
     <title>OPSS</title>
 </head>
 
@@ -701,7 +682,7 @@
             <div class="container">
                 <div class="row">
                     <div class="slider">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div id="carousel-example-generic" class="carousel slide carousel-responsive" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li class="lis active" data-target="#carousel-example-generic" data-slide-to="0"></li>
                                 <li class="lis" data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -795,27 +776,7 @@
                             <div class="sngl_team">
                                 <br><br>
                                 <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>						
-                            <div class="sngl_team">
-                                <br><br>
-                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>	
-                            <div class="sngl_team">
-                                <br><br>
-                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>	
-                            <div class="sngl_team">
-                                <br><br>
-                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>	
-                            <div class="sngl_team">
-                                <br><br>
-                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>	
-                            <div class="sngl_team">
-                                <br><br>
-                                <img class="imgs" width="50px" src="img/toshiba.png" alt="" />
-                            </div>                                      
+                            </div>						                                   
                         </div>
                     </div>
                 </div>        
@@ -853,6 +814,7 @@
     <div class="go-top"><i class="fas fa-arrow-up"></i></div>
 
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
     <?php include_once "views/script_alysa.php"?>
     <?php include_once "views/script_bent.php"?>

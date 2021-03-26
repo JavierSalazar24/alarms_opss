@@ -1,47 +1,62 @@
 <?php
 
-session_start();
-require_once __DIR__ . '/vendor/autoload.php';
+    session_start();
+    require_once __DIR__ . '/vendor/autoload.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    // if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
-    if(!empty($_POST['nombre'])&&!empty($_POST['email'])&&!empty($_POST['mensaje'])){
-        
-        $nombre_mensaje = $_POST['nombre'];
-        $email_mensaje = $_POST['email'];
-        $mensaje = $_POST['mensaje'];
+    //     if(!empty($_POST['nombre'])&&!empty($_POST['email'])&&!empty($_POST['mensaje'])){
+            
+    //         $nombre_mensaje = $_POST['nombre'];
+    //         $email_mensaje = $_POST['email'];
+    //         $mensaje = $_POST['mensaje'];
 
-        $C_mensajes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->mensajes; 
+    //         $C_mensajes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->mensajes; 
 
 
-        $insert = $C_mensajes->insertOne([
-            'nombre' => $nombre_mensaje,
-            'email' => $email_mensaje,
-            'mensaje' => $mensaje,
-        ]);
+    //         $insert = $C_mensajes->insertOne([
+    //             'nombre' => $nombre_mensaje,
+    //             'email' => $email_mensaje,
+    //             'mensaje' => $mensaje,
+    //         ]);
 
-        if ($insert) {
-            echo "<script>alert('Mensaje enviado con exito')</script>";
-            echo "<script> location.href='asistencia.php' </script>";
-        }
-    }else {
-        echo "<script>alert('Debe de llenar todos los campos')</script>";
-    }
-}
+    //         if ($insert) {
+    //             echo "<script>
+    //                         setTimeout(cargaAlertaMensajeEnviado, 500);
+    //                         function cargaAlertaMensajeEnviado(){
+    //                             AlertaMensajeEnviado();
+    //                         }
+    //                         setTimeout(ReedireccionAsistencia, 3500);
+    //                         function ReedireccionAsistencia(){
+    //                             location.href = 'asistencia.php';
+    //                         }
+    //                     </script>";
+    //         }
 
-if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
+    //     }else {
+    //         echo "<script>
+    //                     setTimeout(cargaAlertaErrorDatos, 500);
+    //                     function cargaAlertaErrorDatos(){
+    //                         AlertaErrorDatos();
+    //                     }                    
+    //                 </script>";
+    //     }
 
-    header("Location: control_panel/index.php");
-  
-}elseif(isset($_SESSION['usuario'])){
+    // }
 
-    $correo = $_SESSION['usuario'];
+    if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 
-    $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
-    $datos = $C_clientes->findOne(['correo' => $correo]);
+        header("Location: control_panel/index.php");
     
-    $nombre = $datos['nombres']['nombre'];
-    $ape1 = $datos['nombres']['ape1'];
+    }elseif(isset($_SESSION['usuario'])){
+
+        $correo = $_SESSION['usuario'];
+
+        $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
+        $datos = $C_clientes->findOne(['correo' => $correo]);
+        
+        $nombre = $datos['nombres']['nombre'];
+        $ape1 = $datos['nombres']['ape1'];
 
 
 ?>
@@ -53,17 +68,18 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asistencia</title>
-    <!-- <link rel="stylesheet" href="css/estilos_responsivo.css"> -->
     <script src="js/scrollreveal.js"></script>
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" href="css/estilos.css">
     <?php include_once "views/estilos_future.php"?>
 </head>
 
 <body>
-    
+
     <?php include "partes/_navs.php" ?>
 
     <section id="asistencia">
@@ -110,23 +126,22 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
                         por
                         comprar, usted
                         puede hacerlo dentro
-                        de las 24 horas proximas, de lo contrario la compra no podrá ser cancelada.
-                    </h5>
+                        de las 24 horas proximas, de lo contrario la compra no podrá ser cancelada.</h5>
                 </h4>
                 <hr class="asistencia-hr">
 
             </div>
 
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+            <form id="input_mensaje">
                 <div class="asistencia-inputs">
                     <h4 class="asistencia-h4-input">PONTE EN CONTÁCTO</h4>
-                    <input class="input-nombre" autocomplete="off" type="text" pattern="[a-zA-Zá-úÁ-Ú ]+" name="nombre" placeholder="Nombre" value="<?php if(isset($nombre_mensaje)) echo $nombre_mensaje?>" required>
+                    <input id="id_prueba2" class="input-nombre" type="text" pattern="[a-zA-Zá-úÁ-Ú ]+" name="nombre" placeholder="Nombre" value="" required>
                     <br>
-                    <input class="input-email" type="email" name="email" placeholder="Email" value="<?php if(isset($email_mensaje)) echo $email_mensaje?>" required>
+                    <input class="input-email" type="email" name="email" placeholder="Email" value="" required>
                     <br>
-                    <input class="input-mensaje" type="text" autocomplete="off" name="mensaje" placeholder="Escribe tu mensaje aquí..." value="<?php if(isset($mensaje)) echo $mensaje?>" required>
+                    <textarea required placeholder="Escribe tu mensaje aquí..." class="input-mensaje" name="mensaje" autocomplete="off"></textarea>
                     <br>                    
-                    <input class="input-btn" type="submit" value="Enviar">
+                    <input class="input-btn" type="submit" value="Enviar" onclick="enviarMensaje()">
                 </div>
             </form>
         </div>
@@ -136,13 +151,16 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <script src="js/faq.js"></script>
     <script src="js/index.js"></script>
     <?php include_once "views/script_future.php"?>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/sweetalert.js"></script>
+    <script src="js/peticiones_php.js"></script>
 </body>
 
 </html>
 
 <?php
 
-}elseif(!isset($_SESSION['usuario'])){
+    }elseif(!isset($_SESSION['usuario'])){
 
 ?>
 
@@ -153,11 +171,12 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asistencia</title>
-    <!-- <link rel="stylesheet" href="css/estilos_responsivo.css"> -->
     <script src="js/scrollreveal.js"></script>
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" href="css/estilos.css">
     <?php include_once "views/estilos_future.php"?>
 </head>
@@ -216,16 +235,16 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 
             </div>
 
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+            <form id="input_mensaje">
                 <div class="asistencia-inputs">
                     <h4 class="asistencia-h4-input">PONTE EN CONTÁCTO</h4>
-                    <input class="input-nombre" autocomplete="off" type="text" pattern="[a-zA-Zá-úÁ-Ú ]+" name="nombre" placeholder="Nombre" value="<?php if(isset($nombre_mensaje)) echo $nombre_mensaje?>" required>
+                    <input class="input-nombre" autocomplete="off" type="text" pattern="[a-zA-Zá-úÁ-Ú ]+" name="nombre" placeholder="Nombre" value="" required>
                     <br>
-                    <input class="input-email" type="email" name="email" placeholder="Email" value="<?php if(isset($email_mensaje)) echo $email_mensaje?>" required>
+                    <input id="id_prueba" class="input-email" type="email" name="email" placeholder="Email" value="" required>
                     <br>
-                    <textarea required placeholder="Escribe tu mensaje aquí..." class="input-mensaje" name="mensaje" autocomplete="off" id="" cols="30" rows="10"><?php if(isset($mensaje)) echo $mensaje?></textarea>
+                    <textarea required placeholder="Escribe tu mensaje aquí..." class="input-mensaje" name="mensaje" autocomplete="off" id="" cols="30" rows="10"></textarea>
                     <br>                    
-                    <input class="input-btn" type="submit" value="Enviar">
+                    <input class="input-btn" type="submit" value="Enviar" onclick="enviarMensaje()">
                 </div>
             </form>
         </div>
@@ -235,12 +254,14 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <script src="js/faq.js"></script>
     <script src="js/index.js"></script>
     <?php include_once "views/script_future.php"?>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/sweetalert.js"></script>
 </body>
 
 </html>
 
 <?php
 
-}
+    }
 
 ?>

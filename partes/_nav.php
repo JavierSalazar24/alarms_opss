@@ -12,10 +12,10 @@
 	<nav class="mainf">
 		<ul class="ulf">
 			<li class="lif search">
-				<a class="ancla-navf fa-search" href="comprar.php">COMPRAR</a>					
+				<a class="ancla-navf fa-boxes" href="productos.php">COMPRAR</a>					
 			</li>
 			<li class="lif menu">
-				<a class="ancla-navf fa-bars" href="#menu">MENÚ</a>
+				<a class="desaparece ancla-navf fa-bars" href="#menu">MENÚ</a>
 			</li>
 		</ul>
 	</nav>
@@ -30,30 +30,31 @@
     </section>
 
     <!-- Links -->
-    <section class="sectionf">
+    <section class="sectionf text-center">
         <ul class="ulf links">
             <li class="lif">
-                <a class="ancla-navf" href="#">
-                    <h3 class="h3f">Lorem ipsum</h3>
-                    <p class="parafof">Feugiat tempus veroeros dolor</p>
+                <a class="ancla-navf" href="index.php">
+                    <h3 class="h3f">INICIO</h3>
                 </a>
             </li>
             <li class="lif">
-                <a class="ancla-navf" href="#">
-                    <h3 class="h3f">Dolor sit amet</h3>
-                    <p class="parafof">Sed vitae justo condimentum</p>
+                <a class="ancla-navf" href="noticias.php">
+                    <h3 class="h3f">NOTICIAS</h3>
                 </a>
             </li>
             <li class="lif">
-                <a class="ancla-navf" href="#">
-                    <h3 class="h3f">Feugiat veroeros</h3>
-                    <p class="parafof">Phasellus sed ultricies mi congue</p>
+                <a class="ancla-navf" href="asistencia.php">
+                    <h3 class="h3f">ASISTENCIA</h3>
                 </a>
             </li>
             <li class="lif">
-                <a class="ancla-navf" href="#">
-                    <h3 class="h3f">Etiam sed consequat</h3>
-                    <p class="parafof">Porta lectus amet ultricies</p>
+                <a class="ancla-navf" href="productos.php">
+                    <h3 class="h3f">PRODUCTOS</h3>
+                </a>
+            </li>
+            <li class="lif">
+                <a class="ancla-navf" href="registrar.php">
+                    <h3 class="h3f">REGISTRARSE</h3>
                 </a>
             </li>
         </ul>
@@ -62,7 +63,7 @@
     <!-- Actions -->
     <section>
         <ul class="ulf actions vertical">
-            <li class="lif"><a href="cerrar_sesion.php" class="ancla-navf button big fit">INICIAR SESIÓN</a></li>
+            <li class="lif decoration-non"><a href="iniciar_sesion.php" class="ancla-navf button big fit">INICIAR SESIÓN</a></li>
         </ul>
     </section>
 

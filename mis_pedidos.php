@@ -49,6 +49,7 @@
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,6 +62,7 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
 </head>
+
 <body class="body-perfil">
 
     <?php include "partes/_navs.php"; ?>
@@ -114,6 +116,7 @@
     <script src="js/index.js"></script>
     <?php include_once "views/script_future.php"?>
 </body>
+
 </html>
 
 <?php

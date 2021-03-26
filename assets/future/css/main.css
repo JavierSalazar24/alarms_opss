@@ -33,6 +33,22 @@ body.is-menu-visible #div-principal {
 
 /* Reset */
 
+.dropdown-button {
+  background: transparent;
+}
+
+.dropdown-menu {
+  text-align: center !important;
+}
+
+.ancla-dropdown {
+  font-size: 90% !important;
+}
+
+.desaparece {
+  display: none !important;
+}
+
 .h1f,
 .h3f,
 .parrafof,
@@ -76,6 +92,10 @@ body.is-menu-visible #div-principal {
   line-height: 1.75;
 }
 
+.decoration-non > .ancla-navf {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1680px) {
   #headerf,
   .sectionf {
@@ -94,6 +114,9 @@ body.is-menu-visible #div-principal {
   #headerf,
   .sectionf {
     font-size: 12pt;
+  }
+  .desaparece {
+    display: block !important;
   }
 }
 

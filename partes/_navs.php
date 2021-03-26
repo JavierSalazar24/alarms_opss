@@ -5,17 +5,28 @@
 			<li class="lif"><a class="ancla-navf" href="index.php">INICIO</a></li>
 			<li class="lif"><a class="ancla-navf" href="noticias.php">NOTICIAS</a></li>
 			<li class="lif"><a class="ancla-navf" href="asistencia.php">ASISTENCIA</a></li>
-			<li class="lif"><a class="ancla-navf" href="comprar.php">COMPRAR</a></li>
-			<li class="lif"><a class="ancla-navf" href="mi_perfil.php"><?php echo $nombre.' '.$ape1?></a></li>
+			<li class="lif"><a class="ancla-navf" href="productos.php">PRODUCTOS</a></li>
+            <li class="lif">
+                <div class="btn-group group-button-z">
+                    <button class="dropdown-button ancla-navf dropdown-toggle" id="dp-categorias" data-toggle="dropdown">
+                        <?php echo $nombre.' '.$ape1?>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dp-categorias">
+                        <a href="mi_perfil.php" class="ancla-navf ancla-dropdown dropdown-item">Mi perfil</a>
+                        <a href="alarmas.php" class="ancla-navf ancla-dropdown dropdown-item">Mis alarmas</a>         
+                    </div>
+                </div>
+            </li>
 		</ul>
 	</nav>
 	<nav class="mainf">
 		<ul class="ulf">
 			<li class="lif search">
-				<a class="ancla-navf fa-search" href="cerrar_sesion.php">CERRAR SESIÓN</a>					
+                <!-- <i class="fas fa-sign-out-alt"></i> -->
+				<a class="ancla-navf fa-sign-out-alt" href="cerrar_sesion.php">CERRAR SESIÓN</a>					
 			</li>
 			<li class="lif menu">
-				<a class="ancla-navf fa-bars" href="#menu">MENÚ</a>
+				<a class="desaparece ancla-navf fa-bars" href="#menu">MENÚ</a>
 			</li>
 		</ul>
 	</nav>
@@ -30,30 +41,26 @@
     </section>
 
     <!-- Links -->
-    <section class="sectionf">
+    <section class="sectionf text-center">
         <ul class="ulf links">
             <li class="lif">
                 <a class="ancla-navf" href="#">
-                    <h3 class="h3f">Lorem ipsum</h3>
-                    <p class="parafof">Feugiat tempus veroeros dolor</p>
+                    <h3 class="h3f">INICIO</h3>
                 </a>
             </li>
             <li class="lif">
                 <a class="ancla-navf" href="#">
-                    <h3 class="h3f">Dolor sit amet</h3>
-                    <p class="parafof">Sed vitae justo condimentum</p>
+                    <h3 class="h3f">NOTICIAS</h3>
                 </a>
             </li>
             <li class="lif">
                 <a class="ancla-navf" href="#">
-                    <h3 class="h3f">Feugiat veroeros</h3>
-                    <p class="parafof">Phasellus sed ultricies mi congue</p>
+                    <h3 class="h3f">ASISTENCIA</h3>
                 </a>
             </li>
             <li class="lif">
                 <a class="ancla-navf" href="#">
-                    <h3 class="h3f">Etiam sed consequat</h3>
-                    <p class="parafof">Porta lectus amet ultricies</p>
+                    <h3 class="h3f">PRODUCTOS</h3>
                 </a>
             </li>
         </ul>
@@ -62,8 +69,8 @@
     <!-- Actions -->
     <section>
         <ul class="ulf actions vertical">
-            <li class="lif"><a href="mi_perfil.php" class="ancla-navf button big fit"><?php echo $nombre.' '.$ape1?></a></li>
-            <li class="lif"><a href="cerrar_sesion.php" class="ancla-navf button big fit">CERRAR SESIÓN</a></li>
+            <li class="lif decoration-non"><a href="mi_perfil.php" class="ancla-navf button big fit"><?php echo $nombre.' '.$ape1?></a></li>
+            <li class="lif decoration-non"><a href="cerrar_sesion.php" class="ancla-navf button big fit">CERRAR SESIÓN</a></li>
         </ul>
     </section>
 
