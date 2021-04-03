@@ -16,7 +16,7 @@
         <li class="nav-item ">
             <a class="nav-link" href="index.php">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Tablero</span>
+                <span>Panel</span>
             </a>
         </li>
 
@@ -45,7 +45,7 @@
                 <span>Pedidos</span>
             </a>
             <a class="nav-link" href="envios.php">
-                <i class="fas fa-people-carry""></i>
+                <i class="fas fa-people-carry"></i>
                 <span>Envíos</span>
             </a>
             <a class="nav-link" href="ventas.php">

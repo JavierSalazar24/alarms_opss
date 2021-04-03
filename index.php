@@ -33,13 +33,13 @@
     <meta name="robots" content="index">
     <link rel="shortcut icon" href="img/favicon1.png">
     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/estilos_brandy.css">
     <?php include_once "views/estilos_alysa.php"?>
-    <?php include_once "views/estilos_future.php"?>
     <?php include_once "views/estilos_bent.php"?>
     <?php include_once "views/estilos_sima.php"?>
+    <?php include_once "views/estilos_future.php"?>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     
     <title>OPSS</title>
 </head>
@@ -160,8 +160,9 @@
         <!-- End características -->
 
         <!-- Descaragar APP -->
+
         <section class="download page" id="DOWNLOAD">
-            <div class="container">
+            <div class="container ">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="section_title">
@@ -173,26 +174,18 @@
             </div>
 
             <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="download_screen text-center wow fadeInUp" data-wow-duration="1s">
-                        <img class="telefono-descargar" src="assets/bent/images/iPhone02.png" alt="">
+                <div class="row row-descargar_principal">
+                    <div class="col-md-6 download_screen__div-principal">
+                        <div class="download_screen  wow fadeInUp" data-wow-duration="1s">
+                            <img class="telefono-descargar" src="assets/bent/images/iPhone02.png" alt="">
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="available_store">
-                <div class="available_store__div-padding container  wow bounceInRight" data-wow-duration="1s">
-                    <div class="col-md-6">
-                        <div class="available_title">
+                    </div>                    
+                     <div class="col-md-6 available_title__div-principal">
+                        <div class="available_title ">
                             <h2 class="h2b">Disponible para</h2>
                             <p class="parrafob">Puedes descargar nuestra aplicación en la plataforma que gustes.</p>
                         </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="row">
+                        <div class="download__div-single_store ">
                             <div class="col-md-6">
                                 <a href="">
                                     <div class="single_store">
@@ -213,62 +206,11 @@
                                     </div>
                                 </a>
                             </div>
-                                                    
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- <section class="download page mt-5" id="DOWNLOAD">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <div class="section_title">
-                            <h2 class="h2b">Descargar ahora</h2>
-                            <p class="parrafob">Descarga nuestra aplicación móvil para que puedas tener un mejor control de tu alarma.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-2">
-                        <div class="download_screen text-center wow fadeInUp" data-wow-duration="1s">
-                        <img class="telefono-descargar" src="assets/bent/images/about_iphone.png" alt="">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="available_title">
-                                <h2 class="h2b">Disponible para</h2>
-                                <p class="parrafob">Puedes descargar nuestra aplicación en la plataforma que gustes.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-6">
-                                        <div class="single_store">
-                                            <i class="fa fa-apple"></i>
-                                            <div class="store_inner">
-                                                <h2 class="h2b">iOS</h2>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div class="col-md-6">
-                                        <div class="single_store">
-                                            <i class="fa fa-android"></i>
-                                            <div class="store_inner">
-                                                <h2 class="h2b">ANDROID</h2>
-                                            </div>
-                                        </div>
-                                </div>                                               
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
         <!-- fin Descargar app -->
 
         <!-- Testimonios -->
@@ -406,9 +348,10 @@
     
     <div class="go-top"><i class="fas fa-arrow-up"></i></div>
 
+
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
-    <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
+    <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_alysa.php"?>
     <?php include_once "views/script_bent.php"?>
     <?php include_once "views/script_sima.php"?>
@@ -566,65 +509,6 @@
         <!-- End características -->
 
         <!-- Descaragar APP -->
-        <!-- <section class="download page" id="DOWNLOAD">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <div class="section_title">
-                            <h2 class="h2b">Descargar ahora</h2>
-                            <p class="parrafob">Descarga nuestra aplicación móvil para que puedas tener un mejor control de tu alarma.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="download_screen text-center wow fadeInUp" data-wow-duration="1s">
-                        <img class="telefono-descargar" src="assets/bent/images/iPhone02.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="available_store">
-                <div class="available_store__div-padding container  wow bounceInRight" data-wow-duration="1s">
-                    <div class="col-md-6">
-                        <div class="available_title">
-                            <h2 class="h2b">Disponible para</h2>
-                            <p class="parrafob">Puedes descargar nuestra aplicación en la plataforma que gustes.</p>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <a href="">
-                                    <div class="single_store">
-                                        <i class="fa fa-apple"></i>
-                                        <div class="store_inner">
-                                            <h2 class="h2b">iOS</h2>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="">
-                                    <div class="single_store">
-                                        <i class="fa fa-android"></i>
-                                        <div class="store_inner">
-                                            <h2 class="h2b">ANDROID</h2>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                                                    
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
         <section class="download page" id="DOWNLOAD">
             <div class="container ">
                 <div class="row">

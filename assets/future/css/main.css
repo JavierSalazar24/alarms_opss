@@ -1,11 +1,17 @@
 @import url(font-awesome.min.css);
 @import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Raleway:400,800,900");
 
+#menu::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0.671);
+}
+
+#menu::-webkit-scrollbar-thumb {
+  background-color: rgb(49, 49, 49);
+  border-radius: 7px;
+}
+
 #div-principal {
-  /* display: -moz-flex; */
-  /* display: -webkit-flex; */
-  /* display: -ms-flex; */
-  /* display: flex; */
   -moz-flex-direction: row-reverse;
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
@@ -17,8 +23,6 @@
   margin: 0 auto;
   max-width: 100%;
   opacity: 1;
-  /* padding: 4.5em; */
-  /* width: 90em; */
 }
 
 body.is-menu-visible #div-principal {
@@ -35,14 +39,28 @@ body.is-menu-visible #div-principal {
 
 .dropdown-button {
   background: transparent;
+  box-shadow: none;
+}
+.dropdown-button:active {
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+.dropdown-button:focus {
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+.ancla-dropdown:active {
+  background: rgb(227, 252, 250);
+  font-weight: bold;
 }
 
-.dropdown-menu {
-  text-align: center !important;
+.nombre-btn {
+  cursor: pointer !important;
 }
-
 .ancla-dropdown {
-  font-size: 90% !important;
+  padding: 7px 0 !important;
 }
 
 .desaparece {
@@ -500,7 +518,7 @@ body.is-menu-visible #div-principal {
   height: inherit;
   line-height: inherit;
   margin-left: 1.5em;
-  overflow: hidden;
+  /* overflow: hidden; */
   padding-left: 1.5em;
 }
 

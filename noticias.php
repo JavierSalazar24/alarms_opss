@@ -32,6 +32,7 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
     <?php include_once "views/estilos_future.php"?>
 </head>
@@ -66,6 +67,7 @@ if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+    <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
 </body>
 

@@ -23,6 +23,8 @@
             echo json_encode('error');
         }
 
+    }else{
+        echo json_encode('vacio');
     }
 
 

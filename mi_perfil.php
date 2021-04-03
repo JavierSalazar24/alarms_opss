@@ -45,6 +45,7 @@
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <?php include_once "views/estilos_future.php"?>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
@@ -60,7 +61,7 @@
         
         <div class="div-inputs-perfil-gnrl">
             <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2">
+                <div class="div-inputs-registrar2 mb-0 pb-0">
                     <label for="nombre" id="label-perfil">Nombre(s)</label>
                 </div>
                 <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php echo $nombre?>" disabled>
@@ -68,63 +69,63 @@
                 
             <div class="div-inputs-perfil">
                 <input type="hidden" name="id" value="<?php echo $id?>">                
-                <div class="div-inputs-registrar2">
+                <div class="div-inputs-registrar2 mb-0 pb-0">
                     <label for="ape1" id="label-perfil">Primer apellido</label>
                 </div>
                 <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php echo $ape1?>" disabled>                
             </div>
 
             <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2">                 
+                <div class="div-inputs-registrar2 mb-0 pb-0">                 
                     <label for="ape2" id="label-perfil">Segundo apellido</label>
                 </div>
                 <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape2" id="ape2" value="<?php echo $ape2?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2">
+                <div class="div-inputs-registrar2 mb-0 pb-0">
                     <label for="telefono" id="label-perfil">Teléfono</label>
                 </div>
                 <input class="input-perfil-form" title="Solo números" pattern="[0-9]+" type="tel" name="telefono" required id="telefono" minlength="10" maxlength="10" value="<?php echo $telefono?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2">                
+                <div class="div-inputs-registrar2 mb-0 pb-0">                
                     <label for="calle" id="label-perfil">Calle</label>
                 </div>
                 <input class="input-perfil-form" type="text" name="calle" required id="calle" value="<?php echo $calle?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2">
+                <div class="div-inputs-registrar2 mb-0 pb-0">
                     <label for="numero" id="label-perfil">Número exterior</label>
                 </div>
                 <input class="input-perfil-form" type="text" name="numero" required id="numero" value="<?php echo $numero?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2">
+                <div class="div-inputs-registrar2 mb-0 pb-0">
                     <label for="col-fracc" id="label-perfil">Col. o Fracc.</label>
                 </div>
                 <input class="input-perfil-form" type="text" name="col_fracc" required id="col-fracc" value="<?php echo $col_fracc?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2">
+                <div class="div-inputs-registrar2 mb-0 pb-0">
                     <label for="cp" id="label-perfil">Código Postal</label>
                 </div>
                 <input class="input-perfil-form" type="tel" title="Solo números" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php echo $cp?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2">
+                <div class="div-inputs-registrar2 mb-0 pb-0">
                     <label for="cp" id="label-perfil">Ciudad</label>
                 </div>
                 <input class="input-perfil-form" type="text" name="ciudd" required id="ciudad" value="<?php echo $ciudad?>" disabled>
             </div>
 
             <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar3">
+                <div class="div-inputs-registrar2 mb-0 pb-0">
                     <label for="email" id="label-perfil">Email</label>
                 </div>
                 <input class="input-perfil-form" type="text" name="correo" required id="email" value="<?php echo $correo?>" disabled>
@@ -142,6 +143,7 @@
 
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+    <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
 
 </body>

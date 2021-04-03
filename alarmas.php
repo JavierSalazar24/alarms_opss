@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    // error_reporting(0);
+    error_reporting(0);
     require_once __DIR__ . '/vendor/autoload.php';
 
     if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
@@ -18,6 +18,12 @@
 
         $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
         $datos = $C_clientes->findOne(["correo" => $correo]);
+        
+        if ($datos['alarmas']) {
+            $cont = $datos['alarmas']->count();
+        }else {
+            $cont = 0;
+        }
 
         $nombre = $datos['nombres']['nombre'];
         $ape1 = $datos['nombres']['ape1'];
@@ -37,7 +43,7 @@
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" href="css/estilos.css">
     <?php include_once "views/estilos_future.php"?>
@@ -51,27 +57,34 @@
     <section id="perfil">
         
         <h1 class="h1-alarma">Mis alarmas</h1>
-        
-        <div class="div-inputs-perfil-gnrl">            
-            <?php
-                foreach ($datos as $dato):
-                    $i++;
-
-                    if (isset($datos['alarmas']["alarma $i"])){
-                        
-                    
-
+        <div class="div-inputs-perfil-gnrl">
+            <?php 
+                if (json_encode($cont) >= 1) {
             ?>
-                <div class="div-inputs-perfil">
-                    <div class="div-inputs-alarma">
-                        <label for="nombre" id="label-perfil">Estatus de la alarma <?php echo $i?></label>
+                <?php                
+                    foreach ($datos as $dato){
+                        $i++;
+                        if (isset($datos['alarmas']["alarma $i"])){
+                ?>
+                            <div class="div-inputs-perfil">
+                                <div class="div-inputs-alarma mb-0 pb-0">
+                                    <label for="nombre" id="label-perfil">Estatus de la alarma <?php echo $i?></label>
+                                </div>
+                                <input class="input-perfil-form" type="text" value="<?php echo $datos['alarmas']["alarma $i"];?>" disabled>
+                            </div>
+            <?php
+                        }
+                    }            
+                }else {   
+            ?>             
+                    <div class="div-inputs-perfil">
+                        <div class="div-inputs-alarma">
+                            <label for="nombre" id="label-perfil">Estatus de tus alarmas</label>
+                        </div>
+                        <input class="input-perfil-form" type="text" value="Sin alarmas todavía" disabled>
                     </div>
-                    <input class="input-perfil-form" type="text" value="<?php echo $datos['alarmas']["alarma $i"];?>" disabled>
-                </div>
-
             <?php
                 }
-                endforeach;            
             ?>
         </div>
 

@@ -1,22 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/favicon1.png">
-    <link rel='stylesheet' href='css/estilos.css'>
-    <link rel='stylesheet' href='css/estilos_responsivo.css'>
-    <title>OPSS | Cerrar Sesión</title>
-</head>
-<body>
-    
-
-    <script src='//cdn.jsdelivr.net/npm/sweetalert2@10'></script>
-    <script src='js/sweetalert.js'></script>
-</body>
-</html>
-
 <?php
 
     // Inicializar la sesión.
@@ -36,6 +17,9 @@
         );
     }
 
+    echo "<script src='//cdn.jsdelivr.net/npm/sweetalert2@10'></script>";
+    echo "<script src='js/sweetalert.js'></script>";
+
     echo "<script>
                 setTimeout(cargaAlertaCerrarSesion, 500);
                 function cargaAlertaCerrarSesion(){
@@ -47,7 +31,7 @@
     session_destroy();
 
     echo "<script>
-                setTimeout(ReedireccionLogin, 3500);
+                setTimeout(ReedireccionLogin, 1700);
                 function ReedireccionLogin(){
                     location.href = 'iniciar_sesion.php';
                 }

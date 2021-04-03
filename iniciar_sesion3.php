@@ -31,11 +31,7 @@
 
                 $cuenta_admin = $C_admins->findOne(['correo' => $correo,'contrasena' => $contrasena]);
                 
-                if ($cuenta_admin==null && $cuenta_cliente==null ) {
-
-                    echo "<script>alert('Usuario o contraseña incorrectos')</script>";
-
-                }elseif ($cuenta_cliente!=null) {
+                if (!empty($cuenta_cliente)) {
 
                     $cliente = $C_clientes->findOne(['correo' => $correo]);        
                     $nombre_c = $cliente['nombres']['nombre'];
@@ -47,19 +43,19 @@
                             function cargaAlertaIniciarSesion(){
                                 AlertaIniciarSesion();
                             }
-                            setTimeout(ReedireccionIniciarSesion, 1400);
+                            setTimeout(ReedireccionIniciarSesion, 2200);
                             function ReedireccionIniciarSesion(){
                                 location.href = 'index.php';
                             }
                         </script>";
                         
 
-                }elseif(cuenta_admin!=null){
+                }elseif(!empty($cuenta_admin)){
                     $administrador = $C_admins->findOne(['correo' => $correo]);
                     
                     if ($correo == "estandar@gmail.com" || $correo == "root@gmail.com") {
                         $nombre_a = "";
-                        $ape1_a = $administrador['nombre'];
+                        $ape1_a = $administrador['nombres']['nombre'];
                     }else{
                         $nombre_a = $administrador['nombres']['nombre'];
                         $ape1_a = $administrador['nombres']['ape1'];
@@ -70,10 +66,23 @@
                     }elseif($administrador['tipo_admin']=='2' || $administrador['tipo_admin']==2){
                         $_SESSION['estandar']=$correo;
                     }
-                    echo "<script>alert('Bienvenido admin $nombre_a $ape1_a ')</script>";
-                    echo "<script> location.href='control_panel/index.php' </script>";
-                }elseif ($cuenta_cliente==null || $cuenta_admin==null) {
-                    echo "<script>alert('Usuario o contraseña incorrectos')</script>";
+                    echo "<script>
+                            setTimeout(cargaAlertaIniciarSesionPanel, 500);
+                            function cargaAlertaIniciarSesionPanel(){
+                                AlertaIniciarSesionPanel();
+                            }
+                            setTimeout(ReedireccionIniciarSesion, 2200);
+                            function ReedireccionIniciarSesion(){
+                                location.href = 'control_panel/index.php';
+                            }
+                        </script>";
+                }elseif (empty($cuenta_cliente) || empty($cuenta_admin)) {
+                    echo "<script>
+                            setTimeout(cargaAlertaIniciarSesionError, 500);
+                            function cargaAlertaIniciarSesionError(){
+                                AlertaIniciarSesionError();
+                            }
+                        </script>";
                 }
             
             }
@@ -93,7 +102,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
 </head>
@@ -105,23 +114,23 @@
                 <h1 id="x-login">X</h1>
             </a>
             <h1 class="h1-login">Iniciar sesión</h1>
-            <p class="h4-p mt-2">
+            <h4 class="h4-p">
                 ¿Eres nuevo en este sitio? <a class="ancla-registrarse-login" href="registrarse.php">Regístrate</a>
-            </p>
+            </h4>
 
             <div class="div-inputs-login">
-                <label for="email" id="label-login" class="my-0 py-0">Email</label>
+                <label for="email" id="label-login">Email</label>
                 <br>
-                <input class="my-0 py-0 input-login-form" type="email" name="correo" required id="email" value="<?php if(isset($correo)) echo $correo?>">
+                <input class="input-login-form" type="email" name="correo" required id="email" value="<?php if(isset($correo)) echo $correo?>">
             </div>
             <br>
             <div class="div-inputs-login">
-                <label for="password" id="label-login" class="my-0 py-0">Contraseña</label>
+                <label for="password" id="label-login">Contraseña</label>
                 <br>
-                <input class="my-0 py-0 input-login-form" type="password" name="contrasena" required id="password" minlength="8">
+                <input class="input-login-form" type="password" name="contrasena" required id="password" minlength="8">
             </div>
             <br>
-            <input class="btn btn-dark" type="submit" value="Iniciar Sesión">
+            <input class="btn-input-login" type="submit" value="Iniciar Sesión">
         </section>
     </form>
 

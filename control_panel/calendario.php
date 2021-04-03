@@ -29,15 +29,6 @@
             $ape1 = $datos['nombres']['ape1'];
         }
 
-
-
-        $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
-        $C_ventas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->ventas; 
-
-        $numA = $C_administradores -> count();
-        $numC = $C_clientes -> count();
-        $numV = $C_ventas -> count();
-
 ?>
 
 <!DOCTYPE html>
@@ -55,13 +46,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/estilos_panel.css" rel="stylesheet">
+    <link href="css/estilos_responsivo.css" rel="stylesheet">
     <!-- Fontsawesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- fullCalendar -->
     <link rel="stylesheet" href="css/main.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="css/adminlte.min.css">
-    <title>Calendario</title>
+    <title>Calendario | Panel de control</title>
 </head>
 
 <body id="page-top">
@@ -426,13 +418,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/estilos_panel.css" rel="stylesheet">
+    <link href="css/estilos_responsivo.css" rel="stylesheet">
     <!-- Fontsawesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- fullCalendar -->
     <link rel="stylesheet" href="css/main.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="css/adminlte.min.css">
-    <title>Calendario</title>
+    <title>Calendario | Panel de control</title>
 </head>
 
 <body id="page-top">
@@ -762,12 +755,5 @@
     }
 
 ?>
-        
-
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-  </a>
 
 

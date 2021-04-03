@@ -50,7 +50,8 @@
         rel="stylesheet">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/estilos_panel.css" rel="stylesheet">
-    <title>Clientes</title>
+    <link href="css/estilos_responsivo.css" rel="stylesheet">
+    <title>Clientes | Panel de control</title>
 </head>
 
 <body id="page-top">
@@ -83,51 +84,64 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">                            
-                                    <thead>
-                                        <th>No.</th>
-                                        <th>Nombre</th>
-                                        <th>Primer Apellido</th>
-                                        <th>Segundo Apellido</th>
-                                        <th>Calle</th>
-                                        <th>Número</th>
-                                        <th>Col o Fracc.</th>
-                                        <th>CP</th>
-                                        <th>Ciudad</th>
-                                        <th>Teléfono</th>
-                                        <th>Correo</th>
-                                        <th>Acciones</th>
-                                    </thead>
-                                
-                                <?php
-                                    foreach ($datos as $dato) {
-                                ?>
-                                    <tbody>
-                                        <tr>
-                                            <td><?php echo $i=$i+1 ?></td>
-                                            <td><?php echo $dato['nombres']["nombre"]; ?></td>
-                                            <td><?php echo $dato['nombres']["ape1"]; ?></td>
-                                            <td><?php if ($dato['nombres']["ape2"]) {
-                                                echo $dato['nombres']["ape2"];
-                                            }else{
-                                                echo "-";
-                                            } ?></td>
-                                            <td><?php echo $dato['direccion']["calle"]; ?></td>
-                                            <td><?php echo $dato['direccion']["numero"]; ?></td>
-                                            <td><?php echo $dato['direccion']["col_fracc"]; ?></td>
-                                            <td><?php echo $dato['direccion']["cp"]; ?></td>
-                                            <td><?php echo $dato['direccion']["ciudad"]; ?></td>
-                                            <td><?php echo $dato["telefono"]; ?></td>
-                                            <td><?php echo $dato["correo"]; ?></td>
-                                            <td><a id="btn-panel" class="btn btn-danger" href="eliminar.php?id_cliente=<?php echo $dato['_id']?>" onclick="return ConfirmDelete()"><i class="fas fa-trash"></i></a></td>
-                                        </tr>
-                                    </tbody>
-
-                                        <?php
-                                            }//foreach
-                                        ?>
+                                <form id="formulario_client">
+                                    <table class="text-center table table-bordered" id="dataTable" style="width:100%">                            
+                                        <thead>
+                                            <tr>
+                                                <th>No.</th>
+                                                <th>Nombre</th>
+                                                <th>Primer Apellido</th>
+                                                <th>Segundo Apellido</th>
+                                                <th>Calle</th>
+                                                <th>Número</th>
+                                                <th>Col o Fracc.</th>
+                                                <th>CP</th>
+                                                <th>Ciudad</th>
+                                                <th>Teléfono</th>
+                                                <th>Correo</th>
+                                                <th>Acciones</th>
+                                            </tr>                                        
+                                        </thead>
                                     
-                                </table>
+                                        <tbody>
+                                    
+                                            <?php
+                                                foreach ($datos as $dato) {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $i=$i+1 ?></td>
+                                                <td><?php echo $dato['nombres']["nombre"]; ?></td>
+                                                <td><?php echo $dato['nombres']["ape1"]; ?></td>
+                                                <td><?php if ($dato['nombres']["ape2"]) {
+                                                    echo $dato['nombres']["ape2"];
+                                                }else{
+                                                    echo "-";
+                                                } ?></td>
+                                                <td><?php echo $dato['direccion']["calle"]; ?></td>
+                                                <td><?php echo $dato['direccion']["numero"]; ?></td>
+                                                <td><?php echo $dato['direccion']["col_fracc"]; ?></td>
+                                                <td><?php echo $dato['direccion']["cp"]; ?></td>
+                                                <td><?php echo $dato['direccion']["ciudad"]; ?></td>
+                                                <td><?php echo $dato["telefono"]; ?></td>
+                                                <td><?php echo $dato["correo"]; ?></td>
+                                                <td>
+                                                    <a class="btn btn-danger a_panel" onclick="ConfirmarEliminacionClient('<?php echo $dato['_id']?>')"><i class="fas fa-trash"></i></a>
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="checkbox" name="eliminar-multClient[]" value="<?php echo $dato['_id']?>">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                                }
+                                            ?>
+                                        </tbody>                                    
+                                    </table>
+                                    <div class="row mt-5">                                        
+                                        <div class="col-12 mb-5 text-center">
+                                            <input class="btn btn-danger" type="submit" name="borrar" onclick="EliminacionMultClient()" value="Eliminar registros seleccionados">
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -147,15 +161,24 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
+    <!-- SweetAlert CDN -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- funcionamiento de datatables -->
-    <script type="text/javascript" src="../datatable/datatables.min.js"></script>
-    <script type="text/javascript" src="../datatable/Responsive-2.2.5/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript" src="../js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/searchbuilder/1.0.1/js/dataTables.searchBuilder.min.js"></script>
+    <script src="https://cdn.datatables.net/searchpanes/1.2.1/js/dataTables.searchPanes.min.js"></script>
+    <script type="text/javascript" src="js/datatable.js"></script>
     <!-- botones de datatables -->
     <script type="text/javascript" src="../datatable/Buttons-1.6.2/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="../datatable/JSZIP-2.5.0/jszip.min.js"></script>
@@ -163,7 +186,8 @@
     <script type="text/javascript" src="../datatable/pdfmake-0.1.36/vsf_fonts.js"></script>
     <script type="text/javascript" src="../datatable/Buttons-1.6.2/js/buttons.html5.min.js"></script>
     <!-- funcionamiento de eliminación de registros (propios) -->
-    <script type="text/javascript" src="../js/eliminar.js"></script>
+    <script type="text/javascript" src="js/eliminacionMult.js"></script>
+    <script type="text/javascript" src="js/eliminar.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
@@ -175,6 +199,19 @@
 <?php
 
     }elseif(isset($_SESSION['estandar'])){
+
+        $correo = $_SESSION['estandar'];
+
+        $C_administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
+        $admin = $C_administradores->findOne(['correo' => $correo]);
+
+        if ($correo == "estandar@gmail.com") {
+            $nombre = "usuario";
+            $ape1 = $admin['nombres']['nombre'];
+        }else{
+            $nombre = $admin['nombres']['nombre'];
+            $ape1 = $admin['nombres']['ape1'];
+        }
 
 ?>
 
@@ -188,12 +225,12 @@
     <link rel="shortcut icon" href="../img/favicon1.png">
     <!-- Estilos -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="css/estilos_panel.css" rel="stylesheet">
-    <title>Clientes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos_panel.css">
+    <link href="css/estilos_responsivo.css" rel="stylesheet">
+    <title>Clientes | Panel de control</title>
 </head>
 
 <body id="page-top">
@@ -241,10 +278,10 @@
                                         <th>Correo</th>
                                     </thead>
                                 
-                                <?php
-                                    foreach ($datos as $dato) {
-                                ?>
                                     <tbody>
+                                        <?php
+                                            foreach ($datos as $dato) {
+                                        ?>
                                         <tr>
                                             <td><?php echo $i=$i+1 ?></td>
                                             <td><?php echo $dato['nombres']["nombre"]; ?></td>
@@ -262,12 +299,12 @@
                                             <td><?php echo $dato["telefono"]; ?></td>
                                             <td><?php echo $dato["correo"]; ?></td>
                                         </tr>
-                                    </tbody>
 
                                         <?php
                                             }//foreach
                                         ?>
                                     
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -294,17 +331,22 @@
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- funcionamiento de datatables -->
-    <script type="text/javascript" src="../datatable/datatables.min.js"></script>
-    <script type="text/javascript" src="../datatable/Responsive-2.2.5/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript" src="../js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/searchbuilder/1.0.1/js/dataTables.searchBuilder.min.js"></script>
+    <script src="https://cdn.datatables.net/searchpanes/1.2.1/js/dataTables.searchPanes.min.js"></script>
+    <script type="text/javascript" src="js/datatable.js"></script>
     <!-- botones de datatables -->
     <script type="text/javascript" src="../datatable/Buttons-1.6.2/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" src="../datatable/JSZIP-2.5.0/jszip.min.js"></script>
     <script type="text/javascript" src="../datatable/pdfmake-0.1.36/pdfmake.min.js"></script>
     <script type="text/javascript" src="../datatable/pdfmake-0.1.36/vsf_fonts.js"></script>
     <script type="text/javascript" src="../datatable/Buttons-1.6.2/js/buttons.html5.min.js"></script>
-    <!-- funcionamiento de eliminación de registros (propios) -->
-    <script type="text/javascript" src="../js/eliminar.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 

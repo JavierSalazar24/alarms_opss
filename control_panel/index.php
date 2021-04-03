@@ -11,15 +11,33 @@
     $anio=date('Y');
     
     $fecha=$dia . ' de ' . $mes . ' del ' . $anio;
+
+    $C_admin = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
+    $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
+    $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos; 
+    $C_pedidos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->pedidos; 
+    $C_envios = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->envios; 
+    $C_ventas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->ventas; 
+    $C_mensajes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->mensajes; 
+
+    $numA = $C_admin -> count();
+    $numC = $C_clientes -> count();
+    $numPr = $C_productos -> count();
+    $numPe = $C_pedidos -> count();
+    $numE = $C_envios -> count();
+    $numV = $C_ventas -> count();
+    $numM = $C_mensajes -> count();
+
+    $numEs = $numPe + $numE + $numV;
+
+    $C_notas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->notas; 
+    $notas = $C_notas->find();
     
     if(isset($_SESSION['admin'])){
 
         $correo = $_SESSION['admin'];
 
-        $C_administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
-        $datos = $C_administradores->findOne(['correo' => $correo]);
-
-        
+        $datos = $C_admin->findOne(['correo' => $correo]);    
 
         if ($correo == "root@gmail.com") {
             $nombre = "usuario";
@@ -28,15 +46,6 @@
             $nombre = $datos['nombres']['nombre'];
             $ape1 = $datos['nombres']['ape1'];
         }
-
-
-
-        $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
-        $C_ventas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->ventas; 
-
-        $numA = $C_administradores -> count();
-        $numC = $C_clientes -> count();
-        $numV = $C_ventas -> count();
 
 ?>
 
@@ -53,9 +62,15 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Dashboard AdminLTE -->
+    <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/estilos_panel.css" rel="stylesheet">
-    <title>Panel de control</title>
+    <link href="css/estilos_responsivo.css" rel="stylesheet">
+    <title>Panel de control | OPSS</title>
 </head>
 
 <body id="page-top" class="hold-transition sidebar-mini">
@@ -91,6 +106,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
+    <?php include "views/script_calendario.php"?>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
@@ -102,6 +118,12 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+    <!-- SweetAlert CDN -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Agregar -->
+    <script type="text/javascript" src="js/agregar_editar.js"></script>
+    <!-- Eliminar -->
+    <script type="text/javascript" src="js/eliminar.js"></script>
 
 </body>
 
@@ -113,23 +135,15 @@
 
         $correo = $_SESSION['estandar'];
 
-        $C_administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
-        $datos = $C_administradores->findOne(['correo' => $correo]);
+        $datos = $C_admin->findOne(['correo' => $correo]);
 
         if ($correo == "estandar@gmail.com") {
             $nombre = "usuario";
-            $ape1 = $datos['nombre'];
+            $ape1 = $datos['nombres']['nombre'];
         }else{
             $nombre = $datos['nombre'];
             $ape1 = $datos['ape1'];
         }
-
-        $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
-        $C_ventas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->ventas; 
-
-        $numA = $C_administradores -> count();
-        $numC = $C_clientes -> count();
-        $numV = $C_ventas -> count();
 
 ?>
 
@@ -145,14 +159,16 @@
     <link rel="shortcut icon" href="../img/favicon1.png">
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <!-- Dashboard AdminLTE -->
+    <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/estilos_panel.css" rel="stylesheet">
-    <title>Panel de control</title>
+    <link href="css/estilos_responsivo.css" rel="stylesheet">
+    <title>Panel de control | OPSS</title>
 </head>
 
 <body id="page-top">
@@ -187,6 +203,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
+    <?php include "views/script_calendario.php"?>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -199,7 +216,12 @@
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
-
+    <!-- SweetAlert CDN -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Agregar nota -->
+    <script type="text/javascript" src="js/agregar_editar.js"></script>
+    <!-- Eliminar Nota -->
+    <script type="text/javascript" src="js/eliminar.js"></script>
 </body>
 
 </html>
@@ -211,3 +233,35 @@
     }
 
 ?>
+
+    <!-- Modal agregar nota -->
+    <form id="agregar_notaI" class="needs-validation" novalidate>
+        <div class="modal fade" id="NotaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary">
+                        <h5 class="modal-title text-white" id="exampleModalLabel">Agregar Nota</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="mb-3">
+                            <label for="nota" class="form-label">Nota:</label>
+                            <textarea class="form-control" name="nota" id="nota" required></textarea>
+                            <div class="valid-feedback">Correcto.</div>
+						    <div class="invalid-feedback">Por favor ingresa un nombre.</div>
+                            <input type="hidden" name="estatus" value="pendiente">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" onclick="agregarNotaI()" class="btn btn-primary">Guardar nota</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Validación de los formularios -->
+	<script src="../js/validacion_formulario.js"></script>

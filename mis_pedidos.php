@@ -58,6 +58,7 @@
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <?php include_once "views/estilos_future.php"?>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
@@ -72,31 +73,31 @@
         <h1 class="h1-perfil">Mis pedidos</h1>
         
         <div class="div-inputs-perfil-gnrl">                
-            <div class="div-inputs-perfil">
+            <div class="div-inputs-perfil mb-0 pb-0">
                 <label for="nombre" id="label-perfil">Nombre del producto</label>
                 <br>
                 <input class="input-perfil-form" type="text" value="<?php if(empty($nombre_p)) echo "Sin pedidos"; else echo $nombre_p;?>" disabled>                
             </div>
 
-            <div class="div-inputs-perfil">
+            <div class="div-inputs-perfil mb-0 pb-0">
                 <label for="precio" id="label-perfil">Precio del producto</label>
                 <br>
                 <input class="input-perfil-form" type="text" value="<?php if(empty($precio)) echo "Sin pedidos"; else echo $precio;?>" disabled>
             </div>
 
-            <div class="div-inputs-perfil">
+            <div class="div-inputs-perfil mb-0 pb-0">
                 <label for="cantidad" id="label-perfil">Cantidad comprada hasta el momento</label>
                 <br>
                 <input class="input-perfil-form" type="text" value="<?php if(empty($cantidad)) echo "Sin pedidos"; else echo $cantidad;?>" disabled>
             </div>
 
-            <div class="div-inputs-perfil">
+            <div class="div-inputs-perfil mb-0 pb-0">
                 <label for="precio_total" id="label-perfil">Precio total de la compra hasta el momento</label>
                 <br>
                 <input class="input-perfil-form" type="text" value="<?php if(empty($total)) echo "Sin pedidos"; else echo $total;?>" disabled>
             </div>
 
-            <div class="div-inputs-perfil">
+            <div class="div-inputs-perfil mb-0 pb-0">
                 <label for="fecha_hora" id="label-perfil">Fecha y hora de la última compra</label>
                 <br>
                 <input class="input-perfil-form" type="text" value="<?php if(empty($fecha_hora)) echo "Sin pedidos"; else echo $fecha_hora;?>" disabled>
@@ -114,6 +115,7 @@
     
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+    <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
 </body>
 

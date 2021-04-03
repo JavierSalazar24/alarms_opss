@@ -34,6 +34,78 @@ function iniciarSesion() {
           }
         } else if (data == "null") {
           Swal.fire("Error!", "Usuario o Contraseña incorrecta", "error");
+        } else if (data == "vacio") {
+          Swal.fire("Error!", "Datos vacíos", "error");
+        }
+      });
+  });
+}
+
+function registrarse() {
+  var form_registrarse = document.getElementById("form_registrarse");
+  form_registrarse.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var datos = new FormData(form_registrarse);
+
+    fetch("php/registrarse.php", {
+      method: "POST",
+      body: datos,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data == "correcto") {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Bienvenido a OPSS",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setTimeout(cargaAlertaRegistrarse, 500);
+          function cargaAlertaRegistrarse() {
+            location.href = "index.php";
+          }
+        } else if (data == "error") {
+          Swal.fire("Error!", "Ocurrio un error en el servidor", "error");
+        } else if (data == "existente") {
+          Swal.fire("Error!", "El correo ya existe", "error");
+        } else if (data == "vacio") {
+          Swal.fire("Error!", "Datos vacíos", "error");
+        }
+      });
+  });
+}
+
+function registrarse2() {
+  var form_registrarse2 = document.getElementById("form_registrarse2");
+  form_registrarse2.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var datos = new FormData(form_registrarse2);
+
+    fetch("php/registrarse.php", {
+      method: "POST",
+      body: datos,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data == "correcto") {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Bienvenido a OPSS",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setTimeout(cargaAlertaRegistrarse, 500);
+          function cargaAlertaRegistrarse() {
+            location.href = "index.php";
+          }
+        } else if (data == "error") {
+          Swal.fire("Error!", "Ocurrio un error en el servidor", "error");
+        } else if (data == "existente") {
+          Swal.fire("Error!", "El correo ya existe", "error");
+        } else if (data == "vacio") {
+          Swal.fire("Error!", "Datos vacíos", "error");
         }
       });
   });
@@ -59,7 +131,7 @@ function enviarMensaje() {
             showConfirmButton: false,
             timer: 1500,
           });
-        } else {
+        } else if (data == "error") {
           Swal.fire({
             position: "center",
             icon: "error",
@@ -67,6 +139,8 @@ function enviarMensaje() {
             showConfirmButton: false,
             timer: 1500,
           });
+        } else if (data == "vacio") {
+          Swal.fire("Error!", "Datos vacíos", "error");
         }
       });
     input_mensaje.reset();
@@ -100,7 +174,7 @@ function enviarDireccion() {
               location.href = `pagar.php?id_producto=${datos.get(
                 "id_producto"
               )}`;
-            } else {
+            } else if (data == "error") {
               Swal.fire({
                 position: "center",
                 icon: "error",
@@ -108,6 +182,52 @@ function enviarDireccion() {
                 showConfirmButton: false,
                 timer: 3000,
               });
+            } else if (data == "vacio") {
+              Swal.fire("Error!", "Datos vacíos", "error");
+            }
+          });
+      }
+    });
+  });
+}
+
+function enviarDireccion2() {
+  var enviar_direccion2 = document.getElementById("enviar_direccion2");
+
+  enviar_direccion2.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var datos = new FormData(enviar_direccion2);
+    Swal.fire({
+      title: "¿Estás seguro que deseas realizar la compra?",
+      text: "No podras deshacerlo",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: "Aceptar",
+      cancelButtonText: "Cancelar",
+      cancelButtonColor: "#d33",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch("php/enviar_direccion.php", {
+          method: "POST",
+          body: datos,
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data == "correcto") {
+              location.href = `pagar.php?id_producto=${datos.get(
+                "id_producto"
+              )}`;
+            } else if (data == "error") {
+              Swal.fire({
+                position: "center",
+                icon: "error",
+                title: "Error en el servidor",
+                showConfirmButton: false,
+                timer: 3000,
+              });
+            } else if (data == "vacio") {
+              Swal.fire("Error!", "Datos vacíos", "error");
             }
           });
       }

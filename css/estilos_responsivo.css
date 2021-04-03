@@ -198,10 +198,24 @@
     width: 40%;
   }
 }
+@media screen and (max-width: 767px) {
+  .formulario_normal {
+    display: none;
+    transition: 1s;
+  }
+
+  .formulario_responsive {
+    display: block;
+    transition: 1s;
+  }
+}
 
 @media screen and (max-width: 762px) {
   #agregar2 {
     margin-top: 10rem;
+  }
+  .x-registrarse {
+    right: 6rem;
   }
 }
 
@@ -256,6 +270,10 @@
 
   .btn-comprar {
     width: 90%;
+  }
+
+  .x-registrarse {
+    right: 4rem;
   }
 }
 
@@ -379,9 +397,9 @@
     font-size: 0.8rem;
   }
 
-  .h1-registrarse {
-    font-size: 2rem;
-  }
+  /* .h1-registrarse {
+    font-size: 3rem;
+  } */
 
   .h4-p {
     margin-top: -1rem;
@@ -466,6 +484,13 @@
     font-size: 1rem;
   }
 }
+
+@media screen and (max-width: 461px) {
+  .x-registrarse {
+    right: 2rem;
+  }
+}
+
 @media screen and (max-width: 455px) {
   .input-nombre,
   .input-email,
@@ -517,6 +542,17 @@
   }
 }
 
+@media screen and (max-width: 367px) {
+  .x-registrarse {
+    right: 1rem;
+    margin-top: -2rem;
+    font-size: 1.6rem;
+  }
+  .h1-registrarse {
+    font-size: 40px;
+  }
+}
+
 @media screen and (max-width: 330px) {
   .p-nota {
     font-size: 0.9rem;
@@ -524,10 +560,6 @@
 }
 
 @media screen and (max-width: 320px) {
-  .x-registrar {
-    margin-right: 0rem;
-  }
-
   .btn-input-registrar {
     width: 50%;
   }

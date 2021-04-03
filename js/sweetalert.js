@@ -62,7 +62,7 @@ function AlertaIniciarSesion() {
     icon: "success",
     title: "Bienvenido a Alarmas - OPSS",
     showConfirmButton: false,
-    timer: 1200,
+    timer: 2000,
   });
 }
 
@@ -71,6 +71,37 @@ function AlertaProductoAgotado() {
     position: "center",
     icon: "error",
     title: "Producto agotado.",
+    showConfirmButton: false,
+    timer: 3000,
+  });
+}
+
+function AlertaIniciarSesionPanel() {
+  Swal.fire({
+    position: "center",
+    icon: "success",
+    title: "Bienvenido al Panel de Control",
+    showConfirmButton: false,
+    timer: 2000,
+  });
+}
+
+function AlertaIniciarSesionError() {
+  Swal.fire({
+    position: "center",
+    icon: "error",
+    title: "Contraseña o correo incorrecto.",
+    showConfirmButton: false,
+    timer: 3000,
+  });
+}
+
+function ComprarProductosIndex() {
+  Swal.fire({
+    position: "center",
+    icon: "info",
+    title: "¡ Aviso !",
+    text: "Necesita registrarse para comprar algun producto.",
     showConfirmButton: false,
     timer: 3000,
   });

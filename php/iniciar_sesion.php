@@ -24,25 +24,27 @@ session_start();
             $correo = $_POST['correo'];
             $contrasena = MD5($_POST['contrasena']);
 
-            $cuenta_cliente = $C_clientes->findOne(['correo' => $correo,'contrasena' => $contrasena]);
+            $cuenta_cliente = $C_clientes->findOne(['correo' => $correo]);
+            $contrasena_cliente = $C_clientes->findOne(['contrasena' => $contrasena]);
 
 
-            $cuenta_admin = $C_admins->findOne(['correo' => $correo,'contrasena' => $contrasena]);
+            $cuenta_admin = $C_admins->findOne(['correo' => $correo]);
+            $contrasena_admin = $C_admins->findOne(['contrasena' => $contrasena]);
                 
-            if ($cuenta_admin==null && $cuenta_cliente==null ) {
+            if (empty($cuenta_admin) && empty($cuenta_cliente)) {
 
                 echo json_encode('null');
 
-            }elseif ($cuenta_cliente!=null) {
+            }elseif (!empty($cuenta_cliente) && !empty($contrasena_cliente)) {
 
-                $cliente = $C_clientes->findOne(['correo' => $correo]);        
+                $cliente = $C_clientes->findOne(['correo' => $correo]);
                 $nombre_c = $cliente['nombres']['nombre'];
                 $ape1_c = $cliente['nombres']['ape1'];
                 $_SESSION['usuario']=$correo;          
                 
                 echo json_encode('user');
 
-            }elseif(cuenta_admin!=null){
+            }elseif(!empty($cuenta_admin) && !empty($contrasena_admin)){
                     
                 $administrador = $C_admins->findOne(['correo' => $correo]);
                     
@@ -62,13 +64,10 @@ session_start();
                 
                 echo json_encode('admin');
 
-
-            }elseif ($cuenta_cliente==null || $cuenta_admin==null) {
-
-                echo json_encode('error');
-
             }
             
+        }else{
+            echo json_encode('vacio');
         }
     }
 

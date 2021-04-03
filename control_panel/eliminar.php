@@ -4,7 +4,6 @@
 
     if(isset($_SESSION['admin'])){
 
-
         require_once '../vendor/autoload.php';
 
         if(isset($_REQUEST['id_admin'])){
@@ -17,8 +16,7 @@
 
             if ($delete) {
                 
-                echo "<script>alert('Admin eliminado con exito')</script>";
-                echo "<script> location.href='administradores.php' </script>";
+                header('Location: administradores.php');
 
             }
         
@@ -32,8 +30,7 @@
 
             if ($delete) {
                 
-                echo "<script>alert('Cliente eliminado con exito')</script>";
-                echo "<script> location.href='clientes.php' </script>";
+                header('Location: clientes.php');
 
             }
 
@@ -47,8 +44,7 @@
 
             if ($delete) {
                 
-                echo "<script>alert('Producto eliminado con exito')</script>";
-                echo "<script> location.href='productos.php' </script>";
+                header('Location: productos.php');
 
             }
 
@@ -63,8 +59,7 @@
 
             if ($delete) {
                 
-                echo "<script>alert('Mensaje eliminado con exito')</script>";
-                echo "<script> location.href='mensajes.php' </script>";
+                header('Location: mensajes.php');
 
             }
             
@@ -77,8 +72,7 @@
             $delete = $C_pedido->deleteMany(['_id' => new MongoDB\BSON\ObjectID($id_pedido)]);
 
             if ($delete) {
-                echo "<script>alert('Pedido eliminado con exito')</script>";
-                echo "<script> location.href='pedidos.php' </script>";
+                header('Location: pedidos.php');
             }
             
         }elseif (isset($_REQUEST['id_envio'])) {
@@ -91,8 +85,7 @@
 
             if ($delete) {
                 
-                echo "<script>alert('Envío eliminado con exito')</script>";
-                echo "<script> location.href='envios.php' </script>";
+                header('Location: envios.php');
 
             }
             
@@ -106,8 +99,35 @@
 
             if ($delete) {
                 
-                echo "<script>alert('Venta eliminada con exito')</script>";
-                echo "<script> location.href='ventas.php' </script>";
+                header('Location: ventas.php');
+
+            }
+            
+        }elseif (isset($_REQUEST['id_nota'])) {
+
+            $id_nota = $_REQUEST['id_nota'];
+
+            $C_nota = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->notas; 
+
+            $delete = $C_nota->deleteMany(['_id' => new MongoDB\BSON\ObjectID($id_nota)]);
+
+            if ($delete) {
+                
+                header('Location: notas.php');
+
+            }
+            
+        }elseif (isset($_REQUEST['id_notaI'])) {
+
+            $id_nota = $_REQUEST['id_notaI'];
+
+            $C_nota = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->notas; 
+
+            $delete = $C_nota->deleteMany(['_id' => new MongoDB\BSON\ObjectID($id_nota)]);
+
+            if ($delete) {
+                
+                header('Location: index.php');
 
             }
             

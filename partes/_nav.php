@@ -3,17 +3,15 @@
 	<nav class="links">
 		<ul class="ulf">
 			<li class="lif"><a class="ancla-navf" href="index.php">INICIO</a></li>
+			<li class="lif"><a class="ancla-navf" href="productos.php">PRODUCTOS</a></li>
 			<li class="lif"><a class="ancla-navf" href="noticias.php">NOTICIAS</a></li>
 			<li class="lif"><a class="ancla-navf" href="asistencia.php">ASISTENCIA</a></li>
 			<li class="lif"><a class="ancla-navf" href="iniciar_sesion.php">INICIAR SESIÓN</a></li>
-			<li class="lif"><a class="ancla-navf" href="registrar.php">REGISTRARSE</a></li>
+			<li class="lif"><a class="ancla-navf" href="registrarse.php">REGISTRARSE</a></li>
 		</ul>
 	</nav>
 	<nav class="mainf">
 		<ul class="ulf">
-			<li class="lif search">
-				<a class="ancla-navf fa-boxes" href="productos.php">COMPRAR</a>					
-			</li>
 			<li class="lif menu">
 				<a class="desaparece ancla-navf fa-bars" href="#menu">MENÚ</a>
 			</li>
@@ -25,8 +23,8 @@
 <section class="sectionf" id="menu">
 
     <!-- logo width="300px"-->
-    <section class="sectionf">
-        <img src="img/Logo6.png" width="100px"  alt="">
+    <section class="py-5 text-center bg-dark sectionf">
+        <img src="img/Logo6.png" width="140px"  alt="">
     </section>
 
     <!-- Links -->

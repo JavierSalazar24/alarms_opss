@@ -20,8 +20,8 @@ input {
   text-decoration: none;
 }
 
-#btn-panel {
-  padding: 2px 6px;
+.a_panel {
+  padding: 2px 6px !important;
 }
 
 th,
@@ -141,4 +141,8 @@ td {
   .desaparecer {
     display: none;
   }
+}
+
+#tachado {
+  z-index: 1000 !important;
 }
