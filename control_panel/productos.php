@@ -142,13 +142,12 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
+    <!-- Estilos Script-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- funcionamiento de datatables -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -176,6 +175,8 @@
     <script type="text/javascript" src="js/agregar_editar.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <!-- LINK ACTIVE -->
+    <script src="js/active.js"></script>
 
 </body>
 
@@ -294,10 +295,9 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Bootstrap core JavaScript-->
+    <!-- Estilos Script-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- funcionamiento de datatables -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -319,6 +319,8 @@
     <script type="text/javascript" src="../datatable/Buttons-1.6.2/js/buttons.html5.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <!-- LINK ACTIVE -->
+    <script src="js/active.js"></script>
 
 </body>
 

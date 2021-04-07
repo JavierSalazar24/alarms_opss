@@ -353,3 +353,47 @@ function editarProducto() {
       });
   });
 }
+
+function enviarCorreo() {
+  var enviar_correo = document.getElementById("enviar_correo");
+  enviar_correo.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var datos = new FormData(enviar_correo);
+    fetch("enviar_correo.php", {
+      method: "POST",
+      body: datos,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data == "correcto") {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Correo enviado.",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setTimeout(cargaAlertaIniciarSesion, 500);
+          function cargaAlertaIniciarSesion() {
+            location.href = "correo.php";
+          }
+        } else if (data == "error") {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Error en el servidor",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+        } else if (data == "vacio") {
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Datos vacíos",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+        }
+      });
+  });
+}

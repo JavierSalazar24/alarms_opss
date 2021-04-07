@@ -1,8 +1,12 @@
 <?php
 
+    /* Crear una sesion */
     session_start();
+
+    /* no mostrar errores */
     error_reporting(0);
     
+    /* Traer la fecha local (México) */
     date_default_timezone_set('America/Mexico_City');
     setlocale(LC_ALL, '');
     $dia=date('d');
@@ -10,18 +14,23 @@
     $anio=date('Y');
     $fecha=$dia . ' de ' . $mes . ' del ' . $anio;
 
+    /* Traer para poner la conexion */
     require_once '../vendor/autoload.php';
+
+    /* Traer la colección administradores */
     $administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
+    /* Busqueda de administradores */
     $datos = $administradores->find();
 
     $i=0;
-    
-    if(isset($_SESSION['admin'])){
-     
-        $correo = $_SESSION['admin'];
 
+    if(isset($_SESSION['admin'])){/* Si existe la sesión usuario entra */
+     
+        $correo = $_SESSION['admin']; /* Agregar el correo a la variable "correo" */
+
+        /* Traer la coleccion administradores*/
         $C_administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
-        $admin = $C_administradores->findOne(['correo' => $correo]);
+        $admin = $C_administradores->findOne(['correo' => $correo]); /* Buscar la información del administrador donde coincida el correo */
 
         if ($correo == "root@gmail.com") {
             $nombre = "usuario";

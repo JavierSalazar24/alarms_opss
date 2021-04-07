@@ -57,8 +57,8 @@
     
 <body class="body-direccion">
         
-        <?php include "partes/_navs.php" ?>
-        <form action="direccion.php" method="POST">    
+    <?php include "partes/_navs.php" ?>
+    <form action="direccion.php" method="POST">    
             <section id="comprar">
                 <div class="div-img-comprar">
                     <img class="img-comprar" src="img/img-comprar.jpg" alt="Alarma OPSS en venta">
@@ -82,13 +82,18 @@
                     </div>
                 </div>
             </section>
-        </form>
-        <script src=" https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
-        <script src="js/faq.js"></script>
-        <script src="js/index.js"></script>
-        <script type="text/javascript" src="js/agregar_editar.js"></script>
-        <?php include_once "views/script_bootstrap.php"?>
-        <?php include_once "views/script_future.php"?>
+    </form>
+
+    <!-- Boton mostrar más -->
+    <script src="js/faq.js"></script>
+    <!-- Transiciones -->
+    <script src="js/index.js"></script>
+    <!-- Programación PHP y JS -->
+    <script type="text/javascript" src="js/agregar_editar.js"></script>
+    <!-- Estilos script -->
+    <script src=" https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <?php include_once "views/script_bootstrap.php"?>
+    <?php include_once "views/script_future.php"?>
 
 </body>
     

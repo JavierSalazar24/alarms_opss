@@ -10,6 +10,8 @@
     $anio=date('Y');
     $fecha=$dia . ' de ' . $mes . ' del ' . $anio;
 
+    $i = 0;
+
     require_once '../vendor/autoload.php';
     $C_pedidos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->pedidos; 
     $datos = $C_pedidos->find();
@@ -41,9 +43,7 @@
     <link rel="shortcut icon" href="../img/favicon1.png">
     <!-- Estilos -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="css/estilos_panel.css" rel="stylesheet">
@@ -104,7 +104,7 @@
                                                 foreach ($datos as $dato) {
                                             ?>
                                             <tr>
-                                                <td><?php echo $dato["no"]; ?></td>
+                                                <td><?php $i++ ?></td>
                                                 <td><?php echo $dato["id_mercancia"]; ?></td>
                                                 <td><?php echo $dato['info_cliente']["nombres"]; ?></td>
                                                 <td><?php echo $dato['info_cliente']["apellidos"]; ?></td>
@@ -155,10 +155,9 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Bootstrap core JavaScript-->
+    <!-- Estilos Script-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- funcionamiento de datatables -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -186,6 +185,8 @@
     <script type="text/javascript" src="js/agregar_editar.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <!-- LINK ACTIVE -->
+    <script src="js/active.js"></script>
 
 </body>
 
@@ -282,7 +283,7 @@
                                             foreach ($datos as $dato) {
                                         ?>
                                         <tr>
-                                            <td><?php echo $dato["no"]; ?></td>
+                                            <td><?php $i++ ?></td>
                                             <td><?php echo $dato["id_mercancia"]; ?></td>
                                             <td><?php echo $dato['info_cliente']["nombres"]; ?></td>
                                             <td><?php echo $dato['info_cliente']["apellidos"]; ?></td>
@@ -319,10 +320,9 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Bootstrap core JavaScript-->
+    <!-- Estilos Script-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- funcionamiento de datatables -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -344,6 +344,8 @@
     <script type="text/javascript" src="../datatable/Buttons-1.6.2/js/buttons.html5.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <!-- LINK ACTIVE -->
+    <script src="js/active.js"></script>
 
 </body>
 

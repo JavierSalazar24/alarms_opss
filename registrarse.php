@@ -11,6 +11,7 @@
     <!-- Estilos -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_responsivo.css">
     <title>Registrarse | OPSS</title>
 </head>
 
@@ -20,9 +21,6 @@
             <div class="col-12 formulario_registrarse">                
                 <form id="form_registrarse" class="formulario_normal row mt-2 justify-content-evenly needs-validation" novalidate>
                     <div class="form-group text-center pt-4 pb-5">
-                        <!-- <a href="index.php" class="x-ancla-login">
-                            <span class="x-login">X</span>
-                        </a> -->
                         <h1 class="titulo-login">REGISTRATE</h1>
                         <p class="parrafo-login">¿Ya tienes una cuenta? <a href="iniciar_sesion.php" class="text-light btn-link">inicia sesión</a></p>
                     </div>
@@ -136,12 +134,19 @@
                         </div>                        
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-8 col-md-4 mt-5 mb-5 d-grid gap-2 text-center">
+                        <div class="col-md-4 mt-5 mb-5 d-grid gap-2 text-center">
                             <button type="submit" class="btn btn-dark btn-lg" onclick="registrarse()">Registrarse</button>
-                        </div>                    
+                        </div>
+                        <div class="col-md-4 mt-5 mb-5 d-grid gap-2 text-center">
+                            <a href="index.php" class="btn btn-dark btn-lg">Volver al inicio</a>
+                        </div>                
                     </div>
                 </form>
                 <form id="form_registrarse2" class="formulario_responsive row mt-2 justify-content-center needs-validation" novalidate>
+                    <div class="form-group text-center pt-4 pb-3">
+                        <h1 class="titulo-login">REGISTRATE</h1>
+                        <p class="parrafo-login">¿Ya tienes una cuenta? <a href="iniciar_sesion.php" class="text-light btn-link">inicia sesión</a></p>
+                    </div>
                     <div class="col-12">
                         <div class="form-floating mb-4 pr-5">
                             <input class="form-control mt-5 form-control-registrarse" placeholder="Nombre(s)"  pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php if(isset($nombre)) echo $nombre?>">
@@ -250,9 +255,10 @@
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-8 col-md-4 mt-5 mb-5 d-grid gap-2 text-center">
-                            <button type="submit" class="btn btn-dark btn-lg" onclick="registrarse2()">Registrarse</button>
-                        </div>                    
+                        <div class="form-group mt-5 mb-3 d-grid text-center">
+                            <input type="submit" class="btn ingresar mb-3" onclick="registrarse2()" value="Iniciar Sesión">
+                            <a href="index.php" class="btn ingresar mb-3">Ir al inicio</a>
+                        </div>             
                     </div>                     
                 </form> 
             </div>

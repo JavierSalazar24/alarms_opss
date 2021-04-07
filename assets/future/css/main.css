@@ -71,7 +71,7 @@ body.is-menu-visible #div-principal {
 .h3f,
 .parrafof,
 .ancla-navf,
-#headerf {
+.active #headerf {
   margin: 0;
   padding: 0;
   border: 0;
@@ -162,12 +162,38 @@ body.is-menu-visible #div-principal {
   text-decoration: none;
 }
 
+/* .active {
+  -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  transition: color 0.2s ease, border-bottom-color 0.2s ease;
+  border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
+  color: inherit;
+  text-decoration: none;
+} */
+
 .ancla-navf:before {
   -moz-transition: color 0.2s ease;
   -webkit-transition: color 0.2s ease;
   -ms-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
+
+/* .active:before {
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  -ms-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+.active:hover {
+  border-bottom-color: transparent;
+  color: #2ebaae !important;
+} */
+
+/* .active:hover:before {
+  color: #2ebaae !important;
+} */
 
 .ancla-navf:hover {
   border-bottom-color: transparent;
@@ -195,6 +221,12 @@ body.is-menu-visible #div-principal {
 
 .h1f .ancla-navf,
 .h3f .ancla-navf {
+  color: inherit;
+  border-bottom: 0;
+}
+
+.h1f .active,
+.h3f .active {
   color: inherit;
   border-bottom: 0;
 }
@@ -487,10 +519,19 @@ body.is-menu-visible #div-principal {
   text-decoration: none;
 }
 
+#headerf .active {
+  color: inherit;
+  text-decoration: none;
+}
+
 #headerf .ulf {
   list-style: none;
   margin: 0;
   padding-left: 0;
+}
+
+.active {
+  color: #2ebaae;
 }
 
 #headerf .ulf .lif {
@@ -506,6 +547,10 @@ body.is-menu-visible #div-principal {
 }
 
 #headerf .h1f .ancla-navf {
+  font-size: 0.7em;
+}
+
+#headerf .h1f .active {
   font-size: 0.7em;
 }
 
@@ -536,6 +581,15 @@ body.is-menu-visible #div-principal {
 }
 
 #headerf .links .ulf .lif .ancla-navf {
+  border-bottom: 0;
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 0.7em;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+#headerf .links .ulf .lif .active {
   border-bottom: 0;
   font-family: "Raleway", Helvetica, sans-serif;
   font-size: 0.7em;
@@ -577,6 +631,16 @@ body.is-menu-visible #div-principal {
   width: 4em;
 }
 
+#headerf .mainf .ulf .lif > .active {
+  text-decoration: none;
+  border-bottom: 0;
+  color: #aaaaaa;
+  overflow: hidden;
+  position: relative;
+  text-indent: 4em;
+  width: 4em;
+}
+
 #headerf .mainf .ulf .lif > .ancla-navf:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -587,6 +651,27 @@ body.is-menu-visible #div-principal {
 }
 
 #headerf .mainf .ulf .lif > .ancla-navf:before {
+  display: block;
+  height: inherit;
+  left: 0;
+  line-height: inherit;
+  position: absolute;
+  text-align: center;
+  text-indent: 0;
+  top: 0;
+  width: inherit;
+}
+
+#headerf .mainf .ulf .lif > .active:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+
+#headerf .mainf .ulf .lif > .active:before {
   display: block;
   height: inherit;
   left: 0;
@@ -717,10 +802,49 @@ body.is-menu-visible #div-principal {
   color: #2ebaae;
 }
 
+#menu .links > .lif .ancla-navf {
+  display: block;
+  border-bottom: 0;
+}
+
+#menu .links > .lif .active {
+  display: block;
+  border-bottom: 0;
+}
+
+#menu .links > .lif .active,
+.h3f {
+  -moz-transition: color 0.2s ease;
+  -webkit-transition: color 0.2s ease;
+  -ms-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  font-size: 1.5em;
+}
+
+#menu .links > .lif .active,
+.parrafof {
+  font-family: "Raleway", Helvetica, sans-serif;
+  font-size: 0.6em;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  margin-bottom: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* #menu .links > .lif .active:hover .h3f {
+  color: #2ebaae;
+} */
+
 #menu .links > .lif:first-child {
   border-top: 0;
   margin-top: 0;
   padding-top: 0;
+}
+
+.active {
+  color: #2ebaae !important;
+  font-weight: bold !important;
 }
 
 body.is-menu-visible #menu {

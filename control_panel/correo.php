@@ -48,9 +48,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="../img/favicon1.png">
-    <!-- Dashboard AdminLTE -->
+    <!-- Estilos -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap_copy.min.css">
     <link rel="stylesheet" href="assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <link href="css/AdminLTE_copy.min.css" rel="stylesheet">
@@ -96,18 +96,23 @@
                               <i class="fa fa-times"></i></button>
                           </div>
                         </div>
-                        <div class="box-body">
-                          <form action="#" method="post">
+                        <form id="enviar_correo">
+                          <div class="box-body">
+                            <div class="mb-2">
+                              <label for="email">Destino:</label>
+                              <input class="form-control" type="email" name="email" id="email">
+                            </div>
                             <div>
                               <textarea class="textarea" placeholder="Escribe tu mensaje..." name="mensaje_correo"
                                 style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                             </div>
-                          </form>
-                        </div>
-                        <div class="box-footer clearfix">
-                          <button type="button" class="pull-right btn btn-dark" id="sendEmail">Send
-                            <i class="fa fa-arrow-circle-right"></i></button>
-                        </div>
+                          </div>
+                          <div class="box-footer clearfix">
+                            <button type="submit" onclick="enviarCorreo()" class="pull-right btn btn-dark" id="sendEmail">
+                              Enviar<i class="fa fa-arrow-circle-right"></i>
+                            </button>
+                          </div>
+                        </form>
                       </div>
                     </section>
                   </div>
@@ -122,7 +127,15 @@
           </div>
     </div>
 
+  <!-- Estilos Script -->
   <?php include "views/script_AdminLTE.php"?>
+  <script src="js/sb-admin-2.min.js"></script>
+  <!-- SweetAlert CDN -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- Enviar correo -->
+  <script src="js/agregar_editar.js"></script>
+  <!-- LINK ACTIVE -->
+  <script src="js/active.js"></script>
 </body>
 
 </html>
@@ -161,7 +174,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="../img/favicon1.png">
-    <!-- Dashboard AdminLTE -->
+    <!-- Estilos -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap_copy.min.css">
@@ -209,18 +222,23 @@
                               <i class="fa fa-times"></i></button>
                           </div>
                         </div>
-                        <div class="box-body">
-                          <form action="#" method="post">
+                        <form id="enviar_correo">
+                          <div class="box-body">
+                            <div class="mb-2">
+                              <label for="email">Destino:</label>
+                              <input class="form-control" type="email" name="email" id="email">
+                            </div>
                             <div>
                               <textarea class="textarea" placeholder="Escribe tu mensaje..." name="mensaje_correo"
                                 style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                             </div>
-                          </form>
-                        </div>
-                        <div class="box-footer clearfix">
-                          <button type="button" class="pull-right btn btn-dark" id="sendEmail">Send
-                            <i class="fa fa-arrow-circle-right"></i></button>
-                        </div>
+                          </div>
+                          <div class="box-footer clearfix">
+                            <button type="submit" onclick="enviarCorreo()" class="pull-right btn btn-dark" id="sendEmail">
+                              Enviar<i class="fa fa-arrow-circle-right"></i>
+                            </button>
+                          </div>
+                        </form>
                       </div>
                     </section>
                   </div>
@@ -236,7 +254,16 @@
     </div>
 
 
+  <!-- Estilos Script -->
   <?php include "views/script_AdminLTE.php"?>
+  <script src="js/sb-admin-2.min.js"></script>
+  <!-- SweetAlert CDN -->
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- Enviar correo -->
+  <script src="js/agregar_editar.js"></script>
+  <!-- LINK ACTIVE -->
+  <script src="js/active.js"></script>
+
 </body>
 
 </html>

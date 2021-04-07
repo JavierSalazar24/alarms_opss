@@ -51,14 +51,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="../img/favicon1.png">
-    <!-- Dashboard 1 -->
+    <!-- Estilos -->   
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <!-- Dashboard AdminLTE -->
     <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/bower_components/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-    <!-- Estilos -->    
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos_panel.css">
@@ -127,8 +125,8 @@
                                             ?>
                                                     <p class="d-none" id="p_idNota"><?php echo $nota['_id']?></p>
                                                     <input type="checkbox" onclick="editarEstatusNota('<?php echo $nota['_id'] ?>')" checked>
-                                                    <span class="text"><s id="s_Nota"> <?php echo $nota['nota'] ?></s></span>
-                                                    <small class="badge badge-primary"><i class="fa fa-clock-o"></i> <?php echo $nota['fecha'] ?></small>
+                                                    <span class="text text-secondary"><s id="s_Nota"> <?php echo $nota['nota'] ?></s></span>
+                                                    <small class="badge badge-secondary"><i class="fa fa-clock-o"></i> <?php echo $nota['fecha'] ?></small>
                                                     <div class="tools d-flex pt-1 pb-0">
                                                         <i class="fa fa-edit" data-toggle="modal" data-target="#EditarNotaModal<?php echo $nota['_id'] ?>"></i>
                                                         <i class="fa fa-trash-o" onclick="ConfirmarEliminacionNota('<?php echo $nota['_id'] ?>')"></i>
@@ -186,7 +184,7 @@
                                 <div class="box-header bg-primary">
                                     <i class="fa fa-calendar"></i>
 
-                                    <h3 class="box-title">Calendar</h3>
+                                    <h3 class="box-title">Calendario</h3>
                                     <!-- tools box -->
                                     <div class="pull-right box-tools">
                                     <!-- button with a dropdown -->                        
@@ -216,9 +214,10 @@
         
     </div>
 
-    <!-- Bootstrap core JavaScript-->
+    <!-- Estilos Script-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/sb-admin-2.min.js"></script>
     <!-- SweetAlert CDN -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Agregar nota -->
@@ -226,6 +225,8 @@
     <!-- Eliminar nota -->
     <script type="text/javascript" src="js/eliminar.js"></script>
     <?php include "views/script_calendario.php"?>
+    <!-- LINK ACTIVE -->
+    <script src="js/active.js"></script>
 </body>
 
 </html>
@@ -338,8 +339,8 @@
                                         ?>
                                                 <p class="d-none" id="p_idNota"><?php echo $nota['_id']?></p>
                                                 <input type="checkbox" onclick="editarEstatusNota('<?php echo $nota['_id'] ?>')" checked>
-                                                <span class="text"><s id="s_Nota"><?php echo $nota['nota'] ?></s></span>
-                                                <small class="badge badge-primary"><i class="fa fa-clock-o"></i> <?php echo $nota['fecha'] ?></small>
+                                                <span class="text text-secondary"><s id="s_Nota"><?php echo $nota['nota'] ?></s></span>
+                                                <small class="badge badge-secondary"><i class="fa fa-clock-o"></i> <?php echo $nota['fecha'] ?></small>
                                                 <div class="tools d-flex pt-1 pb-0">
                                                     <i class="fa fa-edit" data-toggle="modal" data-target="#EditarNotaModal"></i>
                                                     <i class="fa fa-trash-o" onclick="ConfirmarEliminacionNota('<?php echo $nota['_id'] ?>')"></i>
@@ -395,7 +396,7 @@
                             <div class="box-header bg-primary">
                                 <i class="fa fa-calendar"></i>
 
-                                <h3 class="box-title">Calendar</h3>
+                                <h3 class="box-title">Calendario</h3>
                                 <!-- tools box -->
                                 <div class="pull-right box-tools">
                                 <!-- button with a dropdown -->                        
@@ -419,14 +420,17 @@
         
     </div>
 
-    <!-- Bootstrap core JavaScript-->
+    <!-- Estilos Script-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/sb-admin-2.min.js"></script>
     <!-- SweetAlert CDN -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Agregar nota -->
     <script type="text/javascript" src="js/agregar_editar.js"></script>
     <?php include "views/script_calendario.php"?>
+    <!-- LINK ACTIVE -->
+    <script src="js/active.js"></script>
 </body>
 
 </html>

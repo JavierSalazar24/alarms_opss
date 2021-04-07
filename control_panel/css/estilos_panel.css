@@ -146,3 +146,14 @@ td {
 #tachado {
   z-index: 1000 !important;
 }
+
+.activePanel {
+  color: #fff !important;
+  font-weight: bold !important;
+  display: block;
+  padding: 0.5rem 1rem !important;
+}
+
+.activePanel:hover {
+  text-decoration: none !important;
+}

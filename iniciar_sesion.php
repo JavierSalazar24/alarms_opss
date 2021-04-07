@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -16,13 +17,10 @@
 
 <body class="body-login">
     <div id="iniciar-sesion" class="container">
-        <div class="row justify-content-center pt-4 mt-3 m-1">
-            <div class="col-md-6 formulario_login">
+        <div class="row justify-content-center pt-4 mt-3 pb-4 mb-3 m-1">
+            <div class="col-12 col-md-6 formulario_login">
                 <form id="form_login" class="needs-validation" novalidate>
-                    <div class="form-group text-center pt-4 pb-5">
-                        <!-- <a href="index.php" class="x-ancla-login">
-                            <span class="x-login">X</span>
-                        </a> -->
+                    <div class="form-group text-center pt-4 pb-5">                       
                         <h1 class="titulo-login">INICIAR SESIÓN</h1>
                         <p class="parrafo-login">¿Eres nuevo en este sitio? <a href="registrarse.php" class="text-light btn-link">registrate</a></p>
                     </div>
@@ -38,21 +36,17 @@
                         <div class="valid-feedback text-white">Correcto.</div>
 						<div class="invalid-feedback text-white">Por favor ingresa tú contraseña.</div>
                     </div>
-                    <div class="form-group mx-sm-4 d-grid gap-2 mt-5 mb-2">
-                        <input type="submit" class="btn btn-block ingresar" onclick="iniciarSesion()" value="Iniciar Sesión">
+                    <div class="form-group mt-5 mb-3 text-center">
+                        <input type="submit" class="btn ingresar mb-3" onclick="iniciarSesion()" value="Iniciar Sesión">
+                        <a href="index.php" class="btn ingresar mb-3">Volver al inicio</a>
                     </div>
-                    <div class="form-group mx-sm-4 pb-2 d-grid gap-2 mb-3">
-                        <a href="index.php" class="btn btn-block ingresar">Volver al inicio</a>
-                    </div>
-                    <!-- <div class="form-group mt-5 mb-3 text-center">
-                        <input type="submit" class="btn ingresar" onclick="iniciarSesion()" value="Iniciar Sesión">
-                        <a href="index.php" class="btn ingresar">Volver al inicio</a>
-                    </div>                -->
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- Script bootstrap -->
     <?php include_once "views/script_bootstrap.php"?>
     <!-- Alertas Sweetalert -->

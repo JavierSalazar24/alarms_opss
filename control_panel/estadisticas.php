@@ -145,6 +145,8 @@
     <script type="text/javascript" src="../js/eliminar.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <!-- LINK ACTIVE -->
+    <script src="js/active.js"></script>
 
 </body>
 
@@ -275,6 +277,8 @@
     <script type="text/javascript" src="../datatable/Buttons-1.6.2/js/buttons.html5.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+    <!-- LINK ACTIVE -->
+    <script src="js/active.js"></script>
 
 </body>
 

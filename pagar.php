@@ -9,14 +9,10 @@
         $id_pedido = $_REQUEST['id_producto'];
         $C_pedidos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->pedidos;
         $datosPedidos = $C_pedidos->findOne(['id_mercancia' => $id_pedido],['sort' => ['fecha_hora' => -1]]);
-        if (empty($datosPedidos)) {
-            header("Location: productos.php");
-        }else{
-            $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos;
-            $datosProductos = $C_productos->findOne(['_id' => new MongoDB\BSON\ObjectID($id_pedido)]);
-        }
-
         
+        $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos;
+        $datosProductos = $C_productos->findOne(['_id' => new MongoDB\BSON\ObjectID($id_pedido)]);
+                
     }
 
     date_default_timezone_set('America/Mexico_City');

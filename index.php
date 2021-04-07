@@ -31,8 +31,8 @@
     <meta name="author" content="Empresa OPSS.">
     <meta name="copyright" content="Empresa OPSS.">
     <meta name="robots" content="index">
+    <meta name="google-signin-client_id" content="529817140282-nfm7dvhqm0jjfrr7020sq99ifm0q6qs9.apps.googleusercontent.com">
     <link rel="shortcut icon" href="img/favicon1.png">
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/estilos_brandy.css">
     <?php include_once "views/estilos_alysa.php"?>
@@ -325,12 +325,12 @@
                     <div class="col-md-12 text-center   wow fadeInUp animated">
                         <h4>Siguenos en nuestras redes sociales</h4>
                         <ul class="icon_list">
-                            <li><a href="http://www.facebook.com/abdullah.noman99"target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="http://www.twitter.com/absconderm"target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="http://www.dribbble.com/abdullahnoman"target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                        </ul>                        
+                            <li><a href="#"target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                        </ul>                      
                         <br>
                         <div>
                             <p>&copy; HECHO POR OPSS <?php echo date('Y');?>.</p>
@@ -349,12 +349,17 @@
     <div class="go-top"><i class="fas fa-arrow-up"></i></div>
 
 
+    <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <!-- Estilos script -->
     <?php include_once "views/script_future.php"?>
     <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_alysa.php"?>
     <?php include_once "views/script_bent.php"?>
     <?php include_once "views/script_sima.php"?>
+    <!-- LINK ACTIVADO -->
+    <script src="js/active.js"></script>
+
 </body>
 
 </html>
@@ -377,8 +382,8 @@
     <meta name="author" content="Empresa OPSS.">
     <meta name="copyright" content="Empresa OPSS.">
     <meta name="robots" content="index">
+    <meta name="google-signin-client_id" content="529817140282-nfm7dvhqm0jjfrr7020sq99ifm0q6qs9.apps.googleusercontent.com">
     <link rel="shortcut icon" href="img/favicon1.png">
-
     <link rel="stylesheet" href="css/estilos_brandy.css">
     <?php include_once "views/estilos_alysa.php"?>
     <?php include_once "views/estilos_future.php"?>
@@ -675,11 +680,11 @@
                     <div class="social col-md-12 text-center   wow fadeInUp animated">
                         <h2>Siguenos en nuestras redes sociales</h2>
                         <ul class="icon_list">
-                            <li><a href="http://www.facebook.com/abdullah.noman99"target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="http://www.twitter.com/absconderm"target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="http://www.dribbble.com/abdullahnoman"target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#"target="_blank"><i class="fa fa-dribbble"></i></a></li>
                         </ul>                        
                         <br>
                         <div class="copyright_text">
@@ -697,12 +702,17 @@
 
     <div class="go-top"><i class="fas fa-arrow-up"></i></div>
 
+    <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <!-- Estilos script -->
     <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
     <?php include_once "views/script_alysa.php"?>
     <?php include_once "views/script_bent.php"?>
     <?php include_once "views/script_sima.php"?>
+    <!-- LINK ACTIVADO -->
+    <script src="js/active.js"></script>
+
 </body>
 
 </html>

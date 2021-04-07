@@ -572,3 +572,39 @@
     margin-right: 0rem;
   }
 }
+
+@media screen and (max-width: 991px) {
+  .imagen_normal-noticias {
+    display: none;
+  }
+
+  .imagen_responsiva-noticias {
+    display: inline-block;
+  }
+
+  .contenido_princiapl-normal {
+    display: none;
+  }
+
+  .contenido_princiapl-responsivo {
+    display: inline-block;
+  }
+
+  .temario_normal {
+    display: none;
+  }
+
+  .temario_responsivo {
+    display: inline-block;
+    position: static;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .titulo_jumpbotron {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    margin: 20px 0;
+  }
+}

@@ -61,7 +61,7 @@ $(function () {
 
   var calendar = new Calendar(calendarEl, {
     headerToolbar: {
-      left: "prev,next today",
+      left: "ant,sig hoy",
       center: "title",
       right: "dayGridMonth,timeGridWeek,timeGridDay",
     },

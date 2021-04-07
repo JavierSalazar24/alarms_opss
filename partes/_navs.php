@@ -13,6 +13,7 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dp-categorias">
                         <a href="mi_perfil.php" class="text-center ancla-navf ancla-dropdown dropdown-item">Mi perfil</a>
+                        <a href="mis_pedidos.php" class="text-center ancla-navf ancla-dropdown dropdown-item">Mis pedidos</a>         
                         <a href="alarmas.php" class="text-center ancla-navf ancla-dropdown dropdown-item">Mis alarmas</a>         
                         <a href="cerrar_sesion.php" class="text-center ancla-navf ancla-dropdown dropdown-item">Cerrar sesión</a>         
                     </div>
@@ -63,6 +64,11 @@
             <li class="lif">
                 <a class="ancla-navf" href="mi_perfil.php">
                     <h3 class="h3f">MI PERFIL</h3>
+                </a>
+            </li>
+            <li class="lif">
+                <a class="ancla-navf" href="mis_pedidos.php">
+                    <h3 class="h3f">MIS PEDIDOS</h3>
                 </a>
             </li>
             <li class="lif">

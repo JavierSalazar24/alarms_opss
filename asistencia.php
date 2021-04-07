@@ -28,6 +28,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon1.png">
+	<!-- Transiciones -->
+    <script src="js/scrollreveal.js"></script>
+	<!-- Estilos -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
@@ -44,7 +47,7 @@
 	
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-12">
+			<div id="asistencia-preguntas" class="col-12">
 				<main class="pb-5">
 					<h1 class="titulo">Preguntas Frecuentes</h1>
 					<div class="categorias" id="categorias">
@@ -119,15 +122,11 @@
 								<p class="respuesta">No, necesitas una cuenta obligatoriamente para poder comprar cualquier producto, ya que para programar tu alarma usamos tu correo electronico, con el fin de que haya más seguridad en el sistema de tu alarma.</p>
 							</div>
 						</div>
-
-
-
-
 					</div>
 				</main>
 				<hr class="mt-5 bg-gray">
 			</div>
-			<div class="col-12 col-md-6 mt-5">
+			<div id="asistencia-inputs" class="col-12 col-md-6 mt-5">
 				<h2 class="text-center">PONTE EN CONTÁCTO</h2>
 				<form id="input_mensaje" class="row justify-content-center g-3 needs-validation mt-5" novalidate>
 					<div class="col-12 mb-3">
@@ -157,16 +156,25 @@
 	</div>
 	
 
-	<script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
-    <script src="js/faq.js"></script>
+	<!-- Transiciones -->
     <script src="js/index.js"></script>
-    <?php include_once "views/script_bootstrap.php"?>
+	<!-- Boton mostrar más -->
+    <script src="js/faq.js"></script>
+    <!-- Transiciones -->
+    <script src="js/index.js"></script>
+	<!-- Estilos Script -->
+	<script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <?php include_once "views/script_future.php"?>
+    <?php include_once "views/script_bootstrap.php"?>
+	<script src="js/asistencia.js"></script>
+	<!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/sweetalert.js"></script>
+	<!-- Programación para php y validar formulario -->
     <script src="js/peticiones_php.js"></script>
-	<script src="js/asistencia.js"></script>
 	<script src="js/validacion_formulario.js"></script>
+	<!-- LINK ACTIVADO -->
+    <script src="js/active.js"></script>
 </body>
 
 </html>
@@ -184,6 +192,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon1.png">
+	<!-- Transiciones -->
+    <script src="js/scrollreveal.js"></script>
+    <!-- Estilos -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
@@ -205,7 +216,7 @@
 	
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-12">
+			<div id="asistencia-preguntas" class="col-12">
 				<main class="pb-5">
 					<h1 class="titulo">Preguntas Frecuentes</h1>
 					<div class="categorias" id="categorias">
@@ -285,7 +296,7 @@
 				<hr class="mt-5 bg-gray">
 			</div>
 
-			<div class="col-12 col-md-6 mt-5">
+			<div id="asistencia-inputs" class="col-12 col-md-6 mt-5">
 				<h2 class="text-center">PONTE EN CONTÁCTO</h2>
 				<form id="input_mensaje" class="row justify-content-center g-3 needs-validation mt-5" novalidate>
 					<div class="col-12 mb-3">
@@ -314,15 +325,25 @@
 		</div>
 	</div>
 
-	<script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
-    <script src="js/faq.js"></script>
+    
+	<!-- Transiciones -->
     <script src="js/index.js"></script>
+    <!-- Boton mostrar más -->
+    <script src="js/faq.js"></script>
+    <!-- Transiciones -->
+    <script src="js/index.js"></script>
+	<!-- Estilos Script -->
+	<script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <?php include_once "views/script_future.php"?>
+	<script src="js/asistencia.js"></script>
+	<!-- SweetAlert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/sweetalert.js"></script>
+	<!-- Programación para php y validar formulario -->
     <script src="js/peticiones_php.js"></script>
-	<script src="js/asistencia.js"></script>
 	<script src="js/validacion_formulario.js"></script>
+	<!-- LINK ACTIVADO -->
+    <script src="js/active.js"></script>
 </body>
 
 </html>

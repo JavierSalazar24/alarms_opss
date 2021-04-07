@@ -41,15 +41,13 @@
         $precio = $datosP['precio'];        
         $total = $precio * $cantidad_n;
 
-        $C_pedidos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->pedidos; 
-        $numP = $C_pedidos -> count();
-        $no = $numP+1;
+        $C_pedidos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->pedidos;         
 
         if (empty($_POST['ape2'])) {
             
             $insert = $C_pedidos -> insertOne([
-                'no' => $no,
                 'id_mercancia' => $id_producto,
+                'nombre_producto' => $datosP['nombre'],
                 'info_cliente' => [
                 'nombres' => $nombre,
                 'apellidos' => $ape1,
@@ -60,15 +58,16 @@
                 'cp' => $cp_n,
                 'ciudad' => $ciudad,
                 ],
+                'correo_cliente' => $_POST['correo'],                
                 'cantidad' => $cantidad_n_n,
                 'total' => $total,
-                'fecha_hora' => $fecha.'/'.$hora_exacta,
+                'fecha_hora' => $fecha.' / '.$hora_exacta,
             ]);
 
         }else{
             $insert = $C_pedidos -> insertOne([
-                'no' => $no,
                 'id_mercancia' => $id_producto,
+                'nombre_producto' => $datosP['nombre'],
                 'info_cliente' => [
                 'nombres' => $nombre,
                 'apellidos' => $ape1.' '.$_POST['ape2'],
@@ -79,9 +78,10 @@
                 'cp' => $cp_n,
                 'ciudad' => $ciudad,
                 ],
+                'correo_cliente' => $_POST['correo'],                
                 'cantidad' => $cantidad_n_n,
                 'total' => $total,
-                'fecha_hora' => $fecha.'/'.$hora_exacta,
+                'fecha_hora' => $fecha.' / '.$hora_exacta,
             ]);
         }
 

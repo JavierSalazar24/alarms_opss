@@ -23,11 +23,13 @@ function iniciarSesion() {
             location.href = "index.php";
           }
         } else if (data == "admin") {
-          Swal.fire(
-            "Bienvenido!",
-            "Bienvenido a OPSS administrador",
-            "success"
-          );
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Bienvenido a su panel de administrador",
+            showConfirmButton: false,
+            timer: 1500,
+          });
           setTimeout(cargaAlertaIniciarSesion, 500);
           function cargaAlertaIniciarSesion() {
             location.href = "control_panel/index.php";
@@ -232,5 +234,71 @@ function enviarDireccion2() {
           });
       }
     });
+  });
+}
+
+function editarPerfil() {
+  var form_editar_perfil = document.getElementById("form_editar_perfil");
+  form_editar_perfil.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var datos = new FormData(form_editar_perfil);
+
+    fetch("php/editar_perfil.php", {
+      method: "POST",
+      body: datos,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data == "correcto") {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Pefil editado con exito",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setTimeout(cargaAlertaEditarPerfil, 500);
+          function cargaAlertaEditarPerfil() {
+            location.href = "mi_perfil.php";
+          }
+        } else if (data == "error") {
+          Swal.fire("Error!", "Ocurrio un error en el servidor", "error");
+        } else if (data == "vacio") {
+          Swal.fire("Error!", "Datos vacíos", "error");
+        }
+      });
+  });
+}
+
+function editarPerfil2() {
+  var form_editar_perfil2 = document.getElementById("form_editar_perfil2");
+  form_editar_perfil2.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var datos = new FormData(form_editar_perfil2);
+
+    fetch("php/editar_perfil.php", {
+      method: "POST",
+      body: datos,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data == "correcto") {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Perfil editado con exito",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          setTimeout(cargaAlertaEditarPerfil, 500);
+          function cargaAlertaEditarPerfil() {
+            location.href = "mi_perfil.php";
+          }
+        } else if (data == "error") {
+          Swal.fire("Error!", "Ocurrio un error en el servidor", "error");
+        } else if (data == "vacio") {
+          Swal.fire("Error!", "Datos vacíos", "error");
+        }
+      });
   });
 }

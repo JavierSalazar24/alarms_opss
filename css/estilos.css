@@ -28,44 +28,127 @@ a {
 }
 
 /* NOTICIAS */
-/* 
-.div-noticias {
-  width: 60%;
-  margin: 5rem auto;
+
+.body_noticias {
+  background: rgb(25, 34, 41);
+}
+
+.fondo_jump {
+  background: rgb(18, 26, 33);
+  color: #fff;
+}
+
+.titulo_jumpbotron {
+  font-family: "Roboto", sans-serif;
+  font-size: 35px;
+  margin: 20px 0;
+}
+
+.parrafo_jumpbotron {
   text-align: justify;
 }
 
-.h1-noticias {
-  padding-top: 5rem;
-  text-align: center;
-  font-size: 3rem;
-} */
+.img-noticias {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.contenido_princiapl-responsivo {
+  display: none;
+}
+
+.imagen_responsiva-noticias {
+  display: none;
+}
+
+.fondo_texto {
+  background: rgb(33, 46, 54);
+  border-radius: 10px;
+  padding: 35px 30px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.664);
+}
+
+.titulo-noticias {
+  font-family: "Roboto", sans-serif;
+  padding-top: 60px;
+  padding-bottom: 5px;
+  font-size: 28px;
+}
+
+.titulo-noticias1 {
+  padding-top: 12px;
+}
+
+.p-noticias {
+  line-height: 150%;
+  text-align: justify;
+}
+
+.fondo_lista-grupo {
+  background: rgb(33, 46, 54);
+  border-radius: 10px;
+  padding: 25px 30px;
+  border-top: 5px solid #58b3f3 !important;
+  position: sticky;
+  top: 95px;
+}
+
+.temario_responsivo {
+  display: none;
+}
+
+.temario_normal {
+  height: 57vh;
+}
+
+.fondo_lista-grupo > ul > a {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.527);
+  text-decoration: none;
+}
+
+.list-group-item {
+  margin: 4px;
+  padding: 10px;
+}
+
+.list-group-item:hover {
+  background: #2a3b47;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px;
+  color: #58b3f3 !important;
+  font-weight: bold;
+}
+
+.activeNoticias {
+  background: #2a3b47 !important;
+  cursor: pointer !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  color: #58b3f3 !important;
+  font-weight: bold !important;
+}
 
 /* INICIAR SESIÓN */
 
 .body-login {
-  background-image: url(../img/login.jpg);
+  background-position: center;
+  background-image: url(../img/iniciar_sesion.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  /* background-size: cover; */
   background-attachment: fixed;
 }
 
-.x-login {
-  margin-top: -3rem;
-  font-size: 2rem;
-  font-weight: bold;
-  position: absolute;
-  right: 9rem;
+.g-signin2 {
+  width: 100%;
 }
 
-.x-ancla-login {
-  text-decoration: none;
-  color: #fff;
-}
-
-.x-ancla-login:hover {
-  text-decoration: none;
-  color: #fff;
+.g-signin2 > div {
+  margin: 20px auto 0 auto;
 }
 
 .titulo-login {
@@ -118,15 +201,14 @@ a {
 
 .ingresar {
   background: #222a3f;
-  padding: 10px;
-  /* padding: 10px 50px; */
+  padding: 10px 50px;
   font-size: 16px;
   font-weight: 700 !important;
   color: white;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
   transition: 0.5s ease-in;
-  /* margin-left: 10px; */
-  /* margin-right: 10px; */
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .ingresar:hover {
@@ -142,6 +224,7 @@ a {
   background-size: cover;
   background-attachment: fixed;
 }
+
 .container-registrarse {
   margin-top: 3.7rem;
 }
@@ -194,27 +277,9 @@ a {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.ancla-registrarse {
-  text-decoration: underline;
-  color: blue;
-}
-
-.x-registrarse {
-  margin-top: -1.2rem;
-  font-size: 2rem;
-  font-weight: bold;
-  position: absolute;
-  right: 9rem;
-}
-
-.x-ancla-registrarse {
-  text-decoration: none;
-  color: black;
-}
-
-.x-ancla-registrarse:hover {
-  text-decoration: none;
-  color: black;
+.registrarse {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 .formulario_responsive {
@@ -462,172 +527,16 @@ a {
   background-color: #175680;
 }
 
-/* Mi perfil */
+/* Mi perfil, editar perfil */
 
 .body-perfil {
   background-color: #119dcf;
 }
 
-.h1-perfil {
-  font-size: 3rem;
-  color: #000000;
-  font-weight: 500;
-}
-
-.h1-alarma {
-  font-size: 3rem;
-  color: #000000;
-  font-weight: 500;
-  margin-bottom: 4rem;
-}
-
-#perfil {
-  text-align: center;
-  width: 80%;
-  margin-top: 8rem;
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-}
-
-.div-inputs-perfil-gnrl {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.div-inputs-perfil {
-  width: 40%;
-  margin: 1.5rem 0 1rem 3rem;
-}
-
-#label-perfil {
-  color: #fff;
-}
-
-.input-perfil-form {
-  color: #fff;
-  border: none;
-  border-bottom: 1px solid #fff;
+.form-control-registrarse[readonly] {
   background: transparent;
-  padding-top: 1rem;
-  padding-left: 10px;
-  font-size: 1rem;
-  width: 60%;
-  outline: 0px;
 }
 
-.div-perfil-btn {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.btn-perfil {
-  text-decoration: none;
-  margin-right: 1rem;
-  background-color: #343a40;
-  border: none;
-  border-radius: 10px;
-  color: #fff !important;
-  padding: 0.8rem 5%;
-  font-size: 1rem;
-  display: inline-block;
-  margin-bottom: 2rem;
-  transition: 1s;
-}
-
-.btn-perfil:hover {
-  transition: 1s;
-  background-color: #25292e;
-}
-
-.btn-perfil2 {
-  display: inline-block;
-  text-decoration: none;
-  margin-right: 1rem;
-  background-color: #343a40;
-  border: none;
-  border-radius: 10px;
-  color: #fff !important;
-  padding: 0.8rem 4%;
-  font-size: 1rem;
-  transition: 1s;
-  cursor: pointer;
-}
-
-.btn-perfil22 {
-  margin-bottom: 3rem;
-  background-color: #343a40;
-  border: none;
-  color: #fff;
-  border-radius: 10px;
-}
-
-.btn-perfil2:hover {
-  transition: 1s;
-  background-color: #25292e;
-}
-
-/* Editar perfil */
-
-.btn-editar-perfil2 {
-  display: inline-block;
-  margin-left: 1rem;
-  background-color: #343a40;
-  border: none;
-  border-radius: 10px;
-  color: #fff !important;
-  margin-top: 3rem;
-  margin-bottom: 4rem;
-  text-decoration: none;
-  transition: 1s;
-  cursor: pointer;
-  padding: 14.5px 48px;
-}
-
-.btn-editar-perfil2:hover {
-  transition: 1s;
-  background-color: #25292e;
-}
-
-.btn-input-perfil {
-  background-color: #343a40;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  cursor: pointer;
-  padding: 14.5px 48px;
-
-  font-size: 1rem;
-  margin-top: 3rem;
-  margin-bottom: 4rem;
-  outline: 0px;
-  transition: 1s;
-}
-
-.btn-input-perfil:hover {
-  transition: 1s;
-  background-color: #25292e;
-}
-
-.btn-input-perfil2 {
-  text-align: center;
-  background-color: #343a40;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  width: 20%;
-  height: 3rem;
-  font-size: 1rem;
-  margin-top: 3rem;
-  margin-bottom: 4rem;
-  outline: 0px;
-  transition: 1s;
-}
-
-.btn-input-perfil2:hover {
-  transition: 1s;
-  background-color: #25292e;
+.label-pedidos {
+  font-weight: bold;
 }

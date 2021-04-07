@@ -69,11 +69,7 @@
         <div class="sidebar-heading">Herramientas</div>
 
         <!-- Nav Item - Paginas del menu -->
-        <li class="nav-item ">
-            <a class="nav-link" href="calendario.php">
-                <i class="fa fa-calendar"></i>
-                <span>Calendario</span>
-            </a>
+        <li class="nav-item ">            
             <a class="nav-link" href="notas.php">
                 <i class="fas fa-sticky-note"></i>
                 <span>Notas</span>

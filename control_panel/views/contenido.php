@@ -110,13 +110,13 @@
                     </div>
                     <div class="mt-4 text-center small">
                         <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Direct
+                            <i class="fas fa-circle text-primary"></i> Clientes
                         </span>
                         <span class="mr-2">
-                            <i class="fas fa-circle text-success"></i> Social
+                            <i class="fas fa-circle text-success"></i> Productos
                         </span>
                         <span class="mr-2">
-                            <i class="fas fa-circle text-info"></i> Referral
+                            <i class="fas fa-circle text-warning"></i> Administradores
                         </span>
                     </div>
                 </div> 
@@ -160,8 +160,8 @@
                             ?>
                                     <p class="d-none" id="p_idNota"><?php echo $nota['_id']?></p>
                                     <input type="checkbox" onclick="editarEstatusNotaI('<?php echo $nota['_id'] ?>')" checked>
-                                    <span class="text"><s id="s_Nota"> <?php echo $nota['nota'] ?></s></span>
-                                    <small class="badge badge-primary"><i class="fa fa-clock-o"></i> <?php echo $nota['fecha'] ?></small>
+                                    <span class="text text-secondary"><s id="s_Nota"> <?php echo $nota['nota'] ?></s></span>
+                                    <small class="badge badge-secondary"><i class="fa fa-clock-o"></i> <?php echo $nota['fecha'] ?></small>
                                     <div class="tools d-flex pt-1 pb-0">
                                         <i class="fa fa-edit" data-toggle="modal" data-target="#EditarNotaModalI<?php echo $nota['_id'] ?>"></i>
                                         <i class="fa fa-trash-o" onclick="ConfirmarEliminacionNotaI('<?php echo $nota['_id'] ?>')"></i>
@@ -273,7 +273,35 @@
                             </div>
                         </div>
                     </a>
-                </div>                
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <a href="notas.php" id="links-dashboard">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Notas</div>
+                                    </div>
+                                    <div class="col-auto"><i class="fas fa-sticky-note fa-3x text-gray-300"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <a href="correo.php" id="links-dashboard">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Correo</div>
+                                    </div>
+                                    <div class="col-auto"><i class="fas fa-envelope fa-3x text-gray-300"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -282,7 +310,7 @@
             <div class="mb-5 box text-white bg-gray-100 border-none">
                 <div class="box-header bg-primary text-white">
                     <i class="fa fa-calendar"></i>
-                    <h3 class="box-title">Calendar</h3>
+                    <h3 class="box-title">Calendario</h3>
                     <div class="pull-right box-tools">
                     <button type="button" class="btn btn-success btn-sm" data-widget="collapse">
                         <i class="fa fa-minus"></i>
@@ -299,14 +327,21 @@
             <!-- Approach -->
             <div class="card shadow mb-4 mt-5 text-black">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Alarmas - OPSS</h6>
                 </div>
-                <div class="card-body">
-                    <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce
-                        CSS bloat and poor page performance. Custom CSS classes are used to create
-                        custom components and custom utility classes.</p>
-                    <p class="mb-0">Before working with this theme, you should become familiar with the
-                        Bootstrap framework, especially the utility classes.</p>
+                <div class="card-body text-justify">
+                    <p>
+                        Aquí podras eliminar, editar o consultar todos los datos importantes de los <b><a href="clientes.php">clientes</a></b>, <b><a href="administradores.php">administradores</a></b>, <b><a href="productos.php">productos</a></b>, <b><a href="pedidos.php">pedidos</a></b>, <b><a href="envios.php">envios</a></b> o <b><a href="ventas.php">ventas</a></b>, así como sus <b><a href="estadisticas.php">estadísticas</a></b> o contestar <b><a href="mensajes.php">mensajes</a></b> de los clientes.
+                    </p>
+                    <p>
+                        Puedes crear <b><a href="notas.php">notas</a></b> para que otros administradores puedan saber los pendientes que hay o las cosas que se van haciendo día a día, así como mandar <b><a href="correos.php">correos</a></b> para contestar las dudas de los clientes.
+                    </p>
+                    <p>
+                        <b>IMPORTANTE:</b> Los administradores root pueden consultar, editar o eliminar los datos anteriormente mencionados. Los administradores estandar pueden unicamente consultar dichos datos.
+                    </p>
+                    <p>
+                        Para diferenciar, a los administradores root se les asignó el número 1 y a los administradores estandar el número 2.
+                    </p>
                 </div>
             </div>
         </div>

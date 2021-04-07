@@ -40,109 +40,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi perfil</title>
-    <script src="js/scrollreveal.js"></script>
     <link rel="shortcut icon" href="img/favicon1.png">
+    <!-- Transiciones -->
+    <script src="js/scrollreveal.js"></script>
+    <!-- Estilos -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <?php include_once "views/estilos_future.php"?>
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
+    <title>Mi perfil | OPSS</title>
 </head>
 
 <body class="body-perfil">
     
     <?php include "partes/_navs.php" ?>
 
-    <section id="perfil">
-        
-        <h1 class="h1-perfil">Mi perfil</h1>
-        
-        <div class="div-inputs-perfil-gnrl">
-            <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2 mb-0 pb-0">
-                    <label for="nombre" id="label-perfil">Nombre(s)</label>
+    <div id="perfil" class="container">
+        <div class="row justify-content-center pt-5 mt-5 m-1 mb-3 pb-4">
+            <div class="col-12">                
+                <div class="formulario_normal row mt-2 justify-content-evenly">
+                    <div class="col-12 text-center pt-4 pb-5 mb-5">
+                        <h1 class="titulo-login">MI PERFIL</h1>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="nombre">Nombre(s)</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $nombre?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="ape2">Segundo apellido</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $ape2?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="calle">Calle</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $calle?>" readonly>
+                        </div> 
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="col-fracc">Col. o Fracc.</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $col_fracc?>" readonly>
+                        </div> 
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="ciudad">Ciudad</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $ciudad?>" readonly>
+                        </div> 
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="ape1">Primer apellido</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $ape1?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="telefono">Teléfono</label>
+                            <input class="form-control form-control-registrarse" type="tel" value="<?php echo $telefono?>" readonly>
+                        </div>    
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="numero">Número exterior</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $numero?>" readonly>
+                        </div>    
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="cp">Código Postal</label>
+                            <input class="form-control form-control-registrarse" type="tel" value="<?php echo $cp?>">
+                        </div>    
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="email">Email</label>
+                            <input class="form-control form-control-registrarse" type="email" value="<?php echo $correo?>" readonly>
+                        </div>                    
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-3 d-grid gap-2 mt-5 mb-5 text-center">
+                            <a href="editar_mi_perfil.php" class="btn btn-dark btn-lg">Editar perfil</a>
+                        </div>
+                        <div class="col-md-3 d-grid gap-2 mt-5 mb-5 text-center">
+                            <a href="mis_pedidos.php" class="btn btn-dark btn-lg">Mis pedidos</a>
+                        </div>       
+                    </div>                   
                 </div>
-                <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php echo $nombre?>" disabled>
+                <div class="formulario_responsive row mt-2 justify-content-center">
+                    <div class="col-12 form-group text-center pt-4 pb-5">
+                        <h1 class="titulo-login">MI PERFIL</h1>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="nombre">Nombre(s)</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $nombre?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="ape1">Primer apellido</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $ape1?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="ape2">Segundo apellido</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $ape2?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="telefono">Teléfono</label>
+                            <input class="form-control form-control-registrarse" type="tel" value="<?php echo $telefono?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="calle">Calle</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $calle?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="numero">Número exterior</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $numero?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="col-fracc">Col. o Fracc.</label>
+                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $col_fracc?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="cp">Código Postal</label>
+                            <input class="form-control form-control-registrarse" type="tel" value="<?php echo $cp?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="ciudad">Ciudad</label>
+                            <input class="form-control form-control-registrarse" type="text"  value="<?php echo $ciudad?>" readonly>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label class="label-pedidos label-registrarse" for="email">Email</label>
+                            <input class="form-control form-control-registrarse" type="email" value="<?php echo $correo?>" readonly>
+                        </div> 
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-12 form-group mt-5 mb-3 d-grid grid-2 text-center">
+                            <a href="editar_mi_perfil.php" class="btn btn-dark btn-lg mb-3">Editar perfil</a>
+                            <a href="mis_pedidos.php" class="btn btn-dark btn-lg mb-3">Mis pedidos</a>
+                        </div>             
+                    </div>                     
+                </div> 
             </div>
-                
-            <div class="div-inputs-perfil">
-                <input type="hidden" name="id" value="<?php echo $id?>">                
-                <div class="div-inputs-registrar2 mb-0 pb-0">
-                    <label for="ape1" id="label-perfil">Primer apellido</label>
-                </div>
-                <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php echo $ape1?>" disabled>                
-            </div>
-
-            <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2 mb-0 pb-0">                 
-                    <label for="ape2" id="label-perfil">Segundo apellido</label>
-                </div>
-                <input class="input-perfil-form" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape2" id="ape2" value="<?php echo $ape2?>" disabled>
-            </div>
-
-            <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2 mb-0 pb-0">
-                    <label for="telefono" id="label-perfil">Teléfono</label>
-                </div>
-                <input class="input-perfil-form" title="Solo números" pattern="[0-9]+" type="tel" name="telefono" required id="telefono" minlength="10" maxlength="10" value="<?php echo $telefono?>" disabled>
-            </div>
-
-            <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2 mb-0 pb-0">                
-                    <label for="calle" id="label-perfil">Calle</label>
-                </div>
-                <input class="input-perfil-form" type="text" name="calle" required id="calle" value="<?php echo $calle?>" disabled>
-            </div>
-
-            <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2 mb-0 pb-0">
-                    <label for="numero" id="label-perfil">Número exterior</label>
-                </div>
-                <input class="input-perfil-form" type="text" name="numero" required id="numero" value="<?php echo $numero?>" disabled>
-            </div>
-
-            <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2 mb-0 pb-0">
-                    <label for="col-fracc" id="label-perfil">Col. o Fracc.</label>
-                </div>
-                <input class="input-perfil-form" type="text" name="col_fracc" required id="col-fracc" value="<?php echo $col_fracc?>" disabled>
-            </div>
-
-            <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2 mb-0 pb-0">
-                    <label for="cp" id="label-perfil">Código Postal</label>
-                </div>
-                <input class="input-perfil-form" type="tel" title="Solo números" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php echo $cp?>" disabled>
-            </div>
-
-            <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2 mb-0 pb-0">
-                    <label for="cp" id="label-perfil">Ciudad</label>
-                </div>
-                <input class="input-perfil-form" type="text" name="ciudd" required id="ciudad" value="<?php echo $ciudad?>" disabled>
-            </div>
-
-            <div class="div-inputs-perfil">
-                <div class="div-inputs-registrar2 mb-0 pb-0">
-                    <label for="email" id="label-perfil">Email</label>
-                </div>
-                <input class="input-perfil-form" type="text" name="correo" required id="email" value="<?php echo $correo?>" disabled>
-            </div>
-
         </div>
+    </div>
 
-        <div class="div-perfil-btn">
-            <a class="btn-perfil" href="editar_mi_perfil.php">Editar perfil</a>
-            <a class="btn-perfil2 btn-perfil1" href="mis_pedidos.php">Mis pedidos</a>
-            <a class="btn-perfil2 btn-perfil22" href="index.php">Volver al inicio</a>
-        </div>
-
-    </section>
-
+    <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
+    <!-- Transiciones -->
     <script src="js/index.js"></script>
+    <!-- Estilos script -->
     <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
 
