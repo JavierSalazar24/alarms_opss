@@ -56,6 +56,7 @@
     <link href="css/AdminLTE_copy.min.css" rel="stylesheet">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/estilos_responsivo.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos_panel.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Enviar Correo | Panel de control</title>
 </head>

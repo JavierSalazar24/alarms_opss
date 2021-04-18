@@ -22,7 +22,7 @@
                 <form id="form_login" class="needs-validation" novalidate>
                     <div class="form-group text-center pt-4 pb-5">                       
                         <h1 class="titulo-login">INICIAR SESIÓN</h1>
-                        <p class="parrafo-login">¿Eres nuevo en este sitio? <a href="registrarse.php" class="text-light btn-link">registrate</a></p>
+                        <p class="parrafo-login">¿Eres nuevo en este sitio? <a href="registrarse.php" class="text-light btn-link">registrate</a>.<span>&#160</span></p>
                     </div>
                     <div class="form-floating form-group mx-sm-4 mt-4 mb-5">
                         <input class="form-control form-control_login" placeholder="Email" type="email" name="correo" required id="email" value="<?php if(isset($correo)) echo $correo?>">

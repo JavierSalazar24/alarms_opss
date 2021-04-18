@@ -11,6 +11,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
+    "firmata": "^2.3.0",
+    "johnny-five": "^2.0.0",
     "mongoose": "^5.11.17",
     "serialport": "^9.0.6"
   },

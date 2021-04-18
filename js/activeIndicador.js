@@ -1,5 +1,5 @@
 const secciones = document.querySelectorAll(".seccion");
-const menuItems = document.querySelectorAll(".list-group-item");
+const menuItems = document.querySelectorAll(".menu_itemNoticia");
 
 const funcionObserver = (entries) => {
   entries.forEach((entry) => {
@@ -19,8 +19,8 @@ const funcionObserver = (entries) => {
 
 const observer = new IntersectionObserver(funcionObserver, {
   root: null,
-  rootMargin: "0px",
-  threshold: 0.8,
+  rootMargin: "-100px",
+  threshold: 1,
 });
 
 secciones.forEach((seccion) => observer.observe(seccion));

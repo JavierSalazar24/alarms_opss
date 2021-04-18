@@ -56,15 +56,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagar</title>
+    <!-- Transiciones -->
     <script src="js/scrollreveal.js"></script>
+    <!-- Estilos -->
     <link rel="shortcut icon" href="img/favicon1.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <?php include_once "views/estilos_future.php"?>
+    <link rel="stylesheet" href="assets/future/css/main.css" />
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
+    <title>Pagar | OPSS</title>
 </head>
 
 <body class="body-direccion">
@@ -74,7 +76,7 @@
     <section id="comprar">
         <div class="comprar-div">
             <div class="div-img-comprar">
-                <img class="img-comprar" src="img/img-comprar.jpg" alt="Alarma OPSS en venta">
+                <img class="img-comprar" src="img_produtos/<?php echo $datosProductos['imagen']?>" alt="<?php echo $datosProductos['descripcion']?>">
                 <p class="desc-comprar mt-3"><?php echo $datosProductos['descripcion']?></p>
             </div>
             <div class="div-info-comprar">
@@ -90,7 +92,7 @@
                     <p class="info desc-info-comprar desaparece2">
                         El pago debe ser hecho por medio de paypal, con el fin de cuidar su información y poder realizar devoluciones si es necesario.
                     </p>
-                    <hr class="bg-white">
+                    <hr class="bg-dark">
                     </p>
                     <div id="smart-button-container">
                         <div style="text-align: center;">
@@ -102,13 +104,28 @@
         </div>
     </section>
 
+    <!-- Fontsaesome -->
     <script src=" https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
-    <script src="js/faq.js"></script>
+    <!-- Botón mostrar más -->
+    <script>
+        function accion() {
+            var ancla = document.getElementsByClassName("info");
+            var ancla2 = document.getElementsByClassName("plus");
+            for (var i = 0; i < ancla.length; i++) {
+                ancla[i].classList.toggle("desaparece2");
+                ancla2[i].classList.toggle("fa-minus");
+            }
+        }
+    </script>
+    <!-- Transiciones -->
     <script src="js/index.js"></script>
+    <!-- CDN Sweetalert -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/sweetalert.js"></script>
+    <!-- Estilos Script -->
     <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
+    <!-- Botones y funcionamiento paypal -->
     <script src="https://www.paypal.com/sdk/js?client-id=AS60qhUgLC9kzTbhIfk80BWustQ8DL-QOb9KyehDfFVdRLtL88Ezm0ZPhra2_wY_XXGjlV8ZJVnXX6-G&currency=MXN" data-sdk-integration-source="button-factory"></script>
     <script src="js/paypal.js"></script>
 </body>

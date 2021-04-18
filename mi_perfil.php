@@ -47,7 +47,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <?php include_once "views/estilos_future.php"?>
+    <link rel="stylesheet" href="assets/future/css/main.css" />
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <title>Mi perfil | OPSS</title>
@@ -62,50 +62,50 @@
             <div class="col-12">                
                 <div class="formulario_normal row mt-2 justify-content-evenly">
                     <div class="col-12 text-center pt-4 pb-5 mb-5">
-                        <h1 class="titulo-login">MI PERFIL</h1>
+                        <h1 class="titulo-pedidos">MI PERFIL</h1>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="nombre">Nombre(s)</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $nombre?>" readonly>
+                            <label class="label-pedidos" for="nombre">Nombre(s)</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $nombre?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="ape2">Segundo apellido</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $ape2?>" readonly>
+                            <label class="label-pedidos" for="ape2">Segundo apellido</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $ape2?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="calle">Calle</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $calle?>" readonly>
+                            <label class="label-pedidos" for="calle">Calle</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $calle?>" readonly>
                         </div> 
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="col-fracc">Col. o Fracc.</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $col_fracc?>" readonly>
+                            <label class="label-pedidos" for="col-fracc">Col. o Fracc.</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $col_fracc?>" readonly>
                         </div> 
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="ciudad">Ciudad</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $ciudad?>" readonly>
+                            <label class="label-pedidos" for="ciudad">Ciudad</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $ciudad?>" readonly>
                         </div> 
                     </div>
                     <div class="col-md-3">
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="ape1">Primer apellido</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $ape1?>" readonly>
+                            <label class="label-pedidos" for="ape1">Primer apellido</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $ape1?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="telefono">Teléfono</label>
-                            <input class="form-control form-control-registrarse" type="tel" value="<?php echo $telefono?>" readonly>
+                            <label class="label-pedidos" for="telefono">Teléfono</label>
+                            <input class="form-control form-control-negro" type="tel" value="<?php echo $telefono?>" readonly>
                         </div>    
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="numero">Número exterior</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $numero?>" readonly>
+                            <label class="label-pedidos" for="numero">Número exterior</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $numero?>" readonly>
                         </div>    
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="cp">Código Postal</label>
-                            <input class="form-control form-control-registrarse" type="tel" value="<?php echo $cp?>">
+                            <label class="label-pedidos" for="cp">Código Postal</label>
+                            <input class="form-control form-control-negro" type="tel" value="<?php echo $cp?>">
                         </div>    
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="email">Email</label>
-                            <input class="form-control form-control-registrarse" type="email" value="<?php echo $correo?>" readonly>
+                            <label class="label-pedidos" for="email">Email</label>
+                            <input class="form-control form-control-negro" type="email" value="<?php echo $correo?>" readonly>
                         </div>                    
                     </div>
                     <div class="row justify-content-center">
@@ -123,44 +123,44 @@
                     </div>
                     <div class="col-12">
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="nombre">Nombre(s)</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $nombre?>" readonly>
+                            <label class="label-pedidos" for="nombre">Nombre(s)</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $nombre?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="ape1">Primer apellido</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $ape1?>" readonly>
+                            <label class="label-pedidos" for="ape1">Primer apellido</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $ape1?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="ape2">Segundo apellido</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $ape2?>" readonly>
+                            <label class="label-pedidos" for="ape2">Segundo apellido</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $ape2?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="telefono">Teléfono</label>
-                            <input class="form-control form-control-registrarse" type="tel" value="<?php echo $telefono?>" readonly>
+                            <label class="label-pedidos" for="telefono">Teléfono</label>
+                            <input class="form-control form-control-negro" type="tel" value="<?php echo $telefono?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="calle">Calle</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $calle?>" readonly>
+                            <label class="label-pedidos" for="calle">Calle</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $calle?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="numero">Número exterior</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $numero?>" readonly>
+                            <label class="label-pedidos" for="numero">Número exterior</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $numero?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="col-fracc">Col. o Fracc.</label>
-                            <input class="form-control form-control-registrarse" type="text" value="<?php echo $col_fracc?>" readonly>
+                            <label class="label-pedidos" for="col-fracc">Col. o Fracc.</label>
+                            <input class="form-control form-control-negro" type="text" value="<?php echo $col_fracc?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="cp">Código Postal</label>
-                            <input class="form-control form-control-registrarse" type="tel" value="<?php echo $cp?>" readonly>
+                            <label class="label-pedidos" for="cp">Código Postal</label>
+                            <input class="form-control form-control-negro" type="tel" value="<?php echo $cp?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="ciudad">Ciudad</label>
-                            <input class="form-control form-control-registrarse" type="text"  value="<?php echo $ciudad?>" readonly>
+                            <label class="label-pedidos" for="ciudad">Ciudad</label>
+                            <input class="form-control form-control-negro" type="text"  value="<?php echo $ciudad?>" readonly>
                         </div>
                         <div class="form-group mb-5">
-                            <label class="label-pedidos label-registrarse" for="email">Email</label>
-                            <input class="form-control form-control-registrarse" type="email" value="<?php echo $correo?>" readonly>
+                            <label class="label-pedidos" for="email">Email</label>
+                            <input class="form-control form-control-negro" type="email" value="<?php echo $correo?>" readonly>
                         </div> 
                     </div>
                     <div class="row justify-content-center">

@@ -143,13 +143,31 @@ a {
   background-attachment: fixed;
 }
 
-.g-signin2 {
-  width: 100%;
+/* .parrafo-login {
+  float: center;
+  position: relative;
 }
 
-.g-signin2 > div {
-  margin: 20px auto 0 auto;
+.parrafo-login span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: rgb(255, 255, 255);
+  border-left: 1px solid #fff;
+  animation: maquina 7s infinite alternate steps(38);
 }
+
+@keyframes maquina {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+} */
 
 .titulo-login {
   font-weight: bold;
@@ -164,9 +182,9 @@ a {
 
 .formulario_login {
   background: rgba(0, 0, 0, 0.473);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
   color: white;
 }
 
@@ -290,7 +308,7 @@ a {
 
 .body-productos,
 .body-direccion {
-  background-color: #03b0f0;
+  background-color: #d7f4f7;
 }
 
 .tarjeta-wrap {
@@ -335,7 +353,7 @@ a {
 /* COMPRAR */
 
 .body-comprar {
-  background-color: #2d2d2d;
+  background-color: #d7f4f7;
 }
 
 #comprar {
@@ -363,9 +381,9 @@ a {
 
 .desc-comprar {
   text-align: justify;
-  width: 60%;
-  margin-left: 15rem;
-  color: white;
+  width: 62%;
+  margin-left: 14rem;
+  color: #000;
 }
 
 .div-info-comprar {
@@ -376,8 +394,9 @@ a {
 .info-comprar {
   margin-top: 3rem;
   margin-left: 2rem;
-  color: white;
+  color: #000;
   width: 48%;
+  transition: 3s;
 }
 
 .titulo-comprar {
@@ -427,11 +446,13 @@ a {
   margin-top: 1.5rem;
   text-align: justify;
   margin-bottom: 1rem;
+  transition: 3s;
 }
 
 .plus {
   margin-left: 7rem;
   cursor: pointer;
+  transition: 3s;
 }
 
 .btn-input-comprar-producto {
@@ -530,7 +551,17 @@ a {
 /* Mi perfil, editar perfil */
 
 .body-perfil {
-  background-color: #119dcf;
+  background-color: #d7f4f7;
+}
+
+.titulo-pedidos {
+  color: #000;
+  font-weight: bold;
+}
+
+.card-trasnparente {
+  background: rgba(0, 0, 0, 0.473);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
 }
 
 .form-control-registrarse[readonly] {
@@ -539,4 +570,40 @@ a {
 
 .label-pedidos {
   font-weight: bold;
+  color: #000;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.form-control-negro {
+  border: none;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  border-radius: 0px;
+  padding: 0px;
+  padding-left: 0 !important;
+  padding-bottom: 0px !important;
+  color: #000;
+  font-size: 17px;
+}
+
+.form-control-negro:focus {
+  color: #000;
+  border-bottom: 1px solid #000;
+  box-shadow: none;
+  background: transparent;
+  border-radius: 0px;
+}
+
+.form-control-negro:-webkit-autofill,
+.form-control-negro:-webkit-autofill:hover,
+.form-control-negro:-webkit-autofill:focus {
+  border-bottom: 1px solid #000;
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: transparent;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form-control-negro[readonly] {
+  background: transparent;
 }

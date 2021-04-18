@@ -38,19 +38,19 @@ parser.on("data", function (data) {
     const pruebas = db.collection("clientes");
 
     if (valor[0] == 1) {
-      let id = "info_alarma " + valor[1];
+      let id = valor[1];
       let correo = correos[0];
       // console.log(correo.toString());
 
       //actualización
       await pruebas.updateOne(
         { correo: correo },
-        { $set: { [`alarmas.alarma ${id}`]: "activada" } }
+        { $set: { [`alarmas.alarma ${id}`]: "encendida" } }
       );
       // console.log(actualizar.modifiedCount);
       client.close();
     } else {
-      let id = "info_alarma " + valor[1];
+      let id = valor[1];
       let correo = correos[0];
       // console.log(correo.toString());
 

@@ -34,7 +34,7 @@
     <script src="js/scrollreveal.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <?php include_once "views/estilos_future.php"?>
+    <link rel="stylesheet" href="assets/future/css/main.css" />
     <link rel="stylesheet" href="css/estilos.css">
     <title>Productos | OPSS</title>
 </head>
@@ -53,7 +53,7 @@
             <div class="col-lg-4 col-md-6 pb-5 tarjeta">
                 <div class="card bg-dark text-white adelante">
                     <img class="card-img-top img-fluid" src="img_produtos/<?php echo $datos['imagen']?>" alt="<?php echo $datos['descripcion']?>">
-                    <button onclick="MostrarAlertaImg('<?php echo $datos['nombre']?>', '<?php echo $datos['descripcion']?>', 'img_produtos/<?php echo $datos['imagen']?>')" class="icono"><i class="fas fa-search-plus"></i></button>
+                    <button class="icono" onclick="MostrarAlertaImg('<?php echo $datos['nombre']?>', 'img_produtos/<?php echo $datos['imagen']?>', '<?php echo $datos['descripcion']?>')"><i class="fas fa-search-plus"></i></button>
                     <div class="card-body">
                         <h3 class="card-title"><?php echo $datos['nombre']?></h3>                        
                         <p class="card-text">Modelo: 1</p>
@@ -61,16 +61,10 @@
                         <a href="comprar.php?id_producto=<?php echo $datos['_id']?>" class="btn btn-success btn-block">Comprar</a>
                     </div>
                 </div>
-                <script>
-                    
-                    
-
-                </script>
             </div>
             <?php
                 endforeach;
-            ?>
-            
+            ?>            
         </div>            
     </section>
 
@@ -83,7 +77,14 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/sweetalert.js"></script>
     <!-- LINK ACTIVADO -->
-    <script src="js/active.js"></script>
+    <script>
+        const currentLocation = location.href;
+        const menuItem = document.querySelectorAll("a");
+        const menuLength = menuItem.length;
+        for (let i = 0; i < menuLength; i++) {
+        if (menuItem[i].href === currentLocation) menuItem[i].className = "active";
+        }
+    </script>
 
 </body>
 
@@ -107,7 +108,7 @@
     <script src="js/scrollreveal.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <?php include_once "views/estilos_future.php"?>
+    <link rel="stylesheet" href="assets/future/css/main.css" />
     <link rel="stylesheet" href="css/estilos.css">
     <title>Productos | OPSS</title>
 </head>
@@ -126,7 +127,7 @@
             <div class="col-lg-4 col-md-6 pb-5 tarjeta">
                 <div class="card bg-dark text-white adelante">
                     <img class="card-img-top img-fluid" src="img_produtos/<?php echo $datos['imagen']?>" alt="<?php echo $datos['descripcion']?>">
-                    <button class="icono" onclick="MostrarAlertaImg('<?php echo $datos['nombre']?>', '<?php echo $datos['descripcion']?>', 'img_produtos/<?php echo $datos['imagen']?>')"><i class="fas fa-search-plus"></i></button>
+                    <button class="icono" onclick="MostrarAlertaImg('<?php echo $datos['nombre']?>', 'img_produtos/<?php echo $datos['imagen']?>', '<?php echo $datos['descripcion']?>')"><i class="fas fa-search-plus"></i></button>
                     <div class="card-body">
                         <h3 class="card-title"><?php echo $datos['nombre']?></h3>                        
                         <p class="card-text">Modelo: 1</p>
@@ -134,17 +135,10 @@
                         <a href="comprar.php?id_producto=<?php echo $datos['_id']?>" class="btn btn-success btn-block">Comprar</a>
                     </div>
                 </div>
-                <script>
-                    
-                    
-                    
-
-                </script>
             </div>
             <?php
                 endforeach;
-            ?>
-            
+            ?>            
         </div>            
     </section>
 
@@ -157,7 +151,14 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/sweetalert.js"></script>
     <!-- LINK ACTIVADO -->
-    <script src="js/active.js"></script>
+    <script>
+        const currentLocation = location.href;
+        const menuItem = document.querySelectorAll("a");
+        const menuLength = menuItem.length;
+        for (let i = 0; i < menuLength; i++) {
+        if (menuItem[i].href === currentLocation) menuItem[i].className = "active";
+        }
+    </script>
 
 </body>
 

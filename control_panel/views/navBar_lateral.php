@@ -5,6 +5,7 @@
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
+                <!-- <img class="img-profile rounded-circle mr-0 pr-0" src="../img/img_usuario.png" width="50px"> -->
             </div>
             <div class="sidebar-brand-text mx-3">Panel de control</div>
         </a>

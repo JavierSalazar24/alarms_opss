@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <?php include_once "views/estilos_future.php"?>
+    <link rel="stylesheet" href="assets/future/css/main.css" />
     <title>Noticias | OPSS</title>
 </head>
 
@@ -166,9 +166,23 @@
     <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
     <!-- LINK ACTIVE -->
-    <script src="js/active.js"></script>
-    <script src="js/activeNoticias.js"></script>
+    <script>
+        const currentLocation = location.href;
+        const menuItem = document.querySelectorAll("a");
+        const menuLength = menuItem.length;
+        for (let i = 0; i < menuLength; i++) {
+        if (menuItem[i].href === currentLocation) menuItem[i].className = "active";
+        }
+    </script>
+    <!-- Link de noticia activado -->
+    <script>
+        $(document).on("click", ".list-group-item", function () {
+            $(this).addClass("activeNoticias").siblings().removeClass("activeNoticias");
+        });
+    </script>
+    <!-- Link indicador activado -->
     <script src="js/activeIndicador.js"></script>
+
 </body>
 
 </html>
@@ -195,7 +209,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
-    <?php include_once "views/estilos_future.php"?>
+    <link rel="stylesheet" href="assets/future/css/main.css" />
     <title>Noticias | OPSS</title>
 </head>
 
@@ -244,7 +258,7 @@
                     <div id="concepto" class="seccion mt-1">
                         <div>
                             <div>
-                                <h2 class="titulo-noticias titulo-noticias1 text-white">Concepto</h2>
+                                <h2 class="titulo-noticias text-white">Concepto</h2>
                                 <p class="p-noticias">
                                     Combinar varios sensores, circuitos electrónicos, procesadores y cualquier dispositivo que se conozca podría entrar en menor o mayor forma al concepto del internet de las cosas. En otras palabras IoT es forma de conectar cualquier dispositivo con otro. 
                                 </p>
@@ -252,7 +266,7 @@
                         </div>
                     </div>
                     <div id="beneficios" class="seccion mt-1">
-                        <h2 class="titulo-noticias text-white mt-4">Beneficios de internet de las cosas</h2>
+                        <h2 class="titulo-noticias text-white mt-2">Beneficios de internet de las cosas</h2>
                         <p class="p-noticias">
                             <ul>
                                 <li>Nuevos modelos de negocios e ingresos</li>
@@ -317,10 +331,6 @@
 
     </section>
 
-    <!-- LINK ACTIVE -->
-    <script src="js/active.js"></script>
-    <script src="js/activeNoticias.js"></script>
-    <script src="js/activeIndicador.js"></script>
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <!-- Transiciones -->
@@ -328,6 +338,24 @@
     <!-- Estilos script -->
     <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
+    <!-- LINK ACTIVE -->
+    <script>
+        const currentLocation = location.href;
+        const menuItem = document.querySelectorAll("a");
+        const menuLength = menuItem.length;
+        for (let i = 0; i < menuLength; i++) {
+        if (menuItem[i].href === currentLocation) menuItem[i].className = "active";
+        }
+    </script>
+    <!-- Link de noticia activado -->
+    <script>
+        $(document).on("click", ".list-group-item", function () {
+            $(this).addClass("activeNoticias").siblings().removeClass("activeNoticias");
+        });
+    </script>
+    <!-- Link indicador activado -->
+    <script src="js/activeIndicador.js"></script>
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@
         <i class="fa fa-bars"></i>
     </button>
     <!-- Topbar Info CP -->
-    <div class="desaparecer">Panel de control: OPSS</div>
+    <div class="desaparecer">Alarmas - OPSS</div>
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
@@ -23,8 +23,7 @@
             <a class="nav-link dropdown-toggle" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bienvenido: <?php echo $nombre.' '.$ape1?></span>
-                <img class="img-profile rounded-circle"
-                    src="../img/img_usuario.png">
+                <img class="img-profile rounded-circle" src="../img/img_usuario.png">
             </a>                
         </li>
     </ul>
