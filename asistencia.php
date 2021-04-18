@@ -346,7 +346,7 @@
     <?php include_once "views/script_future.php"?>
 	<script src="js/asistencia.js"></script>
 	<!-- SweetAlert -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/sweetalert.js"></script>
 	<!-- Programación para php y validar formulario -->
     <script src="js/peticiones_php.js"></script>

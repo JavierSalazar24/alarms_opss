@@ -1,4 +1,4 @@
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 
 <!-- Script Future -->
 <script src="assets/future/js/skel.min.js"></script>
