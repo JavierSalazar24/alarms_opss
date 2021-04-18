@@ -10,7 +10,6 @@
 <script src="assets/Law/js/script.js"></script>
 
 <!-- Script Sima -->
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="assets/sima/js/bootstrap.min.js"></script>
 <script src="assets/sima/js/isotope.pkgd.min.js"></script>
 <script src="assets/sima/js/main.js"></script>

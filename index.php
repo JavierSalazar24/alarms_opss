@@ -370,6 +370,9 @@
 
     <!-- Regresar a la primera sección -->
     <div class="go-top"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- Jquery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <!-- Script Bootstrap -->
     <?php include_once "views/script_bootstrap.php"?>    
     <!-- Script Plantillas -->
@@ -759,6 +762,9 @@
 
     <!-- Regresar a la primera sección -->
     <div class="go-top"><i class="fas fa-arrow-up"></i></div>
+
+    <!-- Jquery -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <!-- Script Bootstrap -->
     <?php include_once "views/script_bootstrap.php"?>    
     <!-- Script Plantillas -->
