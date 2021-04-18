@@ -47,7 +47,7 @@
     border-radius: 0;
   }
   .navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='https://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
   }
   .navbar-light .navbar-nav {
     background-color: #000000;
@@ -84,7 +84,10 @@
   .navbar-light.transparent-navbar.is-sticky .navbar-nav .nav-item .nav-link {
     color: #ffffff;
   }
-  .navbar-light.transparent-navbar.is-sticky .navbar-nav .nav-item .nav-link::before {
+  .navbar-light.transparent-navbar.is-sticky
+    .navbar-nav
+    .nav-item
+    .nav-link::before {
     background: #ffffff;
   }
   .navbar-light.bg-dark-color .navbar-toggler {
@@ -102,7 +105,10 @@
   .navbar-light.bg-dark-color.is-sticky .navbar-nav .nav-item .nav-link {
     color: #ffffff;
   }
-  .navbar-light.bg-dark-color.is-sticky .navbar-nav .nav-item .nav-link::before {
+  .navbar-light.bg-dark-color.is-sticky
+    .navbar-nav
+    .nav-item
+    .nav-link::before {
     background: #ffffff;
   }
   .main-banner {
@@ -127,12 +133,12 @@
   .main-banner-content .title h5 {
     margin-bottom: 6px;
     -webkit-transform: unset;
-            transform: unset;
+    transform: unset;
     color: #000000;
   }
   .main-banner-content .title h1 {
     -webkit-transform: unset;
-            transform: unset;
+    transform: unset;
     color: #000000;
     font-size: 25px;
   }
@@ -173,7 +179,8 @@
   .hero-content .title h1 {
     font-size: 27px;
   }
-  .hero-content .title h1 a, .hero-content .title h1 span {
+  .hero-content .title h1 a,
+  .hero-content .title h1 span {
     font-size: 27px;
   }
   .services-area {
@@ -380,10 +387,12 @@
     text-align: center;
     margin-top: 15px;
   }
-  blockquote, .blockquote {
+  blockquote,
+  .blockquote {
     padding: 20px !important;
   }
-  blockquote p, .blockquote p {
+  blockquote p,
+  .blockquote p {
     font-size: 14px !important;
   }
   .comments-area {
@@ -530,7 +539,10 @@
   .navbar-light.transparent-navbar.is-sticky .navbar-nav .nav-item .nav-link {
     color: #ffffff;
   }
-  .navbar-light.transparent-navbar.is-sticky .navbar-nav .nav-item .nav-link::before {
+  .navbar-light.transparent-navbar.is-sticky
+    .navbar-nav
+    .nav-item
+    .nav-link::before {
     background: #ffffff;
   }
   .navbar-light.bg-dark-color .navbar-toggler {
@@ -548,7 +560,10 @@
   .navbar-light.bg-dark-color.is-sticky .navbar-nav .nav-item .nav-link {
     color: #ffffff;
   }
-  .navbar-light.bg-dark-color.is-sticky .navbar-nav .nav-item .nav-link::before {
+  .navbar-light.bg-dark-color.is-sticky
+    .navbar-nav
+    .nav-item
+    .nav-link::before {
     background: #ffffff;
   }
   .main-banner {
@@ -573,12 +588,12 @@
   .main-banner-content .title h5 {
     margin-bottom: 6px;
     -webkit-transform: unset;
-            transform: unset;
+    transform: unset;
     color: #000000;
   }
   .main-banner-content .title h1 {
     -webkit-transform: unset;
-            transform: unset;
+    transform: unset;
     color: #000000;
     font-size: 35px;
   }
@@ -616,7 +631,8 @@
   .hero-content .title h1 {
     font-size: 35px;
   }
-  .hero-content .title h1 a, .hero-content .title h1 span {
+  .hero-content .title h1 a,
+  .hero-content .title h1 span {
     font-size: 35px;
   }
   .services-area {
