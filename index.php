@@ -56,7 +56,7 @@
     <div id="div-principal">
 
         <!-- Barra de navegación -->
-        <?php include_once "partes/_navs.php" ?>
+        <?php include_once "partes/_nav.php" ?>
 
         <!-- Inicio -->
         <section class="seccion-inicio">
@@ -129,7 +129,7 @@
                         <div class="section-title white-color">
                             <h2>características</h2>
                             <div class="back-text">
-                                News
+                                Sistema
                             </div>
                         </div>
                     </div>
@@ -252,7 +252,7 @@
                                     <div class="wrap_caption">
                                         <div class="caption_carousel">
                                             <h1 class="h1s">Rocío Salazar</h1>
-                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                            <p class="parrafos">Me agradó este sitio porque tiene diseños profesionales</p>
                                         </div>
                                     </div>
                                 </div>
@@ -260,7 +260,7 @@
                                     <div class="wrap_caption">
                                         <div class="caption_carousel">
                                             <h1 class="h1s">Javier Salazar</h1>
-                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                            <p class="parrafos">Me encantó el sitio ya que cuanta con certificado de seguridad SSL</p>
                                         </div>
                                     </div>
                                 </div>
@@ -268,15 +268,15 @@
                                     <div class="wrap_caption">
                                         <div class="caption_carousel">
                                             <h1 class="h1s">Didier Ortíz</h1>
-                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                            <p class="parrafos">Este sitio es excelente porque tiene una gama de colores llamativa y tiene una gran accesibilidad a los módulos que maneja</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="item ">
                                     <div class="wrap_caption">
                                         <div class="caption_carousel">
-                                            <h1 class="h1s">Littzy Pacheco</h1>
-                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                            <h1 class="h1s">Litzzy Pacheco</h1>
+                                            <p class="parrafos">Me gusta este sitio porque en el catálogo se pueden encontrar las imagenes de los productos</p>
                                         </div>
                                     </div>
                                 </div>
@@ -351,9 +351,7 @@
                         <ul class="icon_list">
                             <li><a href="#"target="_blank"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                         </ul>                        
                         <br>
                         <div class="copyright_text">
@@ -370,7 +368,7 @@
 
     <!-- Regresar a la primera sección -->
     <div class="go-top"><i class="fas fa-arrow-up"></i></div>
-    
+
     <!-- Script Bootstrap -->
     <?php include_once "views/script_bootstrap.php"?>    
     <!-- Script Plantillas -->
@@ -519,7 +517,7 @@
                         <div class="section-title white-color">
                             <h2>características</h2>
                             <div class="back-text">
-                                News
+                                Sistema
                             </div>
                         </div>
                     </div>
@@ -642,7 +640,7 @@
                                     <div class="wrap_caption">
                                         <div class="caption_carousel">
                                             <h1 class="h1s">Rocío Salazar</h1>
-                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                            <p class="parrafos">Me agradó este sitio porque tiene diseños profesionales</p>
                                         </div>
                                     </div>
                                 </div>
@@ -650,7 +648,7 @@
                                     <div class="wrap_caption">
                                         <div class="caption_carousel">
                                             <h1 class="h1s">Javier Salazar</h1>
-                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                            <p class="parrafos">Me encantó el sitio ya que cuanta con certificado de seguridad SSL</p>
                                         </div>
                                     </div>
                                 </div>
@@ -658,15 +656,15 @@
                                     <div class="wrap_caption">
                                         <div class="caption_carousel">
                                             <h1 class="h1s">Didier Ortíz</h1>
-                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                            <p class="parrafos">Este sitio es excelente porque tiene una gama de colores llamativa y tiene una gran accesibilidad a los módulos que maneja</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="item ">
                                     <div class="wrap_caption">
                                         <div class="caption_carousel">
-                                            <h1 class="h1s">Littzy Pacheco</h1>
-                                            <p class="parrafos">LOREM IPSUM DOLOR SIT AMET CONSECTE</p>
+                                            <h1 class="h1s">Litzzy Pacheco</h1>
+                                            <p class="parrafos">Me gusta este sitio porque en el catálogo se pueden encontrar las imagenes de los productos</p>
                                         </div>
                                     </div>
                                 </div>
@@ -741,9 +739,7 @@
                         <ul class="icon_list">
                             <li><a href="#"target="_blank"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
                         </ul>                        
                         <br>
                         <div class="copyright_text">

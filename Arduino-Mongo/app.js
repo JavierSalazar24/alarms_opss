@@ -1,66 +1,107 @@
-/* ------------------------- ESTATUS DE LA ALARMA CON MONGODB Y JS --------------------------------- */
-// Comunicación serial
-const Serialport = require("serialport");
-const ReadLine = Serialport.parsers.Readline;
+//ejecutar el express
+var bodyParser = require("body-parser"); //convertir todo a JSON
+const express = require("express");
+const app = express();
 
-const port = new Serialport("COM3", {
-  baudRate: 9600,
+//cargar el body-parser para utilizar posteriormente
+app.use(bodyParser.urlencoded({ extended: false }));
+
+//asegurar que el body-parser ppueda convertir cualquier cosa en JSON
+app.use(bodyParser.json());
+
+//requerir MongoDB
+const { MongoClient } = require("mongodb");
+// URL de la BD
+const uri =
+  "mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority";
+
+//Escuchar por el puerto que nos de el sitio
+var port = process.env.PORT;
+app.listen(port, () => {
+  console.log(
+    "Servidor corriendo y listo para escuchar peticiones en: http://localhost:" +
+      port
+  );
 });
 
-const parser = port.pipe(new ReadLine({ delimiter: "\n" }));
+// Traer el board y el led
+const { Board, Led } = require("johnny-five");
+const board = new Board();
 
-parser.on("open", function () {
-  console.log("Arduino Conectado");
-});
+// Iniciar el board
+board.on("ready", () => {
+  var led = new Led(13);
+  var buzzer = new Led(12);
 
-parser.on("data", function (data) {
-  let valor = data.split("");
-  let correos = [""];
-  let limit = valor.length;
-  let j = 2;
-  for (let i = 0; i < limit - 3; i++) {
-    correos[0] = correos[0] + valor[j];
-    j++;
-  }
-  console.log(data[0]);
-  const { MongoClient } = require("mongodb");
-  const uri =
-    "mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority";
-  connect();
-  async function connect() {
-    const client = new MongoClient(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    await client.connect();
-    const db = client.db("opss");
-    // console.log("conectado a la BD", db.databaseName);
-    const pruebas = db.collection("clientes");
+  // Ruta de apagado
+  app.post("/encendido", (req, res) => {
+    var params = req.body;
 
-    if (valor[0] == 1) {
-      let id = valor[1];
-      let correo = correos[0];
-      // console.log(correo.toString());
+    let id = parseInt(params.id_alarma) + 1;
 
-      //actualización
+    connect();
+    async function connect() {
+      const client = new MongoClient(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+      await client.connect();
+      const db = client.db("opss");
+      // console.log("conectado a la BD", db.databaseName);
+      const pruebas = db.collection("clientes");
       await pruebas.updateOne(
-        { correo: correo },
+        { correo: params.correo },
         { $set: { [`alarmas.alarma ${id}`]: "encendida" } }
       );
       // console.log(actualizar.modifiedCount);
       client.close();
-    } else {
-      let id = valor[1];
-      let correo = correos[0];
-      // console.log(correo.toString());
+    }
 
-      //actualización
+    status = true;
+    console.log(status);
+
+    led.blink(200);
+    buzzer.blink(200);
+
+    return res.status(200).send({
+      status,
+    });
+  });
+
+  // Ruta de encendido
+  app.post("/apagado", (req, res) => {
+    var params = req.body;
+
+    let id = parseInt(params.id_alarma) + 1;
+
+    connect();
+    async function connect() {
+      const client = new MongoClient(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      });
+      await client.connect();
+      const db = client.db("opss");
+      // console.log("conectado a la BD", db.databaseName);
+      const pruebas = db.collection("clientes");
       await pruebas.updateOne(
-        { correo: correo },
+        { correo: params.correo },
         { $set: { [`alarmas.alarma ${id}`]: "apagada" } }
       );
       // console.log(actualizar.modifiedCount);
       client.close();
     }
-  }
+
+    status = false;
+    console.log(status);
+
+    led.stop();
+    led.off();
+    buzzer.off();
+    buzzer.stop();
+
+    return res.status(200).send({
+      status,
+    });
+  });
 });

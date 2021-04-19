@@ -79,6 +79,7 @@
                         <a href="#aplicaciones" data-url="aplicaciones" class="list-group-item list-group-item-action">Aplicaciones</a>
                         <a href="#campos_aplicacion" data-url="campos_aplicacion" class="list-group-item list-group-item-action">Campos de aplicación</a>
                         <a href="#ejemplos" data-url="ejemplos" class="list-group-item list-group-item-action">Ejemplos</a>
+                        <a href="#como_funciona" data-url="como_funciona" class="list-group-item list-group-item-action">Como funciona</a>
                     </ul>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8 fondo_texto">
@@ -151,6 +152,7 @@
                         <a href="#aplicaciones" data-url="aplicaciones" class="list-group-item list-group-item-action">Aplicaciones</a>
                         <a href="#campos_aplicacion" data-url="campos_aplicacion" class="list-group-item list-group-item-action">Campos de aplicación</a>
                         <a href="#ejemplos" data-url="ejemplos" class="list-group-item list-group-item-action">Ejemplos</a>
+                        <a href="#como_funciona" data-url="como_funciona" class="menu_itemNoticia list-group-item list-group-item-action">Como funciona</a>
                     </ul>
                 </div>
             </div>
@@ -252,18 +254,15 @@
                         <a href="#aplicaciones" data-url="aplicaciones" class="list-group-item list-group-item-action">Aplicaciones</a>
                         <a href="#campos_aplicacion" data-url="campos_aplicacion" class="list-group-item list-group-item-action">Campos de aplicación</a>
                         <a href="#ejemplos" data-url="ejemplos" class="list-group-item list-group-item-action">Ejemplos</a>
+                        <a href="#como_funciona" data-url="como_funciona" class="list-group-item list-group-item-action">Como funciona</a>
                     </ul>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8 fondo_texto">
-                    <div id="concepto" class="seccion mt-1">
-                        <div>
-                            <div>
-                                <h2 class="titulo-noticias text-white">Concepto</h2>
-                                <p class="p-noticias">
-                                    Combinar varios sensores, circuitos electrónicos, procesadores y cualquier dispositivo que se conozca podría entrar en menor o mayor forma al concepto del internet de las cosas. En otras palabras IoT es forma de conectar cualquier dispositivo con otro. 
-                                </p>
-                            </div>
-                        </div>
+                    <div id="concepto" class="seccion">
+                        <h2 class="titulo-noticias1 text-white">Concepto</h2>
+                        <p class="p-noticias">
+                            Combinar varios sensores, circuitos electrónicos, procesadores y cualquier dispositivo que se conozca podría entrar en menor o mayor forma al concepto del internet de las cosas. En otras palabras IoT es forma de conectar cualquier dispositivo con otro. 
+                        </p>
                     </div>
                     <div id="beneficios" class="seccion mt-1">
                         <h2 class="titulo-noticias text-white mt-2">Beneficios de internet de las cosas</h2>
@@ -288,7 +287,7 @@
                     <div id="aplicaciones" class="seccion mt-1">
                         <h2 class="titulo-noticias text-white mt-2">Aplicaciones</h2>
                         <p class="p-noticias">
-                            Las aplicaciones para dispositivos conectados a internet son amplias. Múltiples categorías han sido sugeridas, pero la mayoría está de acuerdo en separar las aplicaciones en tres principales ramas de uso: consumidores, empresarial, e infraestructura.22​23​ George Osborne, exmiembro del gabinete encargado de finanzas, propone que la IoT es la próxima etapa en la revolución de la información, refiriéndose a la interconectividad de todo: desde el transporte urbano hasta dispositivos médicos, pasando por electrodomésticos.
+                            Las aplicaciones para dispositivos conectados a internet son amplias. Múltiples categorías han sido sugeridas, pero la mayoría está de acuerdo en separar las aplicaciones en tres principales ramas de uso: consumidores, empresarial, e infraestructura. George Osborne, exmiembro del gabinete encargado de finanzas, propone que la IoT es la próxima etapa en la revolución de la información, refiriéndose a la interconectividad de todo: desde el transporte urbano hasta dispositivos médicos, pasando por electrodomésticos.
                         </p>
                     </div>
                     <div id="campos_aplicacion" class="seccion mt-1">
@@ -315,15 +314,34 @@
                             </ul>
                         </p>
                     </div>
+                    <div id="como_funciona" class="seccion mt-1">
+                        <h2 class="titulo-noticias text-white mt-2">Cómo funciona la IoT con tecnologías clave</h2>
+                        <p class="p-noticias">
+                            <ul>
+                                <li>
+                                    <b class="text-primary">Gestión de datos y analítica de streaming.</b> Internet de las Cosas impone altas exigencias para la gestión del streaming de Big Data proveniente de sensores. La tecnología de procesamiento de series de eventos – que se conoce a menudo como analítica de streaming – lleva a cabo gestión y analítica de datos de la IoT en tiempo real para hacerlos más valiosos. Entre las capacidades clave se cuentan filtrado, normalización, estandarización, transformación, agregación, correlación y análisis temporal.                                    
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="text-primary">Analítica de Big Data.</b> La IoT aporta muchos Big Data – el volumen masivo, la velocidad y la variedad de datos estructurados y no estructurados que las empresas reúnen cada día. Obtener valor del Big Data en IoT requiere analítica de Big Data. Técnicas relacionadas incluyen analítica predictiva, minería de texto, computación en la nube, minería de datos, lagos de datos y Hadoop. La mayoría de las organizaciones emplean una combinación de estas técnicas para obtener el mayor posible de la IoT.                                    
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="text-primary">Inteligencia artificial.</b> La inteligencia artificial puede multiplicar el valor de IoT utilizando todos los datos de dispositivos inteligentes conectados para promover el aprendizaje y la inteligencia colectiva. Algunas de las técnicas centrales que emplea la inteligencia artificial son el machine learning, el aprendizaje a fondo, el procesamiento del lenguaje natural y la visión por computadora.
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
                 </div>
                 <div class="temario_normal col-md-3 fondo_lista-grupo">
                     <ul class="list-group">
-                        <a href="#concepto" data-url="concepto" class="list-group-item list-group-item-action">Concepto</a>
-                        <a href="#beneficios" data-url="beneficios" class="list-group-item list-group-item-action">Beneficios</a>
-                        <a href="#donde_empezar" data-url="donde_empezar" class="list-group-item list-group-item-action">¿Dónde empezar?</a>
-                        <a href="#aplicaciones" data-url="aplicaciones" class="list-group-item list-group-item-action">Aplicaciones</a>
-                        <a href="#campos_aplicacion" data-url="campos_aplicacion" class="list-group-item list-group-item-action">Campos de aplicación</a>
-                        <a href="#ejemplos" data-url="ejemplos" class="list-group-item list-group-item-action">Ejemplos</a>
+                        <a href="#concepto" data-url="concepto" class="menu_itemNoticia list-group-item list-group-item-action">Concepto</a>
+                        <a href="#beneficios" data-url="beneficios" class="menu_itemNoticia list-group-item list-group-item-action">Beneficios</a>
+                        <a href="#donde_empezar" data-url="donde_empezar" class="menu_itemNoticia list-group-item list-group-item-action">¿Dónde empezar?</a>
+                        <a href="#aplicaciones" data-url="aplicaciones" class="menu_itemNoticia list-group-item list-group-item-action">Aplicaciones</a>
+                        <a href="#campos_aplicacion" data-url="campos_aplicacion" class="menu_itemNoticia list-group-item list-group-item-action">Campos de aplicación</a>
+                        <a href="#ejemplos" data-url="ejemplos" class="menu_itemNoticia list-group-item list-group-item-action">Ejemplos</a>
+                        <a href="#como_funciona" data-url="como_funciona" class="menu_itemNoticia list-group-item list-group-item-action">Como funciona</a>
                     </ul>
                 </div>
             </div>

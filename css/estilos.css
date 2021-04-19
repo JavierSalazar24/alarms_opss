@@ -78,6 +78,9 @@ a {
 
 .titulo-noticias1 {
   padding-top: 12px;
+  font-family: "Roboto", sans-serif;
+  padding-bottom: 5px;
+  font-size: 28px;
 }
 
 .p-noticias {
@@ -99,7 +102,7 @@ a {
 }
 
 .temario_normal {
-  height: 57vh;
+  height: 65vh;
 }
 
 .fondo_lista-grupo > ul > a {
