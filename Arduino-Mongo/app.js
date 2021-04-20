@@ -16,20 +16,25 @@ const uri =
   "mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority";
 
 //Escuchar por el puerto que nos de el sitio
-var port = process.env.PORT;
+var port = 3900;
 app.listen(port, () => {
   console.log(
-    "Servidor corriendo y listo para escuchar peticiones en: http://localhost:" +
+    "Servidor corriendo y listo para escuchar peticiones en: http://localhost: " +
       port
   );
 });
 
 // Traer el board y el led
-const { Board, Led } = require("johnny-five");
-const board = new Board();
+var { Board, Led, Proximity } = require("johnny-five");
+var board = new Board();
 
 // Iniciar el board
 board.on("ready", () => {
+  var proximity = new Proximity({
+    controller: "HCSR04",
+    pin: 7,
+  });
+
   var led = new Led(13);
   var buzzer = new Led(12);
 
@@ -39,6 +44,10 @@ board.on("ready", () => {
 
     let id = parseInt(params.id_alarma) + 1;
 
+    // proximity.on("data", function () {
+    //   console.log(this.cm);
+
+    // if (this.cm < 20 && this.cm > 0) {
     connect();
     async function connect() {
       const client = new MongoClient(uri, {
@@ -56,6 +65,8 @@ board.on("ready", () => {
       // console.log(actualizar.modifiedCount);
       client.close();
     }
+    // }
+    // });
 
     status = true;
     console.log(status);

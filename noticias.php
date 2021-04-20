@@ -209,7 +209,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_noticia.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" href="assets/future/css/main.css" />
     <title>Noticias | OPSS</title>
@@ -217,7 +217,79 @@
 
 <body class="body_noticias">
     
-    <?php include "partes/_nav.php" ?>
+    <!-- Menu normal -->
+    <header id="headerf">
+        <h1 class="h1f"><a class="ancla-navf" href="index.php">Alarmas - OPSS</a></h1>
+        <nav class="links">
+            <ul class="ulf">
+                <li class="lif"><a class="ancla-navf" href="index.php">INICIO</a></li>
+                <li class="lif"><a class="ancla-navf" href="productos.php">PRODUCTOS</a></li>
+                <li class="lif"><a class="ancla-navf" href="noticias.php">NOTICIAS</a></li>
+                <li class="lif"><a class="ancla-navf" href="asistencia.php">ASISTENCIA</a></li>
+                <li class="lif"><a class="ancla-navf" href="iniciar_sesion.php">INICIAR SESIÓN</a></li>
+                <li class="lif"><a class="ancla-navf" href="registrarse.php">REGISTRARSE</a></li>
+            </ul>
+        </nav>
+        <nav class="mainf">
+            <ul class="ulf">            
+                    <button class="switch align-items-center" id="switch">
+				    	<span><i class="fas fa-sun"></i></span>
+				    	<span><i class="fas fa-moon"></i></span>
+				    </button>
+                <li class="lif menu">
+                    <a class="desaparece ancla-navf fa-bars" href="#menu">MENÚ</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu responsive -->
+    <section class="sectionf" id="menu">
+
+        <!-- logo width="300px"-->
+        <section class="py-5 text-center bg-dark sectionf">
+            <img src="img/Logo6.png" width="140px"  alt="">
+        </section>
+
+        <!-- Links -->
+        <section class="sectionf text-center">
+            <ul class="ulf links">
+                <li class="lif">
+                    <a class="ancla-navf" href="index.php">
+                        <h3 class="h3f">INICIO</h3>
+                    </a>
+                </li>
+                <li class="lif">
+                    <a class="ancla-navf" href="noticias.php">
+                        <h3 class="h3f">NOTICIAS</h3>
+                    </a>
+                </li>
+                <li class="lif">
+                    <a class="ancla-navf" href="asistencia.php">
+                        <h3 class="h3f">ASISTENCIA</h3>
+                    </a>
+                </li>
+                <li class="lif">
+                    <a class="ancla-navf" href="productos.php">
+                        <h3 class="h3f">PRODUCTOS</h3>
+                    </a>
+                </li>
+                <li class="lif">
+                    <a class="ancla-navf" href="registrar.php">
+                        <h3 class="h3f">REGISTRARSE</h3>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Actions -->
+        <section>
+            <ul class="ulf actions vertical">
+                <li class="lif decoration-non"><a href="iniciar_sesion.php" class="ancla-navf button big fit">INICIAR SESIÓN</a></li>
+            </ul>
+        </section>
+
+</section>
 
     <section id="noticias" class="mt-5 pt-2">
         <div class="jumpbotron fondo_jump pt-5 pb-5">
@@ -349,6 +421,10 @@
 
     </section>
 
+    <!-- DarkMode -->
+    <script src="js/darkmode.js"></script>
+    <!-- Link indicador activado -->
+    <script src="js/activeIndicador.js"></script>
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <!-- Transiciones -->
@@ -370,9 +446,7 @@
         $(document).on("click", ".list-group-item", function () {
             $(this).addClass("activeNoticias").siblings().removeClass("activeNoticias");
         });
-    </script>
-    <!-- Link indicador activado -->
-    <script src="js/activeIndicador.js"></script>
+    </script>    
 
 </body>
 
