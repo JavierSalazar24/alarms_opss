@@ -25,18 +25,18 @@ app.listen(port, () => {
 });
 
 // Traer el board y el led
-var { Board, Led, Proximity } = require("johnny-five");
-var board = new Board();
+const { Board, Led, Proximity } = require("johnny-five");
+const board = new Board();
 
 // Iniciar el board
 board.on("ready", () => {
-  var proximity = new Proximity({
+  const proximity = new Proximity({
     controller: "HCSR04",
-    pin: 7,
+    pin: 3,
   });
 
-  var led = new Led(13);
-  var buzzer = new Led(12);
+  const led = new Led(13);
+  const buzzer = new Led(12);
 
   // Ruta de apagado
   app.post("/encendido", (req, res) => {
