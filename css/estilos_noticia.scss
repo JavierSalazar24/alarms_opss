@@ -82,6 +82,11 @@ a {
     background: none;
     color: #fff;
   }
+  @media screen and (max-width: 1044) {
+    span {
+      width: 20px;
+    }
+  }
 }
 
 .fondo_jump {

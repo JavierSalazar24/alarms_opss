@@ -27,114 +27,6 @@ a {
   text-decoration: none;
 }
 
-/* NOTICIAS */
-
-.body_noticias {
-  background: rgb(25, 34, 41);
-}
-
-.fondo_jump {
-  background: rgb(18, 26, 33);
-  color: #fff;
-}
-
-.titulo_jumpbotron {
-  font-family: "Roboto", sans-serif;
-  font-size: 35px;
-  margin: 20px 0;
-}
-
-.parrafo_jumpbotron {
-  text-align: justify;
-}
-
-.img-noticias {
-  width: 100%;
-  border-radius: 15px;
-}
-
-.contenido_princiapl-responsivo {
-  display: none;
-}
-
-.imagen_responsiva-noticias {
-  display: none;
-}
-
-.fondo_texto {
-  background: rgb(33, 46, 54);
-  border-radius: 10px;
-  padding: 35px 30px;
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.664);
-}
-
-.titulo-noticias {
-  font-family: "Roboto", sans-serif;
-  padding-top: 60px;
-  padding-bottom: 5px;
-  font-size: 28px;
-}
-
-.titulo-noticias1 {
-  padding-top: 12px;
-  font-family: "Roboto", sans-serif;
-  padding-bottom: 5px;
-  font-size: 28px;
-}
-
-.p-noticias {
-  line-height: 150%;
-  text-align: justify;
-}
-
-.fondo_lista-grupo {
-  background: rgb(33, 46, 54);
-  border-radius: 10px;
-  padding: 25px 30px;
-  border-top: 5px solid #58b3f3 !important;
-  position: sticky;
-  top: 95px;
-}
-
-.temario_responsivo {
-  display: none;
-}
-
-.temario_normal {
-  height: 65vh;
-}
-
-.fondo_lista-grupo > ul > a {
-  border: none;
-  background: none;
-  color: rgba(255, 255, 255, 0.527);
-  text-decoration: none;
-}
-
-.list-group-item {
-  margin: 4px;
-  padding: 10px;
-}
-
-.list-group-item:hover {
-  background: #2a3b47;
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 10px;
-  color: #58b3f3 !important;
-  font-weight: bold;
-}
-
-.activeNoticias {
-  background: #2a3b47 !important;
-  cursor: pointer !important;
-  border-radius: 10px !important;
-  padding: 10px !important;
-  color: #58b3f3 !important;
-  font-weight: bold !important;
-}
-
 /* INICIAR SESIÓN */
 
 .body-login {
@@ -145,32 +37,6 @@ a {
   /* background-size: cover; */
   background-attachment: fixed;
 }
-
-/* .parrafo-login {
-  float: center;
-  position: relative;
-}
-
-.parrafo-login span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  background: rgb(255, 255, 255);
-  border-left: 1px solid #fff;
-  animation: maquina 7s infinite alternate steps(38);
-}
-
-@keyframes maquina {
-  from {
-    width: 100%;
-  }
-  to {
-    width: 0;
-  }
-} */
 
 .titulo-login {
   font-weight: bold;
@@ -311,12 +177,16 @@ a {
 
 .body-productos,
 .body-direccion {
-  background-color: #d7f4f7;
+  background: #f8fafb;
 }
 
 .tarjeta-wrap {
   margin-top: 5rem;
   margin-bottom: 2rem;
+}
+
+.card-sombra {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
 }
 
 .h1-catalogo {
@@ -356,7 +226,8 @@ a {
 /* COMPRAR */
 
 .body-comprar {
-  background-color: #d7f4f7;
+  /* background-color: #d7f4f7; */
+  background-color: #f8fafb;
 }
 
 #comprar {
@@ -380,6 +251,7 @@ a {
 
 .img-comprar {
   width: 70%;
+  border-radius: 10px;
 }
 
 .desc-comprar {
@@ -481,8 +353,6 @@ a {
   display: none;
   transition: 2s;
 }
-
-/* Comprar producto */
 
 /* Agregar pedido */
 

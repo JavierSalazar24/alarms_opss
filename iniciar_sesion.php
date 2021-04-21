@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+    require_once 'vendor/autoload.php';
+    
+
+    if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
+
+        header("Location: control_panel/index.php");
+    
+    }elseif(isset($_SESSION['usuario'])){
+
+        header("Location: index.php");
+    
+    }elseif(!isset($_SESSION['usuario'])){
+
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -26,7 +44,7 @@
                     </div>
                     <div class="form-floating form-group mx-sm-4 mt-4 mb-5">
                         <input class="form-control form-control_login" placeholder="Email" type="email" name="correo" required id="email" value="<?php if(isset($correo)) echo $correo?>">
-                        <label class="label_login" for="email">Email</label>
+                        <label class="label_login" for="email">Email</label>                        
                         <div class="valid-feedback text-white">Correcto.</div>
 						<div class="invalid-feedback text-white">Por favor ingresa tú email.</div>
                     </div>
@@ -61,3 +79,7 @@
 </body>
 
 </html>
+
+<?php 
+    }
+?>

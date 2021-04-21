@@ -56,7 +56,7 @@
     <div id="div-principal">
 
         <!-- Barra de navegación -->
-        <?php include_once "partes/_nav.php" ?>
+        <?php include_once "partes/_navs.php" ?>
 
         <!-- Inicio -->
         <section class="seccion-inicio">

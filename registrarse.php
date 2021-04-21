@@ -1,3 +1,22 @@
+<?php
+
+    session_start();
+
+    require_once 'vendor/autoload.php';
+    
+
+    if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
+
+        header("Location: control_panel/index.php");
+    
+    }elseif(isset($_SESSION['usuario'])){
+
+        header("Location: index.php");
+    
+    }elseif(!isset($_SESSION['usuario'])){
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -279,3 +298,9 @@
 </body>
 
 </html>
+
+<?php
+
+    }
+
+?>
