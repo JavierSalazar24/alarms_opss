@@ -34,7 +34,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos_noticia.css">
     <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="stylesheet" href="assets/future/css/main.css" />
     <title>Noticias | OPSS</title>
@@ -42,7 +42,97 @@
 
 <body class="body_noticias">
     
-    <?php include "partes/_navs.php" ?>
+    <!-- Menu normal -->
+    <header id="headerf">
+        <h1 class="h1f"><a class="ancla-navf" href="index.php">Alarmas - OPSS</a></h1>
+        <nav class="links">
+            <ul class="ulf">        
+                <li class="lif"><a class="ancla-navf" href="index.php">INICIO</a></li>
+                <li class="lif"><a class="ancla-navf" href="productos.php">PRODUCTOS</a></li>
+                <li class="lif"><a class="ancla-navf" href="noticias.php">NOTICIAS</a></li>
+                <li class="lif"><a class="ancla-navf" href="asistencia.php">ASISTENCIA</a></li>
+                <li class="lif nombre-li">
+                    <div class="btn-group group-button-z">
+                        <button class="button-nav-nombre nombre-btn dropdown-button ancla-navf dropdown-toggle" id="dp-categorias" data-toggle="dropdown">
+                            <?php echo $nombre.' '.$ape1?>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dp-categorias">
+                            <a href="mi_perfil.php" class="text-center ancla-navf ancla-dropdown dropdown-item">Mi perfil</a>
+                            <a href="mis_pedidos.php" class="text-center ancla-navf ancla-dropdown dropdown-item">Mis pedidos</a>         
+                            <a href="alarmas.php" class="text-center ancla-navf ancla-dropdown dropdown-item">Mis alarmas</a>         
+                            <a href="cerrar_sesion.php" class="text-center ancla-navf ancla-dropdown dropdown-item">Cerrar sesión</a>         
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="mainf">
+            <ul class="ulf">
+                <li class="lif menu">
+                    <a class="desaparece ancla-navf fa-bars" href="#menu">MENÚ</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu responsive -->
+    <section class="sectionf" id="menu">
+
+        <!-- logo -->
+        <section class="py-5 text-center bg-dark sectionf">
+            <img src="img/Logo6.png" width="140px"  alt="">
+        </section>
+
+        <!-- Links -->
+        <section class="sectionf text-center">
+            <ul class="ulf links">
+                <li class="lif">
+                    <a class="ancla-navf" href="index.php">
+                        <h3 class="h3f">INICIO</h3>
+                    </a>
+                </li>
+                <li class="lif">
+                    <a class="ancla-navf" href="noticias.php">
+                        <h3 class="h3f">NOTICIAS</h3>
+                    </a>
+                </li>
+                <li class="lif">
+                    <a class="ancla-navf" href="asistencia.php">
+                        <h3 class="h3f">ASISTENCIA</h3>
+                    </a>
+                </li>
+                <li class="lif">
+                    <a class="ancla-navf" href="productos.php">
+                        <h3 class="h3f">PRODUCTOS</h3>
+                    </a>
+                </li>
+                <li class="lif">
+                    <a class="ancla-navf" href="mi_perfil.php">
+                        <h3 class="h3f">MI PERFIL</h3>
+                    </a>
+                </li>
+                <li class="lif">
+                    <a class="ancla-navf" href="mis_pedidos.php">
+                        <h3 class="h3f">MIS PEDIDOS</h3>
+                    </a>
+                </li>
+                <li class="lif">
+                    <a class="ancla-navf" href="alarmas.php">
+                        <h3 class="h3f">MIS ALARMAS</h3>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Actions -->
+        <section>
+            <ul class="ulf actions vertical">
+                <li class="lif decoration-non"><a href="mi_perfil.php" class="ancla-navf button big fit"><?php echo $nombre.' '.$ape1?></a></li>
+                <li class="lif decoration-non"><a href="cerrar_sesion.php" class="ancla-navf button big fit">CERRAR SESIÓN</a></li>
+            </ul>
+        </section>
+
+    </section>
 
     <section id="noticias" class="mt-5 pt-2">
         <div class="jumpbotron fondo_jump pt-5 pb-5">
@@ -83,15 +173,11 @@
                     </ul>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8 fondo_texto">
-                    <div id="concepto" class="seccion mt-1">
-                        <div>
-                            <div>
-                                <h2 class="titulo-noticias text-white">Concepto</h2>
-                                <p class="p-noticias">
-                                    Combinar varios sensores, circuitos electrónicos, procesadores y cualquier dispositivo que se conozca podría entrar en menor o mayor forma al concepto del internet de las cosas. En otras palabras IoT es forma de conectar cualquier dispositivo con otro. 
-                                </p>
-                            </div>
-                        </div>
+                    <div id="concepto" class="seccion">
+                        <h2 class="titulo-noticias1 text-white">Concepto</h2>
+                        <p class="p-noticias">
+                            Combinar varios sensores, circuitos electrónicos, procesadores y cualquier dispositivo que se conozca podría entrar en menor o mayor forma al concepto del internet de las cosas. En otras palabras IoT es forma de conectar cualquier dispositivo con otro. 
+                        </p>
                     </div>
                     <div id="beneficios" class="seccion mt-1">
                         <h2 class="titulo-noticias text-white mt-2">Beneficios de internet de las cosas</h2>
@@ -116,7 +202,7 @@
                     <div id="aplicaciones" class="seccion mt-1">
                         <h2 class="titulo-noticias text-white mt-2">Aplicaciones</h2>
                         <p class="p-noticias">
-                            Las aplicaciones para dispositivos conectados a internet son amplias. Múltiples categorías han sido sugeridas, pero la mayoría está de acuerdo en separar las aplicaciones en tres principales ramas de uso: consumidores, empresarial, e infraestructura.22​23​ George Osborne, exmiembro del gabinete encargado de finanzas, propone que la IoT es la próxima etapa en la revolución de la información, refiriéndose a la interconectividad de todo: desde el transporte urbano hasta dispositivos médicos, pasando por electrodomésticos.
+                            Las aplicaciones para dispositivos conectados a internet son amplias. Múltiples categorías han sido sugeridas, pero la mayoría está de acuerdo en separar las aplicaciones en tres principales ramas de uso: consumidores, empresarial, e infraestructura. George Osborne, exmiembro del gabinete encargado de finanzas, propone que la IoT es la próxima etapa en la revolución de la información, refiriéndose a la interconectividad de todo: desde el transporte urbano hasta dispositivos médicos, pasando por electrodomésticos.
                         </p>
                     </div>
                     <div id="campos_aplicacion" class="seccion mt-1">
@@ -143,15 +229,33 @@
                             </ul>
                         </p>
                     </div>
+                    <div id="como_funciona" class="seccion mt-1">
+                        <h2 class="titulo-noticias text-white mt-2">Cómo funciona la IoT con tecnologías clave</h2>
+                        <p class="p-noticias">
+                            <ul>
+                                <li>
+                                    <b class="text-primary">Gestión de datos y analítica de streaming.</b> Internet de las Cosas impone altas exigencias para la gestión del streaming de Big Data proveniente de sensores. La tecnología de procesamiento de series de eventos – que se conoce a menudo como analítica de streaming – lleva a cabo gestión y analítica de datos de la IoT en tiempo real para hacerlos más valiosos. Entre las capacidades clave se cuentan filtrado, normalización, estandarización, transformación, agregación, correlación y análisis temporal.                                    
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="text-primary">Analítica de Big Data.</b> La IoT aporta muchos Big Data – el volumen masivo, la velocidad y la variedad de datos estructurados y no estructurados que las empresas reúnen cada día. Obtener valor del Big Data en IoT requiere analítica de Big Data. Técnicas relacionadas incluyen analítica predictiva, minería de texto, computación en la nube, minería de datos, lagos de datos y Hadoop. La mayoría de las organizaciones emplean una combinación de estas técnicas para obtener el mayor posible de la IoT.                                    
+                                </li>
+                                <br>
+                                <li>
+                                    <b class="text-primary">Inteligencia artificial.</b> La inteligencia artificial puede multiplicar el valor de IoT utilizando todos los datos de dispositivos inteligentes conectados para promover el aprendizaje y la inteligencia colectiva. Algunas de las técnicas centrales que emplea la inteligencia artificial son el machine learning, el aprendizaje a fondo, el procesamiento del lenguaje natural y la visión por computadora.
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
                 </div>
                 <div class="temario_normal col-md-3 fondo_lista-grupo">
                     <ul class="list-group">
-                        <a href="#concepto" data-url="concepto" class="list-group-item list-group-item-action">Concepto</a>
-                        <a href="#beneficios" data-url="beneficios" class="list-group-item list-group-item-action">Beneficios</a>
-                        <a href="#donde_empezar" data-url="donde_empezar" class="list-group-item list-group-item-action">¿Dónde empezar?</a>
-                        <a href="#aplicaciones" data-url="aplicaciones" class="list-group-item list-group-item-action">Aplicaciones</a>
-                        <a href="#campos_aplicacion" data-url="campos_aplicacion" class="list-group-item list-group-item-action">Campos de aplicación</a>
-                        <a href="#ejemplos" data-url="ejemplos" class="list-group-item list-group-item-action">Ejemplos</a>
+                        <a href="#concepto" data-url="concepto" class="menu_itemNoticia list-group-item list-group-item-action">Concepto</a>
+                        <a href="#beneficios" data-url="beneficios" class="menu_itemNoticia list-group-item list-group-item-action">Beneficios</a>
+                        <a href="#donde_empezar" data-url="donde_empezar" class="menu_itemNoticia list-group-item list-group-item-action">¿Dónde empezar?</a>
+                        <a href="#aplicaciones" data-url="aplicaciones" class="menu_itemNoticia list-group-item list-group-item-action">Aplicaciones</a>
+                        <a href="#campos_aplicacion" data-url="campos_aplicacion" class="menu_itemNoticia list-group-item list-group-item-action">Campos de aplicación</a>
+                        <a href="#ejemplos" data-url="ejemplos" class="menu_itemNoticia list-group-item list-group-item-action">Ejemplos</a>
                         <a href="#como_funciona" data-url="como_funciona" class="menu_itemNoticia list-group-item list-group-item-action">Como funciona</a>
                     </ul>
                 </div>
@@ -160,6 +264,10 @@
 
     </section>
 
+    <!-- DarkMode -->
+    <script src="js/darkmode.js"></script>
+    <!-- Link indicador activado -->
+    <script src="js/activeIndicador.js"></script>
     <!-- Fontawesome -->
     <script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <!-- Transiciones -->
@@ -181,9 +289,7 @@
         $(document).on("click", ".list-group-item", function () {
             $(this).addClass("activeNoticias").siblings().removeClass("activeNoticias");
         });
-    </script>
-    <!-- Link indicador activado -->
-    <script src="js/activeIndicador.js"></script>
+    </script>    
 
 </body>
 
@@ -289,7 +395,7 @@
             </ul>
         </section>
 
-</section>
+    </section>
 
     <section id="noticias" class="mt-5 pt-2">
         <div class="jumpbotron fondo_jump pt-5 pb-5">
