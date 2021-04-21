@@ -96,12 +96,12 @@ function AlertaIniciarSesionError() {
   });
 }
 
-function ComprarProductosIndex() {
+function ComprarProductos() {
   Swal.fire({
     position: "center",
     icon: "info",
     title: "¡ Aviso !",
-    text: "Necesita registrarse para comprar algun producto.",
+    text: "Necesita Iniciar Sesión para poder comprar algún producto.",
     showConfirmButton: false,
     timer: 3000,
   });

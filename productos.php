@@ -132,7 +132,7 @@
                         <h3 class="card-title"><?php echo $datos['nombre']?></h3>                        
                         <p class="card-text">Modelo: 1</p>
                         <p class="card-text">$<?php echo $datos['precio']?>.00 MXN.</p>
-                        <a href="comprar.php?id_producto=<?php echo $datos['_id']?>" class="btn btn-success btn-block">Comprar</a>
+                        <button class="btn btn-success btn-block" onclick="ComprarProductos()">Comprar</button>
                     </div>
                 </div>
             </div>
