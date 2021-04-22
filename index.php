@@ -2,21 +2,14 @@
 
     session_start();
     require_once 'vendor/autoload.php';
-
     if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
-
         header("Location: control_panel/index.php");
-    
     }elseif(isset($_SESSION['usuario'])){
-
         $correo = $_SESSION['usuario'];
-
         $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
         $datos = $C_clientes->findOne(['correo' => $correo]);
-
         $nombre = $datos['nombres']['nombre'];
         $ape1 = $datos['nombres']['ape1'];
-
 
 ?>
 
@@ -52,7 +45,7 @@
 	</div>
     <!-- Fin preloader -->
 
-    <!-- Wrapper -->
+    <!-- Div principal -->
     <div id="div-principal">
 
         <!-- Barra de navegación -->

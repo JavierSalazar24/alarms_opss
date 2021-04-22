@@ -3,15 +3,11 @@
     session_start();
     require_once '../vendor/autoload.php';
     date_default_timezone_set('America/Mexico_City');
-    
     setlocale(LC_ALL, '');
-    
     $dia=date('d');
     $mes=strftime('%B');
     $anio=date('Y');
-    
     $fecha=$dia . ' de ' . $mes . ' del ' . $anio;
-
     $C_admin = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
     $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
     $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos; 
@@ -19,7 +15,6 @@
     $C_envios = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->envios; 
     $C_ventas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->ventas; 
     $C_mensajes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->mensajes; 
-
     $numA = $C_admin -> count();
     $numC = $C_clientes -> count();
     $numPr = $C_productos -> count();
@@ -27,18 +22,12 @@
     $numE = $C_envios -> count();
     $numV = $C_ventas -> count();
     $numM = $C_mensajes -> count();
-
     $numEs = $numPe + $numE + $numV;
-
     $C_notas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->notas; 
     $notas = $C_notas->find();
-    
     if(isset($_SESSION['admin'])){
-
         $correo = $_SESSION['admin'];
-
         $datos = $C_admin->findOne(['correo' => $correo]);    
-
         if ($correo == "root@gmail.com") {
             $nombre = "usuario";
             $ape1 = $datos['nombres']['nombre'];

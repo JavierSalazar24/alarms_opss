@@ -117,15 +117,15 @@
 
 <?php
 
-    }elseif(!isset($_SESSION['usuario'])){
+        }elseif(!isset($_SESSION['usuario'])){
 
-        header("Location: iniciar_sesion.php");
+            header("Location: iniciar_sesion.php");
+        }
+
+    }else{
+
+        header("Location: productos.php");    
+
     }
-
-}else{
-
-    header("Location: productos.php");    
-
-}
 
 ?>
