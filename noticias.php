@@ -35,8 +35,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilos_noticia.css">
-    <link rel="stylesheet" href="assets/future/css/main.css" />
     <link rel="stylesheet" href="css/estilos_responsivo.css">
+    <link rel="stylesheet" href="assets/future/css/main.css" />
     <title>Noticias | OPSS</title>
 </head>
 
@@ -67,7 +67,13 @@
             </ul>
         </nav>
         <nav class="mainf">
-            <ul class="ulf">
+            <ul class="ulf ul-switch_menu">
+                <li class="li-switch">
+                    <button class="switch align-items-center" id="switch">
+				    	<span><i class="fas fa-sun"></i></span>
+				    	<span><i class="fas fa-moon"></i></span>
+				    </button>
+                </li> 
                 <li class="lif menu">
                     <a class="desaparece ancla-navf fa-bars" href="#menu">MENÚ</a>
                 </li>

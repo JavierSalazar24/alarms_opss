@@ -1,30 +1,32 @@
 <?php
 
-        session_start();
-        error_reporting(0);
-        require_once 'vendor/autoload.php';
-        $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos;
-    
+    session_start();
+    error_reporting(0);
+
+    require_once 'vendor/autoload.php';
+    $C_productos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->productos;
+
+    if(!empty($_REQUEST['id_producto'])){                
+        $id_producto_req = $_REQUEST['id_producto'];
+        $datosP = $C_productos->findOne(['_id' => new MongoDB\BSON\ObjectID($id_producto_req)]);
+        $cantidad = $datosP['cantidad'];        
+        if ($cantidad == 0) {
+            echo "<script>
+                    setTimeout(cargaAlertaProductoAgotado, 500);
+                    function cargaAlertaProductoAgotado(){
+                        ProductoAgotado();
+                    }
+                </script>";
+        }            
+        if (empty($datosP)) {
+            header("Location: productos.php");
+        }
+
         if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
 
             header("Location: control_panel/index.php");
         
         }elseif(isset($_SESSION['usuario'])){
-
-            if(!empty($_REQUEST['id_producto'])){                
-
-                $id_producto_req = $_REQUEST['id_producto'];
-                $datosP = $C_productos->findOne(['_id' => new MongoDB\BSON\ObjectID($id_producto_req)]);
-                
-                if (empty($datosP)) {
-                    header("Location: productos.php");
-                }
-        
-            }else{
-
-                header("Location: productos.php");
-
-            }
 
             $correo = $_SESSION['usuario'];
 
@@ -99,6 +101,9 @@
             }
         }
     </script>
+    <!-- Sweetalert -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/sweetalert.js"></script>
     <!-- Transiciones -->
     <script src="js/index.js"></script>
     <!-- Estilos script -->
@@ -116,5 +121,11 @@
 
         header("Location: iniciar_sesion.php");
     }
+
+}else{
+
+    header("Location: productos.php");    
+
+}
 
 ?>

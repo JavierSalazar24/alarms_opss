@@ -142,6 +142,8 @@
         </div>            
     </section>
 
+    <!-- Fontsawesome -->
+    <script src=" https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <!-- Estilos script -->
     <?php include_once "views/script_future.php"?>
     <?php include_once "views/script_bootstrap.php"?>

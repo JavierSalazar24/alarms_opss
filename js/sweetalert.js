@@ -1,11 +1,11 @@
-function MostrarAlertaImg(titulo, desc, ruta) {
+function MostrarAlertaImg(titulo, ruta, desc) {
   Swal.fire({
     title: titulo,
     text: desc,
     imageUrl: ruta,
     imageWidth: 400,
-    imageHeight: 250,
-    imageAlt: "Custom image",
+    imageHeight: 220,
+    imageAlt: desc,
     confirmButtonText: "Volver",
     showClass: {
       popup: "animate__animated animate__fadeInDown",
@@ -13,36 +13,6 @@ function MostrarAlertaImg(titulo, desc, ruta) {
     hideClass: {
       popup: "animate__animated animate__fadeOutUp",
     },
-  });
-}
-
-function AlertaErrorDatos() {
-  Swal.fire({
-    position: "center",
-    icon: "error",
-    title: "Error al guardar los datos.",
-    showConfirmButton: false,
-    timer: 3000,
-  });
-}
-
-function AlertaExitoEditarPerfil() {
-  Swal.fire({
-    position: "center",
-    icon: "success",
-    title: "Tu información se guardo con exito.",
-    showConfirmButton: false,
-    timer: 3000,
-  });
-}
-
-function AlertaMensajeEnviado() {
-  Swal.fire({
-    position: "center",
-    icon: "success",
-    title: "Mensaje enviado.",
-    showConfirmButton: false,
-    timer: 3000,
   });
 }
 
@@ -56,53 +26,34 @@ function AlertaCerrarSesion() {
   });
 }
 
-function AlertaIniciarSesion() {
-  Swal.fire({
-    position: "center",
-    icon: "success",
-    title: "Bienvenido a Alarmas - OPSS",
-    showConfirmButton: false,
-    timer: 2000,
-  });
-}
-
-function AlertaProductoAgotado() {
-  Swal.fire({
-    position: "center",
-    icon: "error",
-    title: "Producto agotado.",
-    showConfirmButton: false,
-    timer: 3000,
-  });
-}
-
-function AlertaIniciarSesionPanel() {
-  Swal.fire({
-    position: "center",
-    icon: "success",
-    title: "Bienvenido al Panel de Control",
-    showConfirmButton: false,
-    timer: 2000,
-  });
-}
-
-function AlertaIniciarSesionError() {
-  Swal.fire({
-    position: "center",
-    icon: "error",
-    title: "Contraseña o correo incorrecto.",
-    showConfirmButton: false,
-    timer: 3000,
-  });
-}
-
 function ComprarProductos() {
   Swal.fire({
-    position: "center",
-    icon: "info",
     title: "¡ Aviso !",
     text: "Necesita Iniciar Sesión para poder comprar algún producto.",
-    showConfirmButton: false,
-    timer: 3000,
+    icon: "info",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    confirmButtonText: "Iniciar Sesión",
+    cancelButtonText: "Cancelar",
+    cancelButtonColor: "#d33",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      location.href = "iniciar_sesion.php";
+    }
+  });
+}
+
+function ProductoAgotado() {
+  Swal.fire({
+    title: "¡ Aviso !",
+    text: "Producto agotado",
+    icon: "warning",
+    confirmButtonColor: "#3085d6",
+    confirmButtonText: "Aceptar",
+    allowOutsideClick: false,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      location.href = "productos.php";
+    }
   });
 }
