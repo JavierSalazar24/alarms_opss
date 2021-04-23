@@ -116,7 +116,7 @@
 
 <?php
 
-    }elseif(isset($_SESSION['estandar'])){
+    }else if(isset($_SESSION['estandar'])){
 
         $correo = $_SESSION['estandar'];
 
@@ -139,12 +139,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/estilos_responsivo.css">
     <link rel="shortcut icon" href="../img/favicon1.png">
     <!-- Estilos -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/bower_components/Ionicons/css/ionicons.min.css">
     <link rel="stylesheet" href="assets/dist/css/AdminLTE.min.css">
@@ -155,28 +154,29 @@
     <title>Panel de control | OPSS</title>
 </head>
 
-<body id="page-top">
+<body id="page-top" class="hold-transition sidebar-mini">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <!-- Sidebar -->
+        <!-- Barra lateral -->
         <?php include_once "views/navBar_lateral.php"?>
-        <!-- End of Sidebar -->
+        <!-- Fin Barra lateral -->
 
-        <!-- Content Wrapper -->
+        <!-- Contenido completo -->
         <div id="content-wrapper" class="d-flex flex-column">
-            <!-- Content Wrapper -->
+
+            <!-- Barra sueperior -->
             <?php include_once "views/navBar_superior.php"?>
-            <!-- End of Content Wrapper -->
+            <!-- Fin de Barra sueperior -->
             
-            <!-- End of Main Content -->
+            <!-- Contenido central -->
             <?php include_once "views/contenido.php" ?>
-            <!-- End of Contenido -->
+            <!-- Fin Contenido central -->
 
             <!-- Footer -->
-                <?php include_once "views/footer.php" ?>
-            <!-- End of Footer -->
+            <?php include_once "views/footer.php" ?>
+            <!-- Fin de Footer -->
         </div>
 
     </div>
@@ -189,7 +189,6 @@
 
     <!-- Estilos Script -->
     <?php include "views/script_calendario.php"?>
-    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/sb-admin-2.min.js"></script>
@@ -198,12 +197,13 @@
     <script src="js/demo/chart-pie-demo.js"></script>
     <!-- SweetAlert CDN -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <!-- Agregar nota -->
+    <!-- Agregar -->
     <script type="text/javascript" src="js/agregar_editar.js"></script>
-    <!-- Eliminar Nota -->
+    <!-- Eliminar -->
     <script type="text/javascript" src="js/eliminar.js"></script>
     <!-- LINK ACTIVE -->
     <script src="js/active.js"></script>
+
 </body>
 
 </html>

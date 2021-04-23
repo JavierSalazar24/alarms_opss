@@ -38,13 +38,13 @@
                     <div class="form-floating form-group mx-sm-4 mt-4 mb-5">
                         <input class="form-control form-control_login" placeholder="Email" type="email" name="correo" required id="email" value="<?php if(isset($correo)) echo $correo?>">
                         <label class="label_login" for="email">Email</label>                        
-                        <div class="valid-feedback text-white">Correcto.</div>
+                        <div class="valid-feedback text-white"></div>
 						<div class="invalid-feedback text-white">Por favor ingresa tú email.</div>
                     </div>
                     <div class="form-floating form-group mx-sm-4 mt-3 pb-1">
                         <input class="form-control form-control_login" placeholder="Contraseña" type="password" name="contrasena" minlength="8" required id="password">
                         <label class="label_login" for="password">Contraseña</label>
-                        <div class="valid-feedback text-white">Correcto.</div>
+                        <div class="valid-feedback text-white"></div>
 						<div class="invalid-feedback text-white">Por favor ingresa tú contraseña.</div>
                     </div>
                     <div class="form-group mt-5 mb-3 text-center">

@@ -140,19 +140,19 @@
 					<div class="col-12 mb-3">
 						<label for="nombre" class="form-label">Tú nombre:</label>
 						<input class="form-control" id="nombre" type="text" pattern="[a-zA-Zá-úÁ-Ú ]+" name="nombre" placeholder="Nombre" required>
-						<div class="valid-feedback">Correcto.</div>
+						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">Por favor ingresa tu nombre.</div>
 					</div>
 					<div class="col-12 mb-3">
 						<label for="email" class="form-label">Tú email:</label>					
 						<input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
-						<div class="valid-feedback">Correcto.</div>
+						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">Por favor ingresa tu email.</div>
 					</div>
 					<div class="col-12 mb-4">
 						<label for="mensaje" class="form-label">Tú mensaje o duda:</label>					
 						<textarea class="form-control" id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." autocomplete="off" required></textarea>
-						<div class="valid-feedback">Correcto.</div>
+						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">Por favor ingresa un mensaje.</div>
 					</div>
 					<div class="col-12 text-center mb-5">
@@ -287,15 +287,15 @@
 						<div class="contenedor-preguntas" data-categoria="cuenta">
 							<div class="contenedor-pregunta">
 								<p class="pregunta">¿Como puedo acceder a mis pedidos? <img src="./img/suma.svg" alt="Abrir Respuesta" /></p>
-								<p class="respuesta">Primeramente necesitas crear una cuenta para que puedas encontrar tus pedidos, ya con una cuenta creada puedes acceder desde <a class="enlace_asistencia" href="mis_pedidos.php">aquí</a>.</p>
+								<p class="respuesta">Primeramente necesitas crear una cuenta para que puedas encontrar tus pedidos, ya con una cuenta creada puedes acceder desde <button class="mx-0 px-0 btn btn-link enlace_asistencia" onclick="VerPedidos()">aquí</button>.</p>
 							</div>
 							<div class="contenedor-pregunta">
 								<p class="pregunta">¿Como puedo revisar el estatus de mi alarma comprada? <img src="./img/suma.svg" alt="Abrir Respuesta" /></p>
-								<p class="respuesta">Primeramente necesitas crear una cuenta para que puedas encontrar el estatus de tus alarmas, ya con una cuenta creada puedes acceder desde <a class="enlace_asistencia" href="alarmas.php">aquí</a>.</p>
+								<p class="respuesta">Primeramente necesitas crear una cuenta para que puedas encontrar el estatus de tus alarmas, ya con una cuenta creada puedes acceder desde <button class="mx-0 px-0 btn btn-link enlace_asistencia" onclick="VerPedidos()">aquí</button>.</p>
 							</div>
 							<div class="contenedor-pregunta">
 								<p class="pregunta">¿Como puedo manipular mi alarma comprada? <img src="./img/suma.svg" alt="Abrir Respuesta" /></p>
-								<p class="respuesta">Para manipular tu alarma necesitas <a class="enlace_asistencia" href="#">descargar</a> nuestra aplicación, ya con la aplicación necesitas crear una cuenta de usuario en este <a class="enlace_asistencia" href="registrarse.php">sitio</a> y así podras usar tu alarma sin ningun problema.</p>
+								<p class="respuesta">Para manipular tu alarma necesitas <a class="enlace_asistencia" href="#">descargar</a> nuestra aplicación, ya con la aplicación necesitas crear una cuenta de usuario en este <a class="enlace_asistencia" href="registrarse.php">sitio</a> y así podras usar tu alarma sin ningún problema.</p>
 							</div>
 							<div class="contenedor-pregunta">
 								<p class="pregunta">¿Puedo comprar sin cuenta? <img src="./img/suma.svg" alt="Abrir Respuesta" /></p>
@@ -314,19 +314,19 @@
 					<div class="col-12 mb-3">
 						<label for="nombre" class="form-label">Tú nombre:</label>
 						<input class="form-control" id="nombre" type="text" pattern="[a-zA-Zá-úÁ-Ú ]+" name="nombre" placeholder="Nombre" required>
-						<div class="valid-feedback">Correcto.</div>
+						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">Por favor ingresa tu nombre.</div>
 					</div>
 					<div class="col-12 mb-3">
 						<label for="email" class="form-label">Tú email:</label>					
 						<input class="form-control" type="email" id="email" name="email" placeholder="Email" required>
-						<div class="valid-feedback">Correcto.</div>
+						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">Por favor ingresa tu email.</div>
 					</div>
 					<div class="col-12 mb-4">
 						<label for="mensaje" class="form-label">Tú mensaje o duda:</label>					
 						<textarea class="form-control" id="mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." autocomplete="off" required></textarea>
-						<div class="valid-feedback">Correcto.</div>
+						<div class="valid-feedback"></div>
 						<div class="invalid-feedback">Por favor ingresa un mensaje.</div>
 					</div>
 					<div class="col-12 text-center mb-5">
@@ -340,14 +340,14 @@
     
 	<!-- Transiciones -->
     <script src="js/index.js"></script>
+	<!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/sweetalert.js"></script>
 	<!-- Estilos Script -->
 	<script src="https://kit.fontawesome.com/56b0f801ce.js" crossorigin="anonymous"></script>
     <?php include_once "views/script_bootstrap.php"?>
     <?php include_once "views/script_future.php"?>
-	<script src="js/asistencia.js"></script>
-	<!-- SweetAlert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="js/sweetalert.js"></script>
+	<script src="js/asistencia.js"></script>	
 	<!-- Programación para php y validar formulario -->
     <script src="js/peticiones_php.js"></script>
 	<script src="js/validacion_formulario.js"></script>

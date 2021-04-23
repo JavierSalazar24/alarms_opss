@@ -110,7 +110,7 @@
                           </div>
                           <div class="box-footer clearfix">
                             <button type="submit" onclick="enviarCorreo()" class="pull-right btn btn-dark" id="sendEmail">
-                              Enviar<i class="fa fa-arrow-circle-right"></i>
+                              Enviar <i class="fa fa-arrow-circle-right"></i>
                             </button>
                           </div>
                         </form>
@@ -148,15 +148,7 @@
         $correo = $_SESSION['estandar'];
 
         $C_administradores = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->administradores; 
-        $datos = $C_administradores->findOne(['correo' => $correo]);
-
-        if ($correo == "estandar@gmail.com") {
-            $nombre = "usuario";
-            $ape1 = $datos['nombre'];
-        }else{
-            $nombre = $datos['nombre'];
-            $ape1 = $datos['ape1'];
-        }
+        $datos = $C_administradores->findOne(['correo' => $correo]);        
 
         $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes; 
         $C_ventas = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->ventas; 
@@ -165,6 +157,13 @@
         $numC = $C_clientes -> count();
         $numV = $C_ventas -> count();
 
+        if ($correo == "estandar@gmail.com") {
+          $nombre = "usuario";
+          $ape1 = $datos['nombres']['nombre'];
+        }else{
+            $nombre = $datos['nombres']['nombre'];
+            $ape1 = $datos['nombres']['ape1'];
+        }
 ?>
 
 <!DOCTYPE html>
@@ -177,23 +176,24 @@
     <link rel="shortcut icon" href="../img/favicon1.png">
     <!-- Estilos -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap_copy.min.css">
     <link rel="stylesheet" href="assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <link href="css/AdminLTE_copy.min.css" rel="stylesheet">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link href="css/estilos_responsivo.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos_panel.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Enviar Correo | Panel de control</title>  
+    <title>Enviar Correo | Panel de control</title>
 </head>
 
 <body>
 
     <div id="wrapper">
 
-      <!-- Barra lateral -->
-      <?php include_once "views/navBar_lateral.php"?>
-      <!-- Fin Barra lateral -->
+          <!-- Barra lateral -->
+          <?php include_once "views/navBar_lateral.php"?>
+          <!-- Fin Barra lateral -->
 
           <!-- Contenido completo -->
           <div id="content-wrapper" class="d-flex flex-column">
@@ -236,7 +236,7 @@
                           </div>
                           <div class="box-footer clearfix">
                             <button type="submit" onclick="enviarCorreo()" class="pull-right btn btn-dark" id="sendEmail">
-                              Enviar<i class="fa fa-arrow-circle-right"></i>
+                              Enviar <i class="fa fa-arrow-circle-right"></i>
                             </button>
                           </div>
                         </form>
@@ -254,7 +254,6 @@
           </div>
     </div>
 
-
   <!-- Estilos Script -->
   <?php include "views/script_AdminLTE.php"?>
   <script src="js/sb-admin-2.min.js"></script>
@@ -264,7 +263,6 @@
   <script src="js/agregar_editar.js"></script>
   <!-- LINK ACTIVE -->
   <script src="js/active.js"></script>
-
 </body>
 
 </html>

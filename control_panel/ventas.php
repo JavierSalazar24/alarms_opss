@@ -201,8 +201,7 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos_panel.css">
+    <link href="css/estilos_panel.css" rel="stylesheet">
     <link href="css/estilos_responsivo.css" rel="stylesheet">
     <title>Ventas | Panel de control</title>
 </head>
@@ -230,42 +229,43 @@
                     <!-- Titulo -->
                     <h1 class="h3 mb-2 text-gray-800">Ventas</h1>
 
-                    <!-- Tabla Ventas -->
+                    <!-- Tabla Administradores -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tabla de Ventas</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tabla de ventas</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">                            
-                                    <thead>
-                                        <th>No.</th>
-                                        <th>No. Envío</th>
-                                        <th>Total</th>
-                                        <th>Fecha y Hora</th>
-                                    </thead>
+                                <form id="formulario_ventas">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">                            
+                                        <thead>
+                                            <th>No.</th>
+                                            <th>No. Envío</th>
+                                            <th>Total</th>
+                                            <th>Fecha y Hora</th>
+                                        </thead>
 
-                                    <tbody>
-                                        <?php
-                                            foreach ($datos as $dato) {
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $dato["no"]; ?></td>
-                                            <td><?php echo $dato["no_envio"]; ?></td>
-                                            <td><?php echo $dato["total_compra"]; ?></td>
-                                            <td><?php echo $dato["fecha_hora"]; ?></td>
-                                        </tr>
-                                        <?php
-                                            }//foreach
-                                        ?>                                    
-                                    </tbody>
-                                </table>
+                                        <tbody>
+                                            <?php
+                                                foreach ($datos as $dato) {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $dato["no"]; ?></td>
+                                                <td><?php echo $dato["no_envio"]; ?></td>
+                                                <td><?php echo $dato["total_compra"]; ?></td>
+                                                <td><?php echo $dato["fecha_hora"]; ?></td>                                                
+                                            </tr>
+                                            <?php
+                                                }//foreach
+                                            ?>                                    
+                                        </tbody>
+                                    </table>                                    
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
             <!-- Fin Contenido central -->
 
             <!-- Footer -->
@@ -280,6 +280,8 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
+    <!-- SweetAlert CDN -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Estilos Script-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -301,8 +303,6 @@
     <script type="text/javascript" src="../datatable/pdfmake-0.1.36/pdfmake.min.js"></script>
     <script type="text/javascript" src="../datatable/pdfmake-0.1.36/vsf_fonts.js"></script>
     <script type="text/javascript" src="../datatable/Buttons-1.6.2/js/buttons.html5.min.js"></script>
-    <!-- funcionamiento de eliminación de registros (propios) -->
-    <script type="text/javascript" src="../js/eliminar.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <!-- LINK ACTIVE -->

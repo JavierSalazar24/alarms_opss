@@ -73,6 +73,56 @@ function registrarse() {
           Swal.fire("Error!", "El correo ya existe", "error");
         } else if (data == "vacio") {
           Swal.fire("Error!", "Datos vacíos", "error");
+        } else if (data == "dif") {
+          Swal.fire("Error!", "Las contraseñas no coinciden", "error");
+        } else if (data == "nom") {
+          Swal.fire(
+            "Error!",
+            "El nombre debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "ape1") {
+          Swal.fire(
+            "Error!",
+            "El apellido debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "tel") {
+          Swal.fire(
+            "Error!",
+            "El teléfono debe contener al menos 10 números",
+            "warning"
+          );
+        } else if (data == "calle") {
+          Swal.fire(
+            "Error!",
+            "La calle debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "col") {
+          Swal.fire(
+            "Error!",
+            "La colonia o fraccionamiento debe contener al menos 5 carácteres",
+            "warning"
+          );
+        } else if (data == "cp") {
+          Swal.fire(
+            "Error!",
+            "El código postal debe contener 5 números",
+            "warning"
+          );
+        } else if (data == "email") {
+          Swal.fire(
+            "Error!",
+            "El correo debe tener formato de email (@example.com)",
+            "warning"
+          );
+        } else if (data == "pass") {
+          Swal.fire(
+            "Error!",
+            "La contraseña debe contener al menos 8 carácteres",
+            "warning"
+          );
         }
       });
   });
@@ -108,6 +158,56 @@ function registrarse2() {
           Swal.fire("Error!", "El correo ya existe", "error");
         } else if (data == "vacio") {
           Swal.fire("Error!", "Datos vacíos", "error");
+        } else if (data == "dif") {
+          Swal.fire("Error!", "Las contraseñas no coinciden", "error");
+        } else if (data == "nom") {
+          Swal.fire(
+            "Error!",
+            "El nombre debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "ape1") {
+          Swal.fire(
+            "Error!",
+            "El apellido debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "tel") {
+          Swal.fire(
+            "Error!",
+            "El teléfono debe contener al menos 10 números",
+            "warning"
+          );
+        } else if (data == "calle") {
+          Swal.fire(
+            "Error!",
+            "La calle debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "col") {
+          Swal.fire(
+            "Error!",
+            "La colonia o fraccionamiento debe contener al menos 5 carácteres",
+            "warning"
+          );
+        } else if (data == "cp") {
+          Swal.fire(
+            "Error!",
+            "El código postal debe contener 5 números",
+            "warning"
+          );
+        } else if (data == "email") {
+          Swal.fire(
+            "Error!",
+            "El correo debe tener formato de email (@example.com)",
+            "warning"
+          );
+        } else if (data == "pass") {
+          Swal.fire(
+            "Error!",
+            "La contraseña debe contener al menos 8 carácteres",
+            "warning"
+          );
         }
       });
   });
@@ -147,6 +247,9 @@ function enviarMensaje() {
       });
     input_mensaje.reset();
   });
+  document.getElementById("nombre").innerHTML = " ";
+  document.getElementById("email").innerHTML = " ";
+  document.getElementById("mensaje").innerHTML = " ";
 }
 
 function enviarDireccion() {
@@ -186,6 +289,48 @@ function enviarDireccion() {
               });
             } else if (data == "vacio") {
               Swal.fire("Error!", "Datos vacíos", "error");
+            } else if (data == "nom") {
+              Swal.fire(
+                "Error!",
+                "El nombre debe contener al menos 3 carácteres",
+                "warning"
+              );
+            } else if (data == "ape1") {
+              Swal.fire(
+                "Error!",
+                "El apellido debe contener al menos 3 carácteres",
+                "warning"
+              );
+            } else if (data == "tel") {
+              Swal.fire(
+                "Error!",
+                "El teléfono debe contener al menos 10 números",
+                "warning"
+              );
+            } else if (data == "calle") {
+              Swal.fire(
+                "Error!",
+                "La calle debe contener al menos 3 carácteres",
+                "warning"
+              );
+            } else if (data == "col") {
+              Swal.fire(
+                "Error!",
+                "La colonia o fraccionamiento debe contener al menos 5 carácteres",
+                "warning"
+              );
+            } else if (data == "cp") {
+              Swal.fire(
+                "Error!",
+                "El código postal debe contener 5 números",
+                "warning"
+              );
+            } else if (data == "cant") {
+              Swal.fire(
+                "Error!",
+                "La cantidad debe de ser mayor o igual a 1",
+                "warning"
+              );
             }
           });
       }
@@ -230,6 +375,48 @@ function enviarDireccion2() {
               });
             } else if (data == "vacio") {
               Swal.fire("Error!", "Datos vacíos", "error");
+            } else if (data == "nom") {
+              Swal.fire(
+                "Error!",
+                "El nombre debe contener al menos 3 carácteres",
+                "warning"
+              );
+            } else if (data == "ape1") {
+              Swal.fire(
+                "Error!",
+                "El apellido debe contener al menos 3 carácteres",
+                "warning"
+              );
+            } else if (data == "tel") {
+              Swal.fire(
+                "Error!",
+                "El teléfono debe contener al menos 10 números",
+                "warning"
+              );
+            } else if (data == "calle") {
+              Swal.fire(
+                "Error!",
+                "La calle debe contener al menos 3 carácteres",
+                "warning"
+              );
+            } else if (data == "col") {
+              Swal.fire(
+                "Error!",
+                "La colonia o fraccionamiento debe contener al menos 5 carácteres",
+                "warning"
+              );
+            } else if (data == "cp") {
+              Swal.fire(
+                "Error!",
+                "El código postal debe contener 5 números",
+                "warning"
+              );
+            } else if (data == "cant") {
+              Swal.fire(
+                "Error!",
+                "La cantidad debe de ser mayor o igual a 1",
+                "warning"
+              );
             }
           });
       }
@@ -265,6 +452,42 @@ function editarPerfil() {
           Swal.fire("Error!", "Ocurrio un error en el servidor", "error");
         } else if (data == "vacio") {
           Swal.fire("Error!", "Datos vacíos", "error");
+        } else if (data == "nom") {
+          Swal.fire(
+            "Error!",
+            "El nombre debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "ape1") {
+          Swal.fire(
+            "Error!",
+            "El apellido debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "tel") {
+          Swal.fire(
+            "Error!",
+            "El teléfono debe contener al menos 10 números",
+            "warning"
+          );
+        } else if (data == "calle") {
+          Swal.fire(
+            "Error!",
+            "La calle debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "col") {
+          Swal.fire(
+            "Error!",
+            "La colonia o fraccionamiento debe contener al menos 5 carácteres",
+            "warning"
+          );
+        } else if (data == "cp") {
+          Swal.fire(
+            "Error!",
+            "El código postal debe contener 5 números",
+            "warning"
+          );
         }
       });
   });
@@ -298,6 +521,42 @@ function editarPerfil2() {
           Swal.fire("Error!", "Ocurrio un error en el servidor", "error");
         } else if (data == "vacio") {
           Swal.fire("Error!", "Datos vacíos", "error");
+        } else if (data == "nom") {
+          Swal.fire(
+            "Error!",
+            "El nombre debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "ape1") {
+          Swal.fire(
+            "Error!",
+            "El apellido debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "tel") {
+          Swal.fire(
+            "Error!",
+            "El teléfono debe contener al menos 10 números",
+            "warning"
+          );
+        } else if (data == "calle") {
+          Swal.fire(
+            "Error!",
+            "La calle debe contener al menos 3 carácteres",
+            "warning"
+          );
+        } else if (data == "col") {
+          Swal.fire(
+            "Error!",
+            "La colonia o fraccionamiento debe contener al menos 5 carácteres",
+            "warning"
+          );
+        } else if (data == "cp") {
+          Swal.fire(
+            "Error!",
+            "El código postal debe contener 5 números",
+            "warning"
+          );
         }
       });
   });

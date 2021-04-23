@@ -5,7 +5,11 @@
 
     error_reporting(0);
 
-    if(isset($_SESSION['usuario'])){
+    if(isset($_SESSION['admin'])||isset($_SESSION['estandar'])){
+
+        header("Location: control_panel/index.php");
+
+    }elseif(isset($_SESSION['usuario'])){
 
         $correo = $_SESSION['usuario'];
 
@@ -265,6 +269,10 @@
 </html>
 
 <?php
+
+    }elseif(!isset($_SESSION['usuario'])){
+    
+        header("Location: index.php");        
 
     }
 

@@ -96,31 +96,30 @@
                 <h1 class="h1-direccion text-center pt-5 pb-5">Agrega tu dirección</h1>           
             <form id="enviar_direccion" class="formulario_normal row mt-2 justify-content-evenly needs-validation" novalidate>
                 <div class="col-md-3">
-                    <input type="hidden" name="id_producto" value="<?php echo $id_producto_post?>">
-                    <input type="hidden" name="correo" value="<?php echo $correo?>">
                     <div class="form-floating mb-4 pr-5">
-                        <input class="form-control form-control-negro" placeholder="Nombre"  pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php if(isset($nombre)) echo $nombre?>">
+                        <input type="hidden" name="id_producto" value="<?php echo $id_producto_post?>">
+                        <input type="hidden" name="correo" value="<?php echo $correo?>">
+                        <input class="form-control form-control-negro" placeholder="Nombre" minlength="3" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php if(isset($nombre)) echo $nombre?>">
                         <label class="label-pedidos" for="nombre">Nombre(s)</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú nombre.</div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú nombre, mínimo 3 carácteres.</div>
                     </div>
                     <div class="form-floating mb-4">
                         <input class="form-control form-control-negro" placeholder="Segundo apellido" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape2" id="ape2" value="<?php if(isset($ape2)) echo $ape2?>">
                         <label class="label-pedidos" for="ape2">Segundo apellido</label>
-                        <div class="valid-feedback">Este campo no es obligatorio.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú segundo apellido.</div>
+                        <div class="valid-feedback">Este campo no es obligatorio.</div>                                                
                     </div>
                     <div class="form-floating mb-4">
-                        <input class="form-control form-control-negro" placeholder="Calle" type="text" name="calle" required id="calle" value="<?php if(isset($calle)) echo $calle?>">
+                        <input class="form-control form-control-negro" placeholder="Calle" minlength="3" type="text" name="calle" required id="calle" value="<?php if(isset($calle)) echo $calle?>">
                         <label class="label-pedidos" for="calle">Calle</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú calle.</div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú calle, mínimo 3 carácteres.</div>
                     </div> 
                     <div class="form-floating mb-4">
-                        <input class="form-control form-control-negro" placeholder="Col. o Fracc." type="text" name="col_fracc" required id="col-fracc" value="<?php if(isset($col_fracc)) echo $col_fracc?>">
+                        <input class="form-control form-control-negro" placeholder="Col. o Fracc." minlength="5" type="text" name="col_fracc" required id="col-fracc" value="<?php if(isset($col_fracc)) echo $col_fracc?>">
                         <label class="label-pedidos" for="col-fracc">Col. o Fracc.</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú colonia o fraccionamiento.</div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú colonia o fraccionamiento, mínimo 5 carácteres.</div>
                     </div> 
                     <div class="form-floating mb-4">
                         <input class="form-control form-control-negro" placeholder="Ciudad" list="ciudades" type="text" name="ciudad" required id="ciudad" value="<?php if(isset($ciudad)) echo $ciudad?>">
@@ -158,41 +157,41 @@
                                     <option value="Zacatecas">
                         </datalist>
                         <label class="label-pedidos" for="ciudad">Ciudad</label>
-                        <div class="valid-feedback">Correcto.</div>
+                        <div class="valid-feedback"></div>
                         <div class="invalid-feedback">Por favor elige tu ciudad.</div>
-                    </div> 
+                    </div>                         
                 </div>
                 <div class="col-md-3">
                     <div class="form-floating mb-4">
-                        <input class="form-control form-control-negro" placeholder="Primer apellido" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php if(isset($ape1)) echo $ape1?>">
+                        <input class="form-control form-control-negro" placeholder="Primer apellido" minlength="3" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php if(isset($ape1)) echo $ape1?>">
                         <label class="label-pedidos" for="ape1">Primer apellido</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú primer apellido.</div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú primer apellido, mínimo 3 carácteres.</div>
                     </div>
                     <div class="form-floating mb-4">
                         <input class="form-control form-control-negro" placeholder="Teléfono"  title="Solo números" pattern="[0-9]+" type="tel" name="telefono" required id="telefono" minlength="10" maxlength="10" value="<?php if(isset($telefono)) echo $telefono?>">
                         <label class="label-pedidos" for="telefono">Teléfono</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú teléfono.</div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú teléfono de 10 números.</div>
                     </div>    
                     <div class="form-floating mb-4">
                         <input class="form-control form-control-negro" placeholder="Número exterior" type="text" name="numero" required id="numero" value="<?php if(isset($numero)) echo $numero?>">
                         <label class="label-pedidos" for="numero">Número exterior</label>
-                        <div class="valid-feedback">Correcto.</div>
+                        <div class="valid-feedback"></div>
                         <div class="invalid-feedback">Por favor ingresa tú número exterior.</div>
                     </div>    
                     <div class="form-floating mb-4">
-                        <input class="form-control form-control-negro" placeholder="Código Postal" type="tel" title="Solo números" maxlength="5" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php if(isset($cp)) echo $cp?>">
+                        <input class="form-control form-control-negro" placeholder="Código Postal" type="tel" title="Solo números" minlength="5" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php if(isset($cp)) echo $cp?>">
                         <label class="label-pedidos" for="cp">Código Postal</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú código postal.</div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú código postal, solo números.</div>
                     </div>    
                     <div class="form-floating mb-4">
                         <input class="form-control form-control-negro" placeholder="Cantidad" type="number" name="cantidad_n" required id="cantidad" min="1" value="<?php if(isset($cantidad)) echo $cantidad?>">
                         <label class="label-pedidos" for="cantidad">Cantidad</label>
                         <div class="valid-feedback">Correcto.</div>
                         <div class="invalid-feedback">Por favor ingresa una cantidad.</div>
-                    </div>                    
+                    </div>                        
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-8 col-md-4 mt-5 mb-5 d-grid gap-2 text-center">
@@ -205,53 +204,52 @@
                     <div class="form-floating mb-4 pr-5">
                         <input type="hidden" name="id_producto" value="<?php echo $id_producto_post?>">
                         <input type="hidden" name="correo" value="<?php echo $correo?>">
-                        <input class="form-control mt-5 form-control-negro" placeholder="Nombre(s)"  pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php if(isset($nombre)) echo $nombre?>">
+                        <input class="form-control form-control-negro" placeholder="Nombre" minlength="3" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="nombre" required id="nombre" value="<?php if(isset($nombre)) echo $nombre?>">
                         <label class="label-pedidos" for="nombre">Nombre(s)</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú nombre.</div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú nombre, mínimo 3 carácteres.</div>
                     </div>
                     <div class="form-floating mb-4">
-                        <input class="form-control form-control-negro" placeholder="Primer apellido" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php if(isset($ape1)) echo $ape1?>">
+                        <input class="form-control form-control-negro" placeholder="Primer apellido" minlength="3" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape1" required id="ape1" value="<?php if(isset($ape1)) echo $ape1?>">
                         <label class="label-pedidos" for="ape1">Primer apellido</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú primer nombre.</div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú primer apellido, mínimo 3 carácteres.</div>
                     </div>
                     <div class="form-floating mb-4">
                         <input class="form-control form-control-negro" placeholder="Segundo apellido" pattern="[a-zA-Zá-úÁ-Ú ]+" type="text" name="ape2" id="ape2" value="<?php if(isset($ape2)) echo $ape2?>">
                         <label class="label-pedidos" for="ape2">Segundo apellido</label>
-                        <div class="valid-feedback">Este campo no es obligatorio.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú segundo apellido.</div>
+                        <div class="valid-feedback">Este campo no es obligatorio.</div>                                                
                     </div>
                     <div class="form-floating mb-4">
                         <input class="form-control form-control-negro" placeholder="Teléfono"  title="Solo números" pattern="[0-9]+" type="tel" name="telefono" required id="telefono" minlength="10" maxlength="10" value="<?php if(isset($telefono)) echo $telefono?>">
                         <label class="label-pedidos" for="telefono">Teléfono</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú teléfono.</div>
-                    </div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú teléfono de 10 números.</div>
+                    </div> 
                     <div class="form-floating mb-4">
-                        <input class="form-control form-control-negro" placeholder="Calle" type="text" name="calle" required id="calle" value="<?php if(isset($calle)) echo $calle?>">
+                        <input class="form-control form-control-negro" placeholder="Calle" minlength="3" type="text" name="calle" required id="calle" value="<?php if(isset($calle)) echo $calle?>">
                         <label class="label-pedidos" for="calle">Calle</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú calle.</div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú calle, mínimo 3 carácteres.</div>
                     </div>
                     <div class="form-floating mb-4">
                         <input class="form-control form-control-negro" placeholder="Número exterior" type="text" name="numero" required id="numero" value="<?php if(isset($numero)) echo $numero?>">
                         <label class="label-pedidos" for="numero">Número exterior</label>
-                        <div class="valid-feedback">Correcto.</div>
+                        <div class="valid-feedback"></div>
                         <div class="invalid-feedback">Por favor ingresa tú número exterior.</div>
                     </div>
                     <div class="form-floating mb-4">
-                        <input class="form-control form-control-negro" placeholder="Col. o Fracc." type="text" name="col_fracc" required id="col-fracc" value="<?php if(isset($col_fracc)) echo $col_fracc?>">
+                        <input class="form-control form-control-negro" placeholder="Col. o Fracc." minlength="5" type="text" name="col_fracc" required id="col-fracc" value="<?php if(isset($col_fracc)) echo $col_fracc?>">
                         <label class="label-pedidos" for="col-fracc">Col. o Fracc.</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú colonia o fraccionamiento.</div>
-                    </div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú colonia o fraccionamiento, mínimo 5 carácteres.</div>
+                    </div> 
                     <div class="form-floating mb-4">
-                        <input class="form-control form-control-negro" placeholder="Código Postal" type="tel" title="Solo números" maxlength="5" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php if(isset($cp)) echo $cp?>">
+                        <input class="form-control form-control-negro" placeholder="Código Postal" type="tel" title="Solo números" minlength="5" maxlength="5" pattern="[0-9]+" name="cp" required id="cp" value="<?php if(isset($cp)) echo $cp?>">
                         <label class="label-pedidos" for="cp">Código Postal</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor ingresa tú código postal.</div>
-                    </div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor ingresa tú código postal, solo números.</div>
+                    </div> 
                     <div class="form-floating mb-4">
                         <input class="form-control form-control-negro" placeholder="Ciudad" list="ciudades" type="text" name="ciudad" required id="ciudad" value="<?php if(isset($ciudad)) echo $ciudad?>">
                         <datalist id="ciudades">
@@ -288,15 +286,15 @@
                                     <option value="Zacatecas">
                         </datalist>
                         <label class="label-pedidos" for="ciudad">Ciudad</label>
-                        <div class="valid-feedback">Correcto.</div>
-                        <div class="invalid-feedback">Por favor elige tú ciudad.</div>
+                        <div class="valid-feedback"></div>
+                        <div class="invalid-feedback">Por favor elige tu ciudad.</div>
                     </div>
                     <div class="form-floating mb-4">
                         <input class="form-control form-control-negro" placeholder="Cantidad" type="number" name="cantidad_n" required id="cantidad" min="1" value="<?php if(isset($cantidad)) echo $cantidad?>">
                         <label class="label-pedidos" for="cantidad">Cantidad</label>
                         <div class="valid-feedback">Correcto.</div>
                         <div class="invalid-feedback">Por favor ingresa una cantidad.</div>
-                    </div> 
+                    </div>  
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-8 col-md-4 mt-5 mb-5 d-grid gap-2 text-center">
@@ -330,7 +328,7 @@
 
      }elseif(!isset($_SESSION['usuario'])){
     
-        header("Location: registrarse.php");        
+        header("Location: index.php");        
 
      }
 

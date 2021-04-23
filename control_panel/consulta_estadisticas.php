@@ -11,9 +11,17 @@
     $numE = $C_envios -> count();
     $numV = $C_ventas -> count();
 
-    echo json_encode($numP);
-    echo json_encode($numE);
-    echo json_encode($numV);
+    $array = array(
+        0  => $numP,
+        1  => $numE,
+        2  => $numV
+    );
+
+    echo json_encode($array[0]);
+    echo json_encode(',');
+    echo json_encode($array[1]);
+    echo json_encode(',');
+    echo json_encode($array[2]);
     
 ?>
 

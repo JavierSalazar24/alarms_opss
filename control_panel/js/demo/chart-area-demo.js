@@ -2,9 +2,10 @@ $.ajax({
   url: "consulta_estadisticas.php",
   type: "POST",
 }).done(function (resp) {
-  var pedidos = parseInt(resp[0]);
-  var envios = parseInt(resp[1]);
-  var ventas = parseInt(resp[2]);
+  let contenido = resp.split('","');
+  var pedidos = parseInt(contenido[0]);
+  var envios = parseInt(contenido[1]);
+  var ventas = parseInt(contenido[2]);
 
   function number_format(number, decimals, dec_point, thousands_sep) {
     // *     example: number_format(1234.56, 2, ',', ' ');

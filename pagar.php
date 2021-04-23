@@ -135,7 +135,7 @@
 <?php
 
     }elseif(!isset($_SESSION['usuario'])){
-        header("Location: registrarse.php");
+        header("Location: index.php");
     }
 
 ?>

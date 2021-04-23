@@ -1,4 +1,4 @@
-function MostrarAlertaImg(titulo, ruta, desc) {
+function MostrarAlertaImg(titulo, desc, ruta) {
   Swal.fire({
     title: titulo,
     text: desc,
@@ -23,6 +23,40 @@ function AlertaCerrarSesion() {
     title: "Gracias por su visita.",
     showConfirmButton: false,
     timer: 1500,
+  });
+}
+
+function VerPedidos() {
+  Swal.fire({
+    title: "¡ Aviso !",
+    text: "Necesitas iniciar sesión para poder ver tus pedidos.",
+    icon: "info",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    confirmButtonText: "Iniciar Sesión",
+    cancelButtonText: "Cancelar",
+    cancelButtonColor: "#d33",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      location.href = "iniciar_sesion.php";
+    }
+  });
+}
+
+function VerAlarmas() {
+  Swal.fire({
+    title: "¡ Aviso !",
+    text: "Necesitas iniciar sesión para poder ver tus alrmas.",
+    icon: "info",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    confirmButtonText: "Iniciar Sesión",
+    cancelButtonText: "Cancelar",
+    cancelButtonColor: "#d33",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      location.href = "iniciar_sesion.php";
+    }
   });
 }
 

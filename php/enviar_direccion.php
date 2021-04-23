@@ -43,84 +43,111 @@
 
         $C_pedidos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->pedidos;         
 
-        if (empty($_POST['ape2'])) {
-            
-            $insert = $C_pedidos -> insertOne([
-                'id_mercancia' => $id_producto,
-                'nombre_producto' => $datosP['nombre'],
-                'info_cliente' => [
-                'nombres' => $nombre,
-                'apellidos' => $ape1,
-                'telefono' => $telefono_n,
-                'calle' => $calle,
-                'numero' => $numero_n,
-                'col_fracc' => $col_fracc,
-                'cp' => $cp_n,
-                'ciudad' => $ciudad,
-                ],
-                'correo_cliente' => $_POST['correo'],                
-                'cantidad' => $cantidad_n_n,
-                'total' => $total,
-                'fecha_hora' => $fecha.' / '.$hora_exacta,
-            ]);
-
-        }else{
-            $insert = $C_pedidos -> insertOne([
-                'id_mercancia' => $id_producto,
-                'nombre_producto' => $datosP['nombre'],
-                'info_cliente' => [
-                'nombres' => $nombre,
-                'apellidos' => $ape1.' '.$_POST['ape2'],
-                'telefono' => $telefono_n,
-                'calle' => $calle,
-                'numero' => $numero_n,
-                'col_fracc' => $col_fracc,
-                'cp' => $cp_n,
-                'ciudad' => $ciudad,
-                ],
-                'correo_cliente' => $_POST['correo'],                
-                'cantidad' => $cantidad_n_n,
-                'total' => $total,
-                'fecha_hora' => $fecha.' / '.$hora_exacta,
-            ]);
-        }
-
-
-        if ($insert) {
-
-            $cantidadNueva = $datosP['cantidad'] - $cantidad_n_n;
-
-            $edit_producto = $C_productos -> updateOne(
-                ['_id' => new MongoDB\BSON\ObjectID($id_producto)],
-                ['$set' => ['cantidad' => $cantidadNueva, ]]
-            );
-            
-            $correo = $_POST['correo'];
-
-            $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes;
-
-            $busqueda_cliente = $C_clientes -> findOne(['correo' => $correo]);
-
-            $i=0;
-
-            
-
-            do {
-                $i=$i+1;
-                if (empty($busqueda_cliente['alarmas']["alarma $i"])) { 
-                    $edit_alarmas = $C_clientes -> updateOne(
-                        ['correo' => $correo],
-                        ['$set' => ["alarmas.alarma $i" => 'apagada'] ]
-                    );
-
-                    break;
+        if (strlen($nombre) >= 3) {
+            if (strlen($ape1) >= 3){
+                if (strlen($telefono_n) == 10){
+                    if (strlen($calle) >= 3){
+                        if (strlen($col_fracc) >= 3){
+                            if (strlen($cp_n) == 5){
+                                if (strlen($cantidad_n_n) >= 1){
+                                    if (empty($_POST['ape2'])) {
+                
+                                        $insert = $C_pedidos -> insertOne([
+                                            'id_mercancia' => $id_producto,
+                                            'nombre_producto' => $datosP['nombre'],
+                                            'info_cliente' => [
+                                            'nombres' => $nombre,
+                                            'apellidos' => $ape1,
+                                            'telefono' => $telefono_n,
+                                            'calle' => $calle,
+                                            'numero' => $numero_n,
+                                            'col_fracc' => $col_fracc,
+                                            'cp' => $cp_n,
+                                            'ciudad' => $ciudad,
+                                            ],
+                                            'correo_cliente' => $_POST['correo'],                
+                                            'cantidad' => $cantidad_n_n,
+                                            'total' => $total,
+                                            'fecha_hora' => $fecha.' / '.$hora_exacta,
+                                        ]);
+                            
+                                    }else{
+                                        $insert = $C_pedidos -> insertOne([
+                                            'id_mercancia' => $id_producto,
+                                            'nombre_producto' => $datosP['nombre'],
+                                            'info_cliente' => [
+                                            'nombres' => $nombre,
+                                            'apellidos' => $ape1.' '.$_POST['ape2'],
+                                            'telefono' => $telefono_n,
+                                            'calle' => $calle,
+                                            'numero' => $numero_n,
+                                            'col_fracc' => $col_fracc,
+                                            'cp' => $cp_n,
+                                            'ciudad' => $ciudad,
+                                            ],
+                                            'correo_cliente' => $_POST['correo'],                
+                                            'cantidad' => $cantidad_n_n,
+                                            'total' => $total,
+                                            'fecha_hora' => $fecha.' / '.$hora_exacta,
+                                        ]);
+                                    }
+                            
+                                    if ($insert) {
+                            
+                                        $cantidadNueva = $datosP['cantidad'] - $cantidad_n_n;
+                            
+                                        $edit_producto = $C_productos -> updateOne(
+                                            ['_id' => new MongoDB\BSON\ObjectID($id_producto)],
+                                            ['$set' => ['cantidad' => $cantidadNueva, ]]
+                                        );
+                                        
+                                        $correo = $_POST['correo'];
+                            
+                                        $C_clientes = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->clientes;
+                            
+                                        $busqueda_cliente = $C_clientes -> findOne(['correo' => $correo]);
+                            
+                                        $i=0;
+                            
+                                        
+                            
+                                        do {
+                                            $i=$i+1;
+                                            if (empty($busqueda_cliente['alarmas']["alarma $i"])) { 
+                                                $edit_alarmas = $C_clientes -> updateOne(
+                                                    ['correo' => $correo],
+                                                    ['$set' => ["alarmas.alarma $i" => 'apagada'] ]
+                                                );
+                            
+                                                break;
+                                            }
+                                        } while (!empty($busqueda_cliente['alarmas']["alarma $i"]));
+                                        echo json_encode('correcto');
+                                    
+                                    }else{
+                                        echo json_encode('error');
+                                    }
+                                }else{
+                                    echo json_encode("cant");
+                                }
+                            }else{
+                                echo json_encode("cp");
+                            }                                                        
+                        }else{
+                            echo json_encode("col");
+                        }
+                    }else{
+                        echo json_encode("calle");
+                    }
+                }else{
+                    echo json_encode("tel");
                 }
-            } while (!empty($busqueda_cliente['alarmas']["alarma $i"]));
-            echo json_encode('correcto');
-        
+            }else{
+                echo json_encode("ape1");
+            }
         }else{
-            echo json_encode('error');
-        }
+            echo json_encode ("nom");
+        }           
 
     }else{
         echo json_encode('vacio');

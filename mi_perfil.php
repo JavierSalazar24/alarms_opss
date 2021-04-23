@@ -117,9 +117,9 @@
                         </div>       
                     </div>                   
                 </div>
-                <div class="formulario_responsive row mt-2 justify-content-center">
-                    <div class="col-12 form-group text-center pt-4 pb-5">
-                        <h1 class="titulo-login">MI PERFIL</h1>
+                <div class="formulario_responsive row mt-2 justify-content-center mx-auto">
+                    <div class="col-12 form-group text-center pt-0 pb-5">
+                        <h1 class="titulo-pedidos">MI PERFIL</h1>
                     </div>
                     <div class="col-12">
                         <div class="form-group mb-5">
@@ -163,7 +163,7 @@
                             <input class="form-control form-control-negro" type="email" value="<?php echo $correo?>" readonly>
                         </div> 
                     </div>
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center mx-auto">
                         <div class="col-12 form-group mt-5 mb-3 d-grid grid-2 text-center">
                             <a href="editar_mi_perfil.php" class="btn btn-dark btn-lg mb-3">Editar perfil</a>
                             <a href="mis_pedidos.php" class="btn btn-dark btn-lg mb-3">Mis pedidos</a>

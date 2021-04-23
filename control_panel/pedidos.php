@@ -10,7 +10,7 @@
     $anio=date('Y');
     $fecha=$dia . ' de ' . $mes . ' del ' . $anio;
 
-    $i = 0;
+    $i = 1;
 
     require_once '../vendor/autoload.php';
     $C_pedidos = (new MongoDB\Client('mongodb+srv://javier:javier12345@cluster0.w3wdi.mongodb.net/opss?retryWrites=true&w=majority'))->opss->pedidos; 
@@ -104,7 +104,7 @@
                                                 foreach ($datos as $dato) {
                                             ?>
                                             <tr>
-                                                <td><?php $i++ ?></td>
+                                                <td><?php echo $i++ ?></td>
                                                 <td><?php echo $dato["id_mercancia"]; ?></td>
                                                 <td><?php echo $dato['info_cliente']["nombres"]; ?></td>
                                                 <td><?php echo $dato['info_cliente']["apellidos"]; ?></td>
@@ -283,7 +283,7 @@
                                             foreach ($datos as $dato) {
                                         ?>
                                         <tr>
-                                            <td><?php $i++ ?></td>
+                                            <td><?php echo $i++ ?></td>
                                             <td><?php echo $dato["id_mercancia"]; ?></td>
                                             <td><?php echo $dato['info_cliente']["nombres"]; ?></td>
                                             <td><?php echo $dato['info_cliente']["apellidos"]; ?></td>

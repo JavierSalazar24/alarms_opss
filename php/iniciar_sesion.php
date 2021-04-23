@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+    session_start();
 
     require_once '../vendor/autoload.php';
     
@@ -41,34 +41,21 @@ session_start();
                 echo json_encode('null');
 
             }elseif (!empty($cuenta_cliente)) {
-
-                $cliente = $C_clientes->findOne(['correo' => $correo]);
-                $nombre_c = $cliente['nombres']['nombre'];
-                $ape1_c = $cliente['nombres']['ape1'];
-                $_SESSION['usuario']=$correo;          
+                         
+                $_SESSION['usuario'] = $correo;          
                 
                 echo json_encode('user');
 
-            }elseif(!empty($cuenta_admin)){
-                    
-                $administrador = $C_admins->findOne(['correo' => $correo]);
-                    
-                if ($correo == "estandar@gmail.com" || $correo == "root@gmail.com") {
-                    $nombre_a = "";
-                    $ape1_a = $administrador['nombre'];
-                }else{
-                    $nombre_a = $administrador['nombres']['nombre'];
-                    $ape1_a = $administrador['nombres']['ape1'];
-                }
+            }elseif(!empty($cuenta_admin)){                                    
 
-                if ($administrador['tipo_admin'] == 1) {
-                    $_SESSION['admin']=$correo;
-                }elseif($administrador['tipo_admin'] == 2){
-                    $_SESSION['estandar']=$correo;
+                if ($cuenta_admin['tipo_admin'] == 1) {
+                    $_SESSION['admin'] = $correo;
+                    echo json_encode('admin');
+                }else if($cuenta_admin['tipo_admin'] == 2){
+                    $_SESSION['estandar'] = $correo;
+                    echo json_encode('admin');
                 }
                 
-                echo json_encode('admin');
-
             }
             
         }else{
