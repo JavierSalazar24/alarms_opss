@@ -130,7 +130,7 @@
             <div class="col-lg-4 col-md-6 pb-5 tarjeta">
                 <div class="card card-sombra bg-dark text-white adelante">
                     <img class="img-producto card-img-top img-fluid" src="img_produtos/<?php echo $datos['imagen']?>" alt="<?php echo $datos['descripcion']?>">
-                    <button class="icono" onclick="MostrarAlertaImg('<?php echo $datos['nombre']?>', 'img_produtos/<?php echo $datos['imagen']?>', '<?php echo $datos['descripcion']?>')"><i class="fas fa-search-plus"></i></button>
+                    <button class="icono" onclick="MostrarAlertaImg('<?php echo $datos['nombre']?>', '<?php echo $datos['descripcion']?>', 'img_produtos/<?php echo $datos['imagen']?>')"><i class="fas fa-search-plus"></i></button>
                     <div class="card-body">
                         <h3 class="card-title"><?php echo $datos['nombre']?></h3>                        
                         <p class="card-text">Modelo: 1</p>

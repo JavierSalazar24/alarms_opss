@@ -101,7 +101,7 @@
                         </div>    
                         <div class="form-group mb-5">
                             <label class="label-pedidos" for="cp">Código Postal</label>
-                            <input class="form-control form-control-negro" type="tel" value="<?php echo $cp?>">
+                            <input class="form-control form-control-negro" type="tel" value="<?php echo $cp?>" readonly>
                         </div>    
                         <div class="form-group mb-5">
                             <label class="label-pedidos" for="email">Email</label>

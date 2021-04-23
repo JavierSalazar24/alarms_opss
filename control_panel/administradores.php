@@ -92,7 +92,7 @@
                             <div class="table-responsive">
                                 <form id="formulario_admin">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">                            
-                                        <thead>
+                                        <thead class="text-dark">
                                             <th>No.</th>
                                             <th>Nombre</th>
                                             <th>Primer Apellido</th>
@@ -103,7 +103,7 @@
                                             <th>Acciones</th>
                                         </thead>
                                     
-                                        <tbody>
+                                        <tbody class="text-dark">
                                             <?php
                                                 foreach ($datos as $dato) {
                                             ?>

@@ -47,6 +47,7 @@ a {
   color: #ffffff;
   margin-left: 0 !important;
   padding-left: 0 !important;
+  font-weight: bold;
 }
 
 .formulario_login {
@@ -54,7 +55,7 @@ a {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.568);
   padding: 20px;
   border-radius: 10px;
-  color: white;
+  color: #fff;
 }
 
 .form-control_login {
@@ -75,6 +76,7 @@ a {
   box-shadow: none;
   background: transparent;
   border-radius: 0px;
+  /* font-weight: bold; */
 }
 
 .form-control_login:-webkit-autofill,
@@ -84,6 +86,7 @@ a {
   -webkit-text-fill-color: #fff;
   -webkit-box-shadow: transparent;
   transition: background-color 5000s ease-in-out 0s;
+  /* font-weight: bold; */
 }
 
 .ingresar {
@@ -133,6 +136,7 @@ a {
   color: #fff;
   margin-left: 0 !important;
   padding-left: 0 !important;
+  font-weight: bold;
 }
 
 .form-control-registrarse {
