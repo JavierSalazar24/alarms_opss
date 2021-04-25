@@ -63,7 +63,7 @@
                                         <div class="header-decorated" data-caption-animate="fadeInUp" data-caption-delay="0s">
                                             <h3 class="medium text-primary">Alarmas - OPSS</h3>
                                         </div>
-                                        <h2 class="slider-header" data-caption-animate="fadeInUp" data-caption-delay="150">Sientete seguro en tu hogar</h2>
+                                        <h2 class="slider-header" data-caption-animate="fadeInUp" data-caption-delay="150">Siéntete seguro en tu hogar</h2>
                                         <div class="button-block" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="button button-lg button-primary-outline-v2" href="productos.php">Ir al catálogo</a></div>
                                     </div>
                                 </div>
@@ -451,7 +451,7 @@
                                         <div class="header-decorated" data-caption-animate="fadeInUp" data-caption-delay="0s">
                                             <h3 class="medium text-primary">Alarmas - OPSS</h3>
                                         </div>
-                                        <h2 class="slider-header" data-caption-animate="fadeInUp" data-caption-delay="150">Sientete seguro en tu hogar</h2>
+                                        <h2 class="slider-header" data-caption-animate="fadeInUp" data-caption-delay="150">Siéntete seguro en tu hogar</h2>
                                         <div class="button-block" data-caption-animate="fadeInUp" data-caption-delay="400"><a class="button button-lg button-primary-outline-v2" href="productos.php">Ir al catálogo</a></div>
                                     </div>
                                 </div>

@@ -236,22 +236,18 @@
                         </p>
                     </div>
                     <div id="como_funciona" class="seccion mt-1">
-                        <h2 class="titulo-noticias text-white mt-2">Cómo funciona la IoT con tecnologías clave</h2>
-                        <p class="p-noticias">
-                            <ul>
-                                <li>
+                        <h2 class="titulo-noticias text-white mt-2 mb-4">Cómo funciona IoT con tecnologías clave</h2>
+                            <ul class="p-noticias">
+                                <li class="mb-4">
                                     <b class="text-primary">Gestión de datos y analítica de streaming.</b> Internet de las Cosas impone altas exigencias para la gestión del streaming de Big Data proveniente de sensores. La tecnología de procesamiento de series de eventos – que se conoce a menudo como analítica de streaming – lleva a cabo gestión y analítica de datos de la IoT en tiempo real para hacerlos más valiosos. Entre las capacidades clave se cuentan filtrado, normalización, estandarización, transformación, agregación, correlación y análisis temporal.                                    
                                 </li>
-                                <br>
-                                <li>
+                                <li class="mb-4">
                                     <b class="text-primary">Analítica de Big Data.</b> La IoT aporta muchos Big Data – el volumen masivo, la velocidad y la variedad de datos estructurados y no estructurados que las empresas reúnen cada día. Obtener valor del Big Data en IoT requiere analítica de Big Data. Técnicas relacionadas incluyen analítica predictiva, minería de texto, computación en la nube, minería de datos, lagos de datos y Hadoop. La mayoría de las organizaciones emplean una combinación de estas técnicas para obtener el mayor posible de la IoT.                                    
                                 </li>
-                                <br>
-                                <li>
+                                <li class="mb-4">
                                     <b class="text-primary">Inteligencia artificial.</b> La inteligencia artificial puede multiplicar el valor de IoT utilizando todos los datos de dispositivos inteligentes conectados para promover el aprendizaje y la inteligencia colectiva. Algunas de las técnicas centrales que emplea la inteligencia artificial son el machine learning, el aprendizaje a fondo, el procesamiento del lenguaje natural y la visión por computadora.
                                 </li>
-                            </ul>
-                        </p>
+                            </ul>                  
                     </div>
                 </div>
                 <div class="temario_normal col-md-3 fondo_lista-grupo">
@@ -502,22 +498,18 @@
                         </p>
                     </div>
                     <div id="como_funciona" class="seccion mt-1">
-                        <h2 class="titulo-noticias text-white mt-2">Cómo funciona la IoT con tecnologías clave</h2>
-                        <p class="p-noticias">
-                            <ul>
-                                <li>
+                        <h2 class="titulo-noticias text-white mt-2 mb-4">Cómo funciona IoT con tecnologías clave</h2>
+                            <ul class="p-noticias">
+                                <li class="mb-4">
                                     <b class="text-primary">Gestión de datos y analítica de streaming.</b> Internet de las Cosas impone altas exigencias para la gestión del streaming de Big Data proveniente de sensores. La tecnología de procesamiento de series de eventos – que se conoce a menudo como analítica de streaming – lleva a cabo gestión y analítica de datos de la IoT en tiempo real para hacerlos más valiosos. Entre las capacidades clave se cuentan filtrado, normalización, estandarización, transformación, agregación, correlación y análisis temporal.                                    
                                 </li>
-                                <br>
-                                <li>
+                                <li class="mb-4">
                                     <b class="text-primary">Analítica de Big Data.</b> La IoT aporta muchos Big Data – el volumen masivo, la velocidad y la variedad de datos estructurados y no estructurados que las empresas reúnen cada día. Obtener valor del Big Data en IoT requiere analítica de Big Data. Técnicas relacionadas incluyen analítica predictiva, minería de texto, computación en la nube, minería de datos, lagos de datos y Hadoop. La mayoría de las organizaciones emplean una combinación de estas técnicas para obtener el mayor posible de la IoT.                                    
                                 </li>
-                                <br>
-                                <li>
+                                <li class="mb-4">
                                     <b class="text-primary">Inteligencia artificial.</b> La inteligencia artificial puede multiplicar el valor de IoT utilizando todos los datos de dispositivos inteligentes conectados para promover el aprendizaje y la inteligencia colectiva. Algunas de las técnicas centrales que emplea la inteligencia artificial son el machine learning, el aprendizaje a fondo, el procesamiento del lenguaje natural y la visión por computadora.
                                 </li>
-                            </ul>
-                        </p>
+                            </ul>                  
                     </div>
                 </div>
                 <div class="temario_normal col-md-3 fondo_lista-grupo">
