@@ -202,7 +202,7 @@
                         </div>
                         <div class="download__div-single_store ">
                             <div class="col-md-6">
-                                <a href="aplication/opss.apk" download="opss.apk">
+                                <a href="app/opss.apk" download="opss.apk">
                                     <div class="single_store">
                                         <i class="fa fa-apple"></i>
                                         <div class="store_inner">
@@ -212,7 +212,7 @@
                                 </a>
                             </div>
                             <div class="col-md-6">
-                                <a href="aplication/opss.apk" download="opss.apk">
+                                <a href="app/opss.apk" download="opss.apk">
                                     <div class="single_store">
                                         <i class="fa fa-android"></i>
                                         <div class="store_inner">
@@ -590,7 +590,7 @@
                         </div>
                         <div class="download__div-single_store ">
                             <div class="col-md-6">
-                                <a href="aplication/opss.apk" download="opss.apk">
+                                <a href="app/opss.apk" download="opss.apk">
                                     <div class="single_store">
                                         <i class="fa fa-apple"></i>
                                         <div class="store_inner">
@@ -600,7 +600,7 @@
                                 </a>
                             </div>
                             <div class="col-md-6">
-                                <a href="aplication/opss.apk" download="opss.apk">
+                                <a href="app/opss.apk" download="opss.apk">
                                     <div class="single_store">
                                         <i class="fa fa-android"></i>
                                         <div class="store_inner">
