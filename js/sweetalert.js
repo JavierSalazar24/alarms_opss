@@ -4,7 +4,7 @@ function MostrarAlertaImg(titulo, desc, ruta) {
     text: desc,
     imageUrl: ruta,
     imageWidth: 400,
-    imageHeight: 220,
+    imageHeight: 400,
     imageAlt: desc,
     confirmButtonText: "Volver",
     showClass: {

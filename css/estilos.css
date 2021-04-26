@@ -201,10 +201,10 @@ a {
 
 .icono {
   position: absolute;
-  bottom: 45%;
+  bottom: 39%;
   right: 0%;
   font-size: 30px;
-  cursor: zoom-in;
+  cursor: pointer;
   background: transparent;
   border: none;
   color: #fff;
