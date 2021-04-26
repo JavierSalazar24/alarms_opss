@@ -371,7 +371,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="submit" onclick="editarNota()" class="btn btn-success">Editar nota</button>
+                                                            <button type="submit" onclick="editarNota()" class="btn btn-success">Guardar cambios</button>
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                                         </div>
                                                     </div>

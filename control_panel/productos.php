@@ -386,7 +386,7 @@
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header bg-success text-white">
-                        <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Editar producto</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <div class="modal-body">
@@ -418,7 +418,7 @@
                         </div>                                            
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" onclick="editarProducto()">Editar producto</button>
+                        <button type="submit" class="btn btn-success" onclick="editarProducto()">Guardar cambios</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>

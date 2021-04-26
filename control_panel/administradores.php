@@ -493,7 +493,7 @@
                         </div>                                                                
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" onclick="editarAdmin()">Editar administrador</button>
+                        <button type="submit" class="btn btn-success" onclick="editarAdmin()">Guardar cambios</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
